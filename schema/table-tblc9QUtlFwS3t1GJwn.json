@@ -1,0 +1,279 @@
+{
+  "id": "tblc9QUtlFwS3t1GJwn",
+  "name": "Partners",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Partners\"",
+  "fields": [
+    {
+      "id": "fldV8ZXuzPjIF5g4nSw",
+      "name": "Email",
+      "dbFieldName": "Email",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldNwTApxN338Iu7uTh",
+      "name": "Phone",
+      "dbFieldName": "Phone",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldupiJvfHt1Ngee3c5",
+      "name": "ID",
+      "dbFieldName": "ID",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldLFjY8yZe2Zi1BN39",
+      "name": "Tax ID",
+      "dbFieldName": "Tax_ID",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldzJV0VtBgNqormk5W",
+      "name": "Type",
+      "dbFieldName": "Type",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "Company",
+        "Customer",
+        "Vendor",
+        "Employee",
+        "Internal"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldVGCgqzwcEzdsk7gI",
+      "name": "Country",
+      "dbFieldName": "Country",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "Thailand",
+        "Australia",
+        "China",
+        "Japan",
+        "USA"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldAMql7wEQbr3QHgbl",
+      "name": "Credit Limit",
+      "dbFieldName": "Credit_Limit",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldbgJNVsSWSjCIEE4y",
+      "name": "Payment Terms",
+      "dbFieldName": "Payment_Terms",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "Net 30",
+        "Net 60",
+        "Prepaid",
+        "50% upfront"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldMypa2FCSUWZr95Wh",
+      "name": "Website",
+      "dbFieldName": "Website",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldM8w5kIo9jHUy5rAq",
+      "name": "Name",
+      "dbFieldName": "Naem",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldSMbUrijVRJwmIKQ5",
+      "name": "Payment",
+      "dbFieldName": "Payment",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "oneMany",
+        "foreignTableId": "tblHkymCqhyNCw2F4O0",
+        "lookupFieldId": "fldCGS4d56hUVFfwq8n",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Payment",
+        "selfKeyName": "__fk_fld0OvN6WyH2fiMLaI1",
+        "foreignKeyName": "__id",
+        "symmetricFieldId": "fld0OvN6WyH2fiMLaI1"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fldagfG6hTbBx8SJRIG",
+      "name": "Source Location",
+      "dbFieldName": "Source_Location",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldCHV95seGsfc9vuNW",
+      "name": "Destination Location",
+      "dbFieldName": "Destination_Location",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld5GmxlNZwFFG4gTeN",
+      "name": "Customer PO",
+      "dbFieldName": "Customer_PO",
+      "type": "link",
+      "description": null,
+      "options": {
+        "foreignTableId": "tbld1ckQQ4Oq70n4hjn",
+        "relationship": "oneMany",
+        "isOneWay": false,
+        "symmetricFieldId": "fldw4fXOVDpBdOJbKqW",
+        "lookupFieldId": "fldUu7GQ4NLWufUe7nd",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Customer_PO",
+        "selfKeyName": "__fk_fldw4fXOVDpBdOJbKqW",
+        "foreignKeyName": "__id"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fld7gBiriDYrXdRz8UY",
+      "name": "Sales Orders",
+      "dbFieldName": "Sales_Orders",
+      "type": "link",
+      "description": null,
+      "options": {
+        "foreignTableId": "tblcgaHqcge0NObcHGF",
+        "relationship": "oneMany",
+        "isOneWay": false,
+        "symmetricFieldId": "fldLQtTSQ23wo4MR4KY",
+        "lookupFieldId": "fldOrYKDMc9OHXYpb8R",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Sales_Orders",
+        "selfKeyName": "__fk_fldLQtTSQ23wo4MR4KY",
+        "foreignKeyName": "__id"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fld1t9ZOxesyccUfvT2",
+      "name": "Account Move",
+      "dbFieldName": "Account_Move",
+      "type": "link",
+      "description": null,
+      "options": {
+        "foreignTableId": "tbl2hpVtax8DS5VEgg5",
+        "relationship": "oneMany",
+        "isOneWay": false,
+        "symmetricFieldId": "fldeB6jzLfvMtrhh8d1",
+        "lookupFieldId": "fldGmpqFcitupYVYbx2",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Account_Move",
+        "selfKeyName": "__fk_fldeB6jzLfvMtrhh8d1",
+        "foreignKeyName": "__id"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fldkFkOZ3SmAt1sXmlE",
+      "name": "Purchase Orders",
+      "dbFieldName": "Purchase_Orders",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "oneMany",
+        "foreignTableId": "tblcfnWU8Vb7dNtJEZo",
+        "lookupFieldId": "fldfUKPd0nC3vqf9tb1",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Purchase_Orders",
+        "selfKeyName": "__fk_fldAVHkTHmSW8YGh3Ch",
+        "foreignKeyName": "__id",
+        "symmetricFieldId": "fldAVHkTHmSW8YGh3Ch"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    }
+  ]
+}

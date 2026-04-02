@@ -1,0 +1,178 @@
+{
+  "id": "tblCW0fvp4bBZ3SCuv2",
+  "name": "Hook & Loop Items",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Hook_Loop_Items\"",
+  "fields": [
+    {
+      "id": "fldI8xVd7Wo4bZ5UhIy",
+      "name": "ID",
+      "dbFieldName": "ID",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "flduimHUCDRkKwuocxx",
+      "name": "Name",
+      "dbFieldName": "Name",
+      "type": "formula",
+      "description": null,
+      "options": {
+        "expression": "{fldGI8oyLnapYfUtOYK}+\" \"+{fldrC9S4N8J8cwy6tdK}",
+        "timeZone": "Asia/Bangkok"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldkYc7dD9dlgeswinC",
+      "name": "Qty",
+      "dbFieldName": "Qty",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldn4wb8OrJs41QqP9W",
+      "name": "Total (mm)",
+      "dbFieldName": "Total_mm",
+      "type": "formula",
+      "description": null,
+      "options": {
+        "expression": "{fldkYc7dD9dlgeswinC}*{fldxBNmsBPnvhdNCCRx}",
+        "timeZone": "Asia/Bangkok",
+        "formatting": {
+          "type": "decimal",
+          "precision": 2
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "flddLDfqRDfFBvSHFLb",
+      "name": "Total (m)",
+      "dbFieldName": "Total_m",
+      "type": "formula",
+      "description": null,
+      "options": {
+        "expression": "{fldn4wb8OrJs41QqP9W}/1000",
+        "timeZone": "Asia/Bangkok",
+        "formatting": {
+          "type": "decimal",
+          "precision": 2
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldGI8oyLnapYfUtOYK",
+      "name": "Item",
+      "dbFieldName": "Item",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblPa6m5iZFnb2Yb7xu",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "flduGdBbpGSguqFcckg",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Hook_Loop_Items",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldStWClzsioGpiKEKj"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld8WzbImgMN161Np7c",
+      "name": "BOM Lines",
+      "dbFieldName": "BOM_Lines",
+      "type": "link",
+      "description": null,
+      "options": {
+        "foreignTableId": "tblxWum7GLIpaEotAr4",
+        "relationship": "manyOne",
+        "isOneWay": false,
+        "symmetricFieldId": "fldwEsz0DQDCqIuQHyM",
+        "lookupFieldId": "fldVYn7r40Tizvse5bE",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Hook_Loop_Items",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fld8WzbImgMN161Np7c"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldxBNmsBPnvhdNCCRx",
+      "name": "Length",
+      "dbFieldName": "Length",
+      "type": "rollup",
+      "description": null,
+      "options": {
+        "expression": "sum({values})",
+        "timeZone": "Asia/Bangkok",
+        "formatting": {
+          "type": "decimal",
+          "precision": 2
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldrC9S4N8J8cwy6tdK",
+      "name": "Size",
+      "dbFieldName": "Size",
+      "type": "link",
+      "description": null,
+      "options": {
+        "foreignTableId": "tblgkA5H6JnZdavE6qL",
+        "relationship": "manyOne",
+        "isOneWay": true,
+        "lookupFieldId": "fldYlQkcXpWcAJaT37Q",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Hook_Loop_Items",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldrC9S4N8J8cwy6tdK",
+        "filter": null,
+        "filterByViewId": null,
+        "visibleFieldIds": null
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    }
+  ]
+}

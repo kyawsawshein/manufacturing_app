@@ -1,0 +1,144 @@
+{
+  "id": "tblHkymCqhyNCw2F4O0",
+  "name": "Payment",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Payment\"",
+  "fields": [
+    {
+      "id": "fldGyA2PSRuMpFtEvS7",
+      "name": "Amount",
+      "dbFieldName": "Amount",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 0,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldnJxJtuLmzXFTd2VH",
+      "name": "Status",
+      "dbFieldName": "Status",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "To do",
+        "In progress",
+        "Done"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldQoXtdrnpKXROPTFm",
+      "name": "Date",
+      "dbFieldName": "Date",
+      "type": "date",
+      "description": null,
+      "options": {
+        "formatting": {
+          "date": "YYYY-MM-DD",
+          "time": "None",
+          "timeZone": "Asia/Bangkok"
+        }
+      },
+      "cellValueType": "dateTime",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldCGS4d56hUVFfwq8n",
+      "name": "ID",
+      "dbFieldName": "ID",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld0OvN6WyH2fiMLaI1",
+      "name": "Partner",
+      "dbFieldName": "Partner",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblc9QUtlFwS3t1GJwn",
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldupiJvfHt1Ngee3c5",
+        "isOneWay": false,
+        "symmetricFieldId": "fldSMbUrijVRJwmIKQ5",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Payment",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fld0OvN6WyH2fiMLaI1"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldDdwIJgu6Jgemrmyq",
+      "name": "Journal",
+      "dbFieldName": "Journal",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblo9esf4d7Agj5n4tn",
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldybQWwnmV43gLVYAh",
+        "isOneWay": false,
+        "symmetricFieldId": "fldwV7E1dojCX9iF3Rp",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Payment",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldDdwIJgu6Jgemrmyq"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldle66g0hqlE4UPiaw",
+      "name": "Currency",
+      "dbFieldName": "Currency",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tbl7JIUHTMA3nCAAGIW",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldb4UMM96vJbBy0dmW",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Payment",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldle66g0hqlE4UPiaw"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    }
+  ]
+}

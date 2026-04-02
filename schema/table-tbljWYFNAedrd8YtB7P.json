@@ -1,0 +1,199 @@
+{
+  "id": "tbljWYFNAedrd8YtB7P",
+  "name": "Product Categories",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Product_Categories\"",
+  "fields": [
+    {
+      "id": "fldxyr29DpztU0232uY",
+      "name": "Costing Method",
+      "dbFieldName": "Costing_Method",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "Standard",
+        "Average",
+        "FIFO"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld4DBBitfiF0FQrxWK",
+      "name": "ID",
+      "dbFieldName": "ID",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldcHOX0pTVGlKv4BBr",
+      "name": "Expense Account",
+      "dbFieldName": "Expense_Account",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblAvg4APx0CZ8zH2oY",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldHDHqQEDm1sf7zaH9",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Product_Categories",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldcHOX0pTVGlKv4BBr"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldPI9BBio164XDejJi",
+      "name": "Name",
+      "dbFieldName": "Name",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld9tNbIXnWF0aubAPb",
+      "name": "Description",
+      "dbFieldName": "Description",
+      "type": "formula",
+      "description": null,
+      "options": {
+        "expression": "IF({fldgFa2Y6og2xXvq30g}, (CONCATENATE({fldgFa2Y6og2xXvq30g},' / ',{fldPI9BBio164XDejJi})), {fldPI9BBio164XDejJi})",
+        "timeZone": "Asia/Bangkok"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldcI0NI98YkNYgi7sY",
+      "name": "Product Categories",
+      "dbFieldName": "Product_Categories",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "oneMany",
+        "foreignTableId": "tbljWYFNAedrd8YtB7P",
+        "lookupFieldId": "fld4DBBitfiF0FQrxWK",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Product_Categories",
+        "selfKeyName": "__fk_fldgFa2Y6og2xXvq30g",
+        "foreignKeyName": "__id",
+        "symmetricFieldId": "fldgFa2Y6og2xXvq30g"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fldgFa2Y6og2xXvq30g",
+      "name": "Parent Category",
+      "dbFieldName": "Parent_Category",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tbljWYFNAedrd8YtB7P",
+        "isOneWay": false,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldPI9BBio164XDejJi",
+        "symmetricFieldId": "fldcI0NI98YkNYgi7sY",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Product_Categories",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldgFa2Y6og2xXvq30g"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldbxjG8LY9LMpdlAWR",
+      "name": "Product Templates",
+      "dbFieldName": "Product_Templates",
+      "type": "link",
+      "description": null,
+      "options": {
+        "foreignTableId": "tblnMBL9TZkU79CjnBf",
+        "relationship": "oneMany",
+        "isOneWay": false,
+        "symmetricFieldId": "fldO6m0rGrwi3Tyfaqq",
+        "lookupFieldId": "fldy0PFMhgkZQfHHI8P",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Product_Templates",
+        "selfKeyName": "__fk_fldO6m0rGrwi3Tyfaqq",
+        "foreignKeyName": "__id"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fldGmgIDhIi4sPjNBWI",
+      "name": "Income Account",
+      "dbFieldName": "Income_Account",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblAvg4APx0CZ8zH2oY",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldHDHqQEDm1sf7zaH9",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Product_Categories",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldGmgIDhIi4sPjNBWI"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldJzBK2gx3MPIA70uY",
+      "name": "Stock Journal",
+      "dbFieldName": "Stock_Journal",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblo9esf4d7Agj5n4tn",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldybQWwnmV43gLVYAh",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Product_Categories",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldJzBK2gx3MPIA70uY"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    }
+  ]
+}

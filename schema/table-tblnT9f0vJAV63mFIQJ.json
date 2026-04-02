@@ -1,0 +1,50 @@
+{
+  "id": "tblnT9f0vJAV63mFIQJ",
+  "name": "Model",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Model\"",
+  "fields": [
+    {
+      "id": "fld3YCkFEwOD9DUoMgS",
+      "name": "Status",
+      "dbFieldName": "Status",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "To do",
+        "In progress",
+        "Done"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld4C1aY6nkRht030En",
+      "name": "Name",
+      "dbFieldName": "Name",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldH2FbG6SksUyPoWWX",
+      "name": "Label",
+      "dbFieldName": "Label",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    }
+  ]
+}

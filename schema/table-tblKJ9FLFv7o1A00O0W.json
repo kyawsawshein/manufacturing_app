@@ -1,0 +1,293 @@
+{
+  "id": "tblKJ9FLFv7o1A00O0W",
+  "name": "Production Cost Sheet",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Production_Cost_Sheet\"",
+  "fields": [
+    {
+      "id": "fldLCi6kficp9PaCbqr",
+      "name": "Approved By",
+      "dbFieldName": "Approved_By",
+      "type": "user",
+      "description": null,
+      "options": {
+        "isMultiple": false
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldTmBvMIawmzD1K5Pe",
+      "name": "Variance",
+      "dbFieldName": "Variance",
+      "type": "formula",
+      "description": null,
+      "options": {
+        "expression": "{fldU0FI4Zsr3ZJj9Fl5} - {fldEMI5QFiNJXANawK3} - {fldlJhTOJwvphqZtKrJ} - {fldOjbu26y2TpTtF3fF} - {fldHJWkE763rynzfdJF} - {fldWlMjr5YAHo5ijVBS}",
+        "timeZone": "Asia/Bangkok",
+        "formatting": {
+          "type": "decimal",
+          "precision": 2
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldRJv3CV4d2HqOvx7p",
+      "name": "MO",
+      "dbFieldName": "MO",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblPbvDgbuKgA55boy8",
+        "isOneWay": false,
+        "lookupFieldId": "fldkn3Z8gNv5Y0eFQ3b",
+        "symmetricFieldId": "fldMpNIccUhdeegzHID",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Production_Cost_Sheet",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldRJv3CV4d2HqOvx7p"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldjLUtEqA3g8wsCxM6",
+      "name": "Total Cost",
+      "dbFieldName": "Total_Cost",
+      "type": "formula",
+      "description": null,
+      "options": {
+        "expression": "{fldEMI5QFiNJXANawK3} + {fldOjbu26y2TpTtF3fF} + {fldHJWkE763rynzfdJF} + {fldWlMjr5YAHo5ijVBS}",
+        "timeZone": "Asia/Bangkok",
+        "formatting": {
+          "type": "decimal",
+          "precision": 2
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldlJhTOJwvphqZtKrJ",
+      "name": "Labor Cost",
+      "dbFieldName": "Labor_Cost",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldOjbu26y2TpTtF3fF",
+      "name": "Overhead Cost",
+      "dbFieldName": "Overhead_Cost",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldHJWkE763rynzfdJF",
+      "name": "Subcontract Cost",
+      "dbFieldName": "Subcontract_Cost",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldWlMjr5YAHo5ijVBS",
+      "name": "Tooling/Scrap Cost",
+      "dbFieldName": "Tooling_Scrap_Cost",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldU0FI4Zsr3ZJj9Fl5",
+      "name": "Standard Cost",
+      "dbFieldName": "Standard_Cost",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld6NBKY02LKMSeqJnP",
+      "name": "Status",
+      "dbFieldName": "Status",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "Draft",
+        "Calculated",
+        "Approved"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldY4viipbVmoY6cIid",
+      "name": "Created Date",
+      "dbFieldName": "Created_Date",
+      "type": "date",
+      "description": null,
+      "options": {
+        "formatting": {
+          "date": "YYYY-MM-DD",
+          "time": "None",
+          "timeZone": "Asia/Bangkok"
+        }
+      },
+      "cellValueType": "dateTime",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldKuJRSJvjSIf8uuYW",
+      "name": "Variance %",
+      "dbFieldName": "Variance_percent",
+      "type": "formula",
+      "description": null,
+      "options": {
+        "expression": "IF({fldU0FI4Zsr3ZJj9Fl5} != 0, ROUND(({fldU0FI4Zsr3ZJj9Fl5} - {fldEMI5QFiNJXANawK3} - {fldlJhTOJwvphqZtKrJ} - {fldOjbu26y2TpTtF3fF} - {fldHJWkE763rynzfdJF} - {fldWlMjr5YAHo5ijVBS}) / {fldU0FI4Zsr3ZJj9Fl5} * 100, 2), 0)",
+        "timeZone": "Asia/Bangkok",
+        "formatting": {
+          "type": "decimal",
+          "precision": 2
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldLiJAKg1mwCPueAD5",
+      "name": "Cost Sheet",
+      "dbFieldName": "Cost_Sheet",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldEMI5QFiNJXANawK3",
+      "name": "Material Cost",
+      "dbFieldName": "Material",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldErGJOQMXooNQmogH",
+      "name": "Product",
+      "dbFieldName": "Product",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblPa6m5iZFnb2Yb7xu",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "flduGdBbpGSguqFcckg",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.MO",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldDPs40ZyYNDYa9yCg"
+      },
+      "cellValueType": "string",
+      "isLookup": true,
+      "isComputed": true,
+      "isMultipleCellValue": false
+    },
+    {
+      "id": "fldGDbAGXcaIrXdJNNH",
+      "name": "Operation",
+      "dbFieldName": "Operation",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblH6UTJxYtesnTyQhH",
+        "isOneWay": true,
+        "lookupFieldId": "fldi2PMy8BCHD8w6OQb",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Production_Cost_Sheet",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldGDbAGXcaIrXdJNNH"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    }
+  ]
+}

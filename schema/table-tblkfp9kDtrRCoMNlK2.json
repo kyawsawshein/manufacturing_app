@@ -1,0 +1,176 @@
+{
+  "id": "tblkfp9kDtrRCoMNlK2",
+  "name": "RBEX Packing List",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"RBEX_Packing_List\"",
+  "fields": [
+    {
+      "id": "fldDOS19RUuC38T7BUO",
+      "name": "Label",
+      "dbFieldName": "Label",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldYcQiGCHHY9cgypb4",
+      "name": "Status",
+      "dbFieldName": "Status",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "To do",
+        "In progress",
+        "Done"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldrKSnJU7g9YrUQHyg",
+      "name": "Total (Cartons)",
+      "dbFieldName": "Total_Cartons",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldiKXGt1FqizbboLZf",
+      "name": "Net Weight (Kg)",
+      "dbFieldName": "Net_Weight_Kg",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldG6KXxEhndlHWo090",
+      "name": "Gross Weight (Kg)",
+      "dbFieldName": "Gross_Weight_Kg",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldD5LQZPjJIlhbyQBh",
+      "name": "Average Box (Kg)",
+      "dbFieldName": "Average_Box_Kg",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld8tLXVrWS3IDcJ7bG",
+      "name": "Total",
+      "dbFieldName": "Total",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldigEmTdz2iEpz7KOG",
+      "name": "Box No",
+      "dbFieldName": "Box_No",
+      "type": "link",
+      "description": null,
+      "options": {
+        "foreignTableId": "tblY0d2x7r6sB3dQa5j",
+        "relationship": "manyOne",
+        "isOneWay": true,
+        "lookupFieldId": "fld9yA758fYLp9UiOWf",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.RBEX_Packing_List",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldigEmTdz2iEpz7KOG",
+        "filter": null,
+        "filterByViewId": null,
+        "visibleFieldIds": null
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldx9cpfIHeMWVstQs7",
+      "name": "Description",
+      "dbFieldName": "Description",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": true,
+      "isComputed": true,
+      "isMultipleCellValue": false
+    },
+    {
+      "id": "fldj7oGSxT5ff1M0qcB",
+      "name": "Item Code",
+      "dbFieldName": "Item_Code",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": true,
+      "isComputed": true,
+      "isMultipleCellValue": false
+    },
+    {
+      "id": "fldkbxAOxQSpzrM5qaW",
+      "name": "Unit",
+      "dbFieldName": "Unit",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "Unit",
+        "Set",
+        "Pair"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    }
+  ]
+}

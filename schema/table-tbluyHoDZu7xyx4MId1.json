@@ -1,0 +1,288 @@
+{
+  "id": "tbluyHoDZu7xyx4MId1",
+  "name": "Locations",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Locations\"",
+  "fields": [
+    {
+      "id": "fld5eRZ3LDu6gZuclha",
+      "name": "Code",
+      "dbFieldName": "Code",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldLArg3yre2kNTKrlh",
+      "name": "Site",
+      "dbFieldName": "Site",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldBrvLlY952zxFE2Fx",
+      "name": "Building",
+      "dbFieldName": "Building",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldTikvjWteJAdBFYnS",
+      "name": "ID",
+      "dbFieldName": "ID",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldkz006AHMLtBj2BNy",
+      "name": "Floor",
+      "dbFieldName": "Floor",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld5cI972Rc3zNufNf6",
+      "name": "Room/Zone",
+      "dbFieldName": "Room_Zone",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldwizFP1fOFR1FrpjM",
+      "name": "Bin/Shelf",
+      "dbFieldName": "Bin_Shelf",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldgOKNjrhEO5YWZkI0",
+      "name": "Capacity",
+      "dbFieldName": "Capacity",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldAhRXsFlRQZx90F41",
+      "name": "Temperature Controlled",
+      "dbFieldName": "Temperature_Controlled",
+      "type": "checkbox",
+      "description": null,
+      "options": {},
+      "cellValueType": "boolean",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldG78ZBgsA1RuhBbVi",
+      "name": "Status",
+      "dbFieldName": "Status",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "Active",
+        "Inactive",
+        "Closed"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldNUobb26yWipzFlzL",
+      "name": "Description",
+      "dbFieldName": "Description",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldOSV3Xc90oPPtZxhk",
+      "name": "Type",
+      "dbFieldName": "Type",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldZTNE0Ft49x3iqhOk",
+      "name": "Location Type",
+      "dbFieldName": "Location_Type",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblgmMIBt67GM05nSVF",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldLCLslS6Rns6R5tn1",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Locations",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fld6Oo4I5QCrtPRthTr"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldXVhsz4CUaGjqEz92",
+      "name": "Stock On Hand",
+      "dbFieldName": "Stock_On_Hand",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "oneMany",
+        "foreignTableId": "tblg7lXl8YLJjv8bLJs",
+        "lookupFieldId": "fldNn2xuBPBXoqbnDZH",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Stock_On_Hand",
+        "selfKeyName": "__fk_fldWFV8UShMr8pii0uU",
+        "foreignKeyName": "__id",
+        "symmetricFieldId": "fldEFGfnLP1PgCFaoDi"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fld5ybPHHikn6SXzXlA",
+      "name": "Locations",
+      "dbFieldName": "Locations",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "oneMany",
+        "foreignTableId": "tbluyHoDZu7xyx4MId1",
+        "lookupFieldId": "fldTikvjWteJAdBFYnS",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Locations",
+        "selfKeyName": "__fk_fldHyQYJ6vYVb654wU5",
+        "foreignKeyName": "__id",
+        "symmetricFieldId": "fldHyQYJ6vYVb654wU5"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fldHyQYJ6vYVb654wU5",
+      "name": "Parent Location",
+      "dbFieldName": "Location",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tbluyHoDZu7xyx4MId1",
+        "isOneWay": false,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fld5eRZ3LDu6gZuclha",
+        "symmetricFieldId": "fld5ybPHHikn6SXzXlA",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Locations",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldHyQYJ6vYVb654wU5"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldleQTy59612aPj6jB",
+      "name": "Location Name",
+      "dbFieldName": "Location_Name",
+      "type": "formula",
+      "description": null,
+      "options": {
+        "expression": "CONCATENATE({fldHyQYJ6vYVb654wU5},\" / \",{fld5eRZ3LDu6gZuclha})",
+        "timeZone": "Asia/Bangkok"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldz6NARMmZrl0PvXaq",
+      "name": "Warehouse",
+      "dbFieldName": "Warehouse",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblVIyq3vYhpIzzOqDV",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldm7ccvJu62oMe2Q5d",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Locations",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldz6NARMmZrl0PvXaq"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    }
+  ]
+}

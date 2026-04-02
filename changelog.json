@@ -1,0 +1,15 @@
+{
+  "name": "ERP System Dashboard",
+  "description": "Professional ERP system with modules for Settings, Employees, Inventory, Purchase, Sales, and Manufacturing",
+  "logs": [
+    "Created complete ERP dashboard with dark theme and sidebar navigation",
+    "Added Settings module with Users and Access Rights management",
+    "Added Employees module with employee and department management forms",
+    "Added Inventory module with Products, Stock On Hand, Stock Moves, Locations, and Warehouses",
+    "Added Purchase module with Purchase Orders and Vendors views",
+    "Added Sales module with Sales Orders and Customers views",
+    "Added Manufacturing module with Manufacturing Orders and Bill of Materials forms",
+    "Added full CRUD functionality to Customers and Vendors pages with dialog forms",
+    "Fixed MO_Copy table name to MO in manufacturing order queries"
+  ]
+}

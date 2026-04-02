@@ -1,0 +1,97 @@
+{
+  "id": "tblxkpNSxxYmitJCtWS",
+  "name": "Material Log",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Material_Log\"",
+  "fields": [
+    {
+      "id": "fldwNHzbZIJTON1z4KW",
+      "name": "Notes",
+      "dbFieldName": "Notes",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldHWReFs2NEFhALhzq",
+      "name": "Photo",
+      "dbFieldName": "Photo",
+      "type": "attachment",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fldpaXgeJ0bIxOjB09k",
+      "name": "Issued By (User)",
+      "dbFieldName": "Issued_By_User",
+      "type": "user",
+      "description": null,
+      "options": {
+        "isMultiple": false,
+        "shouldNotify": true
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldDRgRD585HnUcu6u4",
+      "name": "Ordered Qty",
+      "dbFieldName": "Ordered_Qty",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldVu5nUK7Wi5nUmKNy",
+      "name": "Quantity Issued",
+      "dbFieldName": "Quantity_Issued",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld5NNANdygnac0Zucc",
+      "name": "WIP Number",
+      "dbFieldName": "WIP_Number",
+      "type": "link",
+      "description": null,
+      "options": {
+        "foreignTableId": "tblePU3ccRlF4Sv7Lpu",
+        "relationship": "manyOne",
+        "isOneWay": false,
+        "symmetricFieldId": "fldwn53b5nCS95BRMN9",
+        "lookupFieldId": "fld8S95glgEWybzDou7",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Material_Log",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fld5NNANdygnac0Zucc"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    }
+  ]
+}

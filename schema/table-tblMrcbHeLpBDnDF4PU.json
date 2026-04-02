@@ -1,0 +1,104 @@
+{
+  "id": "tblMrcbHeLpBDnDF4PU",
+  "name": "Account Type",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Account_Type\"",
+  "fields": [
+    {
+      "id": "fldNZg1V8ktjR02Wyyd",
+      "name": "Status",
+      "dbFieldName": "Status",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "To do",
+        "In progress",
+        "Done"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldi7c1umodyu5hTtol",
+      "name": "ID",
+      "dbFieldName": "ID",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld3E85kBsa3iJqwNxe",
+      "name": "Name",
+      "dbFieldName": "Name",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldWyUP7qDRh5YuaXl7",
+      "name": "Chart of Account",
+      "dbFieldName": "Chart_of_Account",
+      "type": "link",
+      "description": null,
+      "options": {
+        "foreignTableId": "tblAvg4APx0CZ8zH2oY",
+        "relationship": "oneMany",
+        "isOneWay": false,
+        "symmetricFieldId": "fld0t8gS4I4cS5nK6nT",
+        "lookupFieldId": "fldHDHqQEDm1sf7zaH9",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Chart_of_Account",
+        "selfKeyName": "__fk_fld0t8gS4I4cS5nK6nT",
+        "foreignKeyName": "__id"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fldH1sLgDitkecWJKZo",
+      "name": "Account Head",
+      "dbFieldName": "Account_Herd",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tbl9oRDAAgDK4rwmfle",
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": {
+          "conjunction": "and",
+          "filterSet": [
+            {
+              "fieldId": "fldSms4z2XnhG8zC8ZT",
+              "value": null,
+              "operator": "isNotEmpty"
+            }
+          ]
+        },
+        "lookupFieldId": "fldYGDZteqoEX5t7LLF",
+        "isOneWay": false,
+        "symmetricFieldId": "fld887vror0fgjK3Nje",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Account_Type",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldH1sLgDitkecWJKZo"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    }
+  ]
+}

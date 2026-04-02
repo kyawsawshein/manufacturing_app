@@ -1,0 +1,368 @@
+{
+  "id": "tblIjEJLmhAMrP6DTL3",
+  "name": "Express",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Express\"",
+  "fields": [
+    {
+      "id": "fldFxHtUmX8Q87cYyXW",
+      "name": "Qty",
+      "dbFieldName": "Qty",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 0,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld5UBW0EojZQtU5SP5",
+      "name": "Status",
+      "dbFieldName": "Status",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "To do",
+        "In progress",
+        "Done"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld1Gc2kziB0Vszh9UW",
+      "name": "Type",
+      "dbFieldName": "Front_Rear",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "FRONT PAIR",
+        "REAR"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "flddpvy1pNhGRtXNdxF",
+      "name": "Model",
+      "dbFieldName": "Model",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldLOCgQ8xNFq6GPZLf",
+      "name": "Cutting Date",
+      "dbFieldName": "Cutting_Date",
+      "type": "date",
+      "description": null,
+      "options": {
+        "formatting": {
+          "date": "YYYY-MM-DD",
+          "time": "None",
+          "timeZone": "Asia/Bangkok"
+        }
+      },
+      "cellValueType": "dateTime",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldMyrPvNHnQa6RVIBG",
+      "name": "Fabric Used",
+      "dbFieldName": "Fabric_Used",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldAMEKf4PQ42ESZjZ8",
+      "name": "Send Sewing",
+      "dbFieldName": "Send_Sewing",
+      "type": "date",
+      "description": null,
+      "options": {
+        "formatting": {
+          "date": "YYYY-MM-DD",
+          "time": "None",
+          "timeZone": "Asia/Bangkok"
+        }
+      },
+      "cellValueType": "dateTime",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldqjx4q736PhnzyqMz",
+      "name": "Sewing Finished",
+      "dbFieldName": "Sewing_Finished",
+      "type": "date",
+      "description": null,
+      "options": {
+        "formatting": {
+          "date": "YYYY-MM-DD",
+          "time": "None",
+          "timeZone": "Asia/Bangkok"
+        }
+      },
+      "cellValueType": "dateTime",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld0xESn86UA583jNYe",
+      "name": "QC Date",
+      "dbFieldName": "QC_Date",
+      "type": "date",
+      "description": null,
+      "options": {
+        "formatting": {
+          "date": "YYYY-MM-DD",
+          "time": "None",
+          "timeZone": "Asia/Bangkok"
+        }
+      },
+      "cellValueType": "dateTime",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld7FXi4GBOzbgr4Kg0",
+      "name": "Packing Date",
+      "dbFieldName": "Packing_Date",
+      "type": "date",
+      "description": null,
+      "options": {
+        "formatting": {
+          "date": "YYYY-MM-DD",
+          "time": "None",
+          "timeZone": "Asia/Bangkok"
+        }
+      },
+      "cellValueType": "dateTime",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldgZBchnbWIA27C7YI",
+      "name": "Packing Finished",
+      "dbFieldName": "Packing_Finished",
+      "type": "date",
+      "description": null,
+      "options": {
+        "formatting": {
+          "date": "YYYY-MM-DD",
+          "time": "None",
+          "timeZone": "Asia/Bangkok"
+        }
+      },
+      "cellValueType": "dateTime",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldR89KK1Ek8VWpOlsk",
+      "name": "ID",
+      "dbFieldName": "ID",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldHPdVSD8RU6TQjGOm",
+      "name": "Lot No",
+      "dbFieldName": "Lot_No",
+      "type": "link",
+      "description": null,
+      "options": {
+        "foreignTableId": "tblWVL9SWxiWGbidJTE",
+        "relationship": "manyOne",
+        "isOneWay": true,
+        "lookupFieldId": "fldCBedWbgnIV6naJcD",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Express",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldHPdVSD8RU6TQjGOm",
+        "filter": null,
+        "filterByViewId": null,
+        "visibleFieldIds": null
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldg20fn0IyOauF3EXD",
+      "name": "SO",
+      "dbFieldName": "SO",
+      "type": "link",
+      "description": null,
+      "options": {
+        "foreignTableId": "tblcgaHqcge0NObcHGF",
+        "relationship": "manyOne",
+        "isOneWay": true,
+        "lookupFieldId": "fldOrYKDMc9OHXYpb8R",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Express",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldg20fn0IyOauF3EXD",
+        "filter": null,
+        "filterByViewId": null,
+        "visibleFieldIds": null
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldhgANsoNQAnFhgqPS",
+      "name": "Fabric",
+      "dbFieldName": "Fabric",
+      "type": "link",
+      "description": null,
+      "options": {
+        "foreignTableId": "tblSGof3jV6QLz5WkuN",
+        "relationship": "manyOne",
+        "isOneWay": true,
+        "lookupFieldId": "fldfz6GEHVXAjg98KVL",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Express",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldhgANsoNQAnFhgqPS",
+        "filter": null,
+        "filterByViewId": null,
+        "visibleFieldIds": null
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldVl4fjIESe1uC6mm6",
+      "name": "Unit",
+      "dbFieldName": "Unit",
+      "type": "link",
+      "description": null,
+      "options": {
+        "foreignTableId": "tblypkdG2CfrjsCglAY",
+        "relationship": "manyOne",
+        "isOneWay": true,
+        "lookupFieldId": "fldIonumpLjA7mXCh25",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Express",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldVl4fjIESe1uC6mm6",
+        "filter": null,
+        "filterByViewId": null,
+        "visibleFieldIds": null
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldognEAxnic0bAxqis",
+      "name": "Job No",
+      "dbFieldName": "Job_No",
+      "type": "link",
+      "description": null,
+      "options": {
+        "foreignTableId": "tbl89A4Ps2lwrMui6vC",
+        "relationship": "manyOne",
+        "isOneWay": true,
+        "lookupFieldId": "fldj22Fbxee3ArGyzHA",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Express",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldognEAxnic0bAxqis",
+        "filter": null,
+        "filterByViewId": null,
+        "visibleFieldIds": null
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldmSDcRSM9dxMZXSLr",
+      "name": "PART No",
+      "dbFieldName": "PART_No",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblSGof3jV6QLz5WkuN",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldUUyPSjllgjlOR2tY",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Express",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldmSDcRSM9dxMZXSLr"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld85TA28RMMeaPJjMk",
+      "name": "PO",
+      "dbFieldName": "PO",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "oneMany",
+        "foreignTableId": "tbld1ckQQ4Oq70n4hjn",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldVxcuUKFzVlT5kut5",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.junction_fld4hpPakgQCl9NsKBd",
+        "selfKeyName": "__fk_radn9rLy0HKJzeLKPL0",
+        "foreignKeyName": "__fk_fld4hpPakgQCl9NsKBd"
+      },
+      "cellValueType": "string",
+      "isLookup": true,
+      "isComputed": true,
+      "isMultipleCellValue": true
+    }
+  ]
+}

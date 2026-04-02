@@ -1,0 +1,359 @@
+{
+  "id": "tblWWFJSHv5B9uHizIO",
+  "name": "CNC Cutting PLAN",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"CNC_Cutting_Plan\"",
+  "fields": [
+    {
+      "id": "fldI1z6sGNnjkvf6HnS",
+      "name": "Finished Date",
+      "dbFieldName": "Finished_Date",
+      "type": "date",
+      "description": null,
+      "options": {
+        "formatting": {
+          "date": "YYYY-MM-DD",
+          "time": "None",
+          "timeZone": "Asia/Bangkok"
+        }
+      },
+      "cellValueType": "dateTime",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld8WKphMxYW3y2uD90",
+      "name": "Remark",
+      "dbFieldName": "Remark",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldqODwKnXIobCOYyX8",
+      "name": "Emboss Only",
+      "dbFieldName": "Emboss_Only",
+      "type": "checkbox",
+      "description": null,
+      "options": {},
+      "cellValueType": "boolean",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldkG9C7YTFm3NyggTB",
+      "name": "Label",
+      "dbFieldName": "Label",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldBmeYhF6rwniTCFcf",
+      "name": "Status",
+      "dbFieldName": "Status",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "To do",
+        "In progress",
+        "Done"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldaqWZr7bw3GkprXGG",
+      "name": "Export Date",
+      "dbFieldName": "Export_Date",
+      "type": "date",
+      "description": null,
+      "options": {
+        "formatting": {
+          "date": "YYYY-MM-DD",
+          "time": "None",
+          "timeZone": "Asia/Bangkok"
+        }
+      },
+      "cellValueType": "dateTime",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld0x11fjjrMCg3SjI7",
+      "name": "Cutting Place",
+      "dbFieldName": "Cutting_Place",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldBCIdTr120qnrr3HT",
+      "name": "Lot No",
+      "dbFieldName": "Lot_No",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldPtIDvway1qcGUzUI",
+      "name": "Plan Qty",
+      "dbFieldName": "Plan_Qty",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "flduTyLcaHA7rhZon7l",
+      "name": "Need Date Finished",
+      "dbFieldName": "Need_Date_Finished",
+      "type": "date",
+      "description": null,
+      "options": {
+        "formatting": {
+          "date": "YYYY-MM-DD",
+          "time": "None",
+          "timeZone": "Asia/Bangkok"
+        }
+      },
+      "cellValueType": "dateTime",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldipsMxwdZFTjfLGsm",
+      "name": "Cutting Date",
+      "dbFieldName": "Cutting_Date",
+      "type": "date",
+      "description": null,
+      "options": {
+        "formatting": {
+          "date": "YYYY-MM-DD",
+          "time": "None",
+          "timeZone": "Asia/Bangkok"
+        }
+      },
+      "cellValueType": "dateTime",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldgqq14BE1Lmc3cKNB",
+      "name": "Model",
+      "dbFieldName": "Model",
+      "type": "link",
+      "description": null,
+      "options": {
+        "foreignTableId": "tblnT9f0vJAV63mFIQJ",
+        "relationship": "manyOne",
+        "isOneWay": true,
+        "lookupFieldId": "fldH2FbG6SksUyPoWWX",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.CNC_Cutting_Plan",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldgqq14BE1Lmc3cKNB",
+        "filter": null,
+        "filterByViewId": null,
+        "visibleFieldIds": null
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldujXVkJGgewn760Og",
+      "name": "Type",
+      "dbFieldName": "Type",
+      "type": "link",
+      "description": null,
+      "options": {
+        "foreignTableId": "tblOvWu4NDW8YjP5XfZ",
+        "relationship": "manyOne",
+        "isOneWay": true,
+        "lookupFieldId": "fldD7oOJHpSy5kwsZCl",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.CNC_Cutting_Plan",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldujXVkJGgewn760Og",
+        "filter": null,
+        "filterByViewId": null,
+        "visibleFieldIds": null
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldxwPjuJHJaIjrCwV1",
+      "name": "Fabric",
+      "dbFieldName": "Fabric",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblSGof3jV6QLz5WkuN",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldUUyPSjllgjlOR2tY",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.CNC_Cutting_Plan",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldxwPjuJHJaIjrCwV1"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldlpyFyEXCs5v6DSCg",
+      "name": "PO.No",
+      "dbFieldName": "PO_No",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "oneMany",
+        "foreignTableId": "tbld1ckQQ4Oq70n4hjn",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldVxcuUKFzVlT5kut5",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.junction_fld4hpPakgQCl9NsKBd",
+        "selfKeyName": "__fk_radn9rLy0HKJzeLKPL0",
+        "foreignKeyName": "__fk_fld4hpPakgQCl9NsKBd"
+      },
+      "cellValueType": "string",
+      "isLookup": true,
+      "isComputed": true,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fld8YrInPlIRk2N0k9Y",
+      "name": "CNC No",
+      "dbFieldName": "CNC_No",
+      "type": "link",
+      "description": null,
+      "options": {
+        "foreignTableId": "tblgbzDmY8SzLdnMXxf",
+        "relationship": "manyOne",
+        "isOneWay": true,
+        "lookupFieldId": "fldPQqrqgAdCa6v5gR5",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.CNC_Cutting_Plan",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fld8YrInPlIRk2N0k9Y",
+        "filter": null,
+        "filterByViewId": null,
+        "visibleFieldIds": null
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldIWH8wF41jP48wrdD",
+      "name": "Assign",
+      "dbFieldName": "Assign",
+      "type": "link",
+      "description": null,
+      "options": {
+        "foreignTableId": "tblcpTwSlhbUY3kOdUa",
+        "relationship": "manyOne",
+        "isOneWay": true,
+        "lookupFieldId": "fldDkD7tiSDTq5ByaEi",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.CNC_Cutting_Plan",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldIWH8wF41jP48wrdD",
+        "filter": null,
+        "filterByViewId": null,
+        "visibleFieldIds": null
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldZCH0cskZfhdCkf1q",
+      "name": "SO.No",
+      "dbFieldName": "SO_No",
+      "type": "link",
+      "description": null,
+      "options": {
+        "foreignTableId": "tblcgaHqcge0NObcHGF",
+        "relationship": "manyOne",
+        "isOneWay": true,
+        "lookupFieldId": "fldOrYKDMc9OHXYpb8R",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.CNC_Cutting_Plan",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldZCH0cskZfhdCkf1q",
+        "filter": null,
+        "filterByViewId": null,
+        "visibleFieldIds": null
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld7d0hBlJVeVfifyoG",
+      "name": "PART No.",
+      "dbFieldName": "PART_No",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblSGof3jV6QLz5WkuN",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldUUyPSjllgjlOR2tY",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.CNC_Cutting_Plan",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fld7d0hBlJVeVfifyoG"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    }
+  ]
+}

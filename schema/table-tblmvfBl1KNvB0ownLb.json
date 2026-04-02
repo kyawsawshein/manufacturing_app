@@ -1,0 +1,152 @@
+{
+  "id": "tblmvfBl1KNvB0ownLb",
+  "name": "Request RM",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Request_RM\"",
+  "fields": [
+    {
+      "id": "fldlrIZRbJpGDZ5LR2x",
+      "name": "Name",
+      "dbFieldName": "Name",
+      "type": "formula",
+      "description": null,
+      "options": {
+        "expression": "\"PR\"+\"-\"+{fldeOm87ux4Bkv2KRNK}",
+        "timeZone": "Asia/Bangkok"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld21wGw8jluBBQIsCT",
+      "name": "Time",
+      "dbFieldName": "Time",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldAZQry02rOE16o1vv",
+      "name": "Date",
+      "dbFieldName": "Date",
+      "type": "date",
+      "description": null,
+      "options": {
+        "formatting": {
+          "date": "YYYY-MM-DD",
+          "time": "None",
+          "timeZone": "Asia/Bangkok"
+        }
+      },
+      "cellValueType": "dateTime",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldeh7r5rxKNgejHZNd",
+      "name": "Status",
+      "dbFieldName": "Status",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "Requested",
+        "Done"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldeOm87ux4Bkv2KRNK",
+      "name": "ID",
+      "dbFieldName": "Label",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldl69f6L8MkgS6wkgl",
+      "name": "Request Items",
+      "dbFieldName": "Request_Items",
+      "type": "link",
+      "description": null,
+      "options": {
+        "foreignTableId": "tblN8PCHnjtPVgwYkx8",
+        "relationship": "oneMany",
+        "isOneWay": false,
+        "symmetricFieldId": "fld5H0AlyoI7pdlL8uu",
+        "lookupFieldId": "fldhGzrps9xcYYFue1r",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Request_Item",
+        "selfKeyName": "__fk_fld5H0AlyoI7pdlL8uu",
+        "foreignKeyName": "__id",
+        "filter": null,
+        "filterByViewId": null,
+        "visibleFieldIds": null
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fld4yZgRkQ94g1RfYz1",
+      "name": "Employee",
+      "dbFieldName": "Employee",
+      "type": "link",
+      "description": null,
+      "options": {
+        "foreignTableId": "tblcpTwSlhbUY3kOdUa",
+        "relationship": "manyOne",
+        "isOneWay": true,
+        "lookupFieldId": "fldDkD7tiSDTq5ByaEi",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Request_RM",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fld4yZgRkQ94g1RfYz1",
+        "filter": null,
+        "filterByViewId": null,
+        "visibleFieldIds": null
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldB8ncFn8s5v55Iqqp",
+      "name": "MO No",
+      "dbFieldName": "MO_No",
+      "type": "link",
+      "description": null,
+      "options": {
+        "foreignTableId": "tblPbvDgbuKgA55boy8",
+        "relationship": "manyOne",
+        "isOneWay": true,
+        "lookupFieldId": "fldLoofRQfW97nbeKiL",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Request_RM",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldB8ncFn8s5v55Iqqp",
+        "filter": null,
+        "filterByViewId": null,
+        "visibleFieldIds": null
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    }
+  ]
+}

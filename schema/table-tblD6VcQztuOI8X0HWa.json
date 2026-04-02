@@ -1,0 +1,112 @@
+{
+  "id": "tblD6VcQztuOI8X0HWa",
+  "name": "QC Checkpoints",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"QC_Checkpoints\"",
+  "fields": [
+    {
+      "id": "fld6XtNs2hK2xePiVSm",
+      "name": "QC Results",
+      "dbFieldName": "QC_Results",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "oneMany",
+        "foreignTableId": "tbl395okaO6le4iaR1x",
+        "lookupFieldId": "fldCkwdDadhxoWFgF0u",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.QC_Results",
+        "selfKeyName": "__fk_fld18uYRXznONoFfpYk",
+        "foreignKeyName": "__id",
+        "symmetricFieldId": "fld18uYRXznONoFfpYk"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fld507u2Bi4PmsZtchU",
+      "name": "Name",
+      "dbFieldName": "Name",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldyllCUUwtRADM9HCY",
+      "name": "Product",
+      "dbFieldName": "Product",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldb0JT5nqhPkVyZkca",
+      "name": "Specification",
+      "dbFieldName": "Specification",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldB9jsOxpKleXcmgVM",
+      "name": "Min Value",
+      "dbFieldName": "Min_Value",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldRAaLaZjYK9GP7YeJ",
+      "name": "Max Value",
+      "dbFieldName": "Max_Value",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldUFrHNI8DHeOyaueH",
+      "name": "ID",
+      "dbFieldName": "ID",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    }
+  ]
+}

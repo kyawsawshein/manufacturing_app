@@ -1,0 +1,297 @@
+{
+  "id": "tblxWum7GLIpaEotAr4",
+  "name": "BOM Lines",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"BOM_Lines\"",
+  "fields": [
+    {
+      "id": "fldkwqLN9LpsqMdAuFR",
+      "name": "Qty used",
+      "dbFieldName": "Qty_used",
+      "type": "formula",
+      "description": null,
+      "options": {
+        "expression": "IF({fldRbC3G9JywBDXPGWI}, {fldRbC3G9JywBDXPGWI}/1000, {fldK7S10zg59EtFbHqg}) *{flde1ul8M1kxWWmkrRT}",
+        "timeZone": "Asia/Bangkok",
+        "formatting": {
+          "type": "decimal",
+          "precision": 2
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldAxfVf6D1pCuq0oDh",
+      "name": "BOM",
+      "dbFieldName": "BOM",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tbljVE4fCX1GxrlZOlO",
+        "isOneWay": false,
+        "lookupFieldId": "fldAFwbFX6fCWyIOMHl",
+        "symmetricFieldId": "fldFCRdHxfGaZOv0N1e",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.BOM_Lines",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldAxfVf6D1pCuq0oDh"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldXLFoeimtdMhFEOtO",
+      "name": "Name",
+      "dbFieldName": "Name",
+      "type": "formula",
+      "description": null,
+      "options": {
+        "expression": "{fldTHdnKDwuPEJzAFkf}+\"-\"+{fldQsDCiQuYllnUvXq2}",
+        "timeZone": "Asia/Bangkok"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldK7S10zg59EtFbHqg",
+      "name": "Quantity",
+      "dbFieldName": "Quantity",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldQsDCiQuYllnUvXq2",
+      "name": "Raw Reference",
+      "dbFieldName": "Reference",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld7aGRuwEEQsxcjYN7",
+      "name": "Total Cost",
+      "dbFieldName": "Total_Cost",
+      "type": "formula",
+      "description": null,
+      "options": {
+        "expression": "{fldK7S10zg59EtFbHqg} * {fldrK0oqPscsZaYEgDv}",
+        "timeZone": "Asia/Bangkok",
+        "formatting": {
+          "type": "decimal",
+          "precision": 2
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldrK0oqPscsZaYEgDv",
+      "name": "Unit Cost",
+      "dbFieldName": "Unit_Cost",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "flde1ul8M1kxWWmkrRT",
+      "name": "BOM Qty",
+      "dbFieldName": "BOM_Qty",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": true,
+      "isComputed": true,
+      "isMultipleCellValue": false
+    },
+    {
+      "id": "fldTHdnKDwuPEJzAFkf",
+      "name": "Product",
+      "dbFieldName": "Product",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblPa6m5iZFnb2Yb7xu",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "flduGdBbpGSguqFcckg",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.BOM_Lines",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldA5nkQTjm39muVwjE"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldVYn7r40Tizvse5bE",
+      "name": "ID",
+      "dbFieldName": "ID",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldUelLsvIJaKggNrlS",
+      "name": "UoM",
+      "dbFieldName": "UoM",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblypkdG2CfrjsCglAY",
+        "isOneWay": true,
+        "lookupFieldId": "fldEtk65rkLweL3bzO3",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.BOM_Lines",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldUelLsvIJaKggNrlS"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldwEsz0DQDCqIuQHyM",
+      "name": "H&L Detaili",
+      "dbFieldName": "H_L_Detaili",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "oneMany",
+        "foreignTableId": "tblCW0fvp4bBZ3SCuv2",
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "flduimHUCDRkKwuocxx",
+        "isOneWay": false,
+        "symmetricFieldId": "fld8WzbImgMN161Np7c",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Hook_Loop_Items",
+        "selfKeyName": "__fk_fld8WzbImgMN161Np7c",
+        "foreignKeyName": "__id"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fldaYCKR66LQGrNYfxY",
+      "name": "Status",
+      "dbFieldName": "Status",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "Draft",
+        "Active",
+        "Obsolete"
+      ],
+      "cellValueType": "string",
+      "isLookup": true,
+      "isComputed": true,
+      "isMultipleCellValue": false
+    },
+    {
+      "id": "fldmrDNm4ygWpKLAtXA",
+      "name": "Item Count",
+      "dbFieldName": "Item_Qty_Unit",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": true,
+      "isComputed": true,
+      "isMultipleCellValue": false
+    },
+    {
+      "id": "fldRbC3G9JywBDXPGWI",
+      "name": "Usage (mm)",
+      "dbFieldName": "Usage",
+      "type": "rollup",
+      "description": null,
+      "options": {
+        "expression": "sum({values})",
+        "timeZone": "Asia/Bangkok",
+        "formatting": {
+          "type": "decimal",
+          "precision": 2
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld5ylu9Akee2DeZLKo",
+      "name": "Used Qty",
+      "dbFieldName": "Used_Qty",
+      "type": "formula",
+      "description": null,
+      "options": {
+        "expression": "ROUNDUP({fldkwqLN9LpsqMdAuFR}/{fldmrDNm4ygWpKLAtXA}, 0)",
+        "timeZone": "Asia/Bangkok",
+        "formatting": {
+          "type": "decimal",
+          "precision": 2
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "id": "tblsIOQB6JF0uYOusXp",
+  "name": "Stock Valuation",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Stock_Valuation\"",
+  "fields": [
+    {
+      "id": "fldATaBWUlboqKX7eka",
+      "name": "ID",
+      "dbFieldName": "ID",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldeoHDpNQ4zCvo8dKx",
+      "name": "Type",
+      "dbFieldName": "Type",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "IN",
+        "OUT"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldPMuSn4YNUt1V0OzU",
+      "name": "Create date",
+      "dbFieldName": "Date",
+      "type": "createdTime",
+      "description": null,
+      "options": {
+        "formatting": {
+          "date": "YYYY-MM-DD",
+          "time": "None",
+          "timeZone": "Asia/Bangkok"
+        },
+        "expression": "CREATED_TIME()"
+      },
+      "cellValueType": "dateTime",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldyXSiC48oRPAOBJSt",
+      "name": "Remaining Qty",
+      "dbFieldName": "Remaining_Qty",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldk0YJ8DqVEkrwon6D",
+      "name": "Total Cost",
+      "dbFieldName": "Total_Cost",
+      "type": "formula",
+      "description": null,
+      "options": {
+        "expression": "{fldIIRinsY0Mg5QhSVy} * {fldwmEYDjocu6lAHoLS}",
+        "timeZone": "Asia/Bangkok",
+        "formatting": {
+          "type": "decimal",
+          "precision": 2
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld27wFC7bSuML8BjX4",
+      "name": "Stock Move",
+      "dbFieldName": "Stock_Move1774324862436",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "oneMany",
+        "foreignTableId": "tblWqzPZBg5mxvDAcEH",
+        "lookupFieldId": "flddwaWMMLrCx3m9AiN",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Stock_Move",
+        "selfKeyName": "__fk_fldFTy7hOPKM5qKcoF5",
+        "foreignKeyName": "__id",
+        "symmetricFieldId": "fldFTy7hOPKM5qKcoF5"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fld6LWw0oSFKuTxXCzE",
+      "name": "Product",
+      "dbFieldName": "Product",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblPa6m5iZFnb2Yb7xu",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "flduGdBbpGSguqFcckg",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Stock_Valuation",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldd1akdKZCZ0KZrAfJ"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldwmEYDjocu6lAHoLS",
+      "name": "Unit Cost",
+      "dbFieldName": "Unit_Cost",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": true,
+      "isComputed": true,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fldIIRinsY0Mg5QhSVy",
+      "name": "Quantity",
+      "dbFieldName": "Quantity",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 0,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": true,
+      "isComputed": true,
+      "isMultipleCellValue": true
+    }
+  ]
+}

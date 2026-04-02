@@ -1,0 +1,142 @@
+{
+  "id": "tblo9esf4d7Agj5n4tn",
+  "name": "Journal",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Journal\"",
+  "fields": [
+    {
+      "id": "fldRrx4js31OCDwq3uf",
+      "name": "Status",
+      "dbFieldName": "Status",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "To do",
+        "In progress",
+        "Done"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldZBz4zQ4iVHPRLwPM",
+      "name": "Prefix",
+      "dbFieldName": "Prefix",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldRuDXNLUDRD4Lfkm0",
+      "name": "Name",
+      "dbFieldName": "Name",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldybQWwnmV43gLVYAh",
+      "name": "ID",
+      "dbFieldName": "ID",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldwV7E1dojCX9iF3Rp",
+      "name": "Payment",
+      "dbFieldName": "Payment",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "oneMany",
+        "foreignTableId": "tblHkymCqhyNCw2F4O0",
+        "lookupFieldId": "fldCGS4d56hUVFfwq8n",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Payment",
+        "selfKeyName": "__fk_fldDdwIJgu6Jgemrmyq",
+        "foreignKeyName": "__id",
+        "symmetricFieldId": "fldDdwIJgu6Jgemrmyq"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fldbmceuuPI91GiOvGY",
+      "name": "Sequence",
+      "dbFieldName": "Sequence",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldwDZSSxFp7tsENH2V",
+      "name": "Account",
+      "dbFieldName": "Account",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblAvg4APx0CZ8zH2oY",
+        "lookupFieldId": "fldHDHqQEDm1sf7zaH9",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Journal",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldwDZSSxFp7tsENH2V",
+        "symmetricFieldId": "fldeTZ1K3WJf6vndbFR",
+        "filter": null,
+        "filterByViewId": null,
+        "visibleFieldIds": null
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldOq6w4HEUObGVSjKP",
+      "name": "Type",
+      "dbFieldName": "Type",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblmcOkAiv0jjGNDpCp",
+        "lookupFieldId": "fldVj6TXoXdTyoPpAyS",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Journal",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldOq6w4HEUObGVSjKP",
+        "symmetricFieldId": "fldUe6xPSq7Qa0MlFWF",
+        "filter": null,
+        "filterByViewId": null,
+        "visibleFieldIds": null
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    }
+  ]
+}

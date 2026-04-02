@@ -1,0 +1,149 @@
+{
+  "id": "tblWVL9SWxiWGbidJTE",
+  "name": "Stock Lot",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Stock_Lot\"",
+  "fields": [
+    {
+      "id": "fldpbVOF8trn4Jjv20x",
+      "name": "Lot",
+      "dbFieldName": "Lot",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldUDEKDbJvZI73gIwr",
+      "name": "Quantity",
+      "dbFieldName": "Quantity",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 0,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldE8Wx05YyT5XoDivX",
+      "name": "Expiry Date",
+      "dbFieldName": "Expiry_Date",
+      "type": "date",
+      "description": null,
+      "options": {
+        "formatting": {
+          "date": "YYYY-MM-DD",
+          "time": "None",
+          "timeZone": "Asia/Bangkok"
+        }
+      },
+      "cellValueType": "dateTime",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldoBga0Z9tt955iDAM",
+      "name": "Cost",
+      "dbFieldName": "Cost",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldCBedWbgnIV6naJcD",
+      "name": "ID",
+      "dbFieldName": "ID",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldvuxw312hjdoxGmsN",
+      "name": "Total Value",
+      "dbFieldName": "Total_Value",
+      "type": "formula",
+      "description": null,
+      "options": {
+        "expression": "{fldUDEKDbJvZI73gIwr}*{fldoBga0Z9tt955iDAM}",
+        "timeZone": "Asia/Bangkok",
+        "formatting": {
+          "type": "decimal",
+          "precision": 2
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldjHPcxHe2sdWAXEuG",
+      "name": "Finished Goods",
+      "dbFieldName": "Finished_Goods",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "oneOne",
+        "foreignTableId": "tblZgVg0b7Q36WLsKSy",
+        "lookupFieldId": "fldIloWA82VRIEkkiD1",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.MO_Finished_Goods",
+        "selfKeyName": "__fk_fldPIpOielIV3u1WxaL",
+        "foreignKeyName": "__id",
+        "symmetricFieldId": "fldPIpOielIV3u1WxaL"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldkCPn2k7zXwy79JtD",
+      "name": "Product",
+      "dbFieldName": "Status",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblPa6m5iZFnb2Yb7xu",
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "flduGdBbpGSguqFcckg",
+        "isOneWay": false,
+        "symmetricFieldId": "fldAcE4ssXqt1ufXRvW",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Stock_Lot",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldtVWbALCpiAv5Fqay"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    }
+  ]
+}

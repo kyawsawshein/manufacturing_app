@@ -1,0 +1,81 @@
+{
+  "id": "tblypkdG2CfrjsCglAY",
+  "name": "Units of Measure",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Units_of_Measure\"",
+  "fields": [
+    {
+      "id": "fldQgi658pGe3LrAvp5",
+      "name": "Type",
+      "dbFieldName": "Type",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "length",
+        "weight",
+        "unit",
+        "volume",
+        "time",
+        "area",
+        "set"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldbcNQTVhVXRsZ0GUa",
+      "name": "Ratio",
+      "dbFieldName": "Ratio",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldIonumpLjA7mXCh25",
+      "name": "ID",
+      "dbFieldName": "ID",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldEtk65rkLweL3bzO3",
+      "name": "UOM",
+      "dbFieldName": "UOM",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldFAx4mx1dgfa0HAK0",
+      "name": "Name",
+      "dbFieldName": "Name",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    }
+  ]
+}

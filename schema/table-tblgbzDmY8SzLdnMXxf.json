@@ -1,0 +1,82 @@
+{
+  "id": "tblgbzDmY8SzLdnMXxf",
+  "name": "Equipment",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Equipment\"",
+  "fields": [
+    {
+      "id": "fldKGgsai0z4LYhat1u",
+      "name": "Status",
+      "dbFieldName": "Status",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "To do",
+        "In progress",
+        "Done"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldJ0w0Fe7V82xIOIx8",
+      "name": "Number",
+      "dbFieldName": "Number",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 0,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "flduofqdaVLklCJlS7G",
+      "name": "Machine",
+      "dbFieldName": "Machine",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldCXsGUu77D9B0l6Ur",
+      "name": "Name",
+      "dbFieldName": "Name",
+      "type": "formula",
+      "description": null,
+      "options": {
+        "expression": "{flduofqdaVLklCJlS7G}+\" \"+{fldJ0w0Fe7V82xIOIx8}",
+        "timeZone": "Asia/Bangkok"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldPQqrqgAdCa6v5gR5",
+      "name": "ID",
+      "dbFieldName": "ID",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    }
+  ]
+}

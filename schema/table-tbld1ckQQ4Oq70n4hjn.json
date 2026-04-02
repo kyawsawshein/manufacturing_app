@@ -1,0 +1,115 @@
+{
+  "id": "tbld1ckQQ4Oq70n4hjn",
+  "name": "Customer PO",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Customer_PO\"",
+  "fields": [
+    {
+      "id": "fldAsG9h6RX4t2eFkvg",
+      "name": "PO Lines",
+      "dbFieldName": "PO_Lines",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "oneMany",
+        "foreignTableId": "tblaFOdEAo9sqvAAmEZ",
+        "lookupFieldId": "fldHCnyBWYh73fIS3GK",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.New_table",
+        "selfKeyName": "__fk_fld8xTlUyrr2vPFOtwT",
+        "foreignKeyName": "__id",
+        "symmetricFieldId": "fld8xTlUyrr2vPFOtwT"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fldyFdcFhXfFgPC7EWK",
+      "name": "Status",
+      "dbFieldName": "Status",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "To do",
+        "In progress",
+        "Done"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldUu7GQ4NLWufUe7nd",
+      "name": "Label",
+      "dbFieldName": "Label",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldVxcuUKFzVlT5kut5",
+      "name": "Name",
+      "dbFieldName": "Name",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldJJZ6TF8nXgwut24F",
+      "name": "Sales Orders",
+      "dbFieldName": "Sales_Orders",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblcgaHqcge0NObcHGF",
+        "lookupFieldId": "fldiHsWOavXfNpz2Xh8",
+        "isOneWay": false,
+        "symmetricFieldId": "fld4hpPakgQCl9NsKBd",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Customer_PO",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldJJZ6TF8nXgwut24F"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldw4fXOVDpBdOJbKqW",
+      "name": "Customer",
+      "dbFieldName": "Customer",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblc9QUtlFwS3t1GJwn",
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldM8w5kIo9jHUy5rAq",
+        "isOneWay": false,
+        "symmetricFieldId": "fld5GmxlNZwFFG4gTeN",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Customer_PO",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldw4fXOVDpBdOJbKqW"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    }
+  ]
+}

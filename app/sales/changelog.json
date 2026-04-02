@@ -1,0 +1,5 @@
+{
+  "name": "Sales Order Creation",
+  "description": "Form app to create Sales Orders with multiple order lines in a single submission",
+  "logs": ["Built Sales Order creation form with header fields (Customer, PO.No, Order Date, Delivery Date, Source Location, Is Kit Order) and dynamic order lines (Product, Qty, Unit Price, Unit, Job No), including auto-calculated subtotals and total amount"]
+}

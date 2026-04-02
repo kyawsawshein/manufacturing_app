@@ -1,0 +1,50 @@
+{
+  "id": "tbltUsiaGfy6lqLcRtK",
+  "name": "Brands",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Brands\"",
+  "fields": [
+    {
+      "id": "fldFXP9zHbiA80l5zsU",
+      "name": "Name",
+      "dbFieldName": "Name",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldMHM8FldNFeRPzTp7",
+      "name": "Type",
+      "dbFieldName": "Type",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "OEM",
+        "Zervi",
+        "Aftermarket"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldOeOoCW80ma7IRUbu",
+      "name": "ID",
+      "dbFieldName": "ID",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    }
+  ]
+}

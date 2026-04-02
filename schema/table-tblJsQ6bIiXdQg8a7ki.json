@@ -1,0 +1,553 @@
+{
+  "id": "tblJsQ6bIiXdQg8a7ki",
+  "name": "Stock Move",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Stock_Movements\"",
+  "fields": [
+    {
+      "id": "fldT4ufIPMfJN0SjThi",
+      "name": "Source Type",
+      "dbFieldName": "Source_Type",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblgmMIBt67GM05nSVF",
+        "lookupFieldId": "fldIoGtT6zzHR6q5pBG",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Locations_2",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldYJUyTF19IfeMsjmN",
+        "symmetricFieldId": "fldnU4XSf93OaW46uEr",
+        "filter": null,
+        "filterByViewId": null,
+        "visibleFieldIds": null
+      },
+      "cellValueType": "string",
+      "isLookup": true,
+      "isComputed": true,
+      "isMultipleCellValue": false
+    },
+    {
+      "id": "fldotksLpkU33VkC4bA",
+      "name": "Destination Type",
+      "dbFieldName": "Destination_Type",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblgmMIBt67GM05nSVF",
+        "lookupFieldId": "fldIoGtT6zzHR6q5pBG",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Locations",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldYJUyTF19IfeMsjmN",
+        "symmetricFieldId": "fldnU4XSf93OaW46uEr",
+        "filter": null,
+        "filterByViewId": null,
+        "visibleFieldIds": null
+      },
+      "cellValueType": "string",
+      "isLookup": true,
+      "isComputed": true,
+      "isMultipleCellValue": false
+    },
+    {
+      "id": "fldgxbXiyMoy6nwNzLa",
+      "name": "Operation Type",
+      "dbFieldName": "Operation_Type",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblSH8jYEl5d7tOFhZP",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldwiNpuHU6R3goAp15",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Stock_Movements",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldgxbXiyMoy6nwNzLa"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldw2RWEb6KX82Zqlg6",
+      "name": "Transaction Type",
+      "dbFieldName": "Transaction_Type",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": true,
+      "isComputed": true,
+      "isMultipleCellValue": false
+    },
+    {
+      "id": "fldn2A3hqvMM6HUvIMX",
+      "name": "Source Location",
+      "dbFieldName": "Source_Location",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tbluyHoDZu7xyx4MId1",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldWahK2qQuIe25ug5j",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Stock_Movements",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldn2A3hqvMM6HUvIMX"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldZt5qOnCDHGQx3Dal",
+      "name": "Sales Order Lines",
+      "dbFieldName": "Sales_Order_Lines",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "oneMany",
+        "foreignTableId": "tbl89A4Ps2lwrMui6vC",
+        "isOneWay": false,
+        "lookupFieldId": "fldj22Fbxee3ArGyzHA",
+        "symmetricFieldId": "fldUlJ5mBiQmWd3mkpw",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Sales_Order_Lines",
+        "selfKeyName": "__fk_fldUlJ5mBiQmWd3mkpw",
+        "foreignKeyName": "__id"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fldpElytAazyjqvIP9E",
+      "name": "Purchase Order Lines",
+      "dbFieldName": "Purchase_Order_Lines",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "oneMany",
+        "foreignTableId": "tbluZE3J00gmOtjq719",
+        "isOneWay": false,
+        "lookupFieldId": "fldrPixyTyMzV8xiOfR",
+        "symmetricFieldId": "fldyHOWxchEXuRpBNnZ",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Purchase_Order_Lines",
+        "selfKeyName": "__fk_fldyHOWxchEXuRpBNnZ",
+        "foreignKeyName": "__id"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fldax5MLmZgRGmqU1d6",
+      "name": "Move Type",
+      "dbFieldName": "Move_Type",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "IN",
+        "OUT"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldTCCCdnGF17OMQXel",
+      "name": "Reference Type",
+      "dbFieldName": "Reference_Type",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "PO",
+        "SO",
+        "MO"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldDDQj9DVfkshkDhrM",
+      "name": "Batch Number",
+      "dbFieldName": "Batch_Number",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldR5mMdxSawi1mjQDS",
+      "name": "Date",
+      "dbFieldName": "Date",
+      "type": "date",
+      "description": null,
+      "options": {
+        "formatting": {
+          "date": "YYYY-MM-DD",
+          "time": "None",
+          "timeZone": "Asia/Bangkok"
+        }
+      },
+      "cellValueType": "dateTime",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldMgugISQudz49hBnW",
+      "name": "Status",
+      "dbFieldName": "Status",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "Draft",
+        "Confirmed",
+        "Done",
+        "Cancelled"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld2mGMjkYXYHRrqh07",
+      "name": "Sequence",
+      "dbFieldName": "Sequence",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldi475hVl40Ci08FXW",
+      "name": "Created By",
+      "dbFieldName": "Created_By",
+      "type": "user",
+      "description": null,
+      "options": {
+        "isMultiple": false,
+        "shouldNotify": true
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldOP8IOzK8Lq6fO3hl",
+      "name": "Created At",
+      "dbFieldName": "Created_At",
+      "type": "date",
+      "description": null,
+      "options": {
+        "formatting": {
+          "date": "YYYY-MM-DD",
+          "time": "HH:mm",
+          "timeZone": "Asia/Bangkok"
+        }
+      },
+      "cellValueType": "dateTime",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldc6IB0dGYgNp0hBbh",
+      "name": "Stock Picking",
+      "dbFieldName": "Stock_Picking",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblFJkEGvmgLbINVAVx",
+        "isOneWay": false,
+        "lookupFieldId": "fldFnojzZJLvaupfvgK",
+        "symmetricFieldId": "fldSwWZDp1G16I3dB6i",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Stock_Movements",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldc6IB0dGYgNp0hBbh"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldyVuxVo2KtFe9Wv5L",
+      "name": "Product",
+      "dbFieldName": "Product",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblSGof3jV6QLz5WkuN",
+        "isOneWay": false,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldUUyPSjllgjlOR2tY",
+        "symmetricFieldId": "fldaLlRgxsHPvfwKSDA",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Stock_Movements",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldyVuxVo2KtFe9Wv5L"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldfGBF1hlTTpQOnFUq",
+      "name": "Move Line",
+      "dbFieldName": "Move_Line",
+      "type": "link",
+      "description": null,
+      "options": {
+        "foreignTableId": "tblhSAYQBm7hsA2D1ne",
+        "relationship": "oneMany",
+        "isOneWay": false,
+        "symmetricFieldId": "fldnG4OPP7two3M7TOc",
+        "lookupFieldId": "fld88jEuJb6UFRRrH95",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Stock_Move_Line",
+        "selfKeyName": "__fk_fldnG4OPP7two3M7TOc",
+        "foreignKeyName": "__id",
+        "filter": null,
+        "filterByViewId": null,
+        "visibleFieldIds": null
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fldJL16tZAqCAqCOMGX",
+      "name": "Quantity",
+      "dbFieldName": "Quantity",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldbyzFotyeJ13tdCsq",
+      "name": "Price Unit",
+      "dbFieldName": "Price_Unit",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldK8tappBozbjGU3fh",
+      "name": "Value",
+      "dbFieldName": "Value",
+      "type": "formula",
+      "description": null,
+      "options": {
+        "expression": "{fldJL16tZAqCAqCOMGX}*{fldbyzFotyeJ13tdCsq}",
+        "timeZone": "Asia/Bangkok",
+        "formatting": {
+          "type": "decimal",
+          "precision": 2
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldvI2J7D6rVi3kx6rZ",
+      "name": "Description",
+      "dbFieldName": "Description",
+      "type": "rollup",
+      "description": null,
+      "options": {
+        "expression": "concatenate({values})",
+        "timeZone": "Asia/Bangkok"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldkR3R1Z1fOPGgSf9M",
+      "name": "Account Move",
+      "dbFieldName": "Account_Move",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tbl2hpVtax8DS5VEgg5",
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldGmpqFcitupYVYbx2",
+        "isOneWay": false,
+        "symmetricFieldId": "fldMq9SH3AK6aqVGBTm",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Stock_Movements",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldkR3R1Z1fOPGgSf9M"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldd98GM8FEoQZWWFWx",
+      "name": "Destination Location",
+      "dbFieldName": "Destination_Location",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tbluyHoDZu7xyx4MId1",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldWahK2qQuIe25ug5j",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Stock_Movements",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldd98GM8FEoQZWWFWx"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldr7qqY1WJocUpg4kJ",
+      "name": "Stock Valuation Layers",
+      "dbFieldName": "Stock_Valuation_Layers",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "oneMany",
+        "foreignTableId": "tblsIOQB6JF0uYOusXp",
+        "isOneWay": false,
+        "lookupFieldId": "fldATaBWUlboqKX7eka",
+        "symmetricFieldId": "fld70f8iqafnivne106",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Stock_Valuation",
+        "selfKeyName": "__fk_fld70f8iqafnivne106",
+        "foreignKeyName": "__id"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fld2wFM5f9UwpXlIFnJ",
+      "name": "Name",
+      "dbFieldName": "Name",
+      "type": "formula",
+      "description": null,
+      "options": {
+        "expression": "{fldw2RWEb6KX82Zqlg6}+\"-\"+{fld2mGMjkYXYHRrqh07}",
+        "timeZone": "Asia/Bangkok"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldD8k1CZDF2sfNkv04",
+      "name": "ID",
+      "dbFieldName": "ID",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldeXDIsnQtlTTTuRYq",
+      "name": "Finished Goods",
+      "dbFieldName": "Finished_Goods",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "oneMany",
+        "foreignTableId": "tblZgVg0b7Q36WLsKSy",
+        "lookupFieldId": "fldIloWA82VRIEkkiD1",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.MO_Finished_Goods",
+        "selfKeyName": "__fk_fld3PlIL2YfnY4lf4zU",
+        "foreignKeyName": "__id",
+        "symmetricFieldId": "fld3PlIL2YfnY4lf4zU"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fldFIorw2foqT0nQ0Tf",
+      "name": "Production Raw Material",
+      "dbFieldName": "Production_Raw_Material",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "oneMany",
+        "foreignTableId": "tbl0aq09fCJXpdox9aT",
+        "lookupFieldId": "fldG17ZJzolabz4bsEj",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.MO_Raw_Material",
+        "selfKeyName": "__fk_fld4C4FsDmSNuMC72la",
+        "foreignKeyName": "__id",
+        "symmetricFieldId": "fld4C4FsDmSNuMC72la"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "id": "tbl395okaO6le4iaR1x",
+  "name": "QC Results",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"QC_Results\"",
+  "fields": [
+    {
+      "id": "fldCkwdDadhxoWFgF0u",
+      "name": "Result ID",
+      "dbFieldName": "Result_ID",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld6Drhb5279pTeaM9I",
+      "name": "QC Order",
+      "dbFieldName": "QC_Order",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblxKaRWqHZnbPNSIvO",
+        "isOneWay": false,
+        "symmetricFieldId": "flddILGfdjaz3ueG8Iq",
+        "lookupFieldId": "fldpPaT1T3xC0FqhB0a",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.QC_Results",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fld6Drhb5279pTeaM9I"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldRH4rq6XXCFeJjt9Z",
+      "name": "Measured Value",
+      "dbFieldName": "Measured_Value",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldE1FUzBRI6u5QB0bU",
+      "name": "Result",
+      "dbFieldName": "Result",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "Pass",
+        "Fail"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld18uYRXznONoFfpYk",
+      "name": "Checkpoint",
+      "dbFieldName": "Checkpoint",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblD6VcQztuOI8X0HWa",
+        "isOneWay": false,
+        "lookupFieldId": "fld507u2Bi4PmsZtchU",
+        "symmetricFieldId": "fld6XtNs2hK2xePiVSm",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.QC_Results",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fld18uYRXznONoFfpYk"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    }
+  ]
+}

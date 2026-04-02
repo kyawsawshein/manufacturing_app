@@ -1,0 +1,147 @@
+{
+  "id": "tblR11f69xiBigYee3f",
+  "name": "Cutting Hook & Loop",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Cutting_Hook_Loop\"",
+  "fields": [
+    {
+      "id": "fld5GveCMenQfoti7jh",
+      "name": "Quantity",
+      "dbFieldName": "Quantity",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldtuTrTp2YgyqiSJnS",
+      "name": "Unit",
+      "dbFieldName": "Unit",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "Pcs"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "flds7CZM5RD5kSDrFYd",
+      "name": "Name",
+      "dbFieldName": "Name",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldcIiOKhECzQI00zXx",
+      "name": "ID",
+      "dbFieldName": "ID",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldhn1VdfIYSDsIQe9Z",
+      "name": "Item",
+      "dbFieldName": "Item",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblPa6m5iZFnb2Yb7xu",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "flduGdBbpGSguqFcckg",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Cutting_Hook_Loop",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldVzrZfhcxN5TLfwlS"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldlaLbadTrLntLzNMN",
+      "name": "Size",
+      "dbFieldName": "Size",
+      "type": "link",
+      "description": null,
+      "options": {
+        "foreignTableId": "tblgkA5H6JnZdavE6qL",
+        "relationship": "manyOne",
+        "isOneWay": true,
+        "lookupFieldId": "fldYlQkcXpWcAJaT37Q",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Cutting_Hook_Loop",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldlaLbadTrLntLzNMN",
+        "filter": null,
+        "filterByViewId": null,
+        "visibleFieldIds": null
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld8OU9QlBg5uorTTGX",
+      "name": "Cutting Request",
+      "dbFieldName": "Cutting_Request",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tbl8QlQ0FRRLSlKGu2w",
+        "isOneWay": false,
+        "lookupFieldId": "fldoedGW7P3UbsExd1p",
+        "symmetricFieldId": "fldkY5UlABIeLdAhX03",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Cutting_Hook_Loop",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fld8OU9QlBg5uorTTGX"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldwruTiLTio9WGFzUc",
+      "name": "Status",
+      "dbFieldName": "Status",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "Requested",
+        "Done"
+      ],
+      "cellValueType": "string",
+      "isLookup": true,
+      "isComputed": true,
+      "isMultipleCellValue": false
+    }
+  ]
+}

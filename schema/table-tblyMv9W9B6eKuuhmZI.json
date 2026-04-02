@@ -1,0 +1,105 @@
+{
+  "id": "tblyMv9W9B6eKuuhmZI",
+  "name": "Taxes",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Taxes\"",
+  "fields": [
+    {
+      "id": "fldzF8OuCyveSwKCxmi",
+      "name": "Status",
+      "dbFieldName": "Status",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "To do",
+        "In progress",
+        "Done"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldm2ASO3jjvpr2fXWy",
+      "name": "Amount",
+      "dbFieldName": "Amount",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 4,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld0ZGLIVpos95odKYq",
+      "name": "Tax Type",
+      "dbFieldName": "Tax_Type",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "Sales",
+        "Purchases"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldfpWOTwWULZBbwMOo",
+      "name": "Name",
+      "dbFieldName": "Name",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld6ZSTsXGmwpwmL4uU",
+      "name": "ID",
+      "dbFieldName": "ID",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldA01aCwlIb7H6hjl9",
+      "name": "Account",
+      "dbFieldName": "Account",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblAvg4APx0CZ8zH2oY",
+        "lookupFieldId": "fldHDHqQEDm1sf7zaH9",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Taxes",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldA01aCwlIb7H6hjl9",
+        "symmetricFieldId": "fldF3EpyUI1xYqn1biH",
+        "filter": null,
+        "filterByViewId": null,
+        "visibleFieldIds": null
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    }
+  ]
+}

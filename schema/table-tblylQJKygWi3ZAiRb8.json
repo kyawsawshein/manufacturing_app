@@ -1,0 +1,173 @@
+{
+  "id": "tblylQJKygWi3ZAiRb8",
+  "name": "Overhead Allocation",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Overhead_Allocation\"",
+  "fields": [
+    {
+      "id": "fld9Cfsh8KyFnVx6OdW",
+      "name": "Rent",
+      "dbFieldName": "Rent",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "currency",
+          "symbol": "฿"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldycACHprESq5A2iji",
+      "name": "Utilities",
+      "dbFieldName": "Utilities",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "currency",
+          "symbol": "฿"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld0WwFyI1LFnSvsN1l",
+      "name": "Depreciation",
+      "dbFieldName": "Depreciation",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "currency",
+          "symbol": "฿"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld6z2ZLDmQgg4LPBR0",
+      "name": "Other Overhead",
+      "dbFieldName": "Other_Overhead",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "currency",
+          "symbol": "฿"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldjC22I2s2YDuBDXh2",
+      "name": "Available Hours",
+      "dbFieldName": "Available_Hours",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldqZe8f5pbQBNidKFJ",
+      "name": "Total Overhead",
+      "dbFieldName": "Total_Overhead",
+      "type": "formula",
+      "description": null,
+      "options": {
+        "expression": "{fld9Cfsh8KyFnVx6OdW} + {fldycACHprESq5A2iji} + {fld0WwFyI1LFnSvsN1l} + {fld6z2ZLDmQgg4LPBR0}",
+        "timeZone": "Asia/Bangkok",
+        "formatting": {
+          "type": "decimal",
+          "precision": 2
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldisXVu2otRvhtcXp5",
+      "name": "Month",
+      "dbFieldName": "Month",
+      "type": "date",
+      "description": null,
+      "options": {
+        "formatting": {
+          "date": "YYYY-MM-DD",
+          "time": "None",
+          "timeZone": "Asia/Bangkok"
+        }
+      },
+      "cellValueType": "dateTime",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldi23EXoTGSHC1rQ28",
+      "name": "Work Center",
+      "dbFieldName": "Work_Center",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblwTGHsdhgcsOJFAnt",
+        "isOneWay": true,
+        "lookupFieldId": "fldKS8I5Td6ep5qPwvo",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Overhead_Allocation",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldi23EXoTGSHC1rQ28"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldQqYagMrdo82OdYJ0",
+      "name": "Overhead Rate/hr",
+      "dbFieldName": "Overhead_Rate_hr",
+      "type": "formula",
+      "description": null,
+      "options": {
+        "expression": "IF({fldjC22I2s2YDuBDXh2} > 0, ROUND({fldqZe8f5pbQBNidKFJ} / {fldjC22I2s2YDuBDXh2}, 2), 0)",
+        "timeZone": "Asia/Bangkok",
+        "formatting": {
+          "type": "decimal",
+          "precision": 2
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    }
+  ]
+}

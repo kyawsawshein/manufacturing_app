@@ -1,0 +1,146 @@
+{
+  "id": "tblyPSfKcaQIjDZRrCz",
+  "name": "Request MO",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Request_MO\"",
+  "fields": [
+    {
+      "id": "fldm0ItrrSmZQDq8MTV",
+      "name": "Number",
+      "dbFieldName": "Number",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 0,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldNYpVNkoaXHkECa4R",
+      "name": "Status",
+      "dbFieldName": "Status",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "Requested",
+        "Done"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldl246Yh4zEZoWEvlM",
+      "name": "Material",
+      "dbFieldName": "Material",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "flduGvyLkzTIePDIftD",
+      "name": "Project",
+      "dbFieldName": "Project",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldWa0ysJrgEwqLnjC6",
+      "name": "Date",
+      "dbFieldName": "Date",
+      "type": "date",
+      "description": null,
+      "options": {
+        "formatting": {
+          "date": "YYYY-MM-DD",
+          "time": "None",
+          "timeZone": "Asia/Bangkok"
+        }
+      },
+      "cellValueType": "dateTime",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldEIsKZzrECc966ItD",
+      "name": "Name",
+      "dbFieldName": "Name",
+      "type": "formula",
+      "description": null,
+      "options": {
+        "expression": "\"MOR\"+\"-\"+{fldUG7teenhbnh3aH8o}",
+        "timeZone": "Asia/Bangkok"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldUG7teenhbnh3aH8o",
+      "name": "ID",
+      "dbFieldName": "ID",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldyS5yddka2IXHofN6",
+      "name": "Product (Part No)",
+      "dbFieldName": "Product_Part_No",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldyHdn5NYlgiidwEYj",
+      "name": "Customer",
+      "dbFieldName": "Customer",
+      "type": "link",
+      "description": null,
+      "options": {
+        "foreignTableId": "tblc9QUtlFwS3t1GJwn",
+        "relationship": "manyOne",
+        "isOneWay": true,
+        "lookupFieldId": "fldupiJvfHt1Ngee3c5",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Request_MO",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldyHdn5NYlgiidwEYj",
+        "filter": null,
+        "filterByViewId": null,
+        "visibleFieldIds": null
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    }
+  ]
+}

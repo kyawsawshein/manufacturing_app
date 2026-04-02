@@ -1,0 +1,146 @@
+{
+  "id": "tblMwGQPqeDDgZcnh1h",
+  "name": "Cutting Tube",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Cutting_Tube\"",
+  "fields": [
+    {
+      "id": "fldnXLxSS8yuVKXsKVw",
+      "name": "Qty",
+      "dbFieldName": "Qty",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 0,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld6izGEOScGretsY2z",
+      "name": "Lot No",
+      "dbFieldName": "Lot_No",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldPSdiQYbsUHdLQ6N8",
+      "name": "Description",
+      "dbFieldName": "Description",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldBsmAldar1RMLf3zN",
+      "name": "Remark",
+      "dbFieldName": "Remark",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldWh1Nm9EhayOv8yX3",
+      "name": "PO.No",
+      "dbFieldName": "PO_No",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldAcZhzXSUMYXfgdd6",
+      "name": "ID",
+      "dbFieldName": "Name",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldOwm0U3c1YuzIhcoS",
+      "name": "Item",
+      "dbFieldName": "Code",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblPa6m5iZFnb2Yb7xu",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "flduGdBbpGSguqFcckg",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Cutting_Tube",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldoFArAJGOYi1xQ0S9"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld8ZnaDtWiRzQiQH4m",
+      "name": "Cutting Request",
+      "dbFieldName": "Cutting_Request",
+      "type": "link",
+      "description": null,
+      "options": {
+        "foreignTableId": "tbl8QlQ0FRRLSlKGu2w",
+        "relationship": "manyOne",
+        "isOneWay": false,
+        "symmetricFieldId": "fldRYdV0cVBbrWEucle",
+        "lookupFieldId": "fldePSwfE9rahdOxQeY",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Cutting_Tube",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fld8ZnaDtWiRzQiQH4m"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldOcUQKSqBcxMjtG7N",
+      "name": "Status",
+      "dbFieldName": "Status",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "Requested",
+        "Done"
+      ],
+      "cellValueType": "string",
+      "isLookup": true,
+      "isComputed": true,
+      "isMultipleCellValue": false
+    }
+  ]
+}

@@ -1,0 +1,329 @@
+{
+  "id": "tblqugp8k8NsihBGtTC",
+  "name": "Planning",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Planning\"",
+  "fields": [
+    {
+      "id": "fldcy8hUaHA1I7BUEvW",
+      "name": "Label",
+      "dbFieldName": "Label",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldHD7dLsswKZ3CMG44",
+      "name": "PO",
+      "dbFieldName": "PO",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldt5NRlIYfPHBd2zLw",
+      "name": "Qty",
+      "dbFieldName": "Qty",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 0,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld5SGiNlvJh1KhQ5qZ",
+      "name": "Status",
+      "dbFieldName": "Status",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "To do",
+        "In progress",
+        "Done"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldBi1OyFSuSBvBQEt1",
+      "name": "SO",
+      "dbFieldName": "SO",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldav6LtgDMcSVMwfXg",
+      "name": "Front / Rear",
+      "dbFieldName": "Front_Rear",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "FRONT PAIR",
+        "REAR"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld6W1M8cllPaBgugZM",
+      "name": "Model",
+      "dbFieldName": "Model",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldPaIliEMKb4uOCHwL",
+      "name": "Lot No",
+      "dbFieldName": "Lot_No",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldETPN4BNzSuDtwU6A",
+      "name": "Qty 2",
+      "dbFieldName": "Qty_2",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld9lsMwXZRScDL55Gu",
+      "name": "Cutting Date",
+      "dbFieldName": "Cutting_Date",
+      "type": "date",
+      "description": null,
+      "options": {
+        "formatting": {
+          "date": "YYYY-MM-DD",
+          "time": "None",
+          "timeZone": "Asia/Bangkok"
+        }
+      },
+      "cellValueType": "dateTime",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldiZxcny0OLgKIV7AB",
+      "name": "Fabric Used",
+      "dbFieldName": "Fabric_Used",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldDVYwwtJ8utnmlfuY",
+      "name": "Send Sewing",
+      "dbFieldName": "Send_Sewing",
+      "type": "date",
+      "description": null,
+      "options": {
+        "formatting": {
+          "date": "YYYY-MM-DD",
+          "time": "None",
+          "timeZone": "Asia/Bangkok"
+        }
+      },
+      "cellValueType": "dateTime",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldrmBCE5VdPIlqk7o9",
+      "name": "Sewing Finished",
+      "dbFieldName": "Sewing_Finished",
+      "type": "date",
+      "description": null,
+      "options": {
+        "formatting": {
+          "date": "YYYY-MM-DD",
+          "time": "None",
+          "timeZone": "Asia/Bangkok"
+        }
+      },
+      "cellValueType": "dateTime",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldC8SVq6l35myNm4xz",
+      "name": "QC Date",
+      "dbFieldName": "QC_Date",
+      "type": "date",
+      "description": null,
+      "options": {
+        "formatting": {
+          "date": "YYYY-MM-DD",
+          "time": "None",
+          "timeZone": "Asia/Bangkok"
+        }
+      },
+      "cellValueType": "dateTime",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldX6ePDTKOxE70vhkv",
+      "name": "Packing Date",
+      "dbFieldName": "Packing_Date",
+      "type": "date",
+      "description": null,
+      "options": {
+        "formatting": {
+          "date": "YYYY-MM-DD",
+          "time": "None",
+          "timeZone": "Asia/Bangkok"
+        }
+      },
+      "cellValueType": "dateTime",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldJQF7JeKM8w2F3KKN",
+      "name": "Packing Finished",
+      "dbFieldName": "Packing_Finished",
+      "type": "date",
+      "description": null,
+      "options": {
+        "formatting": {
+          "date": "YYYY-MM-DD",
+          "time": "None",
+          "timeZone": "Asia/Bangkok"
+        }
+      },
+      "cellValueType": "dateTime",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldsol44O6yNTkk17TR",
+      "name": "PART No",
+      "dbFieldName": "PART_No",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblSGof3jV6QLz5WkuN",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldUUyPSjllgjlOR2tY",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Planning",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldsol44O6yNTkk17TR"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldWrNPRrmPitwscm0Q",
+      "name": "Fabric",
+      "dbFieldName": "Fabric",
+      "type": "link",
+      "description": null,
+      "options": {
+        "foreignTableId": "tblSGof3jV6QLz5WkuN",
+        "relationship": "manyOne",
+        "isOneWay": true,
+        "lookupFieldId": "fldfz6GEHVXAjg98KVL",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Planning",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldWrNPRrmPitwscm0Q",
+        "filter": null,
+        "filterByViewId": null,
+        "visibleFieldIds": null
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "flduxtapoUmM3ZyRQJg",
+      "name": "Unit",
+      "dbFieldName": "Unit",
+      "type": "link",
+      "description": null,
+      "options": {
+        "foreignTableId": "tblypkdG2CfrjsCglAY",
+        "relationship": "manyOne",
+        "isOneWay": true,
+        "lookupFieldId": "fldIonumpLjA7mXCh25",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Planning",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_flduxtapoUmM3ZyRQJg",
+        "filter": null,
+        "filterByViewId": null,
+        "visibleFieldIds": null
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    }
+  ]
+}

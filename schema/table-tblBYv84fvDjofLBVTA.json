@@ -1,0 +1,70 @@
+{
+  "id": "tblBYv84fvDjofLBVTA",
+  "name": "Product Type",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Product_Types_Copy\"",
+  "fields": [
+    {
+      "id": "fldobQXxSwX8DCxsz1d",
+      "name": "Is Manufacturable",
+      "dbFieldName": "Is_Manufacturable",
+      "type": "checkbox",
+      "description": null,
+      "options": {},
+      "cellValueType": "boolean",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldePPuJIBdoBwcwaET",
+      "name": "Is Sellable",
+      "dbFieldName": "Is_Sellable",
+      "type": "checkbox",
+      "description": null,
+      "options": {},
+      "cellValueType": "boolean",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldIeVBLls45pqnV5oF",
+      "name": "ID",
+      "dbFieldName": "ID",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldqZY5X2fZyUSCrfE6",
+      "name": "Is Purchasable",
+      "dbFieldName": "Is_Purchasable",
+      "type": "checkbox",
+      "description": null,
+      "options": {},
+      "cellValueType": "boolean",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldCoLmDGs8YqJYHK0B",
+      "name": "Name",
+      "dbFieldName": "Name",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    }
+  ]
+}

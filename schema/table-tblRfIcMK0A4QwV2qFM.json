@@ -1,0 +1,117 @@
+{
+  "id": "tblRfIcMK0A4QwV2qFM",
+  "name": "Production Log",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Production_Log\"",
+  "fields": [
+    {
+      "id": "fldNcbmfcx0NzBpLQmh",
+      "name": "Photo",
+      "dbFieldName": "Photo",
+      "type": "attachment",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fldUiYg0GqOTk5o7eop",
+      "name": "Operator",
+      "dbFieldName": "Operator",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld70HiRgdJHPyRTM97",
+      "name": "Section Completed",
+      "dbFieldName": "Section_Completed",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "CUTTING",
+        "SEWING",
+        "QC & PACK",
+        "REWORK",
+        "FINAL INSPECTION"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldczJBojk3JIDHuvvG",
+      "name": "Time Taken (minutes)",
+      "dbFieldName": "Time_Taken_minutes",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld6jI1xnONVTwP1hGm",
+      "name": "Status Update",
+      "dbFieldName": "Status_Update",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "✅ Completed",
+        "⏸️ On Hold",
+        "⚠️ Requires Rework",
+        "❌ Scrapped"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldFxFJkqw0dbDM0MnO",
+      "name": "Notes",
+      "dbFieldName": "Notes",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldOIoWEkcVdrjY6rpL",
+      "name": "WIP Number",
+      "dbFieldName": "WIP_Number",
+      "type": "link",
+      "description": null,
+      "options": {
+        "foreignTableId": "tblePU3ccRlF4Sv7Lpu",
+        "relationship": "manyOne",
+        "isOneWay": false,
+        "symmetricFieldId": "fldQs9J341W2EbL3RAp",
+        "lookupFieldId": "fld8S95glgEWybzDou7",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Production_Log",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldOIoWEkcVdrjY6rpL"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    }
+  ]
+}

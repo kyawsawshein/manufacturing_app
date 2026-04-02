@@ -1,0 +1,71 @@
+{
+  "id": "tblmcOkAiv0jjGNDpCp",
+  "name": "Journal Type",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Journal_Type\"",
+  "fields": [
+    {
+      "id": "fldYXB6QL2fmCXJtnYY",
+      "name": "Status",
+      "dbFieldName": "Status",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "To do",
+        "In progress",
+        "Done"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldVj6TXoXdTyoPpAyS",
+      "name": "ID",
+      "dbFieldName": "ID",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldO2F3vn00YhVQ3tM8",
+      "name": "Name",
+      "dbFieldName": "Name",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldUe6xPSq7Qa0MlFWF",
+      "name": "Journal",
+      "dbFieldName": "Journal",
+      "type": "link",
+      "description": null,
+      "options": {
+        "foreignTableId": "tblo9esf4d7Agj5n4tn",
+        "relationship": "oneMany",
+        "isOneWay": false,
+        "symmetricFieldId": "fldOq6w4HEUObGVSjKP",
+        "lookupFieldId": "fldybQWwnmV43gLVYAh",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Journal",
+        "selfKeyName": "__fk_fldOq6w4HEUObGVSjKP",
+        "foreignKeyName": "__id"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    }
+  ]
+}

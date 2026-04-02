@@ -1,0 +1,279 @@
+{
+  "id": "tbl2hpVtax8DS5VEgg5",
+  "name": "Account Move",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Account_Move\"",
+  "fields": [
+    {
+      "id": "fldGmpqFcitupYVYbx2",
+      "name": "Label",
+      "dbFieldName": "Label",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldFhkleaJqvVunh8Ai",
+      "name": "Entry",
+      "dbFieldName": "Entry",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "Invoice",
+        "Bill",
+        "Entry"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldAInGlsFXlPQ0Ht1k",
+      "name": "Currency",
+      "dbFieldName": "Currency",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tbl7JIUHTMA3nCAAGIW",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldb4UMM96vJbBy0dmW",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Account_Move",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldAInGlsFXlPQ0Ht1k"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldO1I0he6BxcDV12EF",
+      "name": "Status",
+      "dbFieldName": "Status",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "Draft",
+        "Post",
+        "Cancelled"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldEUyXQDalfhbisCe7",
+      "name": "Accounting Date",
+      "dbFieldName": "Accounting_Date",
+      "type": "date",
+      "description": null,
+      "options": {
+        "formatting": {
+          "date": "YYYY-MM-DD",
+          "time": "None",
+          "timeZone": "Asia/Bangkok"
+        }
+      },
+      "cellValueType": "dateTime",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld6O5PVf4xlwaUCi2t",
+      "name": "Reference",
+      "dbFieldName": "Reference",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldrtLBvBMW269B6SIQ",
+      "name": "Sequence",
+      "dbFieldName": "Sequence",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldS1QypCZnPJyFTGhD",
+      "name": "Company",
+      "dbFieldName": "Company",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblg4ncr63WXpzbTG0J",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "flddnlvj9F7watnSeu8",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Account_Move",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldS1QypCZnPJyFTGhD"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldwc7vtHVJ1NvWKQXE",
+      "name": "Account Move Lines",
+      "dbFieldName": "Invoice_Lines",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyMany",
+        "foreignTableId": "tblNhNRio3UNt9A6mOf",
+        "lookupFieldId": "fldZzpfREmL1u7H1X8D",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.junction_fldKZM0dMLfCwNzrIsg_fldwc7vtHVJ1NvWKQXE",
+        "selfKeyName": "__fk_fldKZM0dMLfCwNzrIsg",
+        "foreignKeyName": "__fk_fldwc7vtHVJ1NvWKQXE",
+        "symmetricFieldId": "fldKZM0dMLfCwNzrIsg",
+        "filter": null,
+        "filterByViewId": null,
+        "visibleFieldIds": null
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fldWsm5KLfD3bWc8WEx",
+      "name": "Journal",
+      "dbFieldName": "Journal",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblo9esf4d7Agj5n4tn",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldRuDXNLUDRD4Lfkm0",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Account_Move",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldWsm5KLfD3bWc8WEx"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldeB6jzLfvMtrhh8d1",
+      "name": "Partner",
+      "dbFieldName": "Partner",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblc9QUtlFwS3t1GJwn",
+        "lookupFieldId": "fldupiJvfHt1Ngee3c5",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Account_Move",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldeB6jzLfvMtrhh8d1",
+        "symmetricFieldId": "fld1t9ZOxesyccUfvT2",
+        "filter": null,
+        "filterByViewId": null,
+        "visibleFieldIds": null
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldM5iD1KiAmEB0XiEg",
+      "name": "Prefix",
+      "dbFieldName": "Prefix",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": true,
+      "isComputed": true,
+      "isMultipleCellValue": false
+    },
+    {
+      "id": "fldoTPEIeFVDQT0ORwx",
+      "name": "Amount Total",
+      "dbFieldName": "Amount_Total",
+      "type": "rollup",
+      "description": null,
+      "options": {
+        "expression": "sum({values})",
+        "timeZone": "Asia/Bangkok",
+        "formatting": {
+          "type": "decimal",
+          "precision": 2
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld1PsLT3cQjvyADzxq",
+      "name": "Stock Move",
+      "dbFieldName": "Stock_Move",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "oneMany",
+        "foreignTableId": "tblWqzPZBg5mxvDAcEH",
+        "lookupFieldId": "flddwaWMMLrCx3m9AiN",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Stock_Move",
+        "selfKeyName": "__fk_fldb3Y0ETHKf2NwIM2d",
+        "foreignKeyName": "__id",
+        "symmetricFieldId": "fldb3Y0ETHKf2NwIM2d"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fldiMZJXjLmT4xYXQJF",
+      "name": "Name",
+      "dbFieldName": "Name",
+      "type": "formula",
+      "description": null,
+      "options": {
+        "expression": "{fldM5iD1KiAmEB0XiEg}+\"-\"+{fldrtLBvBMW269B6SIQ}",
+        "timeZone": "Asia/Bangkok"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    }
+  ]
+}

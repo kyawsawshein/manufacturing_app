@@ -1,0 +1,90 @@
+{
+  "id": "tblg4ncr63WXpzbTG0J",
+  "name": "Companies",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Companies\"",
+  "fields": [
+    {
+      "id": "fld1dXKKrdphvBGT2GG",
+      "name": "Name",
+      "dbFieldName": "Name",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "flddnlvj9F7watnSeu8",
+      "name": "ID",
+      "dbFieldName": "ID",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldyNjpjbZ9uIPtaHve",
+      "name": "Number",
+      "dbFieldName": "Number",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 0,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldA2fWKKOCGImuE68t",
+      "name": "Status",
+      "dbFieldName": "Status",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "To do",
+        "In progress",
+        "Done"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld1Eamn5oWNKlJ0pCN",
+      "name": "Currency",
+      "dbFieldName": "Currency",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tbl7JIUHTMA3nCAAGIW",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldb4UMM96vJbBy0dmW",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Companies",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fld1Eamn5oWNKlJ0pCN"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    }
+  ]
+}

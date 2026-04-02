@@ -1,0 +1,7 @@
+{
+  "name": "Purchase Order Creation",
+  "description": "Create purchase orders with vendor selection, delivery dates, destination locations, and multiple order lines",
+  "logs": [
+    "Created Purchase Order creation app with header fields (Vendor, Order Date, Expected Delivery, Destination) and order lines (Product, Quantity, Unit Price, auto-calculated subtotals)"
+  ]
+}

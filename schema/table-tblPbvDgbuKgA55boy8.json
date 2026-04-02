@@ -1,0 +1,624 @@
+{
+  "id": "tblPbvDgbuKgA55boy8",
+  "name": "MO  (Manufacturing Plan)",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"MO\"",
+  "fields": [
+    {
+      "id": "fldOCAJQrX6kHRrGHkh",
+      "name": "Product",
+      "dbFieldName": "Product",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblPa6m5iZFnb2Yb7xu",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "flduGdBbpGSguqFcckg",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.MO",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldDPs40ZyYNDYa9yCg"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldbFr38YcvMjKMxvqV",
+      "name": "MO Type",
+      "dbFieldName": "MO_Type",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "Cutting",
+        "Production"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldfXFqu8fX4QmI6vfh",
+      "name": "Cutting BOM",
+      "dbFieldName": "Cutting_BOM",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblUzl4mPv3nA1ufAZl",
+        "isOneWay": false,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldXwnmi4SZAqykBru5",
+        "symmetricFieldId": "fldyLRHZp6ERHhsGvGI",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.MO",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldfXFqu8fX4QmI6vfh"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldkn3Z8gNv5Y0eFQ3b",
+      "name": "Production Order",
+      "dbFieldName": "Name",
+      "type": "formula",
+      "description": null,
+      "options": {
+        "expression": "\"MO\"+\"-\"+{fldLoofRQfW97nbeKiL}",
+        "timeZone": "Asia/Bangkok"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldLoofRQfW97nbeKiL",
+      "name": "ID",
+      "dbFieldName": "ID",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldCmETsjwAWU6oozDK",
+      "name": "Capacity Utilization",
+      "dbFieldName": "Capacity_Utilization",
+      "type": "formula",
+      "description": "Work center capacity utilization percentage",
+      "options": {
+        "expression": "IF(AND({fldol1eNL6A8B3OQDqe}>0, {fldqw8ayLin5Sg2oW1B}), ROUND(({fldol1eNL6A8B3OQDqe} / {fldqw8ayLin5Sg2oW1B}) * 100, 2), 0)",
+        "timeZone": "Asia/Bangkok",
+        "formatting": {
+          "type": "decimal",
+          "precision": 2
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldpIcgI12a5jMMyfLT",
+      "name": "Lead Time",
+      "dbFieldName": "Lead_Time",
+      "type": "singleLineText",
+      "description": "Estimated lead time for manufacturing order",
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld8KDIMICVt1xz2lK5",
+      "name": "Date",
+      "dbFieldName": "Date",
+      "type": "date",
+      "description": null,
+      "options": {
+        "formatting": {
+          "date": "YYYY-MM-DD",
+          "time": "None",
+          "timeZone": "Asia/Bangkok"
+        }
+      },
+      "cellValueType": "dateTime",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldNdHiLXoM7FjEAE70",
+      "name": "Source",
+      "dbFieldName": "Source",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldXhY0m1edcLZbBBj4",
+      "name": "Batch Number",
+      "dbFieldName": "Batch_Number",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldL0wAAZUeCcuEavOz",
+      "name": "Start Date",
+      "dbFieldName": "Start_Date",
+      "type": "date",
+      "description": null,
+      "options": {
+        "formatting": {
+          "date": "YYYY-MM-DD",
+          "time": "None",
+          "timeZone": "Asia/Bangkok"
+        }
+      },
+      "cellValueType": "dateTime",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldmtKVIvDWxly1H2TL",
+      "name": "Status",
+      "dbFieldName": "Status",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "Draft",
+        "Confirmed",
+        "Processing",
+        "Done",
+        "Cancel"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldEBTh6KseVZSBSxKS",
+      "name": "End Date",
+      "dbFieldName": "End_Date",
+      "type": "date",
+      "description": null,
+      "options": {
+        "formatting": {
+          "date": "YYYY-MM-DD",
+          "time": "None",
+          "timeZone": "Asia/Bangkok"
+        }
+      },
+      "cellValueType": "dateTime",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldpO4mn3Dz9A75VGrv",
+      "name": "BOM Version",
+      "dbFieldName": "BOM_Version",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldol1eNL6A8B3OQDqe",
+      "name": "Quantity",
+      "dbFieldName": "Quantity",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldjlZSCHctyvCAEVjb",
+      "name": "Reference",
+      "dbFieldName": "Reference",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldNUSEFI9z8PKcFJPR",
+      "name": "Sequence",
+      "dbFieldName": "Sequence",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldMzYG3fzCCIgIbqJ0",
+      "name": "Created By",
+      "dbFieldName": "Created_By",
+      "type": "user",
+      "description": null,
+      "options": {
+        "isMultiple": false,
+        "shouldNotify": true
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldj3eqIJczvShgA1yc",
+      "name": "Created At",
+      "dbFieldName": "Created_At",
+      "type": "date",
+      "description": null,
+      "options": {
+        "formatting": {
+          "date": "YYYY-MM-DD",
+          "time": "HH:mm",
+          "timeZone": "Asia/Bangkok"
+        }
+      },
+      "cellValueType": "dateTime",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldMpNIccUhdeegzHID",
+      "name": "Production Cost Sheet",
+      "dbFieldName": "Production_Cost_Sheet",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "oneMany",
+        "foreignTableId": "tblKJ9FLFv7o1A00O0W",
+        "lookupFieldId": "fldLiJAKg1mwCPueAD5",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Production_Cost_Sheet",
+        "selfKeyName": "__fk_fldRJv3CV4d2HqOvx7p",
+        "foreignKeyName": "__id",
+        "symmetricFieldId": "fldRJv3CV4d2HqOvx7p"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fldvvP0Cad0QGcrIJg5",
+      "name": "Production Raw Material",
+      "dbFieldName": "Production_Raw_Material",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "oneMany",
+        "foreignTableId": "tbl0aq09fCJXpdox9aT",
+        "lookupFieldId": "fldG17ZJzolabz4bsEj",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.MO_Raw_Material",
+        "selfKeyName": "__fk_fldsokXZdzYBr5wKVvh",
+        "foreignKeyName": "__id",
+        "symmetricFieldId": "fldsokXZdzYBr5wKVvh"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fldKYWW3tw5s3olapl0",
+      "name": "Finished Good Per Cost",
+      "dbFieldName": "Finished_Good_Cost",
+      "type": "formula",
+      "description": null,
+      "options": {
+        "expression": "({fldmDuzwaUXBHBRZoZN}+{fldvraJrm0QbKtKG0tj})/{fldol1eNL6A8B3OQDqe}",
+        "timeZone": "Asia/Bangkok",
+        "formatting": {
+          "type": "decimal",
+          "precision": 2
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldvraJrm0QbKtKG0tj",
+      "name": "Operation Cost",
+      "dbFieldName": "Work_Center_Cost",
+      "type": "rollup",
+      "description": null,
+      "options": {
+        "expression": "sum({values})",
+        "timeZone": "Asia/Bangkok",
+        "formatting": {
+          "type": "decimal",
+          "precision": 2
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldqw8ayLin5Sg2oW1B",
+      "name": "Operation Work",
+      "dbFieldName": "Operation_Work",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "oneMany",
+        "foreignTableId": "tblH6UTJxYtesnTyQhH",
+        "lookupFieldId": "fldegbS5J4hnlo3mgb2",
+        "isOneWay": false,
+        "symmetricFieldId": "fldmKxNiM0nROa4k8Rw",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.MO_Operation",
+        "selfKeyName": "__fk_fldmKxNiM0nROa4k8Rw",
+        "foreignKeyName": "__id"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fldEk7yRGu5eskdoSgC",
+      "name": "SO.No",
+      "dbFieldName": "SO_No",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblcgaHqcge0NObcHGF",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldiHsWOavXfNpz2Xh8",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.MO",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldEk7yRGu5eskdoSgC"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld6lWrZUC42KQm21d8",
+      "name": "Finished Goods",
+      "dbFieldName": "Finished_Goods",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "oneMany",
+        "foreignTableId": "tblZgVg0b7Q36WLsKSy",
+        "lookupFieldId": "fldIloWA82VRIEkkiD1",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.MO_Finished_Goods",
+        "selfKeyName": "__fk_fldGCwbuftbYLnU4kOh",
+        "foreignKeyName": "__id",
+        "symmetricFieldId": "fldGCwbuftbYLnU4kOh"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fldewEkQC565cVLYvdF",
+      "name": "PO.No",
+      "dbFieldName": "PO_No",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "oneMany",
+        "foreignTableId": "tbld1ckQQ4Oq70n4hjn",
+        "isOneWay": false,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldVxcuUKFzVlT5kut5",
+        "symmetricFieldId": "fldJJZ6TF8nXgwut24F",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Customer_PO",
+        "selfKeyName": "__fk_fldJJZ6TF8nXgwut24F",
+        "foreignKeyName": "__id"
+      },
+      "cellValueType": "string",
+      "isLookup": true,
+      "isComputed": true,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fldbj5lYHEr8NKu6eee",
+      "name": "Finished Qty",
+      "dbFieldName": "Finished_Qty",
+      "type": "rollup",
+      "description": null,
+      "options": {
+        "expression": "sum({values})",
+        "timeZone": "Asia/Bangkok",
+        "formatting": {
+          "type": "decimal",
+          "precision": 2
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldrfmDgTcQga9hSiKy",
+      "name": "Remaining Qty",
+      "dbFieldName": "Remaining_Qty",
+      "type": "formula",
+      "description": null,
+      "options": {
+        "expression": "{fldol1eNL6A8B3OQDqe}-{fldbj5lYHEr8NKu6eee}",
+        "timeZone": "Asia/Bangkok",
+        "formatting": {
+          "type": "decimal",
+          "precision": 2
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldxzAzz8k8rAw6W6bE",
+      "name": "Location",
+      "dbFieldName": "Location",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tbluyHoDZu7xyx4MId1",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldleQTy59612aPj6jB",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.MO",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldAxsEzwQp5PzFBWUz"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldhn9QYIsKBSjSpdRl",
+      "name": "Quality Checks",
+      "dbFieldName": "Quality_Checks",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "oneMany",
+        "foreignTableId": "tblfNm28bPAW6I1A7Ki",
+        "lookupFieldId": "fldvB7X45R1u7mFtF9o",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Quality_Checks",
+        "selfKeyName": "__fk_fldBffpUXn6xY4n44dq",
+        "foreignKeyName": "__id",
+        "symmetricFieldId": "fldtqJl0eQzyE8bFhr7"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fldmM4ecVYAFOC5DzTl",
+      "name": "QC Orders",
+      "dbFieldName": "QC_Orders",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "oneMany",
+        "foreignTableId": "tblxKaRWqHZnbPNSIvO",
+        "lookupFieldId": "fldpPaT1T3xC0FqhB0a",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.QC_Orders",
+        "selfKeyName": "__fk_fldfVt3PtP8N6oKuAZw",
+        "foreignKeyName": "__id",
+        "symmetricFieldId": "fldfVt3PtP8N6oKuAZw"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fldP9sMkMfZcGfdKJp1",
+      "name": "BOM",
+      "dbFieldName": "BOM",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tbljVE4fCX1GxrlZOlO",
+        "isOneWay": false,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldAFwbFX6fCWyIOMHl",
+        "symmetricFieldId": "fld6sXgTn8R8UuZq2UT",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.MO",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldP9sMkMfZcGfdKJp1"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldmDuzwaUXBHBRZoZN",
+      "name": "Raw Total Cost",
+      "dbFieldName": "Raw_Total_Cost",
+      "type": "rollup",
+      "description": null,
+      "options": {
+        "expression": "sum({values})",
+        "timeZone": "Asia/Bangkok",
+        "formatting": {
+          "type": "decimal",
+          "precision": 2
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    }
+  ]
+}

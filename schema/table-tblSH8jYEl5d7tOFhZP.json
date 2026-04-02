@@ -1,0 +1,193 @@
+{
+  "id": "tblSH8jYEl5d7tOFhZP",
+  "name": "Operation Type",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Operation_Type\"",
+  "fields": [
+    {
+      "id": "fldgW0XG92Yjl8wfuJ1",
+      "name": "Status",
+      "dbFieldName": "Status",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "To do",
+        "In progress",
+        "Done"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldZoDkL314V9yTlzXv",
+      "name": "Transaction Type",
+      "dbFieldName": "Transaction_Type",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "Transfer",
+        "Receiving",
+        "Delivery",
+        "Production"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld3F1ToXOpT6dc97jV",
+      "name": "Code",
+      "dbFieldName": "Code",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld3O3E1NN0X6jUV4Mw",
+      "name": "Destination Location",
+      "dbFieldName": "Destination_Location",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldwiNpuHU6R3goAp15",
+      "name": "ID",
+      "dbFieldName": "ID",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldrnYizTS4SJ9bV7fx",
+      "name": "Name",
+      "dbFieldName": "Name",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldv4JdgfxQw5nZrmLI",
+      "name": "Hourly Labor Rate",
+      "dbFieldName": "Hourly_Labor_Rate",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldZ8MMJuPHgQRs9uox",
+      "name": "Hourly Machine Rate",
+      "dbFieldName": "Hourly_Machine_Rate",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldbkPwrmuxvLCi68Ko",
+      "name": "Overhead Rate",
+      "dbFieldName": "Overhead_Rate",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldZ5NCq7YTa01LsAFl",
+      "name": "Total Hourly Rate",
+      "dbFieldName": "Total_Hourly_Rate",
+      "type": "formula",
+      "description": null,
+      "options": {
+        "expression": "{fldv4JdgfxQw5nZrmLI} + {fldZ8MMJuPHgQRs9uox} + {fldbkPwrmuxvLCi68Ko}",
+        "timeZone": "Asia/Bangkok",
+        "formatting": {
+          "type": "decimal",
+          "precision": 2
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld09k6BRR1R1YE3pMU",
+      "name": "Stock Move",
+      "dbFieldName": "Stock_Move",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "oneMany",
+        "foreignTableId": "tblWqzPZBg5mxvDAcEH",
+        "lookupFieldId": "flddwaWMMLrCx3m9AiN",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Stock_Move",
+        "selfKeyName": "__fk_fldFVJW7CTygpVxyx8Z",
+        "foreignKeyName": "__id",
+        "symmetricFieldId": "fldFVJW7CTygpVxyx8Z"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fldgyPqPCYPz4XoFnZi",
+      "name": "Source Location",
+      "dbFieldName": "Source_Location",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    }
+  ]
+}

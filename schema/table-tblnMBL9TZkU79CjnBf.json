@@ -1,0 +1,252 @@
+{
+  "id": "tblnMBL9TZkU79CjnBf",
+  "name": "Product Templates",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Product_Templates\"",
+  "fields": [
+    {
+      "id": "fldj6a30wDsPdH1DQnC",
+      "name": "Product Type",
+      "dbFieldName": "Product_Type",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblBYv84fvDjofLBVTA",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldCoLmDGs8YqJYHK0B",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Product_Templates",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldj6a30wDsPdH1DQnC"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldI9Nf9KwUxpaSsFzd",
+      "name": "Code",
+      "dbFieldName": "Code",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldewflNfHySTTXGqrY",
+      "name": "Count Unit",
+      "dbFieldName": "Count_Unit",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 0,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldy0PFMhgkZQfHHI8P",
+      "name": "ID",
+      "dbFieldName": "ID",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldCeh0S9es7Zzbka6q",
+      "name": "Make-or-Buy Default",
+      "dbFieldName": "Make_or_Buy_Default",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "Make",
+        "Buy",
+        "Both"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld3YkI7AFLSIeW3hLY",
+      "name": "Product Name",
+      "dbFieldName": "Product_Name",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld6J9Ncc7XjYhz3muh",
+      "name": "Lead Time Days",
+      "dbFieldName": "Lead_Time_Days",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldMgQytS9XmcORkpJs",
+      "name": "Income Account",
+      "dbFieldName": "Income_Account",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblAvg4APx0CZ8zH2oY",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldHDHqQEDm1sf7zaH9",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Product_Templates",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldMgQytS9XmcORkpJs"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldsGz7OcmlQsZ2ObXE",
+      "name": "Expense Account",
+      "dbFieldName": "Expense_Account",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblAvg4APx0CZ8zH2oY",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldHDHqQEDm1sf7zaH9",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Product_Templates",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldsGz7OcmlQsZ2ObXE"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld6mmSrPoswWTemGFB",
+      "name": "Product",
+      "dbFieldName": "Product",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "oneMany",
+        "foreignTableId": "tblPa6m5iZFnb2Yb7xu",
+        "lookupFieldId": "fldSPWKDO8GxlLmFVam",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Product",
+        "selfKeyName": "__fk_fldqvtBD8gh3MRZycTs",
+        "foreignKeyName": "__id",
+        "symmetricFieldId": "fldqvtBD8gh3MRZycTs"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fldNL3AyYvNeHJdbzGI",
+      "name": "Brand",
+      "dbFieldName": "Brand",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tbltUsiaGfy6lqLcRtK",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldFXP9zHbiA80l5zsU",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Product_Templates",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldNL3AyYvNeHJdbzGI"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldsCdTeuAULvDVJwHZ",
+      "name": "Unit of Measure",
+      "dbFieldName": "Unit_of_Measure",
+      "type": "link",
+      "description": null,
+      "options": {
+        "foreignTableId": "tblypkdG2CfrjsCglAY",
+        "relationship": "manyOne",
+        "isOneWay": true,
+        "lookupFieldId": "fldIonumpLjA7mXCh25",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Product_Templates",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldsCdTeuAULvDVJwHZ",
+        "filter": null,
+        "filterByViewId": null,
+        "visibleFieldIds": null
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldO6m0rGrwi3Tyfaqq",
+      "name": "Category",
+      "dbFieldName": "Category",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tbljWYFNAedrd8YtB7P",
+        "lookupFieldId": "fldPI9BBio164XDejJi",
+        "isOneWay": false,
+        "symmetricFieldId": "fldbxjG8LY9LMpdlAWR",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Product_Templates",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldO6m0rGrwi3Tyfaqq"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    }
+  ]
+}

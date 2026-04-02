@@ -1,0 +1,159 @@
+{
+  "id": "tblTBvWP9zBOQ9cdj3D",
+  "name": "Stock Reservations",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Stock_Reservations\"",
+  "fields": [
+    {
+      "id": "fldTDd5irOiAEEOEFU1",
+      "name": "Stock Move Line",
+      "dbFieldName": "Stock_Move_Line",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "oneMany",
+        "foreignTableId": "tblhSAYQBm7hsA2D1ne",
+        "lookupFieldId": "fld88jEuJb6UFRRrH95",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Stock_Move_Line",
+        "selfKeyName": "__fk_fldLwr3BIvEGSFMYtxO",
+        "foreignKeyName": "__id",
+        "symmetricFieldId": "fldLwr3BIvEGSFMYtxO"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fld0meYHpCyn0OlUlXO",
+      "name": "Batch Number",
+      "dbFieldName": "Batch_Number",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld3wu7jWGXaNch3DaI",
+      "name": "Quantity Fulfilled",
+      "dbFieldName": "Quantity_Fulfilled",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld4gDROLC9p0h2kn1J",
+      "name": "Reservation Date",
+      "dbFieldName": "Reservation_Date",
+      "type": "date",
+      "description": null,
+      "options": {
+        "formatting": {
+          "date": "YYYY-MM-DD",
+          "time": "None",
+          "timeZone": "Asia/Bangkok"
+        }
+      },
+      "cellValueType": "dateTime",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldrDF1S9lhQtaVAnR9",
+      "name": "Expected Ship Date",
+      "dbFieldName": "Expected_Ship_Date",
+      "type": "date",
+      "description": null,
+      "options": {
+        "formatting": {
+          "date": "YYYY-MM-DD",
+          "time": "None",
+          "timeZone": "Asia/Bangkok"
+        }
+      },
+      "cellValueType": "dateTime",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldqRwHoSqTyJNKlC4P",
+      "name": "ID",
+      "dbFieldName": "ID",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldBT05ktrQZBrJmbW6",
+      "name": "Quantity Reserved",
+      "dbFieldName": "Quantity_Reserved",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": true,
+      "isComputed": true,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fld98S5XrhJBjmkr1lK",
+      "name": "Expiry Date",
+      "dbFieldName": "Expiry_Date",
+      "type": "date",
+      "description": null,
+      "options": {
+        "formatting": {
+          "date": "YYYY-MM-DD",
+          "time": "None",
+          "timeZone": "Asia/Bangkok"
+        }
+      },
+      "cellValueType": "dateTime",
+      "isLookup": true,
+      "isComputed": true,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fld2se67K10tsirsozZ",
+      "name": "Status",
+      "dbFieldName": "Status",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "Draft",
+        "Confirmed",
+        "Done",
+        "Cancelled"
+      ],
+      "cellValueType": "string",
+      "isLookup": true,
+      "isComputed": true,
+      "isMultipleCellValue": true
+    }
+  ]
+}

@@ -1,0 +1,352 @@
+{
+  "id": "tblH6UTJxYtesnTyQhH",
+  "name": "MO Operations",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"MO_Operation\"",
+  "fields": [
+    {
+      "id": "fldegbS5J4hnlo3mgb2",
+      "name": "Name",
+      "dbFieldName": "Name",
+      "type": "formula",
+      "description": null,
+      "options": {
+        "expression": "{fldsyyqdEIbZPsg8aIL}+\"-\"+{fldi2PMy8BCHD8w6OQb}",
+        "timeZone": "Asia/Bangkok"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldpHDYTVV6JILTLe68",
+      "name": "Hourly Rate",
+      "dbFieldName": "Hourly_Rate",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "currency",
+          "symbol": "฿"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldnKJFrh5qqNUSqMRc",
+      "name": "Status",
+      "dbFieldName": "Status",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "Active",
+        "Inactive"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldYwkMaWOlH5wyV5uu",
+      "name": "Overhead Cost per",
+      "dbFieldName": "Overhead_Cost_per",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldrvOW8Gp8dr67HDTh",
+      "name": "Labour Costs per",
+      "dbFieldName": "Labour_Costs_per",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldR3bTrvS4aLwy8iwB",
+      "name": "Description",
+      "dbFieldName": "Description",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldHUkZ08BEnNXsr4qP",
+      "name": "Capacity",
+      "dbFieldName": "Capacity",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": true,
+      "isComputed": true,
+      "isMultipleCellValue": false
+    },
+    {
+      "id": "fldIwkvcwcvHWLpOnkB",
+      "name": "Location",
+      "dbFieldName": "Location",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": true,
+      "isComputed": true,
+      "isMultipleCellValue": false
+    },
+    {
+      "id": "fldi2PMy8BCHD8w6OQb",
+      "name": "ID",
+      "dbFieldName": "ID",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldDcVGtLkN33swSGdl",
+      "name": "Department",
+      "dbFieldName": "Department",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblKPsfPodeEWRIvdm0",
+        "isOneWay": true,
+        "lookupFieldId": "fld04CDJaUI2vJJh56w",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.MO_Operation",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldDcVGtLkN33swSGdl"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldsyyqdEIbZPsg8aIL",
+      "name": "Work Station",
+      "dbFieldName": "Work_Station",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblwTGHsdhgcsOJFAnt",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldKymTRe7l0VFohmvN",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.MO_Operation",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldsyyqdEIbZPsg8aIL"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldmKxNiM0nROa4k8Rw",
+      "name": "MO",
+      "dbFieldName": "MO",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblPbvDgbuKgA55boy8",
+        "isOneWay": false,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldkn3Z8gNv5Y0eFQ3b",
+        "symmetricFieldId": "fldqw8ayLin5Sg2oW1B",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.MO_Operation",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldmKxNiM0nROa4k8Rw"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldNw4v1cppEsDS5IAW",
+      "name": "Total Hourly Rate",
+      "dbFieldName": "Total_Hourly_Rate",
+      "type": "formula",
+      "description": null,
+      "options": {
+        "expression": "{fldYuwhTfh7omHVXuPm} + {fldmr9xeVtj7O1HkAr8} + {fldQY0545dSLhXgXDD9} + {fld3Min0jq6iID6Mi6E} + {fldP3uMpJ2voncIDlW4}",
+        "timeZone": "Asia/Bangkok",
+        "formatting": {
+          "type": "decimal",
+          "precision": 2
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldYuwhTfh7omHVXuPm",
+      "name": "Hourly Labor Rate",
+      "dbFieldName": "Hourly_Labor_Rate",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": true,
+      "isComputed": true,
+      "isMultipleCellValue": false
+    },
+    {
+      "id": "fldQY0545dSLhXgXDD9",
+      "name": "Hourly Overhead Rate",
+      "dbFieldName": "Hourly_Overhead_Rate",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": true,
+      "isComputed": true,
+      "isMultipleCellValue": false
+    },
+    {
+      "id": "fldmr9xeVtj7O1HkAr8",
+      "name": "Hourly Machine Rate",
+      "dbFieldName": "Hourly_Machine_Rate",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": true,
+      "isComputed": true,
+      "isMultipleCellValue": false
+    },
+    {
+      "id": "fldP3uMpJ2voncIDlW4",
+      "name": "Hourly Utility Rate",
+      "dbFieldName": "Hourly_Utility_Rate",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": true,
+      "isComputed": true,
+      "isMultipleCellValue": false
+    },
+    {
+      "id": "fld3Min0jq6iID6Mi6E",
+      "name": "Hourly Tooling Rate",
+      "dbFieldName": "Hourly_Tooling_Rate",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": true,
+      "isComputed": true,
+      "isMultipleCellValue": false
+    },
+    {
+      "id": "fld5kd8NZsSek7phvdl",
+      "name": "Hours",
+      "dbFieldName": "Hours",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld4rNC30yEMZRuSgTX",
+      "name": "Cost",
+      "dbFieldName": "Cost",
+      "type": "formula",
+      "description": null,
+      "options": {
+        "expression": "{fld5kd8NZsSek7phvdl}*{fldYuwhTfh7omHVXuPm}",
+        "timeZone": "Asia/Bangkok",
+        "formatting": {
+          "type": "decimal",
+          "precision": 2
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    }
+  ]
+}

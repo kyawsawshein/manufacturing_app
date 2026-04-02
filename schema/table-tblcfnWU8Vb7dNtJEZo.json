@@ -1,0 +1,250 @@
+{
+  "id": "tblcfnWU8Vb7dNtJEZo",
+  "name": "Purchase Orders",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Purchase_Orders\"",
+  "fields": [
+    {
+      "id": "fldn05Btl7SBglM2ssf",
+      "name": "Destination Location",
+      "dbFieldName": "Destination",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tbluyHoDZu7xyx4MId1",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldleQTy59612aPj6jB",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Purchase_Orders",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldS8GQh3uq4uOYyH5o"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldyApAYMs5iwwO7AAT",
+      "name": "Currency",
+      "dbFieldName": "Currency",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tbl7JIUHTMA3nCAAGIW",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldb4UMM96vJbBy0dmW",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Purchase_Orders",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldyApAYMs5iwwO7AAT"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldjUzQO0h5NVeg0WRw",
+      "name": "Order Date",
+      "dbFieldName": "Order_Date",
+      "type": "date",
+      "description": null,
+      "options": {
+        "formatting": {
+          "date": "YYYY-MM-DD",
+          "time": "None",
+          "timeZone": "Asia/Bangkok"
+        }
+      },
+      "cellValueType": "dateTime",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldUbiCzmCzytWp0tql",
+      "name": "Expected Delivery",
+      "dbFieldName": "Expected_Delivery",
+      "type": "date",
+      "description": null,
+      "options": {
+        "formatting": {
+          "date": "YYYY-MM-DD",
+          "time": "None",
+          "timeZone": "Asia/Bangkok"
+        }
+      },
+      "cellValueType": "dateTime",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldn8PbkmTGKthr7yi1",
+      "name": "Status",
+      "dbFieldName": "Status",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "Draft",
+        "Confirmed",
+        "Done",
+        "Cancelled"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld2QGf0t8fpm9hKUBh",
+      "name": "Sequence",
+      "dbFieldName": "Sequence",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldRw9KDHJ5otLCXq3E",
+      "name": "Payment Term",
+      "dbFieldName": "Payment_Term",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "Net 30",
+        "Net 60",
+        "Prepaid",
+        "50% upfront"
+      ],
+      "cellValueType": "string",
+      "isLookup": true,
+      "isComputed": true,
+      "isMultipleCellValue": false
+    },
+    {
+      "id": "fldYGhKcFLTPIoLQwDO",
+      "name": "Company",
+      "dbFieldName": "Company",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblg4ncr63WXpzbTG0J",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fld1dXKKrdphvBGT2GG",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Purchase_Orders",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldYGhKcFLTPIoLQwDO"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldfUKPd0nC3vqf9tb1",
+      "name": "ID",
+      "dbFieldName": "ID",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldAVHkTHmSW8YGh3Ch",
+      "name": "Vendor",
+      "dbFieldName": "Vendor",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblc9QUtlFwS3t1GJwn",
+        "isOneWay": false,
+        "lookupFieldId": "fldM8w5kIo9jHUy5rAq",
+        "symmetricFieldId": "fldkFkOZ3SmAt1sXmlE",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Purchase_Orders",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldAVHkTHmSW8YGh3Ch"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldGQQJ5is2QqJ69nE7",
+      "name": "Purchase Order Lines",
+      "dbFieldName": "Purchase_Order_Lines",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "oneMany",
+        "foreignTableId": "tbluZE3J00gmOtjq719",
+        "lookupFieldId": "fldrPixyTyMzV8xiOfR",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Purchase_Order_Lines",
+        "selfKeyName": "__fk_fldhoLZOVCf7rEaosMH",
+        "foreignKeyName": "__id",
+        "symmetricFieldId": "fldhoLZOVCf7rEaosMH"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fldMT5okp0k7AJ5rBZP",
+      "name": "Total Amount",
+      "dbFieldName": "Total_Amount",
+      "type": "rollup",
+      "description": null,
+      "options": {
+        "expression": "sum({values})",
+        "timeZone": "Asia/Bangkok",
+        "formatting": {
+          "type": "decimal",
+          "precision": 2
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldLQeQovx3iq43GlH3",
+      "name": "Name",
+      "dbFieldName": "Name",
+      "type": "formula",
+      "description": null,
+      "options": {
+        "expression": "\"PO\"+\"-\"+{fld2QGf0t8fpm9hKUBh}",
+        "timeZone": "Asia/Bangkok"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    }
+  ]
+}

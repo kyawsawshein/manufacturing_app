@@ -1,0 +1,71 @@
+{
+  "id": "tblQf2b46WYQMZctgy1",
+  "name": "Product Types",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Product_Types\"",
+  "fields": [
+    {
+      "id": "fld8hRvEuuKGbF0EVsH",
+      "name": "Is Manufacturable",
+      "dbFieldName": "Is_Manufacturable",
+      "type": "checkbox",
+      "description": null,
+      "options": {},
+      "cellValueType": "boolean",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldUMHMwbHiNYxVJlci",
+      "name": "Is Sellable",
+      "dbFieldName": "Is_Sellable",
+      "type": "checkbox",
+      "description": null,
+      "options": {},
+      "cellValueType": "boolean",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld6eaixOWBdObkdBgp",
+      "name": "Type Name",
+      "dbFieldName": "Type_Name",
+      "type": "singleLineText",
+      "description": null,
+      "options": {
+        "expression": "LAST_MODIFIED_TIME()",
+        "unique": true
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld7mmNshKaTmYAHpJH",
+      "name": "Description",
+      "dbFieldName": "Description",
+      "type": "longText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldgJSJaEAFITrmIeyw",
+      "name": "Is Purchasable",
+      "dbFieldName": "Is_Purchasable",
+      "type": "checkbox",
+      "description": null,
+      "options": {},
+      "cellValueType": "boolean",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    }
+  ]
+}

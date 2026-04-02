@@ -1,0 +1,99 @@
+{
+  "id": "tblgmMIBt67GM05nSVF",
+  "name": "Location Types",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Location_Types\"",
+  "fields": [
+    {
+      "id": "fldIoGtT6zzHR6q5pBG",
+      "name": "ID",
+      "dbFieldName": "ID",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldF8CSUQgWViUehFSv",
+      "name": "Code",
+      "dbFieldName": "Code",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldsTnSPUI3YH8Efg8E",
+      "name": "Is Warehouse",
+      "dbFieldName": "Is_Warehouse",
+      "type": "checkbox",
+      "description": null,
+      "options": {},
+      "cellValueType": "boolean",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldtHolm70J4S68h3Ea",
+      "name": "Is Production",
+      "dbFieldName": "Is_Production",
+      "type": "checkbox",
+      "description": null,
+      "options": {},
+      "cellValueType": "boolean",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld9s3mjRKBliDK2unX",
+      "name": "Is Quarantine",
+      "dbFieldName": "Is_Quarantine",
+      "type": "checkbox",
+      "description": null,
+      "options": {},
+      "cellValueType": "boolean",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldKhUx5NPPGcD4q3I7",
+      "name": "Color Code",
+      "dbFieldName": "Color_Code",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldLCLslS6Rns6R5tn1",
+      "name": "Type",
+      "dbFieldName": "Type",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "Internal",
+        "Vendor",
+        "Customer",
+        "Production"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    }
+  ]
+}

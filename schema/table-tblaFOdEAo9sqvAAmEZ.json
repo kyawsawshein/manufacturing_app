@@ -1,0 +1,114 @@
+{
+  "id": "tblaFOdEAo9sqvAAmEZ",
+  "name": "PO Lines",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"New_table\"",
+  "fields": [
+    {
+      "id": "fldogox1xw8KVMJqvxl",
+      "name": "Quantity",
+      "dbFieldName": "Quantity",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 0,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldlDCXImqFjETBZ0lo",
+      "name": "Status",
+      "dbFieldName": "Status",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "To do",
+        "In progress",
+        "Done"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldHCnyBWYh73fIS3GK",
+      "name": "ID",
+      "dbFieldName": "ID",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldHymFVfQKgIUOeTvb",
+      "name": "Part No",
+      "dbFieldName": "Part_No",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld8xTlUyrr2vPFOtwT",
+      "name": "PO",
+      "dbFieldName": "PO",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tbld1ckQQ4Oq70n4hjn",
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldVxcuUKFzVlT5kut5",
+        "isOneWay": false,
+        "symmetricFieldId": "fldAsG9h6RX4t2eFkvg",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.New_table",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fld8xTlUyrr2vPFOtwT"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld6vOHPvkQraolhod6",
+      "name": "Item",
+      "dbFieldName": "Item",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblPa6m5iZFnb2Yb7xu",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "flduGdBbpGSguqFcckg",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.New_table",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fld6vOHPvkQraolhod6"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    }
+  ]
+}

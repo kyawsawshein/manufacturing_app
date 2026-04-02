@@ -1,0 +1,253 @@
+{
+  "id": "tblp5gnBXnCCA82HVLp",
+  "name": "Cutting Fabric",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Cutting_Fabric\"",
+  "fields": [
+    {
+      "id": "fld3Gn6NX3o656tOo01",
+      "name": "MO",
+      "dbFieldName": "MO",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldKy1vtbWzIhNPRCMw",
+      "name": "ID",
+      "dbFieldName": "ID",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldfe03yUx2o9U2WCql",
+      "name": "Status",
+      "dbFieldName": "Status",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "To do",
+        "In progress",
+        "Done"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldDcqgNxy5l02i70il",
+      "name": "Pair",
+      "dbFieldName": "Pair",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld0L7JLq0s4aoJP37s",
+      "name": "Width",
+      "dbFieldName": "Width",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld8hXGNtLoRkxUbQmr",
+      "name": "Used Qty",
+      "dbFieldName": "Used_Qty",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld0EyQdRb3h5JKyFZD",
+      "name": "Lot No",
+      "dbFieldName": "Lot_No",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldphFyTIme6qGiinBg",
+      "name": "Remark",
+      "dbFieldName": "Remark",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld92bPUBhRjaxQjOOv",
+      "name": "Date",
+      "dbFieldName": "Date",
+      "type": "date",
+      "description": null,
+      "options": {
+        "formatting": {
+          "date": "YYYY-MM-DD",
+          "time": "None",
+          "timeZone": "Asia/Bangkok"
+        }
+      },
+      "cellValueType": "dateTime",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldtVbwdu6GbkzhZDYg",
+      "name": "Part No",
+      "dbFieldName": "Part_No",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblSGof3jV6QLz5WkuN",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldUUyPSjllgjlOR2tY",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Cutting_Fabric",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldtVbwdu6GbkzhZDYg"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldX0jQ7hpbSSEZulBI",
+      "name": "Item",
+      "dbFieldName": "Item",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblSGof3jV6QLz5WkuN",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldUUyPSjllgjlOR2tY",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Cutting_Fabric",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldX0jQ7hpbSSEZulBI"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldHPgZmGSCBObXDbEh",
+      "name": "Machine No",
+      "dbFieldName": "Machine_No",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblwTGHsdhgcsOJFAnt",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldKS8I5Td6ep5qPwvo",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Cutting_Fabric",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldHPgZmGSCBObXDbEh"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldW83s9G5pTldICtKo",
+      "name": "Unit",
+      "dbFieldName": "Unit",
+      "type": "link",
+      "description": null,
+      "options": {
+        "foreignTableId": "tblypkdG2CfrjsCglAY",
+        "relationship": "manyOne",
+        "isOneWay": true,
+        "lookupFieldId": "fldIonumpLjA7mXCh25",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Cutting_Fabric",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldW83s9G5pTldICtKo",
+        "filter": null,
+        "filterByViewId": null,
+        "visibleFieldIds": null
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldTksIEIwNkW0sCu2i",
+      "name": "User",
+      "dbFieldName": "User",
+      "type": "link",
+      "description": null,
+      "options": {
+        "foreignTableId": "tblcpTwSlhbUY3kOdUa",
+        "relationship": "manyOne",
+        "isOneWay": true,
+        "lookupFieldId": "fldDkD7tiSDTq5ByaEi",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Cutting_Fabric",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldTksIEIwNkW0sCu2i",
+        "filter": null,
+        "filterByViewId": null,
+        "visibleFieldIds": null
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    }
+  ]
+}

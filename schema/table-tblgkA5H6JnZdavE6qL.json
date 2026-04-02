@@ -1,0 +1,69 @@
+{
+  "id": "tblgkA5H6JnZdavE6qL",
+  "name": "Hook & Loop Size",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Hook_Loop_Size\"",
+  "fields": [
+    {
+      "id": "fldYlQkcXpWcAJaT37Q",
+      "name": "ID",
+      "dbFieldName": "ID",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldHyY7yd2lFpG7SL0v",
+      "name": "Width",
+      "dbFieldName": "Width",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 0,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldbG95nXNF971u5TSG",
+      "name": "length",
+      "dbFieldName": "length",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldErqTfZhdSHSRKeIr",
+      "name": "Size",
+      "dbFieldName": "Size",
+      "type": "formula",
+      "description": null,
+      "options": {
+        "expression": "CONCATENATE({fldHyY7yd2lFpG7SL0v},'x',{fldbG95nXNF971u5TSG})",
+        "timeZone": "Asia/Bangkok"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    }
+  ]
+}

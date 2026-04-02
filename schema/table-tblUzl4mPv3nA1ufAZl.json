@@ -1,0 +1,157 @@
+{
+  "id": "tblUzl4mPv3nA1ufAZl",
+  "name": "Cutting",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Cutting\"",
+  "fields": [
+    {
+      "id": "fldjojsawe8EUMNNe4G",
+      "name": "ID",
+      "dbFieldName": "ID",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldYwmZ5E7g4GRfbJ5k",
+      "name": "Status",
+      "dbFieldName": "Status",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "Draft",
+        "Active",
+        "Obsolete"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "flduvQJ1qKTj9M4mwKU",
+      "name": "Product",
+      "dbFieldName": "Product",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblPa6m5iZFnb2Yb7xu",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "flduGdBbpGSguqFcckg",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Cutting",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldI6N5k8kHNyca5JkA"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldyLRHZp6ERHhsGvGI",
+      "name": "MO  (Manufacturing Plan)",
+      "dbFieldName": "MO_Manufacturing_Plan",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "oneMany",
+        "foreignTableId": "tblPbvDgbuKgA55boy8",
+        "lookupFieldId": "fldkn3Z8gNv5Y0eFQ3b",
+        "isOneWay": false,
+        "symmetricFieldId": "fldfXFqu8fX4QmI6vfh",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.MO",
+        "selfKeyName": "__fk_fldfXFqu8fX4QmI6vfh",
+        "foreignKeyName": "__id"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fld5dbLrigCp2vvil1M",
+      "name": "Cutting Line",
+      "dbFieldName": "Cutting_Line",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "oneMany",
+        "foreignTableId": "tbliEs1RFlkpMkbcJz7",
+        "lookupFieldId": "fldABpepZ1GZhuqKjBC",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Cutting_Line",
+        "selfKeyName": "__fk_fldnRuk6SXj7wAkPSTF",
+        "foreignKeyName": "__id",
+        "symmetricFieldId": "fldnRuk6SXj7wAkPSTF"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fldXwnmi4SZAqykBru5",
+      "name": "Name",
+      "dbFieldName": "Name",
+      "type": "formula",
+      "description": null,
+      "options": {
+        "expression": "\"CUT\"+\"-\"+{fldjojsawe8EUMNNe4G}",
+        "timeZone": "Asia/Bangkok"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld4uDgApOPDAjEXW52",
+      "name": "Quntity",
+      "dbFieldName": "Quntity",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldvdbjgKUfvIjjCnsR",
+      "name": "Reference",
+      "dbFieldName": "Reference",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblcgaHqcge0NObcHGF",
+        "isOneWay": true,
+        "filterByViewId": null,
+        "visibleFieldIds": null,
+        "filter": null,
+        "lookupFieldId": "fldiHsWOavXfNpz2Xh8",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Cutting",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldfnLRpDgFVhuKfof9"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    }
+  ]
+}

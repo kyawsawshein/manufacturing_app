@@ -1,0 +1,174 @@
+{
+  "id": "tblN8PCHnjtPVgwYkx8",
+  "name": "Request Item",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Request_Item\"",
+  "fields": [
+    {
+      "id": "fldZel5oa47ct950J5w",
+      "name": "Reference",
+      "dbFieldName": "Reference",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": true,
+      "isComputed": true,
+      "isMultipleCellValue": false
+    },
+    {
+      "id": "fld5H0AlyoI7pdlL8uu",
+      "name": "Production Request",
+      "dbFieldName": "Production_Request",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblmvfBl1KNvB0ownLb",
+        "lookupFieldId": "fldlrIZRbJpGDZ5LR2x",
+        "isOneWay": false,
+        "symmetricFieldId": "fldl69f6L8MkgS6wkgl",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Request_Item",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fld5H0AlyoI7pdlL8uu"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldxcWWsvq41ZWcP6aH",
+      "name": "Lot No",
+      "dbFieldName": "Lot_No",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldrcfK6vsyitKC7tZv",
+      "name": "Quantity",
+      "dbFieldName": "Quantity",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldYYst7hdmQjwK0TKm",
+      "name": "Location",
+      "dbFieldName": "Location",
+      "type": "link",
+      "description": null,
+      "options": {
+        "foreignTableId": "tbluyHoDZu7xyx4MId1",
+        "relationship": "manyOne",
+        "isOneWay": true,
+        "lookupFieldId": "fldTikvjWteJAdBFYnS",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.New_tablexsAtybPKPb",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldnIShziWPs66RpPwl",
+        "filter": null,
+        "filterByViewId": null,
+        "visibleFieldIds": null
+      },
+      "cellValueType": "string",
+      "isLookup": true,
+      "isComputed": true,
+      "isMultipleCellValue": false
+    },
+    {
+      "id": "fldhGzrps9xcYYFue1r",
+      "name": "ID",
+      "dbFieldName": "ID",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fld4nFfIsvVmeGi9msp",
+      "name": "Unit",
+      "dbFieldName": "Unit",
+      "type": "link",
+      "description": null,
+      "options": {
+        "foreignTableId": "tblypkdG2CfrjsCglAY",
+        "relationship": "manyOne",
+        "isOneWay": true,
+        "lookupFieldId": "fldIonumpLjA7mXCh25",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.Request_Item",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fld4nFfIsvVmeGi9msp",
+        "filter": null,
+        "filterByViewId": null,
+        "visibleFieldIds": null
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldRt9IypdtDppmtoIC",
+      "name": "Product",
+      "dbFieldName": "Product",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldUBHl5ZJXDga16OQX",
+      "name": "Status",
+      "dbFieldName": "Status",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "Requested",
+        "Done"
+      ],
+      "cellValueType": "string",
+      "isLookup": true,
+      "isComputed": true,
+      "isMultipleCellValue": false
+    },
+    {
+      "id": "fldrYOqbD1O19lLHJab",
+      "name": "Name",
+      "dbFieldName": "Name",
+      "type": "formula",
+      "description": null,
+      "options": {
+        "expression": "{fldRt9IypdtDppmtoIC}",
+        "timeZone": "Asia/Bangkok"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    }
+  ]
+}

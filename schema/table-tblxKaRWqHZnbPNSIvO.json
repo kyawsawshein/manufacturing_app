@@ -1,0 +1,139 @@
+{
+  "id": "tblxKaRWqHZnbPNSIvO",
+  "name": "QC Orders",
+  "description": null,
+  "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"QC_Orders\"",
+  "fields": [
+    {
+      "id": "flddILGfdjaz3ueG8Iq",
+      "name": "QC Results",
+      "dbFieldName": "QC_Results",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "oneMany",
+        "foreignTableId": "tbl395okaO6le4iaR1x",
+        "lookupFieldId": "fldCkwdDadhxoWFgF0u",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.QC_Results",
+        "selfKeyName": "__fk_fld6Drhb5279pTeaM9I",
+        "foreignKeyName": "__id",
+        "symmetricFieldId": "fld6Drhb5279pTeaM9I"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": true
+    },
+    {
+      "id": "fldfVt3PtP8N6oKuAZw",
+      "name": "MO",
+      "dbFieldName": "MO",
+      "type": "link",
+      "description": null,
+      "options": {
+        "relationship": "manyOne",
+        "foreignTableId": "tblPbvDgbuKgA55boy8",
+        "isOneWay": false,
+        "lookupFieldId": "fldkn3Z8gNv5Y0eFQ3b",
+        "symmetricFieldId": "fldmM4ecVYAFOC5DzTl",
+        "fkHostTableName": "bseTIY0IrZr61kt6u5E.QC_Orders",
+        "selfKeyName": "__id",
+        "foreignKeyName": "__fk_fldfVt3PtP8N6oKuAZw"
+      },
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldpPaT1T3xC0FqhB0a",
+      "name": "QC Number",
+      "dbFieldName": "QC_Number",
+      "type": "autoNumber",
+      "description": null,
+      "options": {
+        "expression": "AUTO_NUMBER()"
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": true,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldAFqZfwpT3BUmyaui",
+      "name": "Finished Goods",
+      "dbFieldName": "Product",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldwSAXVpoLHm4DmYtA",
+      "name": "Lot / Batch",
+      "dbFieldName": "Lot_Batch",
+      "type": "singleLineText",
+      "description": null,
+      "options": {},
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldCymGrJA97LCzBePh",
+      "name": "Quantity",
+      "dbFieldName": "Quantity",
+      "type": "number",
+      "description": null,
+      "options": {
+        "formatting": {
+          "precision": 2,
+          "type": "decimal"
+        }
+      },
+      "cellValueType": "number",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldQqs0ty2jGoKzCo6U",
+      "name": "Status",
+      "dbFieldName": "Status",
+      "type": "singleSelect",
+      "description": null,
+      "options": [
+        "Pending",
+        "In Progress",
+        "Passed",
+        "Failed"
+      ],
+      "cellValueType": "string",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    },
+    {
+      "id": "fldct76lYVAL2JfckL3",
+      "name": "Inspection Date",
+      "dbFieldName": "Inspection_Date",
+      "type": "date",
+      "description": null,
+      "options": {
+        "formatting": {
+          "date": "YYYY-MM-DD",
+          "time": "None",
+          "timeZone": "Asia/Bangkok"
+        }
+      },
+      "cellValueType": "dateTime",
+      "isLookup": null,
+      "isComputed": null,
+      "isMultipleCellValue": null
+    }
+  ]
+}
