@@ -21,13 +21,17 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Layers, Loader2 } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Layers, Loader2, DollarSign } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import {
   getBOMs,
   createBOM,
   updateBOM,
   deleteBOM,
+  getBOMWithLines,
+  calculateBOMTotalCost,
+  checkBOMCircularReference,
 } from "@/app/actions";
 
 interface BOM {
@@ -41,6 +45,14 @@ interface BOM {
   product: string;
 }
 
+interface BOMLine {
+  id: string;
+  productName: string;
+  quantity: number;
+  unitCost: number;
+  totalCost: number;
+}
+
 function formatDate(dateStr: string | null): string {
   if (!dateStr) return "-";
   const date = new Date(dateStr);
@@ -48,6 +60,13 @@ function formatDate(dateStr: string | null): string {
     year: "numeric",
     month: "short",
     day: "numeric",
+  });
+}
+
+function formatCurrency(value: number): string {
+  return value.toLocaleString("en-US", {
+    style: "currency",
+    currency: "USD",
   });
 }
 
@@ -60,6 +79,11 @@ export default function BOMPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [editingBOM, setEditingBOM] = useState<BOM | null>(null);
+  const [selectedBOM, setSelectedBOM] = useState<BOM | null>(null);
+  const [showDetailsDialog, setShowDetailsDialog] = useState(false);
+  const [bomLines, setBOMLines] = useState<BOMLine[]>([]);
+  const [bomCost, setBOMCost] = useState(0);
+  const [circularRefCheck, setCircularRefCheck] = useState<{ hasCircular: boolean; path: string[] } | null>(null);
   const [isPending, startTransition] = useTransition();
   const { toast } = useToast();
 
@@ -83,6 +107,27 @@ export default function BOMPage() {
       });
     } finally {
       setIsLoading(false);
+    }
+  };
+
+  const loadBOMDetails = async (bom: BOM) => {
+    try {
+      const [details, cost, circularCheck] = await Promise.all([
+        getBOMWithLines(bom.id),
+        calculateBOMTotalCost(bom.id),
+        checkBOMCircularReference(bom.id),
+      ]);
+      setSelectedBOM(bom);
+      setBOMLines(details.lines);
+      setBOMCost(cost);
+      setCircularRefCheck(circularCheck);
+      setShowDetailsDialog(true);
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to load BOM details",
+        variant: "destructive",
+      });
     }
   };
 
@@ -211,6 +256,42 @@ export default function BOMPage() {
           </div>
         </div>
 
+        {boms.length > 0 && (
+          <div className="grid gap-4 md:grid-cols-3">
+            <div className="rounded-lg border bg-card p-4">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm font-medium text-muted-foreground">Total BOMs</p>
+                  <p className="text-2xl font-bold">{boms.length}</p>
+                </div>
+                <Layers className="h-8 w-8 opacity-50" />
+              </div>
+            </div>
+            <div className="rounded-lg border bg-card p-4">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm font-medium text-muted-foreground">Active BOMs</p>
+                  <p className="text-2xl font-bold">
+                    {boms.filter(b => b.status === "Active").length}
+                  </p>
+                </div>
+                <DollarSign className="h-8 w-8 opacity-50" />
+              </div>
+            </div>
+            <div className="rounded-lg border bg-card p-4">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm font-medium text-muted-foreground">Average Version</p>
+                  <p className="text-2xl font-bold">
+                    {(boms.reduce((sum, b) => sum + parseFloat(b.version || "0"), 0) / boms.length).toFixed(1)}
+                  </p>
+                </div>
+                <Layers className="h-8 w-8 opacity-50" />
+              </div>
+            </div>
+          </div>
+        )}
+
         <DataTable
           data={boms}
           columns={columns}
@@ -221,6 +302,7 @@ export default function BOMPage() {
           onDelete={handleDelete}
           addLabel="Create BOM"
           pageSize={15}
+          onRowClick={(bom) => loadBOMDetails(bom)}
         />
 
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
@@ -305,6 +387,97 @@ export default function BOMPage() {
                 {editingBOM ? "Update" : "Create"}
               </Button>
             </DialogFooter>
+          </DialogContent>
+        </Dialog>
+
+        {/* BOM Details Dialog */}
+        <Dialog open={showDetailsDialog} onOpenChange={setShowDetailsDialog}>
+          <DialogContent className="max-w-2xl">
+            <DialogHeader>
+              <DialogTitle>
+                {selectedBOM ? `BOM - ${selectedBOM.name}` : "BOM Details"}
+              </DialogTitle>
+            </DialogHeader>
+
+            {selectedBOM && (
+              <Tabs defaultValue="overview" className="w-full">
+                <TabsList className="grid w-full grid-cols-2">
+                  <TabsTrigger value="overview">Overview</TabsTrigger>
+                  <TabsTrigger value="lines">Components</TabsTrigger>
+                </TabsList>
+
+                <TabsContent value="overview" className="space-y-4">
+                  <div className="grid gap-4">
+                    <div>
+                      <Label className="text-sm font-medium text-muted-foreground">BOM Name</Label>
+                      <p className="text-lg font-semibold">{selectedBOM.name}</p>
+                    </div>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <Label className="text-sm font-medium text-muted-foreground">Version</Label>
+                        <p className="text-lg font-semibold">{selectedBOM.version}</p>
+                      </div>
+                      <div>
+                        <Label className="text-sm font-medium text-muted-foreground">Product</Label>
+                        <p className="text-lg font-semibold">{selectedBOM.product || "-"}</p>
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <Label className="text-sm font-medium text-muted-foreground">Status</Label>
+                        <StatusBadge status={selectedBOM.status} />
+                      </div>
+                      <div>
+                        <Label className="text-sm font-medium text-muted-foreground">Effective Date</Label>
+                        <p className="text-lg font-semibold">{formatDate(selectedBOM.effectiveDate)}</p>
+                      </div>
+                    </div>
+                    {bomCost > 0 && (
+                      <div className="rounded-lg bg-primary/10 p-4">
+                        <p className="text-sm text-muted-foreground">Total Material Cost</p>
+                        <p className="text-2xl font-bold">{formatCurrency(bomCost)}</p>
+                      </div>
+                    )}
+                    {circularRefCheck && (
+                      <div className={`rounded-lg p-4 ${circularRefCheck.hasCircular ? 'bg-red-50 text-red-900' : 'bg-green-50 text-green-900'}`}>
+                        <p className="text-sm font-medium">
+                          {circularRefCheck.hasCircular ? "⚠️ Circular Reference Detected" : "✓ No Circular References"}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </TabsContent>
+
+                <TabsContent value="lines" className="space-y-4">
+                  {bomLines.length > 0 ? (
+                    <div className="space-y-2 max-h-96 overflow-y-auto">
+                      {bomLines.map((line) => (
+                        <div
+                          key={line.id}
+                          className="rounded-lg border p-3"
+                        >
+                          <div className="flex justify-between mb-2">
+                            <p className="font-medium">{line.productName}</p>
+                            <p className="text-sm font-semibold text-primary">
+                              {formatCurrency(line.totalCost)}
+                            </p>
+                          </div>
+                          <div className="grid grid-cols-3 gap-2 text-sm text-muted-foreground">
+                            <div>Qty: {line.quantity.toFixed(2)}</div>
+                            <div>Unit Cost: {formatCurrency(line.unitCost)}</div>
+                            <div>Line Total: {formatCurrency(line.totalCost)}</div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="text-sm text-muted-foreground text-center py-4">
+                      No components in this BOM.
+                    </p>
+                  )}
+                </TabsContent>
+              </Tabs>
+            )}
           </DialogContent>
         </Dialog>
       </div>

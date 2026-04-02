@@ -592,3 +592,308 @@ export async function updatePartner(id: string, data: {
 export async function deletePartner(id: string) {
   return deleteRecord("tblc9QUtlFwS3t1GJwn", id);
 }
+
+// ============================================================================
+// Multi-Level BOM Explosion & Cost Calculations
+// ============================================================================
+
+export interface BOMLineItem {
+  id: string;
+  name: string;
+  productId: string;
+  productName: string;
+  quantity: number;
+  unitCost: number;
+  totalCost: number;
+  level: number;
+  parentBOMId?: string;
+}
+
+export interface BOMHierarchy {
+  bomId: string;
+  bomName: string;
+  productName: string;
+  totalCost: number;
+  level: number;
+  lines: BOMLineItem[];
+  subBOMs?: BOMHierarchy[];
+}
+
+/**
+ * Get BOM with all its lines
+ */
+export async function getBOMWithLines(bomId: string) {
+  const { rows } = await sqlQuery(BASE_ID, `
+    SELECT 
+      b."__id" as "bom_id",
+      b."BOM" as "bom_name",
+      b."Total_Material_Cost" as "total_cost",
+      b."Status" as "status",
+      bl."__id" as "line_id",
+      bl."Product" as "product_json",
+      bl."Quantity" as "quantity",
+      bl."Unit_Cost" as "unit_cost",
+      bl."Total_Cost" as "line_total_cost"
+    FROM "bseTIY0IrZr61kt6u5E"."BOM" b
+    LEFT JOIN "bseTIY0IrZr61kt6u5E"."BOM_Lines" bl ON b."__id" = bl."__fk_fldAxfVf6D1pCuq0oDh"
+    WHERE b."__id" = '${bomId}'
+    ORDER BY bl."Quantity" DESC
+  `);
+  
+  return {
+    bom: rows[0] ? {
+      id: rows[0].bom_id as string,
+      name: rows[0].bom_name as string,
+      totalCost: Number(rows[0].total_cost || 0),
+      status: rows[0].status as string,
+    } : null,
+    lines: rows
+      .filter(row => row.line_id)
+      .map(row => ({
+        id: row.line_id as string,
+        productName: safeParseJson(row.product_json)?.title || "",
+        quantity: Number(row.quantity || 0),
+        unitCost: Number(row.unit_cost || 0),
+        totalCost: Number(row.line_total_cost || 0),
+      })),
+  };
+}
+
+/**
+ * Get all BOMs for a product
+ */
+export async function getBOMsByProduct(productId: string) {
+  const { rows } = await sqlQuery(BASE_ID, `
+    SELECT "__id", "BOM" as "name", "Version" as "version", "Status" as "status", "Total_Material_Cost" as "total_cost"
+    FROM "bseTIY0IrZr61kt6u5E"."BOM"
+    WHERE "__fk_fldcKWcxXFLKHBkqJxT" = '${productId}' OR "Product" LIKE '%${productId}%'
+    ORDER BY "Version" DESC
+    LIMIT 100
+  `);
+  
+  return rows.map(row => ({
+    id: row.__id as string,
+    name: row.name as string,
+    version: row.version as string,
+    status: row.status as string,
+    totalCost: Number(row.total_cost || 0),
+  }));
+}
+
+/**
+ * Calculate total cost for a BOM including all levels
+ */
+export async function calculateBOMTotalCost(bomId: string): Promise<number> {
+  const { rows } = await sqlQuery(BASE_ID, `
+    SELECT COALESCE(SUM(CAST("Total_Cost" AS numeric)), 0) as "total"
+    FROM "bseTIY0IrZr61kt6u5E"."BOM_Lines"
+    WHERE "__fk_fldAxfVf6D1pCuq0oDh" = '${bomId}'
+  `);
+  
+  return Number(rows[0]?.total || 0);
+}
+
+/**
+ * Explode BOM into all raw materials (flattened view)
+ */
+export async function exploseBOM(bomId: string, quantity: number = 1, level: number = 0, visitedBOMs: Set<string> = new Set()): Promise<BOMLineItem[]> {
+  // Prevent circular references
+  if (visitedBOMs.has(bomId) || level > 5) {
+    return [];
+  }
+  
+  visitedBOMs.add(bomId);
+  
+  const { rows } = await sqlQuery(BASE_ID, `
+    SELECT 
+      bl."__id" as "line_id",
+      bl."Product" as "product_json",
+      bl."Quantity" as "qty_per_unit",
+      bl."Unit_Cost" as "unit_cost",
+      bl."Name" as "line_name",
+      p."__id" as "product_id",
+      p."Name" as "product_name"
+    FROM "bseTIY0IrZr61kt6u5E"."BOM_Lines" bl
+    LEFT JOIN "bseTIY0IrZr61kt6u5E"."Products" p ON p."__id" = bl."__fk_fldTHdnKDwuPEJzAFkf"
+    WHERE bl."__fk_fldAxfVf6D1pCuq0oDh" = '${bomId}'
+    LIMIT 500
+  `);
+  
+  const explosedItems: BOMLineItem[] = [];
+  
+  for (const row of rows) {
+    const qtyForThisLevel = Number(row.qty_per_unit || 0) * quantity;
+    const unitCost = Number(row.unit_cost || 0);
+    
+    explosedItems.push({
+      id: row.line_id as string,
+      name: row.line_name as string,
+      productId: row.product_id as string,
+      productName: row.product_name as string || safeParseJson(row.product_json)?.title || "",
+      quantity: qtyForThisLevel,
+      unitCost: unitCost,
+      totalCost: qtyForThisLevel * unitCost,
+      level: level,
+      parentBOMId: bomId,
+    });
+  }
+  
+  return explosedItems;
+}
+
+/**
+ * Create raw material lines for Manufacturing Order from BOM
+ */
+export async function createMORawMaterialsFromBOM(moId: string, bomId: string, moQuantity: number) {
+  try {
+    // Get exploded BOM items
+    const explosedItems = await exploseBOM(bomId, moQuantity);
+    
+    // Get BOM lines to link them
+    const { rows: bomLineRows } = await sqlQuery(BASE_ID, `
+      SELECT "__id", "Product" as "product_json"
+      FROM "bseTIY0IrZr61kt6u5E"."BOM_Lines"
+      WHERE "__fk_fldAxfVf6D1pCuq0oDh" = '${bomId}'
+    `);
+    
+    // Create MO Raw Material records for each item
+    const createdRecords = [];
+    for (const item of explosedItems) {
+      // Find matching BOM line
+      const matchingBOMLine = bomLineRows.find(
+        r => safeParseJson(r.product_json)?.id === item.productId
+      );
+      
+      const record = await createRecord("tbl0aq09fCJXpdox9aT", {
+        fldsokXZdzYBr5wKVvh: moId, // MO link
+        fldFtiECtVOujmdbCiu: item.quantity, // Quantity
+        fldIOQj0dOj3LgxOPVg: item.productId, // Product
+        ...(matchingBOMLine ? { fldQwhRLMtk5G1pTtnP: matchingBOMLine.__id } : {}), // BOM Line
+      });
+      createdRecords.push(record);
+    }
+    
+    return { success: true, count: createdRecords.length, records: createdRecords };
+  } catch (error) {
+    console.error("Error creating MO raw materials:", error);
+    return { success: false, error: String(error), count: 0 };
+  }
+}
+
+/**
+ * Get all raw materials for a Manufacturing Order
+ */
+export async function getMORawMaterials(moId: string) {
+  const { rows } = await sqlQuery(BASE_ID, `
+    SELECT 
+      mrm."__id" as "id",
+      mrm."Quantity" as "quantity",
+      mrm."Consume_Qty" as "consume_qty",
+      p."__id" as "product_id",
+      p."Name" as "product_name",
+      p."Unit_Cost" as "product_cost",
+      bl."__id" as "bom_line_id",
+      bl."Name" as "bom_line_name"
+    FROM "bseTIY0IrZr61kt6u5E"."MO_Raw_Material" mrm
+    LEFT JOIN "bseTIY0IrZr61kt6u5E"."Products" p ON p."__id" = mrm."__fk_fldqRPhdzYBbKShNsEg"
+    LEFT JOIN "bseTIY0IrZr61kt6u5E"."BOM_Lines" bl ON bl."__id" = mrm."__fk_fldJTI7ub6KKVU0FrjM"
+    WHERE mrm."__fk_fldsokXZdzYBr5wKVvh" = '${moId}'
+    ORDER BY mrm."__id" DESC
+    LIMIT 500
+  `);
+  
+  return rows.map(row => ({
+    id: row.id as string,
+    quantity: Number(row.quantity || 0),
+    consumeQty: Number(row.consume_qty || 0),
+    productId: row.product_id as string,
+    productName: row.product_name as string,
+    productCost: Number(row.product_cost || 0),
+    bomLineId: row.bom_line_id as string || null,
+    bomLineName: row.bom_line_name as string,
+  }));
+}
+
+/**
+ * Calculate total raw material cost for a Manufacturing Order
+ */
+export async function calculateMORawMaterialCost(moId: string): Promise<number> {
+  const { rows } = await sqlQuery(BASE_ID, `
+    SELECT COALESCE(SUM(CAST("Quantity" AS numeric) * CAST("Unit_Cost" AS numeric)), 0) as "total"
+    FROM "bseTIY0IrZr61kt6u5E"."MO_Raw_Material" mrm
+    LEFT JOIN "bseTIY0IrZr61kt6u5E"."Products" p ON p."__id" = mrm."__fk_fldqRPhdzYBbKShNsEg"
+    WHERE mrm."__fk_fldsokXZdzYBr5wKVvh" = '${moId}'
+  `);
+  
+  return Number(rows[0]?.total || 0);
+}
+
+/**
+ * Detect circular references in BOM hierarchy
+ */
+export async function checkBOMCircularReference(bomId: string, parentBomId?: string): Promise<{ hasCircular: boolean; path: string[] }> {
+  const visitedBOMs = new Set<string>();
+  const path: string[] = [bomId];
+  
+  async function traverse(currentBomId: string): Promise<boolean> {
+    if (visitedBOMs.has(currentBomId)) {
+      return true; // Circular reference found
+    }
+    
+    visitedBOMs.add(currentBomId);
+    
+    const { rows } = await sqlQuery(BASE_ID, `
+      SELECT DISTINCT "__fk_fldAxfVf6D1pCuq0oDh" as "parent_bom"
+      FROM "bseTIY0IrZr61kt6u5E"."BOM_Lines"
+      WHERE "__fk_fldAxfVf6D1pCuq0oDh" = '${currentBomId}'
+      LIMIT 50
+    `);
+    
+    for (const row of rows) {
+      if (row.parent_bom) {
+        path.push(row.parent_bom as string);
+        if (await traverse(row.parent_bom as string)) {
+          return true;
+        }
+        path.pop();
+      }
+    }
+    
+    return false;
+  }
+  
+  const hasCircular = await traverse(bomId);
+  return { hasCircular, path };
+}
+
+/**
+ * Get manufacturing order with cost summary
+ */
+export async function getManufacturingOrderWithCosts(moId: string) {
+  const [moQuery, rawMaterialCost] = await Promise.all([
+    sqlQuery(BASE_ID, `
+      SELECT 
+        "__id", "MO_Reference", "Date", "Status", "Quantity", "Finished_Qty",
+        "Product" as "product_json", "BOM" as "bom_json"
+      FROM "bseTIY0IrZr61kt6u5E"."MO"
+      WHERE "__id" = '${moId}'
+    `),
+    calculateMORawMaterialCost(moId),
+  ]);
+  
+  const moRow = moQuery.rows[0];
+  if (!moRow) return null;
+  
+  return {
+    id: moRow.__id as string,
+    reference: moRow.MO_Reference as string,
+    date: moRow.Date as string,
+    status: moRow.Status as string,
+    quantity: Number(moRow.Quantity || 0),
+    finishedQty: Number(moRow.Finished_Qty || 0),
+    productName: safeParseJson(moRow.product_json)?.title || "",
+    bomName: safeParseJson(moRow.bom_json)?.title || "",
+    rawMaterialCost: rawMaterialCost,
+    costPerUnit: rawMaterialCost / (Number(moRow.Quantity || 1)),
+  };
+}
