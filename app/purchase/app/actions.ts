@@ -2,7 +2,7 @@
 
 import { sqlQuery, createRecord, createRecords, safeParseJson } from "@/lib/teable";
 
-const BASE_ID = "bseTIY0IrZr61kt6u5E";
+const BASE_ID = process.env.BASE_ID || "bseTIY0IrZr61kt6u5E";
 
 // Table IDs
 const PURCHASE_ORDERS_TABLE = "tblcfnWU8Vb7dNtJEZo";
@@ -67,7 +67,7 @@ export async function getVendors(): Promise<Vendor[]> {
   const { rows } = await sqlQuery(
     BASE_ID,
     `SELECT "__id", "Naem", "Email", "Phone" 
-     FROM "bseTIY0IrZr61kt6u5E"."Partners" 
+     FROM "${BASE_ID}"."Partners" 
      WHERE "Type" = 'Vendor'
      ORDER BY "Naem" 
      LIMIT 200`
@@ -85,7 +85,7 @@ export async function getLocations(): Promise<Location[]> {
   const { rows } = await sqlQuery(
     BASE_ID,
     `SELECT "__id", "Code", "Description" 
-     FROM "bseTIY0IrZr61kt6u5E"."Locations" 
+     FROM "${BASE_ID}"."Locations" 
      WHERE "Status" = 'Active'
      ORDER BY "Code" 
      LIMIT 200`
@@ -103,7 +103,7 @@ export async function getProducts(): Promise<Product[]> {
   const { rows } = await sqlQuery(
     BASE_ID,
     `SELECT "__id", "SKU", "Name", "Cost"
-     FROM "bseTIY0IrZr61kt6u5E"."Products"
+     FROM "${BASE_ID}"."Products"
      ORDER BY "SKU" 
      LIMIT 500`
   );
@@ -121,7 +121,7 @@ export async function getUnits(): Promise<Unit[]> {
   const { rows } = await sqlQuery(
     BASE_ID,
     `SELECT "__id", "Name", "UOM" 
-     FROM "bseTIY0IrZr61kt6u5E"."Units_of_Measure" 
+     FROM "${BASE_ID}"."Units_of_Measure" 
      ORDER BY "Name" 
      LIMIT 100`
   );
@@ -189,7 +189,7 @@ export async function createPurchaseOrder(
     // Get the PO Reference from the created record
     const { rows } = await sqlQuery(
       BASE_ID,
-      `SELECT "ID" FROM "bseTIY0IrZr61kt6u5E"."Purchase_Orders" WHERE "__id" = '${poId}' LIMIT 1`
+      `SELECT "ID" FROM "${BASE_ID}"."Purchase_Orders" WHERE "__id" = '${poId}' LIMIT 1`
     );
 
     const poReference = rows[0]?.PO_Reference as string || poId;

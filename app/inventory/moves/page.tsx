@@ -72,17 +72,17 @@ export default function StockMovesPage() {
   ];
 
   const handleAdd = () => {
-    // setEditingOrder(null);
-    // setFormData({
-    //   orderDate: toISODateString(new Date()),
-    //   deliveryDate: toISODateString(new Date()),
-    //   status: "Draft",
-    //   customerId: "",
-    // });
-    // setIsDialogOpen(true);
+    setEditingOrder(null);
+    setFormData({
+      orderDate: toISODateString(new Date()),
+      deliveryDate: toISODateString(new Date()),
+      status: "Draft",
+      customerId: "",
+    });
+    setIsDialogOpen(true);
 
     // Redirect to Haipter link for creating sale order
-    window.open("https://teable-zervi-u34072.vm.elestio.app/base/bseTIY0IrZr61kt6u5E/app/appzewSTJbezZbqoNoi", "_blank");
+    // window.open("https://teable-zervi-u34072.vm.elestio.app/base/bseTIY0IrZr61kt6u5E/app/appzewSTJbezZbqoNoi", "_blank");
   };
 
   if (isLoading) {

@@ -2,7 +2,7 @@
 
 import { sqlQuery, createRecord } from "@/lib/teable";
 
-const BASE_ID = "bseTIY0IrZr61kt6u5E";
+const BASE_ID = process.env.BASE_ID || "bseTIY0IrZr61kt6u5E";
 
 // Table IDs
 const SALES_ORDERS_TABLE = "tblcgaHqcge0NObcHGF";
@@ -38,7 +38,7 @@ export interface UnitOfMeasure {
 export async function getPartners(): Promise<Partner[]> {
   const { rows } = await sqlQuery(
     BASE_ID,
-    `SELECT "__id", "Naem" FROM "bseTIY0IrZr61kt6u5E"."Partners" WHERE "Naem" IS NOT NULL ORDER BY "Naem" LIMIT 500`
+    `SELECT "__id", "Naem" FROM "${BASE_ID}"."Partners" WHERE "Naem" IS NOT NULL ORDER BY "Naem" LIMIT 500`
   );
   return rows.map((row) => ({
     id: row.__id as string,
@@ -49,7 +49,7 @@ export async function getPartners(): Promise<Partner[]> {
 export async function getCustomerPOs(): Promise<CustomerPO[]> {
   const { rows } = await sqlQuery(
     BASE_ID,
-    `SELECT "__id", "Label" FROM "bseTIY0IrZr61kt6u5E"."Customer_PO" WHERE "Label" IS NOT NULL ORDER BY "Label" LIMIT 500`
+    `SELECT "__id", "Label" FROM "${BASE_ID}"."Customer_PO" WHERE "Label" IS NOT NULL ORDER BY "Label" LIMIT 500`
   );
   return rows.map((row) => ({
     id: row.__id as string,
@@ -60,7 +60,7 @@ export async function getCustomerPOs(): Promise<CustomerPO[]> {
 export async function getLocations(): Promise<Location[]> {
   const { rows } = await sqlQuery(
     BASE_ID,
-    `SELECT "__id", "Code" FROM "bseTIY0IrZr61kt6u5E"."Locations" WHERE "Code" IS NOT NULL ORDER BY "Code" LIMIT 500`
+    `SELECT "__id", "Code" FROM "${BASE_ID}"."Locations" WHERE "Code" IS NOT NULL ORDER BY "Code" LIMIT 500`
   );
   return rows.map((row) => ({
     id: row.__id as string,
@@ -71,7 +71,7 @@ export async function getLocations(): Promise<Location[]> {
 export async function getProducts(): Promise<Product[]> {
   const { rows } = await sqlQuery(
     BASE_ID,
-    `SELECT "__id", "SKU", "Name", "Sale_Price" FROM "bseTIY0IrZr61kt6u5E"."Products" WHERE "SKU" IS NOT NULL ORDER BY "SKU" LIMIT 1000`
+    `SELECT "__id", "SKU", "Name", "Sale_Price" FROM "${BASE_ID}"."Products" WHERE "SKU" IS NOT NULL ORDER BY "SKU" LIMIT 1000`
   );
   return rows.map((row) => ({
     id: row.__id as string,
@@ -84,7 +84,7 @@ export async function getProducts(): Promise<Product[]> {
 export async function getUnitsOfMeasure(): Promise<UnitOfMeasure[]> {
   const { rows } = await sqlQuery(
     BASE_ID,
-    `SELECT "__id", "Name" FROM "bseTIY0IrZr61kt6u5E"."Units_of_Measure" WHERE "Name" IS NOT NULL ORDER BY "Name" LIMIT 100`
+    `SELECT "__id", "Name" FROM "${BASE_ID}"."Units_of_Measure" WHERE "Name" IS NOT NULL ORDER BY "Name" LIMIT 100`
   );
   return rows.map((row) => ({
     id: row.__id as string,
@@ -176,7 +176,7 @@ export async function createSalesOrder(
     // Get the SO Reference (Naem field is auto-generated formula: "SO-{ID}")
     const { rows } = await sqlQuery(
       BASE_ID,
-      `SELECT "Naem" FROM "bseTIY0IrZr61kt6u5E"."Sales_Orders" WHERE "__id" = '${salesOrderId}' LIMIT 1`
+      `SELECT "Naem" FROM "${BASE_ID}"."Sales_Orders" WHERE "__id" = '${salesOrderId}' LIMIT 1`
     );
 
     const soReference = rows[0]?.Naem as string || `SO-${salesOrderId}`;

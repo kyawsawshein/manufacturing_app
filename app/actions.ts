@@ -2,7 +2,7 @@
 
 import { sqlQuery, createRecord, updateRecord, deleteRecord, safeParseJson } from "@/lib/teable";
 
-const BASE_ID = "bseTIY0IrZr61kt6u5E";
+const BASE_ID = process.env.BASE_ID;
 
 // ============================================================================
 // Dashboard Stats
@@ -10,12 +10,12 @@ const BASE_ID = "bseTIY0IrZr61kt6u5E";
 
 export async function getDashboardStats() {
   const [employees, departments, products, purchaseOrders, salesOrders, manufacturingOrders] = await Promise.all([
-    sqlQuery(BASE_ID, `SELECT COUNT(*) as "count" FROM "bseTIY0IrZr61kt6u5E"."Employees" WHERE "Status" = 'Active'`),
-    sqlQuery(BASE_ID, `SELECT COUNT(*) as "count" FROM "bseTIY0IrZr61kt6u5E"."Departments" WHERE "Status" = 'Active'`),
-    sqlQuery(BASE_ID, `SELECT COUNT(*) as "count" FROM "bseTIY0IrZr61kt6u5E"."Products"`),
-    sqlQuery(BASE_ID, `SELECT COUNT(*) as "count", COALESCE(SUM(CAST("Total_Amount" AS numeric)), 0) as "total" FROM "bseTIY0IrZr61kt6u5E"."Purchase_Orders" WHERE "Status" != 'Cancelled'`),
-    sqlQuery(BASE_ID, `SELECT COUNT(*) as "count", COALESCE(SUM(CAST("Total_Amount" AS numeric)), 0) as "total" FROM "bseTIY0IrZr61kt6u5E"."Sales_Orders" WHERE "Status" != 'Cancelled'`),
-    sqlQuery(BASE_ID, `SELECT COUNT(*) as "count" FROM "bseTIY0IrZr61kt6u5E"."MO" WHERE "Status" NOT IN ('Done', 'Cancel')`),
+    sqlQuery(BASE_ID, `SELECT COUNT(*) as "count" FROM "${BASE_ID}"."Employees" WHERE "Status" = 'Active'`),
+    sqlQuery(BASE_ID, `SELECT COUNT(*) as "count" FROM "${BASE_ID}"."Departments" WHERE "Status" = 'Active'`),
+    sqlQuery(BASE_ID, `SELECT COUNT(*) as "count" FROM "${BASE_ID}"."Products"`),
+    sqlQuery(BASE_ID, `SELECT COUNT(*) as "count", COALESCE(SUM(CAST("Total_Amount" AS numeric)), 0) as "total" FROM "${BASE_ID}"."Purchase_Orders" WHERE "Status" != 'Cancelled'`),
+    sqlQuery(BASE_ID, `SELECT COUNT(*) as "count", COALESCE(SUM(CAST("Total_Amount" AS numeric)), 0) as "total" FROM "${BASE_ID}"."Sales_Orders" WHERE "Status" != 'Cancelled'`),
+    sqlQuery(BASE_ID, `SELECT COUNT(*) as "count" FROM "${BASE_ID}"."MO" WHERE "Status" NOT IN ('Done', 'Cancel')`),
   ]);
 
   return {
@@ -37,7 +37,7 @@ export async function getDashboardStats() {
 export async function getEmployees() {
   const { rows } = await sqlQuery(BASE_ID, `
     SELECT "__id", "Employee_ID", "Name", "Contact", "Position", "Status", "Department"
-    FROM "bseTIY0IrZr61kt6u5E"."Employees"
+    FROM "${BASE_ID}"."Employees"
     ORDER BY "Name" ASC
     LIMIT 500
   `);
@@ -95,7 +95,7 @@ export async function deleteEmployee(id: string) {
 export async function getDepartments() {
   const { rows } = await sqlQuery(BASE_ID, `
     SELECT "__id", "Code", "Name", "Location", "Description", "Status", "Manager"
-    FROM "bseTIY0IrZr61kt6u5E"."Departments"
+    FROM "${BASE_ID}"."Departments"
     ORDER BY "Name" ASC
     LIMIT 200
   `);
@@ -153,7 +153,7 @@ export async function deleteDepartment(id: string) {
 export async function getProducts() {
   const { rows } = await sqlQuery(BASE_ID, `
     SELECT "__id", "SKU", "Name", "Description", "Cost", "Sale_Price", "Onhand", "Available_Qty", "Reorder_Point", "Barcode"
-    FROM "bseTIY0IrZr61kt6u5E"."Products"
+    FROM "${BASE_ID}"."Products"
     ORDER BY "Name" ASC
     LIMIT 500
   `);
@@ -218,7 +218,7 @@ export async function deleteProduct(id: string) {
 export async function getStockOnHand() {
   const { rows } = await sqlQuery(BASE_ID, `
     SELECT "__id", "Quantity", "Qty", "Available_Quantity", "Reserved_Quantity", "Status", "Product", "Location"
-    FROM "bseTIY0IrZr61kt6u5E"."Inventory_Quantities"
+    FROM "${BASE_ID}"."Inventory_Quantities"
     ORDER BY "Quantity" DESC
     LIMIT 500
   `);
@@ -237,7 +237,7 @@ export async function getStockOnHand() {
 export async function getStockMoves() {
   const { rows } = await sqlQuery(BASE_ID, `
     SELECT "__id", "Quantity", "Date", "Status", "Batch_Number", "Source_Location", "Destination_Location", "Operation_Type"
-    FROM "bseTIY0IrZr61kt6u5E"."Stock_Movements"
+    FROM "${BASE_ID}"."Stock_Movements"
     ORDER BY "Date" DESC
     LIMIT 500
   `);
@@ -256,7 +256,7 @@ export async function getStockMoves() {
 export async function getLocations() {
   const { rows } = await sqlQuery(BASE_ID, `
     SELECT "__id", "Location_Code", "Location_Name", "Status", "Warehouse"
-    FROM "bseTIY0IrZr61kt6u5E"."Locations_2"
+    FROM "${BASE_ID}"."Locations_2"
     ORDER BY "Location_Code" ASC
     LIMIT 500
   `);
@@ -272,7 +272,7 @@ export async function getLocations() {
 export async function getWarehouses() {
   const { rows } = await sqlQuery(BASE_ID, `
     SELECT "__id", "Label", "Company", "Status"
-    FROM "bseTIY0IrZr61kt6u5E"."New_tablewTapiN75XW"
+    FROM "${BASE_ID}"."New_tablewTapiN75XW"
     ORDER BY "Label" ASC
     LIMIT 100
   `);
@@ -291,7 +291,7 @@ export async function getWarehouses() {
 export async function getPurchaseOrders() {
   const { rows } = await sqlQuery(BASE_ID, `
     SELECT "__id", "PO_Reference", "Order_Date", "Expected_Delivery", "Status", "Total_Amount", "Vendor"
-    FROM "bseTIY0IrZr61kt6u5E"."Purchase_Orders"
+    FROM "${BASE_ID}"."Purchase_Orders"
     ORDER BY "Order_Date" DESC
     LIMIT 500
   `);
@@ -343,7 +343,7 @@ export async function deletePurchaseOrder(id: string) {
 export async function getSalesOrders() {
   const { rows } = await sqlQuery(BASE_ID, `
     SELECT "__id", "Name", "Order_Date", "Delivery_Date", "Status", "Total_Amount", "Customer"
-    FROM "bseTIY0IrZr61kt6u5E"."Sales_Orders"
+    FROM "${BASE_ID}"."Sales_Orders"
     ORDER BY "Order_Date" DESC
     LIMIT 500
   `);
@@ -395,7 +395,7 @@ export async function deleteSalesOrder(id: string) {
 export async function getManufacturingOrders() {
   const { rows } = await sqlQuery(BASE_ID, `
     SELECT "__id", "MO_Reference", "Date", "Start_Date", "End_Date", "Status", "Quantity", "Finished_Qty", "Finished_Product", "BOM"
-    FROM "bseTIY0IrZr61kt6u5E"."MO"
+    FROM "${BASE_ID}"."MO"
     ORDER BY "Date" DESC
     LIMIT 500
   `);
@@ -460,7 +460,7 @@ export async function deleteManufacturingOrder(id: string) {
 export async function getBOMs() {
   const { rows } = await sqlQuery(BASE_ID, `
     SELECT "__id", "BOM", "Version", "Quantity", "Status", "Effective_Date", "Reference", "Product"
-    FROM "bseTIY0IrZr61kt6u5E"."BOM_Headers"
+    FROM "${BASE_ID}"."BOM_Headers"
     ORDER BY "BOM" ASC
     LIMIT 500
   `);
@@ -519,7 +519,7 @@ export async function deleteBOM(id: string) {
 export async function getPartners(type?: string) {
   let query = `
     SELECT "__id", "Name", "Email", "Phone", "Type", "Country", "Payment_Terms", "Credit_Limit", "Tax_ID", "Website"
-    FROM "bseTIY0IrZr61kt6u5E"."Partners"
+    FROM "${BASE_ID}"."Partners"
   `;
   if (type) {
     query += ` WHERE "Type" = '${type}'`;
@@ -634,8 +634,8 @@ export async function getBOMWithLines(bomId: string) {
       bl."Quantity" as "quantity",
       bl."Unit_Cost" as "unit_cost",
       bl."Total_Cost" as "line_total_cost"
-    FROM "bseTIY0IrZr61kt6u5E"."BOM" b
-    LEFT JOIN "bseTIY0IrZr61kt6u5E"."BOM_Lines" bl ON b."__id" = bl."__fk_fldAxfVf6D1pCuq0oDh"
+    FROM "${BASE_ID}"."BOM" b
+    LEFT JOIN "${BASE_ID}"."BOM_Lines" bl ON b."__id" = bl."__fk_fldAxfVf6D1pCuq0oDh"
     WHERE b."__id" = '${bomId}'
     ORDER BY bl."Quantity" DESC
   `);
@@ -665,7 +665,7 @@ export async function getBOMWithLines(bomId: string) {
 export async function getBOMsByProduct(productId: string) {
   const { rows } = await sqlQuery(BASE_ID, `
     SELECT "__id", "BOM" as "name", "Version" as "version", "Status" as "status", "Total_Material_Cost" as "total_cost"
-    FROM "bseTIY0IrZr61kt6u5E"."BOM"
+    FROM "${BASE_ID}"."BOM"
     WHERE "__fk_fldcKWcxXFLKHBkqJxT" = '${productId}' OR "Product" LIKE '%${productId}%'
     ORDER BY "Version" DESC
     LIMIT 100
@@ -686,7 +686,7 @@ export async function getBOMsByProduct(productId: string) {
 export async function calculateBOMTotalCost(bomId: string): Promise<number> {
   const { rows } = await sqlQuery(BASE_ID, `
     SELECT COALESCE(SUM(CAST("Total_Cost" AS numeric)), 0) as "total"
-    FROM "bseTIY0IrZr61kt6u5E"."BOM_Lines"
+    FROM "${BASE_ID}"."BOM_Lines"
     WHERE "__fk_fldAxfVf6D1pCuq0oDh" = '${bomId}'
   `);
   
@@ -713,8 +713,8 @@ export async function exploseBOM(bomId: string, quantity: number = 1, level: num
       bl."Name" as "line_name",
       p."__id" as "product_id",
       p."Name" as "product_name"
-    FROM "bseTIY0IrZr61kt6u5E"."BOM_Lines" bl
-    LEFT JOIN "bseTIY0IrZr61kt6u5E"."Products" p ON p."__id" = bl."__fk_fldTHdnKDwuPEJzAFkf"
+    FROM "${BASE_ID}"."BOM_Lines" bl
+    LEFT JOIN "${BASE_ID}"."Products" p ON p."__id" = bl."__fk_fldTHdnKDwuPEJzAFkf"
     WHERE bl."__fk_fldAxfVf6D1pCuq0oDh" = '${bomId}'
     LIMIT 500
   `);
@@ -752,7 +752,7 @@ export async function createMORawMaterialsFromBOM(moId: string, bomId: string, m
     // Get BOM lines to link them
     const { rows: bomLineRows } = await sqlQuery(BASE_ID, `
       SELECT "__id", "Product" as "product_json"
-      FROM "bseTIY0IrZr61kt6u5E"."BOM_Lines"
+      FROM "${BASE_ID}"."BOM_Lines"
       WHERE "__fk_fldAxfVf6D1pCuq0oDh" = '${bomId}'
     `);
     
@@ -794,9 +794,9 @@ export async function getMORawMaterials(moId: string) {
       p."Unit_Cost" as "product_cost",
       bl."__id" as "bom_line_id",
       bl."Name" as "bom_line_name"
-    FROM "bseTIY0IrZr61kt6u5E"."MO_Raw_Material" mrm
-    LEFT JOIN "bseTIY0IrZr61kt6u5E"."Products" p ON p."__id" = mrm."__fk_fldqRPhdzYBbKShNsEg"
-    LEFT JOIN "bseTIY0IrZr61kt6u5E"."BOM_Lines" bl ON bl."__id" = mrm."__fk_fldJTI7ub6KKVU0FrjM"
+    FROM "${BASE_ID}"."MO_Raw_Material" mrm
+    LEFT JOIN "${BASE_ID}"."Products" p ON p."__id" = mrm."__fk_fldqRPhdzYBbKShNsEg"
+    LEFT JOIN "${BASE_ID}"."BOM_Lines" bl ON bl."__id" = mrm."__fk_fldJTI7ub6KKVU0FrjM"
     WHERE mrm."__fk_fldsokXZdzYBr5wKVvh" = '${moId}'
     ORDER BY mrm."__id" DESC
     LIMIT 500
@@ -820,8 +820,8 @@ export async function getMORawMaterials(moId: string) {
 export async function calculateMORawMaterialCost(moId: string): Promise<number> {
   const { rows } = await sqlQuery(BASE_ID, `
     SELECT COALESCE(SUM(CAST("Quantity" AS numeric) * CAST("Unit_Cost" AS numeric)), 0) as "total"
-    FROM "bseTIY0IrZr61kt6u5E"."MO_Raw_Material" mrm
-    LEFT JOIN "bseTIY0IrZr61kt6u5E"."Products" p ON p."__id" = mrm."__fk_fldqRPhdzYBbKShNsEg"
+    FROM "${BASE_ID}"."MO_Raw_Material" mrm
+    LEFT JOIN "${BASE_ID}"."Products" p ON p."__id" = mrm."__fk_fldqRPhdzYBbKShNsEg"
     WHERE mrm."__fk_fldsokXZdzYBr5wKVvh" = '${moId}'
   `);
   
@@ -844,7 +844,7 @@ export async function checkBOMCircularReference(bomId: string, parentBomId?: str
     
     const { rows } = await sqlQuery(BASE_ID, `
       SELECT DISTINCT "__fk_fldAxfVf6D1pCuq0oDh" as "parent_bom"
-      FROM "bseTIY0IrZr61kt6u5E"."BOM_Lines"
+      FROM "${BASE_ID}"."BOM_Lines"
       WHERE "__fk_fldAxfVf6D1pCuq0oDh" = '${currentBomId}'
       LIMIT 50
     `);
@@ -875,7 +875,7 @@ export async function getManufacturingOrderWithCosts(moId: string) {
       SELECT 
         "__id", "MO_Reference", "Date", "Status", "Quantity", "Finished_Qty",
         "Product" as "product_json", "BOM" as "bom_json"
-      FROM "bseTIY0IrZr61kt6u5E"."MO"
+      FROM "${BASE_ID}"."MO"
       WHERE "__id" = '${moId}'
     `),
     calculateMORawMaterialCost(moId),

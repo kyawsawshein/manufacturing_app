@@ -17,7 +17,6 @@ import type {
   IAttachmentNotifyResponse,
   IAttachmentCellValue,
 } from './teable.types';
-import "../temp.ts";
 
 // Re-export types for convenience
 export type * from './teable.types';
@@ -54,7 +53,11 @@ async function request<T>(endpoint: string, options: RequestOptions = {}): Promi
   const { baseUrl, token } = getConfig();
   const { method = 'GET', body, params } = options;
 
-  let url = `${baseUrl}/api${endpoint}`;
+  // Normalize URL to prevent double slashes or missing slashes
+  const cleanBaseUrl = baseUrl.endsWith('/') ? baseUrl.slice(0, -1) : baseUrl;
+  const cleanEndpoint = endpoint.startsWith('/') ? endpoint : `/${endpoint}`;
+  let url = `${cleanBaseUrl}${cleanEndpoint}`;
+
   if (params && Object.keys(params).length > 0) {
     const searchParams = new URLSearchParams();
     Object.entries(params).forEach(([key, value]) => {
@@ -185,7 +188,7 @@ export async function signAttachments<T extends { path: string; token: string; m
   attachments: T[]
 ): Promise<Array<{ path: string; token: string; presignedUrl: string }>> {
   if (!attachments || attachments.length === 0) return [];
-  
+
   const response = await request<{ attachments: { token: string; url: string }[] }>(
     `/base/${baseId}/sign-attachment-urls`,
     {
@@ -193,10 +196,10 @@ export async function signAttachments<T extends { path: string; token: string; m
       body: { attachments: attachments.map(att => ({ path: att.path, token: att.token, mimetype: att.mimetype })) },
     }
   );
-  
+
   // Create a map for O(1) lookup by token
   const urlMap = new Map(response.attachments.map(s => [s.token, s.url]));
-  
+
   return attachments.map(att => ({
     ...att,
     presignedUrl: urlMap.get(att.token) || '',
@@ -222,7 +225,7 @@ export async function createRecords(
   if (!Array.isArray(records) || records.length === 0) {
     throw new Error('Records must be a non-empty array');
   }
-  
+
   return request<ICreateRecordsResponse>(`/table/${tableId}/record`, {
     method: 'POST',
     body: {
@@ -346,7 +349,7 @@ export async function uploadAttachmentToRecord(
   file: Blob | { url: string }
 ): Promise<void> {
   const { baseUrl, token } = getConfig();
-  const url = `${baseUrl}/api/table/${tableId}/record/${recordId}/${fieldId}/uploadAttachment`;
+  const url = `${baseUrl}/table/${tableId}/record/${recordId}/${fieldId}/uploadAttachment`;
 
   const formData = new FormData();
   if ('url' in file) {
