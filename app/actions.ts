@@ -2,7 +2,7 @@
 
 import { sqlQuery, createRecord, updateRecord, deleteRecord, safeParseJson } from "@/lib/teable";
 
-const BASE_ID = process.env.BASE_ID;
+const BASE_ID = process.env.BASE_ID || "bsez0Y8svP1AV6SJyPa";
 
 // ============================================================================
 // Dashboard Stats
@@ -152,7 +152,7 @@ export async function deleteDepartment(id: string) {
 
 export async function getProducts() {
   const { rows } = await sqlQuery(BASE_ID, `
-    SELECT "__id", "SKU", "Name", "Description", "Cost", "Sale_Price", "Onhand", "Available_Qty", "Reorder_Point", "Barcode"
+    SELECT "__id", "SKU", "Name", "Cost", "Sale_Price", "Onhand", "Available_Qty", "Reorder_Point", "Barcode"
     FROM "${BASE_ID}"."Products"
     ORDER BY "Name" ASC
     LIMIT 500
@@ -161,7 +161,7 @@ export async function getProducts() {
     id: row.__id as string,
     sku: row.SKU as string,
     name: row.Name as string,
-    productCode: row.Description as string,
+    productCode: row.SKU as string,
     barcode: row.Barcode as string,
     cost: Number(row.Cost || 0),
     salePrice: Number(row.Sale_Price || 0),
@@ -217,14 +217,14 @@ export async function deleteProduct(id: string) {
 
 export async function getStockOnHand() {
   const { rows } = await sqlQuery(BASE_ID, `
-    SELECT "__id", "Quantity", "Qty", "Available_Quantity", "Reserved_Quantity", "Status", "Product", "Location"
-    FROM "${BASE_ID}"."Inventory_Quantities"
-    ORDER BY "Quantity" DESC
+    SELECT "__id", "Product", "Qty", "Available_Quantity", "Reserved_Quantity", "Status", "Product", "Location"
+    FROM "${BASE_ID}"."Stock_On_Hand"
+    ORDER BY "ID" DESC
     LIMIT 500
   `);
   return rows.map(row => ({
     id: row.__id as string,
-    name: row.Quantity as string,
+    name: row.Product as string,
     qty: Number(row.Qty || 0),
     availableQty: Number(row.Available_Quantity || 0),
     reservedQty: Number(row.Reserved_Quantity || 0),
@@ -236,14 +236,14 @@ export async function getStockOnHand() {
 
 export async function getStockMoves() {
   const { rows } = await sqlQuery(BASE_ID, `
-    SELECT "__id", "Quantity", "Date", "Status", "Batch_Number", "Source_Location", "Destination_Location", "Operation_Type"
+    SELECT "__id", "Qty", "Date", "Status", "Batch_Number", "Source_Location", "Destination_Location", "Operation_Type"
     FROM "${BASE_ID}"."Stock_Movements"
     ORDER BY "Date" DESC
     LIMIT 500
   `);
   return rows.map(row => ({
     id: row.__id as string,
-    name: row.Quantity as string,
+    name: row.Qty as string,
     date: row.Date as string,
     status: row.Status as string,
     batchNumber: row.Batch_Number as string,
@@ -255,14 +255,14 @@ export async function getStockMoves() {
 
 export async function getLocations() {
   const { rows } = await sqlQuery(BASE_ID, `
-    SELECT "__id", "Location_Code", "Location_Name", "Status", "Warehouse"
-    FROM "${BASE_ID}"."Locations_2"
-    ORDER BY "Location_Code" ASC
+    SELECT "__id", "Code", "Location_Name", "Status", "Warehouse"
+    FROM "${BASE_ID}"."Locations"
+    ORDER BY "ID" ASC
     LIMIT 500
   `);
   return rows.map(row => ({
     id: row.__id as string,
-    code: row.Location_Code as string,
+    code: row.Code as string,
     name: row.Location_Name as string,
     status: row.Status as string,
     warehouse: safeParseJson(row.Warehouse)?.title || "",
@@ -271,9 +271,9 @@ export async function getLocations() {
 
 export async function getWarehouses() {
   const { rows } = await sqlQuery(BASE_ID, `
-    SELECT "__id", "Label", "Company", "Status"
-    FROM "${BASE_ID}"."New_tablewTapiN75XW"
-    ORDER BY "Label" ASC
+    SELECT "__id", "Name", "Company", "Status"
+    FROM "${BASE_ID}"."Warehouse"
+    ORDER BY "ID" ASC
     LIMIT 100
   `);
   return rows.map(row => ({
@@ -394,14 +394,14 @@ export async function deleteSalesOrder(id: string) {
 
 export async function getManufacturingOrders() {
   const { rows } = await sqlQuery(BASE_ID, `
-    SELECT "__id", "MO_Reference", "Date", "Start_Date", "End_Date", "Status", "Quantity", "Finished_Qty", "Finished_Product", "BOM"
+    SELECT "__id", "Reference", "Date", "Start_Date", "End_Date", "Status", "Quantity", "Finished_Qty", "Finished_Goods", "BOM"
     FROM "${BASE_ID}"."MO"
     ORDER BY "Date" DESC
     LIMIT 500
   `);
   return rows.map(row => ({
     id: row.__id as string,
-    reference: row.MO_Reference as string,
+    reference: row.Reference as string,
     date: row.Date as string,
     startDate: row.Start_Date as string,
     endDate: row.End_Date as string,
@@ -460,7 +460,7 @@ export async function deleteManufacturingOrder(id: string) {
 export async function getBOMs() {
   const { rows } = await sqlQuery(BASE_ID, `
     SELECT "__id", "BOM", "Version", "Quantity", "Status", "Effective_Date", "Reference", "Product"
-    FROM "${BASE_ID}"."BOM_Headers"
+    FROM "${BASE_ID}"."BOM"
     ORDER BY "BOM" ASC
     LIMIT 500
   `);

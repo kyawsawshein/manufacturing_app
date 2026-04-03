@@ -55,8 +55,11 @@ async function request<T>(endpoint: string, options: RequestOptions = {}): Promi
 
   // Normalize URL to prevent double slashes or missing slashes
   const cleanBaseUrl = baseUrl.endsWith('/') ? baseUrl.slice(0, -1) : baseUrl;
+  console.log(`############### Teable API Request cleanBaseUrl: ${method} ${cleanBaseUrl}${endpoint}`);
   const cleanEndpoint = endpoint.startsWith('/') ? endpoint : `/${endpoint}`;
+  console.log(`############### Teable API Request cleanEndpoint: ${method} ${cleanBaseUrl}${cleanEndpoint}`);
   let url = `${cleanBaseUrl}${cleanEndpoint}`;
+  console.log(`############### Teable API Request url: ${method} ${url}`);
 
   if (params && Object.keys(params).length > 0) {
     const searchParams = new URLSearchParams();
@@ -70,7 +73,7 @@ async function request<T>(endpoint: string, options: RequestOptions = {}): Promi
       url += `?${queryString}`;
     }
   }
-
+  console.log(`############### Teable API Request: ${method} ${url}`);
   const response = await fetch(url, {
     method,
     headers: {
@@ -128,13 +131,35 @@ interface ISqlQueryResponse {
  *    FROM "bseXXX"."orders"`
  * );
  */
+
+// /api/base/{baseId}/sql-query
+
+
+// SELECT * FROM "bsez0Y8svP1AV6SJyPa"."Work_In_Progress_WIP" LIMIT 10
+// And the full API call:
+
+// // SQL Query API
+// const response = await fetch('https://app.teable.ai/api/base/bsez0Y8svP1AV6SJyPa/sql-query', {
+//   method: 'POST',
+//   headers: {
+//     'Content-Type': 'application/json',
+//     'Authorization': 'Bearer YOUR_ACCESS_TOKEN'
+//   },
+//   body: JSON.stringify({
+//     sql: 'SELECT * FROM "bsez0Y8svP1AV6SJyPa"."Work_In_Progress_WIP" LIMIT 10'
+//   })
+// });
+// https://app.teable.ai/api/base/bsez0Y8svP1AV6SJyPa/sql-query
+
 export async function sqlQuery(
   baseId: string,
   sql: string
 ): Promise<ISqlQueryResponse> {
+  console.log(`############### Teable API SQL Query:  ${baseId} , ${sql}`);
   return request<ISqlQueryResponse>(`/base/${baseId}/sql-query`, {
     method: 'POST',
     body: { sql },
+    // body: JSON.stringify({ sql })
   });
 }
 
