@@ -1,5 +1,5 @@
 import { getVendors, getLocations, getProducts } from "./actions";
-import { PurchaseOrderForm } from "@/components/purchase-order-form";
+import { PurchaseOrderForm } from "../components/purchase-order-form";
 import { FileText } from "lucide-react";
 
 export default async function PurchaseOrderPage() {

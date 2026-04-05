@@ -4,6 +4,7 @@ import { useEffect, useState, useTransition } from "react";
 import { DashboardLayout } from "@/components/dashboard/dashboard-layout";
 import { DataTable, type Column } from "@/components/dashboard/data-table";
 import { StatusBadge } from "@/components/dashboard/status-badge";
+import { MOCreationForm } from "../components/mo-creation-form";
 import {
   Dialog,
   DialogContent,
@@ -99,6 +100,7 @@ export default function ManufacturingOrdersPage() {
   const [boms, setBOMs] = useState<BOM[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [isFormDialogOpen, setIsFormDialogOpen] = useState(false);
   const [editingOrder, setEditingOrder] = useState<ManufacturingOrder | null>(null);
   const [selectedOrder, setSelectedOrder] = useState<ManufacturingOrder | null>(null);
   const [showDetailsDialog, setShowDetailsDialog] = useState(false);
@@ -258,16 +260,7 @@ export default function ManufacturingOrdersPage() {
   ];
 
   const handleAdd = () => {
-    setEditingOrder(null);
-    setFormData({
-      date: toISODateString(new Date()),
-      startDate: toISODateString(new Date()),
-      endDate: toISODateString(new Date()),
-      status: "Draft",
-      quantity: 1,
-      bomId: "",
-    });
-    setIsDialogOpen(true);
+    setIsFormDialogOpen(true);
   };
 
   const handleEdit = (order: ManufacturingOrder) => {
@@ -679,6 +672,22 @@ export default function ManufacturingOrdersPage() {
                 </TabsContent>
               </Tabs>
             )}
+          </DialogContent>
+        </Dialog>
+
+        <Dialog open={isFormDialogOpen} onOpenChange={setIsFormDialogOpen}>
+          <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle>Create Manufacturing Order</DialogTitle>
+            </DialogHeader>
+            <div className="py-4">
+              <MOCreationForm
+                onSuccess={() => {
+                  setIsFormDialogOpen(false);
+                  loadData();
+                }}
+              />
+            </div>
           </DialogContent>
         </Dialog>
       </div>

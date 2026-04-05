@@ -4,6 +4,7 @@ import { useEffect, useState, useTransition } from "react";
 import { DashboardLayout } from "@/components/dashboard/dashboard-layout";
 import { DataTable, type Column } from "@/components/dashboard/data-table";
 import { StatusBadge } from "@/components/dashboard/status-badge";
+import { BOMCreationForm } from "../components/bom-creation-form";
 import {
   Dialog,
   DialogContent,
@@ -24,6 +25,7 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Layers, Loader2, DollarSign } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+
 import {
   getBOMs,
   createBOM,
@@ -32,7 +34,7 @@ import {
   getBOMWithLines,
   calculateBOMTotalCost,
   checkBOMCircularReference,
-} from "@/app/actions";
+} from "../app/actions";
 
 interface BOM {
   id: string;
@@ -78,6 +80,7 @@ export default function BOMPage() {
   const [boms, setBOMs] = useState<BOM[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [isFormDialogOpen, setIsFormDialogOpen] = useState(false);
   const [editingBOM, setEditingBOM] = useState<BOM | null>(null);
   const [selectedBOM, setSelectedBOM] = useState<BOM | null>(null);
   const [showDetailsDialog, setShowDetailsDialog] = useState(false);
@@ -159,15 +162,7 @@ export default function BOMPage() {
   ];
 
   const handleAdd = () => {
-    setEditingBOM(null);
-    setFormData({
-      version: "1.0",
-      quantity: 1,
-      status: "Draft",
-      effectiveDate: toISODateString(new Date()),
-      reference: "",
-    });
-    setIsDialogOpen(true);
+    setIsFormDialogOpen(true);
   };
 
   const handleEdit = (bom: BOM) => {
@@ -387,6 +382,18 @@ export default function BOMPage() {
                 {editingBOM ? "Update" : "Create"}
               </Button>
             </DialogFooter>
+          </DialogContent>
+        </Dialog>
+
+        {/* BOM Creation Form Dialog */}
+        <Dialog open={isFormDialogOpen} onOpenChange={setIsFormDialogOpen}>
+          <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle>Create BOM</DialogTitle>
+            </DialogHeader>
+            <div className="py-4">
+              <BOMCreationForm />
+            </div>
           </DialogContent>
         </Dialog>
 

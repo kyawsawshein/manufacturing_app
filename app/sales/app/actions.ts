@@ -1,6 +1,6 @@
 "use server";
 
-import { sqlQuery, createRecord } from "@/lib/teable";
+import { sqlQuery, createRecord, updateRecord, deleteRecord, safeParseJson} from "@/lib/teable";
 
 const BASE_ID = process.env.BASE_ID || "bseTIY0IrZr61kt6u5E";
 
@@ -35,18 +35,52 @@ export interface UnitOfMeasure {
   name: string;
 }
 
-export async function getPartners(): Promise<Partner[]> {
-  const { rows } = await sqlQuery(
-    BASE_ID,
-    `SELECT "__id", "Naem" FROM "${BASE_ID}"."Partners" WHERE "Naem" IS NOT NULL ORDER BY "Naem" LIMIT 500`
-  );
-  return rows.map((row) => ({
+export async function getSalesOrders() {
+  const { rows } = await sqlQuery(BASE_ID, `
+    SELECT "__id", "Name", "Order_Date", "Delivery_Date", "Status", "Total_Amount", "Customer"
+    FROM "${BASE_ID}"."Sales_Orders"
+    ORDER BY "Order_Date" DESC
+    LIMIT 500
+  `);
+  return rows.map(row => ({
     id: row.__id as string,
-    name: row.Naem as string,
+    name: row.Name as string,
+    orderDate: row.Order_Date as string,
+    deliveryDate: row.Delivery_Date as string,
+    status: row.Status as string,
+    totalAmount: Number(row.Total_Amount || 0),
+    customer: safeParseJson(row.Customer)?.title || "",
   }));
 }
 
-export async function getCustomerPOs(): Promise<CustomerPO[]> {
+export async function updateSalesOrder(id: string, data: {
+  orderDate?: string;
+  deliveryDate?: string;
+  status?: string;
+}) {
+  const fields: Record<string, unknown> = {};
+  if (data.orderDate !== undefined) fields.fldXsIxa7eAgL9VuMXK = data.orderDate;
+  if (data.deliveryDate !== undefined) fields.fld47ona6fn0lPVXY3t = data.deliveryDate;
+  if (data.status !== undefined) fields.fld5vmAcv2IhusCGyX5 = data.status;
+  return updateRecord("tblcgaHqcge0NObcHGF", id, fields);
+}
+
+export async function deleteSalesOrder(id: string) {
+  return deleteRecord("tblcgaHqcge0NObcHGF", id);
+}
+
+export async function getPartners(): Promise<Partner[]> {
+  const { rows } = await sqlQuery(
+    BASE_ID,
+    `SELECT "__id", "Name" FROM "${BASE_ID}"."Partners" WHERE "Name" IS NOT NULL ORDER BY "Name" LIMIT 500`
+  );
+  return rows.map((row) => ({
+    id: row.__id as string,
+    name: row.Name as string,
+  }));
+}
+
+export async function getCustomerPO(): Promise<CustomerPO[]> {
   const { rows } = await sqlQuery(
     BASE_ID,
     `SELECT "__id", "Label" FROM "${BASE_ID}"."Customer_PO" WHERE "Label" IS NOT NULL ORDER BY "Label" LIMIT 500`
@@ -173,13 +207,13 @@ export async function createSalesOrder(
       await createRecord(SALES_ORDER_LINES_TABLE, lineFields);
     }
 
-    // Get the SO Reference (Naem field is auto-generated formula: "SO-{ID}")
+    // Get the SO Reference (Name field is auto-generated formula: "SO-{ID}")
     const { rows } = await sqlQuery(
       BASE_ID,
-      `SELECT "Naem" FROM "${BASE_ID}"."Sales_Orders" WHERE "__id" = '${salesOrderId}' LIMIT 1`
+      `SELECT "Name" FROM "${BASE_ID}"."Sales_Orders" WHERE "__id" = '${salesOrderId}' LIMIT 1`
     );
 
-    const soReference = rows[0]?.Naem as string || `SO-${salesOrderId}`;
+    const soReference = rows[0]?.Name as string || `SO-${salesOrderId}`;
 
     return {
       success: true,

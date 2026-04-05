@@ -15,18 +15,22 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2, Factory, Scissors, Package, DollarSign, Calendar, FileText } from "lucide-react";
-import type { Product, BOM, CostPreview as CostPreviewType } from "@/app/actions";
+import type { Product, BOM, CostPreview as CostPreviewType } from "../app/actions";
 import {
   getProducts,
   getBOMsByProduct,
   getAllBOMs,
   calculateCostPreview,
   createMO,
-} from "@/app/actions";
+} from "../app/actions";
 
 type MOType = "Production" | "Cutting";
 
-export function MOCreationForm() {
+interface MOCreationFormProps {
+  onSuccess?: () => void;
+}
+
+export function MOCreationForm({ onSuccess }: MOCreationFormProps) {
   const { toast } = useToast();
   const [isPending, startTransition] = useTransition();
 
@@ -201,6 +205,8 @@ export function MOCreationForm() {
         setOverheadCost(0);
         setReference("");
         setCostPreview(null);
+
+        onSuccess?.();
       } catch (error) {
         console.error("Failed to create MO:", error);
         toast({

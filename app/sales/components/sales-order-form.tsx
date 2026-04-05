@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
-import { SearchableSelect, type Option } from "@/components/searchable-select";
+import { SearchableSelect, type Option } from "../components/searchable-select";
 import { useToast } from "@/hooks/use-toast";
 import {
   createSalesOrder,
@@ -18,7 +18,7 @@ import {
   type Product,
   type UnitOfMeasure,
   type SalesOrderLineInput,
-} from "@/app/actions";
+} from "../app/actions";
 
 interface SalesOrderFormProps {
   partners: Partner[];
@@ -26,6 +26,7 @@ interface SalesOrderFormProps {
   locations: Location[];
   products: Product[];
   unitsOfMeasure: UnitOfMeasure[];
+  onSuccess?: () => void;
 }
 
 interface OrderLine {
@@ -51,6 +52,7 @@ export function SalesOrderForm({
   locations,
   products,
   unitsOfMeasure,
+  onSuccess,
 }: SalesOrderFormProps) {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = React.useState(false);
@@ -233,6 +235,7 @@ export function SalesOrderForm({
           description: `Sales Order ${result.soReference} created successfully!`,
         });
         resetForm();
+        onSuccess?.();
       } else {
         toast({
           title: "Error",

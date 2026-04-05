@@ -170,6 +170,36 @@ export async function getProducts() {
     reorderPoint: Number(row.Reorder_Point || 0),
   }));
 }
+export interface HookLoopItem {
+  id: string;
+  label: string;
+}
+
+export async function getHookLoopItems(): Promise<HookLoopItem[]> {
+  const { rows } = await sqlQuery(
+    BASE_ID,
+    `SELECT "__id", "Name" FROM "${BASE_ID}"."Hook_Loop_Items" WHERE "Name" IS NOT NULL ORDER BY "Name" LIMIT 500`
+  );
+  return rows.map((row) => ({
+    id: row.__id as string,
+    label: row.Name as string,
+  }));
+}
+export interface UnitOfMeasure {
+  id: string;
+  name: string;
+}
+
+export async function getUnitsOfMeasure(): Promise<UnitOfMeasure[]> {
+  const { rows } = await sqlQuery(
+    BASE_ID,
+    `SELECT "__id", "Name" FROM "${BASE_ID}"."Units_of_Measure" WHERE "Name" IS NOT NULL ORDER BY "Name" LIMIT 100`
+  );
+  return rows.map((row) => ({
+    id: row.__id as string,
+    name: row.Name as string,
+  }));
+}
 
 export async function createProduct(data: {
   sku: string;
@@ -476,40 +506,79 @@ export async function getBOMs() {
   }));
 }
 
-export async function createBOM(data: {
-  version: string;
-  quantity: number;
-  status: string;
-  effectiveDate: string;
-  reference: string;
-}) {
-  return createRecord("tbljVE4fCX1GxrlZOlO", {
-    fld0VdSDfuO9aUlG55s: data.version,
-    fldXoofJqfxsI38hfhd: data.quantity,
-    fldooU78f6gHZ362PtW: data.status,
-    fldSKhzNnNJqDWQDOlZ: data.effectiveDate,
-    fldV1cUu57SObBr8XId: data.reference,
-  });
-}
+// export async function createBOM(data: {
+//   version: string;
+//   quantity: number;
+//   status: string;
+//   effectiveDate: string;
+//   reference: string;
+// }) {
+//   return createRecord("tbljVE4fCX1GxrlZOlO", {
+//     fld0VdSDfuO9aUlG55s: data.version,
+//     fldXoofJqfxsI38hfhd: data.quantity,
+//     fldooU78f6gHZ362PtW: data.status,
+//     fldSKhzNnNJqDWQDOlZ: data.effectiveDate,
+//     fldV1cUu57SObBr8XId: data.reference,
+//   });
+// }
 
-export async function updateBOM(id: string, data: {
-  version?: string;
-  quantity?: number;
-  status?: string;
-  effectiveDate?: string;
-  reference?: string;
-}) {
-  const fields: Record<string, unknown> = {};
-  if (data.version !== undefined) fields.fld0VdSDfuO9aUlG55s = data.version;
-  if (data.quantity !== undefined) fields.fldXoofJqfxsI38hfhd = data.quantity;
-  if (data.status !== undefined) fields.fldooU78f6gHZ362PtW = data.status;
-  if (data.effectiveDate !== undefined) fields.fldSKhzNnNJqDWQDOlZ = data.effectiveDate;
-  if (data.reference !== undefined) fields.fldV1cUu57SObBr8XId = data.reference;
-  return updateRecord("tbljVE4fCX1GxrlZOlO", id, fields);
-}
+// export async function updateBOM(id: string, data: {
+//   version?: string;
+//   quantity?: number;
+//   status?: string;
+//   effectiveDate?: string;
+//   reference?: string;
+// }) {
+//   const fields: Record<string, unknown> = {};
+//   if (data.version !== undefined) fields.fld0VdSDfuO9aUlG55s = data.version;
+//   if (data.quantity !== undefined) fields.fldXoofJqfxsI38hfhd = data.quantity;
+//   if (data.status !== undefined) fields.fldooU78f6gHZ362PtW = data.status;
+//   if (data.effectiveDate !== undefined) fields.fldSKhzNnNJqDWQDOlZ = data.effectiveDate;
+//   if (data.reference !== undefined) fields.fldV1cUu57SObBr8XId = data.reference;
+//   return updateRecord("tbljVE4fCX1GxrlZOlO", id, fields);
+// }
 
 export async function deleteBOM(id: string) {
   return deleteRecord("tbljVE4fCX1GxrlZOlO", id);
+}
+
+export async function createBOMWithLines(data: {
+  productId: string;
+  quantity: number;
+  reference: string;
+  lines: Array<{
+    productId: string;
+    qty: number;
+    quantity: number;
+    unitId: string;
+    hookLoopItemIds?: string[];
+  }>;
+}) {
+  // Create the BOM record first
+  const bomRecord = await createRecord("tbljVE4fCX1GxrlZOlO", {
+    fldehyTSNV6w3jgHqP5: data.productId, // Product
+    fldXoofJqfxsI38hfhd: data.quantity, // Quantity
+    fldV1cUu57SObBr8XId: data.reference, // Reference
+    fldooU78f6gHZ362PtW: "Draft", // Status
+  });
+
+  // Create BOM lines
+  const bomLinesPromises = data.lines.map((line) =>
+    createRecord("tblxWum7GLIpaEotAr4", {
+      fldAxfVf6D1pCuq0oDh: bomRecord.id, // BOM link
+      fldTHdnKDwuPEJzAFkf: line.productId, // Product
+      fldmrDNm4ygWpKLAtXA: line.qty, // Item Count
+      fldK7S10zg59EtFbHqg: line.quantity, // Quantity
+      fldUelLsvIJaKggNrlS: line.unitId, // UoM
+      ...(line.hookLoopItemIds && line.hookLoopItemIds.length > 0
+        ? { fldwEsz0DQDCqIuQHyM: line.hookLoopItemIds }
+        : {}),
+    })
+  );
+
+  await Promise.all(bomLinesPromises);
+
+  return bomRecord;
 }
 
 // ============================================================================

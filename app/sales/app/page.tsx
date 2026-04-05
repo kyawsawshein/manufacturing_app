@@ -1,7 +1,7 @@
-import { SalesOrderForm } from "@/components/sales-order-form";
+import { SalesOrderForm } from "../components/sales-order-form";
 import {
   getPartners,
-  getCustomerPOs,
+  getCustomerPO,
   getLocations,
   getProducts,
   getUnitsOfMeasure,
@@ -11,7 +11,7 @@ export default async function HomePage() {
   // Fetch all data in parallel
   const [partners, customerPOs, locations, products, unitsOfMeasure] = await Promise.all([
     getPartners(),
-    getCustomerPOs(),
+    getCustomerPO(),
     getLocations(),
     getProducts(),
     getUnitsOfMeasure(),

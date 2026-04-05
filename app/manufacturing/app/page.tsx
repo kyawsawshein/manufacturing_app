@@ -1,4 +1,4 @@
-import { MOCreationForm } from "@/components/mo-creation-form";
+import { MOCreationForm } from "../components/mo-creation-form";
 
 export default function HomePage() {
   return (
