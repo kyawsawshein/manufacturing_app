@@ -1,12 +1,12 @@
 {
   "id": "tblWVL9SWxiWGbidJTE",
-  "name": "Stock Lot",
+  "Name": "Stock Lot",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Stock_Lot\"",
   "fields": [
     {
       "id": "fldpbVOF8trn4Jjv20x",
-      "name": "Lot",
+      "Name": "Lot",
       "dbFieldName": "Lot",
       "type": "singleLineText",
       "description": null,
@@ -18,7 +18,7 @@
     },
     {
       "id": "fldUDEKDbJvZI73gIwr",
-      "name": "Quantity",
+      "Name": "Quantity",
       "dbFieldName": "Quantity",
       "type": "number",
       "description": null,
@@ -35,7 +35,7 @@
     },
     {
       "id": "fldE8Wx05YyT5XoDivX",
-      "name": "Expiry Date",
+      "Name": "Expiry Date",
       "dbFieldName": "Expiry_Date",
       "type": "date",
       "description": null,
@@ -53,7 +53,7 @@
     },
     {
       "id": "fldoBga0Z9tt955iDAM",
-      "name": "Cost",
+      "Name": "Cost",
       "dbFieldName": "Cost",
       "type": "number",
       "description": null,
@@ -70,7 +70,7 @@
     },
     {
       "id": "fldCBedWbgnIV6naJcD",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -84,7 +84,7 @@
     },
     {
       "id": "fldvuxw312hjdoxGmsN",
-      "name": "Total Value",
+      "Name": "Total Value",
       "dbFieldName": "Total_Value",
       "type": "formula",
       "description": null,
@@ -103,7 +103,7 @@
     },
     {
       "id": "fldjHPcxHe2sdWAXEuG",
-      "name": "Finished Goods",
+      "Name": "Finished Goods",
       "dbFieldName": "Finished_Goods",
       "type": "link",
       "description": null,
@@ -123,7 +123,7 @@
     },
     {
       "id": "fldkCPn2k7zXwy79JtD",
-      "name": "Product",
+      "Name": "Product",
       "dbFieldName": "Status",
       "type": "link",
       "description": null,

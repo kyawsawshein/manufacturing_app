@@ -1,12 +1,12 @@
 {
   "id": "tblcpTwSlhbUY3kOdUa",
-  "name": "Employees",
+  "Name": "Employees",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Employees\"",
   "fields": [
     {
       "id": "fldRu4So7osPW5ajEeZ",
-      "name": "Name",
+      "Name": "Name",
       "dbFieldName": "Name",
       "type": "singleLineText",
       "description": null,
@@ -18,7 +18,7 @@
     },
     {
       "id": "fldDkD7tiSDTq5ByaEi",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -32,7 +32,7 @@
     },
     {
       "id": "fldNr8jHg1KFsbSacwM",
-      "name": "Contact",
+      "Name": "Contact",
       "dbFieldName": "Contact",
       "type": "singleLineText",
       "description": null,
@@ -44,7 +44,7 @@
     },
     {
       "id": "fldu1LU731Q4lb4DwIb",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -59,7 +59,7 @@
     },
     {
       "id": "fld8XQrrEavLcyvZu8u",
-      "name": "Employee ID",
+      "Name": "Employee ID",
       "dbFieldName": "Employee_ID",
       "type": "singleLineText",
       "description": null,
@@ -74,7 +74,7 @@
     },
     {
       "id": "fldlueEnCp4q4Nbdhpr",
-      "name": "Position",
+      "Name": "Position",
       "dbFieldName": "Position",
       "type": "singleLineText",
       "description": null,
@@ -86,7 +86,7 @@
     },
     {
       "id": "fldl8tsn0mos1wHXS1U",
-      "name": "Departments",
+      "Name": "Departments",
       "dbFieldName": "Departments",
       "type": "link",
       "description": null,
@@ -107,7 +107,7 @@
     },
     {
       "id": "fld7dL4SQkoBBSMzURZ",
-      "name": "Department",
+      "Name": "Department",
       "dbFieldName": "Department",
       "type": "link",
       "description": null,

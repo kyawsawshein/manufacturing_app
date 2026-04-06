@@ -49,7 +49,7 @@ export interface ILinkCellValue {
 
 export interface IAttachmentCellValue {
   id: string;
-  name: string;
+  Name: string;
   token: string;
   path: string;
   size: number;

@@ -1,12 +1,12 @@
 {
   "id": "tblZgVg0b7Q36WLsKSy",
-  "name": "MO Finished Goods",
+  "Name": "MO Finished Goods",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"MO_Finished_Goods\"",
   "fields": [
     {
       "id": "fldjYABHVjJLhiApLsA",
-      "name": "Source Location",
+      "Name": "Source Location",
       "dbFieldName": "Source_Location",
       "type": "link",
       "description": null,
@@ -29,7 +29,7 @@
     },
     {
       "id": "fldIloWA82VRIEkkiD1",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -43,7 +43,7 @@
     },
     {
       "id": "fldIYfzlhOqofuuzyAo",
-      "name": "Effective Date",
+      "Name": "Effective Date",
       "dbFieldName": "Effective_Date",
       "type": "date",
       "description": null,
@@ -61,7 +61,7 @@
     },
     {
       "id": "fld6ac80pfEgIgYrSnQ",
-      "name": "Finished Qty",
+      "Name": "Finished Qty",
       "dbFieldName": "Finished_Qty",
       "type": "number",
       "description": null,
@@ -78,7 +78,7 @@
     },
     {
       "id": "fldWYLOIcYmbzLocb6t",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -94,7 +94,7 @@
     },
     {
       "id": "fldwkVZFbpnBKnk7rPg",
-      "name": "Cost",
+      "Name": "Cost",
       "dbFieldName": "Cost",
       "type": "rollup",
       "description": null,
@@ -113,7 +113,7 @@
     },
     {
       "id": "fldQhmzDq4c4oun0EOE",
-      "name": "Total Cost",
+      "Name": "Total Cost",
       "dbFieldName": "Total_Cost",
       "type": "formula",
       "description": null,
@@ -132,7 +132,7 @@
     },
     {
       "id": "fldO7qDvwbVd9GstJc3",
-      "name": "Product",
+      "Name": "Product",
       "dbFieldName": "Product",
       "type": "link",
       "description": null,
@@ -155,7 +155,7 @@
     },
     {
       "id": "fldPIpOielIV3u1WxaL",
-      "name": "Lot No",
+      "Name": "Lot No",
       "dbFieldName": "Lot_No",
       "type": "link",
       "description": null,
@@ -179,7 +179,7 @@
     },
     {
       "id": "fldz5vc7WuawDln5514",
-      "name": "Stock Move",
+      "Name": "Stock Move",
       "dbFieldName": "Stock_Move1774324926230",
       "type": "link",
       "description": null,
@@ -199,7 +199,7 @@
     },
     {
       "id": "fldGCwbuftbYLnU4kOh",
-      "name": "MO",
+      "Name": "MO",
       "dbFieldName": "MO",
       "type": "link",
       "description": null,
@@ -223,7 +223,7 @@
     },
     {
       "id": "fldrMuA0aVKgKHPEc5c",
-      "name": "Quantity",
+      "Name": "Quantity",
       "dbFieldName": "Quantity",
       "type": "number",
       "description": null,
@@ -240,7 +240,7 @@
     },
     {
       "id": "fld774Q1qZC3mnJrlNg",
-      "name": "Destination Location",
+      "Name": "Destination Location",
       "dbFieldName": "Destination_Location",
       "type": "link",
       "description": null,
@@ -263,7 +263,7 @@
     },
     {
       "id": "fldPVs6Amh0fPdmS2eX",
-      "name": "MO Type",
+      "Name": "MO Type",
       "dbFieldName": "MO_Type",
       "type": "singleSelect",
       "description": null,

@@ -1,12 +1,12 @@
 {
   "id": "tblFJkEGvmgLbINVAVx",
-  "name": "Stock Picking",
+  "Name": "Stock Picking",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Stock_Picking\"",
   "fields": [
     {
       "id": "fldFnojzZJLvaupfvgK",
-      "name": "Name",
+      "Name": "Name",
       "dbFieldName": "Name",
       "type": "formula",
       "description": null,
@@ -21,7 +21,7 @@
     },
     {
       "id": "fld7pBiaqxN6oGphrKI",
-      "name": "Batch Number",
+      "Name": "Batch Number",
       "dbFieldName": "Batch_Number",
       "type": "singleLineText",
       "description": null,
@@ -33,7 +33,7 @@
     },
     {
       "id": "fldBxC5QK4EypyGZFUP",
-      "name": "Sequence",
+      "Name": "Sequence",
       "dbFieldName": "Sequence",
       "type": "autoNumber",
       "description": null,
@@ -47,7 +47,7 @@
     },
     {
       "id": "fld488MuhtKhcrC8zPD",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -64,7 +64,7 @@
     },
     {
       "id": "fldg6bkQyaWc66v7wfH",
-      "name": "Date",
+      "Name": "Date",
       "dbFieldName": "Date",
       "type": "date",
       "description": null,
@@ -82,7 +82,7 @@
     },
     {
       "id": "fldJKFQTS8IpTXp799X",
-      "name": "Created By",
+      "Name": "Created By",
       "dbFieldName": "Created_By",
       "type": "user",
       "description": null,
@@ -97,7 +97,7 @@
     },
     {
       "id": "fldXKi8Nht7wj9215Do",
-      "name": "Created At",
+      "Name": "Created At",
       "dbFieldName": "Created_At",
       "type": "date",
       "description": null,
@@ -115,7 +115,7 @@
     },
     {
       "id": "fld4W10GfYZcZmbngqN",
-      "name": "Partner",
+      "Name": "Partner",
       "dbFieldName": "Partner",
       "type": "link",
       "description": null,
@@ -138,7 +138,7 @@
     },
     {
       "id": "fldd5awH67287ToJbeF",
-      "name": "Operation Type",
+      "Name": "Operation Type",
       "dbFieldName": "Operation_Type",
       "type": "link",
       "description": null,
@@ -161,7 +161,7 @@
     },
     {
       "id": "fldJRTTJn9OgX43VTzb",
-      "name": "Description",
+      "Name": "Description",
       "dbFieldName": "Description",
       "type": "singleLineText",
       "description": null,
@@ -173,7 +173,7 @@
     },
     {
       "id": "fldjI5Qp2Udx4OivOvx",
-      "name": "Transaction Type",
+      "Name": "Transaction Type",
       "dbFieldName": "Transaction_Type",
       "type": "singleLineText",
       "description": null,
@@ -185,7 +185,7 @@
     },
     {
       "id": "fldtna5RYXNqqCy2yAO",
-      "name": "Source Locations",
+      "Name": "Source Locations",
       "dbFieldName": "Locations_2",
       "type": "link",
       "description": null,
@@ -208,7 +208,7 @@
     },
     {
       "id": "fldnoro3F0JaB9aPhMT",
-      "name": "Destination Locations",
+      "Name": "Destination Locations",
       "dbFieldName": "Destination_Location",
       "type": "link",
       "description": null,
@@ -231,7 +231,7 @@
     },
     {
       "id": "fldiNXcK4rm2Swz9RDH",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -245,7 +245,7 @@
     },
     {
       "id": "fldBao1V1SeI6y46P5R",
-      "name": "Stock Move",
+      "Name": "Stock Move",
       "dbFieldName": "Stock_Move",
       "type": "link",
       "description": null,

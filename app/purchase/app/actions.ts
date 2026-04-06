@@ -27,7 +27,7 @@ const PO_LINE_FIELDS = {
 
 export interface Vendor {
   id: string;
-  name: string;
+  Name: string;
   email: string | null;
   phone: string | null;
 }
@@ -35,20 +35,20 @@ export interface Vendor {
 export interface Location {
   id: string;
   code: string;
-  name: string;
+  Name: string;
 }
 
 export interface Product {
   id: string;
   sku: string;
-  name: string;
+  Name: string;
   cost: number;
   uom: string | null;
 }
 
 export interface Unit {
   id: string;
-  name: string;
+  Name: string;
   uom: string | null;
 }
 
@@ -63,19 +63,19 @@ export interface OrderLine {
 }
 
 export async function getVendors(): Promise<Vendor[]> {
-  // Note: Partners table has "Naem" as the dbFieldName for "Name" field (typo in schema)
+  // Note: Partners table has "Name" as the dbFieldName for "Name" field (typo in schema)
   const { rows } = await sqlQuery(
     BASE_ID,
-    `SELECT "__id", "Naem", "Email", "Phone" 
+    `SELECT "__id", "Name", "Email", "Phone" 
      FROM "${BASE_ID}"."Partners" 
      WHERE "Type" = 'Vendor'
-     ORDER BY "Naem" 
+     ORDER BY "Name" 
      LIMIT 200`
   );
 
   return rows.map((row) => ({
     id: row.__id as string,
-    name: (row.Naem as string) || "Unnamed Vendor",
+    Name: (row.Name as string) || "UnNamed Vendor",
     email: row.Email as string | null,
     phone: row.Phone as string | null,
   }));
@@ -94,7 +94,7 @@ export async function getLocations(): Promise<Location[]> {
   return rows.map((row) => ({
     id: row.__id as string,
     code: (row.Code as string) || "",
-    name: (row.Description as string) || (row.Code as string) || "Unknown Location",
+    Name: (row.Description as string) || (row.Code as string) || "Unknown Location",
   }));
 }
 
@@ -111,7 +111,7 @@ export async function getProducts(): Promise<Product[]> {
   return rows.map((row) => ({
     id: row.__id as string,
     sku: (row.SKU as string) || "",
-    name: (row.Name as string) || "Unnamed Product",
+    Name: (row.Name as string) || "UnNamed Product",
     cost: (row.Cost as number) || 0,
     uom: null, // UoM is a lookup field and cannot be queried via SQL
   }));
@@ -128,7 +128,7 @@ export async function getUnits(): Promise<Unit[]> {
 
   return rows.map((row) => ({
     id: row.__id as string,
-    name: (row.Name as string) || "",
+    Name: (row.Name as string) || "",
     uom: row.UOM as string | null,
   }));
 }

@@ -107,7 +107,7 @@ export function PurchaseOrderForm({
     const newLine: OrderLineItem = {
       id: crypto.randomUUID(),
       productId: product.id,
-      productName: `${product.sku} - ${product.name}`,
+      productName: `${product.sku} - ${product.Name}`,
       quantity: qty,
       unitPrice: price,
       unit: product.uom,
@@ -212,7 +212,7 @@ export function PurchaseOrderForm({
                 <SelectContent>
                   {vendors.map((vendor) => (
                     <SelectItem key={vendor.id} value={vendor.id}>
-                      {vendor.name}
+                      {vendor.Name}
                     </SelectItem>
                   ))}
                 </SelectContent>
@@ -255,7 +255,7 @@ export function PurchaseOrderForm({
                 <SelectContent>
                   {locations.map((loc) => (
                     <SelectItem key={loc.id} value={loc.id}>
-                      {loc.name}
+                      {loc.Name}
                     </SelectItem>
                   ))}
                 </SelectContent>
@@ -282,7 +282,7 @@ export function PurchaseOrderForm({
                 <SelectContent>
                   {products.map((product) => (
                     <SelectItem key={product.id} value={product.id}>
-                      {product.sku} - {product.name}
+                      {product.sku} - {product.Name}
                     </SelectItem>
                   ))}
                 </SelectContent>
@@ -416,11 +416,10 @@ export function PurchaseOrderForm({
         <div>
           {submitResult && (
             <div
-              className={`flex items-center gap-2 rounded-lg px-4 py-2 ${
-                submitResult.success
+              className={`flex items-center gap-2 rounded-lg px-4 py-2 ${submitResult.success
                   ? "bg-green-50 text-green-700 dark:bg-green-950 dark:text-green-300"
                   : "bg-destructive/10 text-destructive"
-              }`}
+                }`}
             >
               {submitResult.success && <CheckCircle className="h-4 w-4" />}
               {submitResult.message}

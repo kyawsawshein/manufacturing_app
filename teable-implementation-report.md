@@ -1,9 +1,11 @@
 # Teable.ai Implementation Report
+
 ## Manufacturing Order Creation with Multi-Level BOM Support
 
 ## 1. Executive Summary
 
 This report provides a complete implementation plan for enhancing the ERP System's Manufacturing Order (MO) creation workflow with multi-level BOM support. The solution enables:
+
 - **MO Type Selection**: Production vs Cutting
 - **BOM/Cutting Selection**: Based on MO type
 - **Multi-Level BOM Explosion**: Automatic raw material line creation
@@ -13,6 +15,7 @@ This report provides a complete implementation plan for enhancing the ERP System
 ## 2. Current Schema Analysis
 
 ### 2.1 Key Tables Identified:
+
 1. **MO (Manufacturing Plan)** - `tblPbvDgbuKgA55boy8`
    - Fields: Product, MO Type (Cutting/Production), Cutting BOM, Status, Quantity
    - Links: Product, Cutting BOM
@@ -33,10 +36,11 @@ This report provides a complete implementation plan for enhancing the ERP System
 ## 3. Enhanced Schema Requirements
 
 ### 3.1 Add to MO Table:
+
 ```json
 {
   "id": "fldSelectedBOM",
-  "name": "Selected BOM",
+  "Name": "Selected BOM",
   "type": "link",
   "options": {
     "relationship": "manyOne",
@@ -46,7 +50,7 @@ This report provides a complete implementation plan for enhancing the ERP System
 },
 {
   "id": "fldMOLevel",
-  "name": "MO Level",
+  "Name": "MO Level",
   "type": "number",
   "options": {
     "formatting": { "type": "integer", "precision": 0 }
@@ -54,7 +58,7 @@ This report provides a complete implementation plan for enhancing the ERP System
 },
 {
   "id": "fldTotalRawCost",
-  "name": "Total Raw Material Cost",
+  "Name": "Total Raw Material Cost",
   "type": "rollup",
   "options": {
     "expression": "sum({values})",
@@ -63,7 +67,7 @@ This report provides a complete implementation plan for enhancing the ERP System
 },
 {
   "id": "fldTotalWorkCenterCost",
-  "name": "Total Work Center Cost",
+  "Name": "Total Work Center Cost",
   "type": "formula",
   "options": {
     "expression": "{fldLaborCost} + {fldMachineCost} + {fldOverheadCost}"
@@ -72,10 +76,11 @@ This report provides a complete implementation plan for enhancing the ERP System
 ```
 
 ### 3.2 Add to BOM Table (for Multi-Level Support):
+
 ```json
 {
   "id": "fldParentBOM",
-  "name": "Parent BOM",
+  "Name": "Parent BOM",
   "type": "link",
   "options": {
     "relationship": "manyOne",
@@ -85,7 +90,7 @@ This report provides a complete implementation plan for enhancing the ERP System
 },
 {
   "id": "fldBOMLevel",
-  "name": "BOM Level",
+  "Name": "BOM Level",
   "type": "number",
   "options": {
     "formatting": { "type": "integer", "precision": 0 }
@@ -93,23 +98,24 @@ This report provides a complete implementation plan for enhancing the ERP System
 },
 {
   "id": "fldIsAssembly",
-  "name": "Is Assembly",
+  "Name": "Is Assembly",
   "type": "checkbox",
   "options": {}
 }
 ```
 
 ### 3.3 Add to BOM Lines Table:
+
 ```json
 {
   "id": "fldComponentType",
-  "name": "Component Type",
+  "Name": "Component Type",
   "type": "singleSelect",
   "options": ["Product", "BOM", "Phantom"]
 },
 {
   "id": "fldComponentBOM",
-  "name": "Component BOM",
+  "Name": "Component BOM",
   "type": "link",
   "options": {
     "relationship": "manyOne",
@@ -122,6 +128,7 @@ This report provides a complete implementation plan for enhancing the ERP System
 ## 4. Manufacturing Order Creation Workflow
 
 ### 4.1 User Interface Flow:
+
 ```
 1. User clicks "Create New Manufacturing Order"
 2. Form appears with:
@@ -143,22 +150,20 @@ This report provides a complete implementation plan for enhancing the ERP System
 ```
 
 ### 4.2 Conditional Field Logic:
+
 ```javascript
 // Teable Formula for conditional field visibility
 IF(
-  {MO_Type} = "Production",
+  ({ MO_Type } = "Production"),
   SHOW_FIELD("Selected_BOM"),
-  IF(
-    {MO_Type} = "Cutting", 
-    SHOW_FIELD("Cutting_BOM"),
-    HIDE_BOTH
-  )
-)
+  IF(({ MO_Type } = "Cutting"), SHOW_FIELD("Cutting_BOM"), HIDE_BOTH),
+);
 ```
 
 ## 5. Multi-Level BOM Explosion Algorithm
 
 ### 5.1 BOM Explosion Function:
+
 ```javascript
 /**
  * Explode multi-level BOM and create MO Raw Material lines
@@ -169,13 +174,13 @@ IF(
  */
 async function explodeBOM(bomId, moQuantity, moId) {
   const requirements = [];
-  
+
   // Recursive function to traverse BOM hierarchy
   async function traverseBOM(currentBomId, level, parentQuantity = 1) {
     const bomLines = await getBOMLines(currentBomId);
-    
+
     for (const line of bomLines) {
-      if (line.componentType === 'Product') {
+      if (line.componentType === "Product") {
         // Raw material - add to requirements
         requirements.push({
           productId: line.productId,
@@ -183,25 +188,27 @@ async function explodeBOM(bomId, moQuantity, moId) {
           quantity: line.quantity * parentQuantity * moQuantity,
           level: level,
           unitCost: line.unitCost,
-          totalCost: line.quantity * parentQuantity * moQuantity * line.unitCost
+          totalCost:
+            line.quantity * parentQuantity * moQuantity * line.unitCost,
         });
-      } else if (line.componentType === 'BOM') {
+      } else if (line.componentType === "BOM") {
         // Sub-assembly - recursively traverse
         await traverseBOM(
-          line.componentBOMId, 
-          level + 1, 
-          parentQuantity * line.quantity
+          line.componentBOMId,
+          level + 1,
+          parentQuantity * line.quantity,
         );
       }
     }
   }
-  
+
   await traverseBOM(bomId, 0, 1);
   return requirements;
 }
 ```
 
 ### 5.2 MO Raw Material Creation:
+
 ```javascript
 /**
  * Create MO Raw Material records from exploded BOM
@@ -211,11 +218,11 @@ async function explodeBOM(bomId, moQuantity, moId) {
 async function createMORawMaterials(requirements, moId) {
   for (const req of requirements) {
     await createRecord("tbl0aq09fCJXpdox9aT", {
-      fldsokXZdzYBr5wKVvh: [moId],  // MO link
-      fldQwhRLMtk5G1pTtnP: [req.bomLineId],  // BOM Line link
-      fldIOQj0dOj3LgxOPVg: [req.productId],  // Product link
-      fldFtiECtVOujmdbCiu: req.quantity,  // Quantity
-      fldObsX4bDLw7GCyKgn: req.quantity,  // Consume Qty (same as quantity)
+      fldsokXZdzYBr5wKVvh: [moId], // MO link
+      fldQwhRLMtk5G1pTtnP: [req.bomLineId], // BOM Line link
+      fldIOQj0dOj3LgxOPVg: [req.productId], // Product link
+      fldFtiECtVOujmdbCiu: req.quantity, // Quantity
+      fldObsX4bDLw7GCyKgn: req.quantity, // Consume Qty (same as quantity)
       // Additional fields as needed
     });
   }
@@ -225,6 +232,7 @@ async function createMORawMaterials(requirements, moId) {
 ## 6. Cost Calculation Functions
 
 ### 6.1 Raw Material Cost Calculation:
+
 ```javascript
 /**
  * Calculate total raw material cost for MO
@@ -232,20 +240,24 @@ async function createMORawMaterials(requirements, moId) {
  * @returns {number} Total raw material cost
  */
 async function calculateRawMaterialCost(moId) {
-  const { rows } = await sqlQuery(BASE_ID, `
+  const { rows } = await sqlQuery(
+    BASE_ID,
+    `
     SELECT 
       SUM(rm."Quantity" * COALESCE(p."Cost", 0)) as total_cost
     FROM "bseTIY0IrZr61kt6u5E"."MO_Raw_Material" rm
     LEFT JOIN "bseTIY0IrZr61kt6u5E"."Product" p 
       ON rm."Product" = p."__id"
     WHERE rm."MO" = '${moId}'
-  `);
-  
+  `,
+  );
+
   return Number(rows[0]?.total_cost || 0);
 }
 ```
 
 ### 6.2 Work Center Cost Calculation:
+
 ```javascript
 /**
  * Calculate work center costs for MO
@@ -253,7 +265,9 @@ async function calculateRawMaterialCost(moId) {
  * @returns {Object} Cost breakdown
  */
 async function calculateWorkCenterCost(moId) {
-  const { rows } = await sqlQuery(BASE_ID, `
+  const { rows } = await sqlQuery(
+    BASE_ID,
+    `
     SELECT 
       wc."Labor_Cost_Per_Hour",
       wc."Machine_Cost_Per_Hour",
@@ -263,25 +277,29 @@ async function calculateWorkCenterCost(moId) {
     LEFT JOIN "bseTIY0IrZr61kt6u5E"."Work_Centers" wc
       ON mo."Work_Center" = wc."__id"
     WHERE mo."__id" = '${moId}'
-  `);
-  
+  `,
+  );
+
   const data = rows[0];
   if (!data) return { labor: 0, machine: 0, overhead: 0, total: 0 };
-  
+
   const laborCost = (data.Labor_Cost_Per_Hour || 0) * (data.Planned_Hours || 0);
-  const machineCost = (data.Machine_Cost_Per_Hour || 0) * (data.Planned_Hours || 0);
-  const overheadCost = (laborCost + machineCost) * (data.Overhead_Rate || 0) / 100;
-  
+  const machineCost =
+    (data.Machine_Cost_Per_Hour || 0) * (data.Planned_Hours || 0);
+  const overheadCost =
+    ((laborCost + machineCost) * (data.Overhead_Rate || 0)) / 100;
+
   return {
     labor: laborCost,
     machine: machineCost,
     overhead: overheadCost,
-    total: laborCost + machineCost + overheadCost
+    total: laborCost + machineCost + overheadCost,
   };
 }
 ```
 
 ### 6.3 Total MO Cost Calculation:
+
 ```javascript
 /**
  * Calculate total MO cost (raw materials + work center)
@@ -291,16 +309,16 @@ async function calculateWorkCenterCost(moId) {
 async function calculateTotalMOCost(moId) {
   const [rawMaterialCost, workCenterCost] = await Promise.all([
     calculateRawMaterialCost(moId),
-    calculateWorkCenterCost(moId)
+    calculateWorkCenterCost(moId),
   ]);
-  
+
   return {
     rawMaterial: rawMaterialCost,
     workCenter: workCenterCost.total,
     labor: workCenterCost.labor,
     machine: workCenterCost.machine,
     overhead: workCenterCost.overhead,
-    total: rawMaterialCost + workCenterCost.total
+    total: rawMaterialCost + workCenterCost.total,
   };
 }
 ```
@@ -308,32 +326,37 @@ async function calculateTotalMOCost(moId) {
 ## 7. Teable.ai Implementation Steps
 
 ### 7.1 Step 1: Schema Enhancement
+
 1. **Add new fields** to existing tables (as described in Section 3)
 2. **Create new tables** if needed (Work Centers, Cost Rates)
 3. **Set up field dependencies** for conditional visibility
 
 ### 7.2 Step 2: Formula Field Implementation
+
 ```javascript
 // Example Teable formula for MO Total Cost
-{Total_Raw_Material_Cost} + {Total_Work_Center_Cost}
+{
+  Total_Raw_Material_Cost;
+}
++{ Total_Work_Center_Cost };
 
 // Example formula for BOM Level calculation
-IF(
-  ISBLANK({Parent_BOM}),
-  0,
-  LOOKUP({Parent_BOM}, "BOM_Level") + 1
-)
+IF(ISBLANK({ Parent_BOM }), 0, LOOKUP({ Parent_BOM }, "BOM_Level") + 1);
 ```
 
 ### 7.3 Step 3: Automation Rules
+
 Create Teable automations for:
+
 1. **MO Creation Trigger**: When MO is created with BOM selected
 2. **BOM Explosion**: Automatically create MO Raw Material lines
 3. **Cost Calculation**: Update cost fields when quantities change
 4. **Status Updates**: Change MO status based on progress
 
 ### 7.4 Step 4: View Configuration
+
 Create optimized views:
+
 1. **MO Creation View**: With conditional fields
 2. **BOM Explorer View**: Hierarchical view of multi-level BOM
 3. **Cost Analysis View**: Breakdown of MO costs
@@ -342,6 +365,7 @@ Create optimized views:
 ## 8. User Interface Design
 
 ### 8.1 MO Creation Form:
+
 ```
 ┌─────────────────────────────────────┐
 │ Manufacturing Order Creation        │
@@ -377,6 +401,7 @@ Create optimized views:
 ```
 
 ### 8.2 BOM Selection with Multi-Level Preview:
+
 ```
 ┌─────────────────────────────────────┐
 │ Select BOM with Multi-Level View    │
@@ -404,18 +429,21 @@ Create optimized views:
 ## 9. Integration with Existing Workflow
 
 ### 9.1 Current MO Creation Process:
+
 1. User creates MO manually
 2. Manually adds raw material lines
 3. Manually calculates costs
 4. No multi-level BOM support
 
 ### 9.2 Enhanced Process:
+
 1. **Intelligent MO Creation**: Auto-populates based on BOM selection
 2. **Automatic Line Generation**: Creates MO Raw Material from BOM explosion
 3. **Real-time Costing**: Calculates costs as user makes selections
 4. **Multi-Level Support**: Handles complex BOM hierarchies
 
 ### 9.3 Backward Compatibility:
+
 - Existing MOs remain unchanged
 - New fields are optional (can be added gradually)
 - Old BOMs work as single-level (Level 0)
@@ -424,18 +452,21 @@ Create optimized views:
 ## 10. Testing Plan
 
 ### 10.1 Unit Tests:
+
 1. **BOM Explosion Test**: Verify correct quantity calculations
 2. **Cost Calculation Test**: Verify accurate cost aggregation
 3. **Multi-Level Test**: Verify hierarchy traversal
 4. **Conditional Field Test**: Verify field visibility based on MO type
 
 ### 10.2 Integration Tests:
+
 1. **End-to-End MO Creation**: Create MO with multi-level BOM
 2. **Cost Update Test**: Verify costs update when quantities change
 3. **Work Center Integration**: Verify work center cost calculations
 4. **Stock Impact Test**: Verify raw material requirements affect stock planning
 
 ### 10.3 Performance Tests:
+
 1. **Deep BOM Hierarchy**: Test with 10+ level BOMs
 2. **Large Quantity Scaling**: Test with high MO quantities
 3. **Concurrent MO Creation**: Test multiple users creating MOs simultaneously
@@ -443,21 +474,25 @@ Create optimized views:
 ## 11. Deployment Strategy
 
 ### Phase 1: Schema Updates (Week 1)
+
 - Add new fields to existing tables
 - Create new tables if needed
 - Set up field dependencies and formulas
 
 ### Phase 2: Function Development (Week 2-3)
+
 - Develop BOM explosion algorithm
 - Implement cost calculation functions
 - Create automation rules
 
 ### Phase 3: UI Enhancement (Week 4)
+
 - Update MO creation form
 - Add BOM selection interface
 - Implement cost preview
 
 ### Phase 4: Testing & Rollout (Week 5)
+
 - Internal testing
 - User acceptance testing
 - Production deployment
@@ -465,5 +500,6 @@ Create optimized views:
 ## 12. Success Metrics
 
 ### 12.1 Quantitative Metrics:
+
 - **MO Creation Time**: Reduce from 15 minutes to 2 minutes
 - **Data Accuracy**: Increase from 85%

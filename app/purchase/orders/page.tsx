@@ -43,7 +43,7 @@ interface PurchaseOrder {
 
 interface Partner {
   id: string;
-  name: string;
+  Name: string;
 }
 
 function formatDate(dateStr: string | null): string {
@@ -146,7 +146,7 @@ export default function PurchaseOrdersPage() {
 
   const handleEdit = (order: PurchaseOrder) => {
     setEditingOrder(order);
-    const vendor = vendors.find((v) => v.name === order.vendor);
+    const vendor = vendors.find((v) => v.Name === order.vendor);
     setFormData({
       orderDate: order.orderDate ? order.orderDate.split("T")[0] : toISODateString(new Date()),
       expectedDelivery: order.expectedDelivery ? order.expectedDelivery.split("T")[0] : toISODateString(new Date()),
@@ -269,7 +269,7 @@ export default function PurchaseOrdersPage() {
                     <SelectContent>
                       {vendors.map((vendor) => (
                         <SelectItem key={vendor.id} value={vendor.id}>
-                          {vendor.name}
+                          {vendor.Name}
                         </SelectItem>
                       ))}
                     </SelectContent>

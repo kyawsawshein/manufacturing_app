@@ -1,12 +1,12 @@
 {
   "id": "tbliEs1RFlkpMkbcJz7",
-  "name": "Cutting Line",
+  "Name": "Cutting Line",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Cutting_Line\"",
   "fields": [
     {
       "id": "fld6EKyX6Xt4YLI5iYp",
-      "name": "Type",
+      "Name": "Type",
       "dbFieldName": "Type",
       "type": "link",
       "description": null,
@@ -29,7 +29,7 @@
     },
     {
       "id": "fldddraVpyKgYl3n0l1",
-      "name": "UoM",
+      "Name": "UoM",
       "dbFieldName": "UoM",
       "type": "link",
       "description": null,
@@ -49,7 +49,7 @@
     },
     {
       "id": "fldFnyW0jZedy62QSkv",
-      "name": "Product",
+      "Name": "Product",
       "dbFieldName": "Product",
       "type": "link",
       "description": null,
@@ -72,7 +72,7 @@
     },
     {
       "id": "fldnRuk6SXj7wAkPSTF",
-      "name": "CUT",
+      "Name": "CUT",
       "dbFieldName": "Cut",
       "type": "link",
       "description": null,
@@ -96,7 +96,7 @@
     },
     {
       "id": "fldfujcJq2eKYKM3cLa",
-      "name": "Plan Qty",
+      "Name": "Plan Qty",
       "dbFieldName": "Plan_Qty",
       "type": "number",
       "description": null,
@@ -113,7 +113,7 @@
     },
     {
       "id": "fldIyj6rK0kaQvbzojw",
-      "name": "Model",
+      "Name": "Model",
       "dbFieldName": "Model",
       "type": "link",
       "description": null,
@@ -136,7 +136,7 @@
     },
     {
       "id": "fldYjoUj3D2nhoMzSRL",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -152,7 +152,7 @@
     },
     {
       "id": "fldABpepZ1GZhuqKjBC",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -166,7 +166,7 @@
     },
     {
       "id": "fldc1yo372UMXzzwccf",
-      "name": "Fabric",
+      "Name": "Fabric",
       "dbFieldName": "Fabric",
       "type": "link",
       "description": null,
@@ -189,7 +189,7 @@
     },
     {
       "id": "fldYjvXhBghcNKsoPyt",
-      "name": "PO",
+      "Name": "PO",
       "dbFieldName": "PO",
       "type": "singleLineText",
       "description": null,
@@ -201,7 +201,7 @@
     },
     {
       "id": "fldAKH2fsWHFHQXz4w5",
-      "name": "Emboss Only",
+      "Name": "Emboss Only",
       "dbFieldName": "Emboss_Only",
       "type": "checkbox",
       "description": null,
@@ -213,7 +213,7 @@
     },
     {
       "id": "fldLOBRGszEaVdOI3Ju",
-      "name": "Drawing",
+      "Name": "Drawing",
       "dbFieldName": "Drawing",
       "type": "attachment",
       "description": null,
@@ -225,7 +225,7 @@
     },
     {
       "id": "fld3aVBoFQ48qMXiVyr",
-      "name": "Document",
+      "Name": "Document",
       "dbFieldName": "Document",
       "type": "attachment",
       "description": null,
@@ -237,7 +237,7 @@
     },
     {
       "id": "fldPo7ogj6b5OsiORrT",
-      "name": "SO.No",
+      "Name": "SO.No",
       "dbFieldName": "SO_No",
       "type": "singleLineText",
       "description": null,
@@ -249,7 +249,7 @@
     },
     {
       "id": "fldzuIgJsMQrA5sfiZc",
-      "name": "MO",
+      "Name": "MO",
       "dbFieldName": "MO",
       "type": "singleLineText",
       "description": null,

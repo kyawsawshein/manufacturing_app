@@ -1,12 +1,12 @@
 {
   "id": "tblCexjrKHvtp6azXpd",
-  "name": "Purchase Request Line",
+  "Name": "Purchase Request Line",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Purchase_Request_Line\"",
   "fields": [
     {
       "id": "fldWPJFYEBgegvE2YOX",
-      "name": "Order Qty",
+      "Name": "Order Qty",
       "dbFieldName": "Order_Qty",
       "type": "number",
       "description": null,
@@ -23,7 +23,7 @@
     },
     {
       "id": "fldKDL0LYEMYBos8NUX",
-      "name": "Use Qty",
+      "Name": "Use Qty",
       "dbFieldName": "Time",
       "type": "number",
       "description": null,
@@ -40,7 +40,7 @@
     },
     {
       "id": "fldsHgvp7FLuteu41RY",
-      "name": "On Hand",
+      "Name": "On Hand",
       "dbFieldName": "On_Hand",
       "type": "number",
       "description": null,
@@ -57,7 +57,7 @@
     },
     {
       "id": "fldxiNPjwFgIhPxrGTe",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -71,7 +71,7 @@
     },
     {
       "id": "fldVucS4xRDR70fTM2j",
-      "name": "Product",
+      "Name": "Product",
       "dbFieldName": "Product_SKU",
       "type": "link",
       "description": null,
@@ -94,7 +94,7 @@
     },
     {
       "id": "fldzGsqPD74faIPWlJb",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -109,7 +109,7 @@
     },
     {
       "id": "fldyvxLVF2G4JZAkakc",
-      "name": "Reference",
+      "Name": "Reference",
       "dbFieldName": "Reference",
       "type": "autoNumber",
       "description": null,
@@ -123,7 +123,7 @@
     },
     {
       "id": "fld0Y0cdivAVPJsqqwl",
-      "name": "Name",
+      "Name": "Name",
       "dbFieldName": "Name",
       "type": "formula",
       "description": null,
@@ -138,7 +138,7 @@
     },
     {
       "id": "fldw7H8P89TIWLJkhzw",
-      "name": "Unit",
+      "Name": "Unit",
       "dbFieldName": "Unit",
       "type": "link",
       "description": null,
@@ -161,7 +161,7 @@
     },
     {
       "id": "fldYcKd0w7gKhNqtpQC",
-      "name": "Purchase Request",
+      "Name": "Purchase Request",
       "dbFieldName": "Purchase_Request",
       "type": "link",
       "description": null,

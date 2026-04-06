@@ -9,7 +9,7 @@ import { ErrorReporter, ReactErrorBoundary } from "@/components/error-reporter";
 export const metadata: Metadata = {
   title: "Sales Order Creation",
   description: "Create sales orders with multiple order lines in a single submission",
-    generator: 'v0.app'
+  generator: 'v0.app'
 };
 
 export default function RootLayout({

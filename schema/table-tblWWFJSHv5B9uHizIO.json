@@ -1,12 +1,12 @@
 {
   "id": "tblWWFJSHv5B9uHizIO",
-  "name": "CNC Cutting PLAN",
+  "Name": "CNC Cutting PLAN",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"CNC_Cutting_Plan\"",
   "fields": [
     {
       "id": "fldI1z6sGNnjkvf6HnS",
-      "name": "Finished Date",
+      "Name": "Finished Date",
       "dbFieldName": "Finished_Date",
       "type": "date",
       "description": null,
@@ -24,7 +24,7 @@
     },
     {
       "id": "fld8WKphMxYW3y2uD90",
-      "name": "Remark",
+      "Name": "Remark",
       "dbFieldName": "Remark",
       "type": "singleLineText",
       "description": null,
@@ -36,7 +36,7 @@
     },
     {
       "id": "fldqODwKnXIobCOYyX8",
-      "name": "Emboss Only",
+      "Name": "Emboss Only",
       "dbFieldName": "Emboss_Only",
       "type": "checkbox",
       "description": null,
@@ -48,7 +48,7 @@
     },
     {
       "id": "fldkG9C7YTFm3NyggTB",
-      "name": "Label",
+      "Name": "Label",
       "dbFieldName": "Label",
       "type": "autoNumber",
       "description": null,
@@ -62,7 +62,7 @@
     },
     {
       "id": "fldBmeYhF6rwniTCFcf",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -78,7 +78,7 @@
     },
     {
       "id": "fldaqWZr7bw3GkprXGG",
-      "name": "Export Date",
+      "Name": "Export Date",
       "dbFieldName": "Export_Date",
       "type": "date",
       "description": null,
@@ -96,7 +96,7 @@
     },
     {
       "id": "fld0x11fjjrMCg3SjI7",
-      "name": "Cutting Place",
+      "Name": "Cutting Place",
       "dbFieldName": "Cutting_Place",
       "type": "singleLineText",
       "description": null,
@@ -108,7 +108,7 @@
     },
     {
       "id": "fldBCIdTr120qnrr3HT",
-      "name": "Lot No",
+      "Name": "Lot No",
       "dbFieldName": "Lot_No",
       "type": "singleLineText",
       "description": null,
@@ -120,7 +120,7 @@
     },
     {
       "id": "fldPtIDvway1qcGUzUI",
-      "name": "Plan Qty",
+      "Name": "Plan Qty",
       "dbFieldName": "Plan_Qty",
       "type": "number",
       "description": null,
@@ -137,7 +137,7 @@
     },
     {
       "id": "flduTyLcaHA7rhZon7l",
-      "name": "Need Date Finished",
+      "Name": "Need Date Finished",
       "dbFieldName": "Need_Date_Finished",
       "type": "date",
       "description": null,
@@ -155,7 +155,7 @@
     },
     {
       "id": "fldipsMxwdZFTjfLGsm",
-      "name": "Cutting Date",
+      "Name": "Cutting Date",
       "dbFieldName": "Cutting_Date",
       "type": "date",
       "description": null,
@@ -173,7 +173,7 @@
     },
     {
       "id": "fldgqq14BE1Lmc3cKNB",
-      "name": "Model",
+      "Name": "Model",
       "dbFieldName": "Model",
       "type": "link",
       "description": null,
@@ -196,7 +196,7 @@
     },
     {
       "id": "fldujXVkJGgewn760Og",
-      "name": "Type",
+      "Name": "Type",
       "dbFieldName": "Type",
       "type": "link",
       "description": null,
@@ -219,7 +219,7 @@
     },
     {
       "id": "fldxwPjuJHJaIjrCwV1",
-      "name": "Fabric",
+      "Name": "Fabric",
       "dbFieldName": "Fabric",
       "type": "link",
       "description": null,
@@ -242,7 +242,7 @@
     },
     {
       "id": "fldlpyFyEXCs5v6DSCg",
-      "name": "PO.No",
+      "Name": "PO.No",
       "dbFieldName": "PO_No",
       "type": "link",
       "description": null,
@@ -265,7 +265,7 @@
     },
     {
       "id": "fld8YrInPlIRk2N0k9Y",
-      "name": "CNC No",
+      "Name": "CNC No",
       "dbFieldName": "CNC_No",
       "type": "link",
       "description": null,
@@ -288,7 +288,7 @@
     },
     {
       "id": "fldIWH8wF41jP48wrdD",
-      "name": "Assign",
+      "Name": "Assign",
       "dbFieldName": "Assign",
       "type": "link",
       "description": null,
@@ -311,7 +311,7 @@
     },
     {
       "id": "fldZCH0cskZfhdCkf1q",
-      "name": "SO.No",
+      "Name": "SO.No",
       "dbFieldName": "SO_No",
       "type": "link",
       "description": null,
@@ -334,7 +334,7 @@
     },
     {
       "id": "fld7d0hBlJVeVfifyoG",
-      "name": "PART No.",
+      "Name": "PART No.",
       "dbFieldName": "PART_No",
       "type": "link",
       "description": null,

@@ -1,12 +1,12 @@
 {
   "id": "tblmcOkAiv0jjGNDpCp",
-  "name": "Journal Type",
+  "Name": "Journal Type",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Journal_Type\"",
   "fields": [
     {
       "id": "fldYXB6QL2fmCXJtnYY",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -22,7 +22,7 @@
     },
     {
       "id": "fldVj6TXoXdTyoPpAyS",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -36,7 +36,7 @@
     },
     {
       "id": "fldO2F3vn00YhVQ3tM8",
-      "name": "Name",
+      "Name": "Name",
       "dbFieldName": "Name",
       "type": "singleLineText",
       "description": null,
@@ -48,7 +48,7 @@
     },
     {
       "id": "fldUe6xPSq7Qa0MlFWF",
-      "name": "Journal",
+      "Name": "Journal",
       "dbFieldName": "Journal",
       "type": "link",
       "description": null,

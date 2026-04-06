@@ -1,12 +1,12 @@
 {
   "id": "tblgmMIBt67GM05nSVF",
-  "name": "Location Types",
+  "Name": "Location Types",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Location_Types\"",
   "fields": [
     {
       "id": "fldIoGtT6zzHR6q5pBG",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -20,7 +20,7 @@
     },
     {
       "id": "fldF8CSUQgWViUehFSv",
-      "name": "Code",
+      "Name": "Code",
       "dbFieldName": "Code",
       "type": "singleLineText",
       "description": null,
@@ -32,7 +32,7 @@
     },
     {
       "id": "fldsTnSPUI3YH8Efg8E",
-      "name": "Is Warehouse",
+      "Name": "Is Warehouse",
       "dbFieldName": "Is_Warehouse",
       "type": "checkbox",
       "description": null,
@@ -44,7 +44,7 @@
     },
     {
       "id": "fldtHolm70J4S68h3Ea",
-      "name": "Is Production",
+      "Name": "Is Production",
       "dbFieldName": "Is_Production",
       "type": "checkbox",
       "description": null,
@@ -56,7 +56,7 @@
     },
     {
       "id": "fld9s3mjRKBliDK2unX",
-      "name": "Is Quarantine",
+      "Name": "Is Quarantine",
       "dbFieldName": "Is_Quarantine",
       "type": "checkbox",
       "description": null,
@@ -68,7 +68,7 @@
     },
     {
       "id": "fldKhUx5NPPGcD4q3I7",
-      "name": "Color Code",
+      "Name": "Color Code",
       "dbFieldName": "Color_Code",
       "type": "singleLineText",
       "description": null,
@@ -80,7 +80,7 @@
     },
     {
       "id": "fldLCLslS6Rns6R5tn1",
-      "name": "Type",
+      "Name": "Type",
       "dbFieldName": "Type",
       "type": "singleSelect",
       "description": null,

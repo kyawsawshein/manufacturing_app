@@ -1,12 +1,12 @@
 {
   "id": "tbl2hpVtax8DS5VEgg5",
-  "name": "Account Move",
+  "Name": "Account Move",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Account_Move\"",
   "fields": [
     {
       "id": "fldGmpqFcitupYVYbx2",
-      "name": "Label",
+      "Name": "Label",
       "dbFieldName": "Label",
       "type": "autoNumber",
       "description": null,
@@ -20,7 +20,7 @@
     },
     {
       "id": "fldFhkleaJqvVunh8Ai",
-      "name": "Entry",
+      "Name": "Entry",
       "dbFieldName": "Entry",
       "type": "singleSelect",
       "description": null,
@@ -36,7 +36,7 @@
     },
     {
       "id": "fldAInGlsFXlPQ0Ht1k",
-      "name": "Currency",
+      "Name": "Currency",
       "dbFieldName": "Currency",
       "type": "link",
       "description": null,
@@ -59,7 +59,7 @@
     },
     {
       "id": "fldO1I0he6BxcDV12EF",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -75,7 +75,7 @@
     },
     {
       "id": "fldEUyXQDalfhbisCe7",
-      "name": "Accounting Date",
+      "Name": "Accounting Date",
       "dbFieldName": "Accounting_Date",
       "type": "date",
       "description": null,
@@ -93,7 +93,7 @@
     },
     {
       "id": "fld6O5PVf4xlwaUCi2t",
-      "name": "Reference",
+      "Name": "Reference",
       "dbFieldName": "Reference",
       "type": "singleLineText",
       "description": null,
@@ -105,7 +105,7 @@
     },
     {
       "id": "fldrtLBvBMW269B6SIQ",
-      "name": "Sequence",
+      "Name": "Sequence",
       "dbFieldName": "Sequence",
       "type": "autoNumber",
       "description": null,
@@ -119,7 +119,7 @@
     },
     {
       "id": "fldS1QypCZnPJyFTGhD",
-      "name": "Company",
+      "Name": "Company",
       "dbFieldName": "Company",
       "type": "link",
       "description": null,
@@ -142,7 +142,7 @@
     },
     {
       "id": "fldwc7vtHVJ1NvWKQXE",
-      "name": "Account Move Lines",
+      "Name": "Account Move Lines",
       "dbFieldName": "Invoice_Lines",
       "type": "link",
       "description": null,
@@ -165,7 +165,7 @@
     },
     {
       "id": "fldWsm5KLfD3bWc8WEx",
-      "name": "Journal",
+      "Name": "Journal",
       "dbFieldName": "Journal",
       "type": "link",
       "description": null,
@@ -188,7 +188,7 @@
     },
     {
       "id": "fldeB6jzLfvMtrhh8d1",
-      "name": "Partner",
+      "Name": "Partner",
       "dbFieldName": "Partner",
       "type": "link",
       "description": null,
@@ -211,7 +211,7 @@
     },
     {
       "id": "fldM5iD1KiAmEB0XiEg",
-      "name": "Prefix",
+      "Name": "Prefix",
       "dbFieldName": "Prefix",
       "type": "singleLineText",
       "description": null,
@@ -223,7 +223,7 @@
     },
     {
       "id": "fldoTPEIeFVDQT0ORwx",
-      "name": "Amount Total",
+      "Name": "Amount Total",
       "dbFieldName": "Amount_Total",
       "type": "rollup",
       "description": null,
@@ -242,7 +242,7 @@
     },
     {
       "id": "fld1PsLT3cQjvyADzxq",
-      "name": "Stock Move",
+      "Name": "Stock Move",
       "dbFieldName": "Stock_Move",
       "type": "link",
       "description": null,
@@ -262,7 +262,7 @@
     },
     {
       "id": "fldiMZJXjLmT4xYXQJF",
-      "name": "Name",
+      "Name": "Name",
       "dbFieldName": "Name",
       "type": "formula",
       "description": null,

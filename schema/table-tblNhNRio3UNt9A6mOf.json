@@ -1,12 +1,12 @@
 {
   "id": "tblNhNRio3UNt9A6mOf",
-  "name": "Account Move Line",
+  "Name": "Account Move Line",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Account_Move_Line\"",
   "fields": [
     {
       "id": "flddonA31ykmNNj9R8T",
-      "name": "Sale line",
+      "Name": "Sale line",
       "dbFieldName": "Sale_line",
       "type": "link",
       "description": null,
@@ -30,7 +30,7 @@
     },
     {
       "id": "fldFn9y7FPih83RadMH",
-      "name": "Credit",
+      "Name": "Credit",
       "dbFieldName": "Credit",
       "type": "number",
       "description": null,
@@ -47,7 +47,7 @@
     },
     {
       "id": "fldvuOXosagTYnLzpNt",
-      "name": "Debit",
+      "Name": "Debit",
       "dbFieldName": "Debit",
       "type": "number",
       "description": null,
@@ -64,7 +64,7 @@
     },
     {
       "id": "fldZzpfREmL1u7H1X8D",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -78,7 +78,7 @@
     },
     {
       "id": "fldcta5fcYqQArJ149S",
-      "name": "Quantity",
+      "Name": "Quantity",
       "dbFieldName": "Quantity",
       "type": "number",
       "description": null,
@@ -95,7 +95,7 @@
     },
     {
       "id": "fldzpTiCoeCCdyjqTvb",
-      "name": "Price",
+      "Name": "Price",
       "dbFieldName": "Price",
       "type": "number",
       "description": null,
@@ -112,7 +112,7 @@
     },
     {
       "id": "fldRspaX3Bq6hXDPMLf",
-      "name": "Subtotal",
+      "Name": "Subtotal",
       "dbFieldName": "Subtotal",
       "type": "formula",
       "description": null,
@@ -131,7 +131,7 @@
     },
     {
       "id": "fldLt694aebf09KJHTE",
-      "name": "Account",
+      "Name": "Account",
       "dbFieldName": "Account",
       "type": "link",
       "description": null,
@@ -154,7 +154,7 @@
     },
     {
       "id": "fldiReSl3VEegu1MrhW",
-      "name": "Tax",
+      "Name": "Tax",
       "dbFieldName": "Tax",
       "type": "link",
       "description": null,
@@ -177,7 +177,7 @@
     },
     {
       "id": "fldKZM0dMLfCwNzrIsg",
-      "name": "Account Move",
+      "Name": "Account Move",
       "dbFieldName": "Account_Move",
       "type": "link",
       "description": null,
@@ -198,7 +198,7 @@
     },
     {
       "id": "fldKifp2eXTEr1EHkoM",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -214,7 +214,7 @@
     },
     {
       "id": "flduf5paCnNHE8F9WYd",
-      "name": "Name",
+      "Name": "Name",
       "dbFieldName": "Name",
       "type": "formula",
       "description": null,
@@ -229,7 +229,7 @@
     },
     {
       "id": "fldKChOrtgTd8KWmDKX",
-      "name": "Purchase Line",
+      "Name": "Purchase Line",
       "dbFieldName": "Purchase_Line",
       "type": "link",
       "description": null,
@@ -253,7 +253,7 @@
     },
     {
       "id": "fldwYHhyuXz8G5TcGQb",
-      "name": "Unit",
+      "Name": "Unit",
       "dbFieldName": "Unit",
       "type": "link",
       "description": null,
@@ -276,7 +276,7 @@
     },
     {
       "id": "fldr9dYDmzC9X1SmeFO",
-      "name": "Product",
+      "Name": "Product",
       "dbFieldName": "Product",
       "type": "link",
       "description": null,

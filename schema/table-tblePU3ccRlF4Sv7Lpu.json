@@ -1,12 +1,12 @@
 {
   "id": "tblePU3ccRlF4Sv7Lpu",
-  "name": "Work In Progress (WIP)",
+  "Name": "Work In Progress (WIP)",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Work_In_Progress_WIP\"",
   "fields": [
     {
       "id": "fldzTVPclYdacIHByKq",
-      "name": "Reason for Hold",
+      "Name": "Reason for Hold",
       "dbFieldName": "Reason_for_Hold",
       "type": "singleLineText",
       "description": "Reason why WIP is on hold",
@@ -18,7 +18,7 @@
     },
     {
       "id": "fldXWikmzzzy6ob8L6k",
-      "name": "Quality Check Reference",
+      "Name": "Quality Check Reference",
       "dbFieldName": "Quality_Check_Reference",
       "type": "link",
       "description": "Link to quality check for this WIP item",
@@ -38,7 +38,7 @@
     },
     {
       "id": "fldejRCtWRZMtAjLAtm",
-      "name": "Next Operation",
+      "Name": "Next Operation",
       "dbFieldName": "Next_Operation",
       "type": "singleSelect",
       "description": "Next operation in the production flow",
@@ -56,7 +56,7 @@
     },
     {
       "id": "fldhTuRJ6QeMCjAFwvi",
-      "name": "Quantity Scrapped",
+      "Name": "Quantity Scrapped",
       "dbFieldName": "Quantity_Scrapped",
       "type": "number",
       "description": null,
@@ -73,7 +73,7 @@
     },
     {
       "id": "fldEiXQ3CWEEXflS7b7",
-      "name": "Start Date",
+      "Name": "Start Date",
       "dbFieldName": "Start_Date",
       "type": "date",
       "description": null,
@@ -91,7 +91,7 @@
     },
     {
       "id": "fldw1DJdVlcHstI0Iv9",
-      "name": "Expected Completion",
+      "Name": "Expected Completion",
       "dbFieldName": "Expected_Completion",
       "type": "date",
       "description": null,
@@ -109,7 +109,7 @@
     },
     {
       "id": "fldwJA9SHS3lmZYAHIV",
-      "name": "Actual Completion",
+      "Name": "Actual Completion",
       "dbFieldName": "Actual_Completion",
       "type": "date",
       "description": null,
@@ -127,7 +127,7 @@
     },
     {
       "id": "fldYyc4gypf2mseVXd8",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -144,7 +144,7 @@
     },
     {
       "id": "fldbt3uXhVxmbeMDpic",
-      "name": "Sequence",
+      "Name": "Sequence",
       "dbFieldName": "Sequence",
       "type": "autoNumber",
       "description": null,
@@ -158,7 +158,7 @@
     },
     {
       "id": "fldNmTdV15e5PmlkYxK",
-      "name": "Name",
+      "Name": "Name",
       "dbFieldName": "Name",
       "type": "formula",
       "description": null,
@@ -173,7 +173,7 @@
     },
     {
       "id": "fldemn3iMT46y57h8M1",
-      "name": "Operator Hours",
+      "Name": "Operator Hours",
       "dbFieldName": "Operator_Hours",
       "type": "number",
       "description": null,
@@ -190,7 +190,7 @@
     },
     {
       "id": "fldh3YmKqrtJui6LwSv",
-      "name": "Hourly Rate",
+      "Name": "Hourly Rate",
       "dbFieldName": "Hourly_Rate",
       "type": "number",
       "description": null,
@@ -208,7 +208,7 @@
     },
     {
       "id": "fldeNCzm0lAHJMSulMT",
-      "name": "Labor Cost",
+      "Name": "Labor Cost",
       "dbFieldName": "Labor_Cost",
       "type": "formula",
       "description": null,
@@ -227,7 +227,7 @@
     },
     {
       "id": "fldDq3e9UmuPdC8BUw2",
-      "name": "Batch Number",
+      "Name": "Batch Number",
       "dbFieldName": "Batch_Number",
       "type": "link",
       "description": null,
@@ -250,7 +250,7 @@
     },
     {
       "id": "fld8S95glgEWybzDou7",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -264,7 +264,7 @@
     },
     {
       "id": "fldeOH6L79xurDuTg7h",
-      "name": "Stock Lot",
+      "Name": "Stock Lot",
       "dbFieldName": "Stock_Lot",
       "type": "link",
       "description": null,
@@ -284,7 +284,7 @@
     },
     {
       "id": "fldlrSvw2beIHf5K6Hr",
-      "name": "Manufacturing Order",
+      "Name": "Manufacturing Order",
       "dbFieldName": "Manufacturing_Order",
       "type": "link",
       "description": null,
@@ -304,7 +304,7 @@
     },
     {
       "id": "fldvfoJhiMDYu6ICq6D",
-      "name": "Quantity Started",
+      "Name": "Quantity Started",
       "dbFieldName": "Quantity_Started",
       "type": "number",
       "description": null,
@@ -321,7 +321,7 @@
     },
     {
       "id": "fld3jPEMUVPnJlLb9TT",
-      "name": "Quantity Completed",
+      "Name": "Quantity Completed",
       "dbFieldName": "Quantity_Completed",
       "type": "rollup",
       "description": null,

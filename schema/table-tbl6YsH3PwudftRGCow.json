@@ -1,12 +1,12 @@
 {
   "id": "tbl6YsH3PwudftRGCow",
-  "name": "FG/PL/Production QC",
+  "Name": "FG/PL/Production QC",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"FG_PL_Production_QC\"",
   "fields": [
     {
       "id": "fld0ARFVEBNPTIV7wLu",
-      "name": "PART No",
+      "Name": "PART No",
       "dbFieldName": "PART_No",
       "type": "link",
       "description": null,
@@ -29,7 +29,7 @@
     },
     {
       "id": "fldFk7FTA0JigU9ED0R",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -45,7 +45,7 @@
     },
     {
       "id": "fldTnmGRcqEnuPXsTW1",
-      "name": "Qty",
+      "Name": "Qty",
       "dbFieldName": "Qty",
       "type": "number",
       "description": null,
@@ -62,7 +62,7 @@
     },
     {
       "id": "fld95pfIqotoYi5Ci5q",
-      "name": "Type-BOX",
+      "Name": "Type-BOX",
       "dbFieldName": "Type_BOX",
       "type": "singleLineText",
       "description": null,
@@ -74,7 +74,7 @@
     },
     {
       "id": "fldleIKw8Qb31chX8kk",
-      "name": "BOX No",
+      "Name": "BOX No",
       "dbFieldName": "BOX_No",
       "type": "singleLineText",
       "description": null,
@@ -86,7 +86,7 @@
     },
     {
       "id": "fldLEGjEiqPPSdACrun",
-      "name": "IV No",
+      "Name": "IV No",
       "dbFieldName": "IV_No",
       "type": "singleLineText",
       "description": null,
@@ -98,7 +98,7 @@
     },
     {
       "id": "fldsEQhffJCmWNISVXw",
-      "name": "G.W",
+      "Name": "G.W",
       "dbFieldName": "G_W",
       "type": "number",
       "description": null,
@@ -115,7 +115,7 @@
     },
     {
       "id": "fldrZcPiOxI2jEcuD52",
-      "name": "B.W",
+      "Name": "B.W",
       "dbFieldName": "B_W",
       "type": "number",
       "description": null,
@@ -132,7 +132,7 @@
     },
     {
       "id": "fldJfmUU6bfMKd5srra",
-      "name": "N.W",
+      "Name": "N.W",
       "dbFieldName": "N_W",
       "type": "number",
       "description": null,
@@ -149,7 +149,7 @@
     },
     {
       "id": "fldtWjpJnQz6Iqe8DwA",
-      "name": "Unit",
+      "Name": "Unit",
       "dbFieldName": "Unit",
       "type": "singleSelect",
       "description": null,
@@ -166,7 +166,7 @@
     },
     {
       "id": "fldMxZtQVqeAxyTLC9j",
-      "name": "Lot Name",
+      "Name": "Lot Name",
       "dbFieldName": "Lot_Name",
       "type": "link",
       "description": null,
@@ -189,7 +189,7 @@
     },
     {
       "id": "fldX9nYG4bv9aDLnDFR",
-      "name": "SO.No",
+      "Name": "SO.No",
       "dbFieldName": "SO_No",
       "type": "link",
       "description": null,
@@ -212,7 +212,7 @@
     },
     {
       "id": "flde91X1gjW2VKLfCTW",
-      "name": "MO No",
+      "Name": "MO No",
       "dbFieldName": "MO_No",
       "type": "link",
       "description": null,
@@ -235,7 +235,7 @@
     },
     {
       "id": "fldAzwLMISC8qPSNaWj",
-      "name": "Lot",
+      "Name": "Lot",
       "dbFieldName": "Product",
       "type": "link",
       "description": null,
@@ -258,7 +258,7 @@
     },
     {
       "id": "fldqu2QW31hQQG4d7s0",
-      "name": "PO.No",
+      "Name": "PO.No",
       "dbFieldName": "PO_No",
       "type": "autoNumber",
       "description": null,
@@ -272,7 +272,7 @@
     },
     {
       "id": "fldeUBCbRYO4cH4s2Qq",
-      "name": "PO",
+      "Name": "PO",
       "dbFieldName": "PO",
       "type": "link",
       "description": null,

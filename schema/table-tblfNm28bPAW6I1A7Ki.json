@@ -1,12 +1,12 @@
 {
   "id": "tblfNm28bPAW6I1A7Ki",
-  "name": "Quality Checks",
+  "Name": "Quality Checks",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Quality_Checks\"",
   "fields": [
     {
       "id": "fldSAUfu88o2ym2zVGA",
-      "name": "Defects",
+      "Name": "Defects",
       "dbFieldName": "Defects",
       "type": "singleLineText",
       "description": null,
@@ -18,7 +18,7 @@
     },
     {
       "id": "fldCIA4WIPfLXn5BHue",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -34,7 +34,7 @@
     },
     {
       "id": "fldHhD9VNlPvCU8GVKp",
-      "name": "Date",
+      "Name": "Date",
       "dbFieldName": "Date",
       "type": "date",
       "description": null,
@@ -52,7 +52,7 @@
     },
     {
       "id": "fldj0uPVdCtCSeym5rZ",
-      "name": "Batch Number",
+      "Name": "Batch Number",
       "dbFieldName": "Batch_Number",
       "type": "singleLineText",
       "description": null,
@@ -64,7 +64,7 @@
     },
     {
       "id": "fldtqJl0eQzyE8bFhr7",
-      "name": "Manufacturing Order",
+      "Name": "Manufacturing Order",
       "dbFieldName": "Manufacturing_Order",
       "type": "link",
       "description": null,
@@ -88,7 +88,7 @@
     },
     {
       "id": "fldCtBz2wwIEXuW5oaK",
-      "name": "Name",
+      "Name": "Name",
       "dbFieldName": "Name",
       "type": "singleLineText",
       "description": null,
@@ -100,7 +100,7 @@
     },
     {
       "id": "fldvB7X45R1u7mFtF9o",
-      "name": "Check ID",
+      "Name": "Check ID",
       "dbFieldName": "Check_ID",
       "type": "autoNumber",
       "description": null,
@@ -114,7 +114,7 @@
     },
     {
       "id": "fldLA30mj6z8HJtQO55",
-      "name": "Product",
+      "Name": "Product",
       "dbFieldName": "Product",
       "type": "singleLineText",
       "description": null,
@@ -126,7 +126,7 @@
     },
     {
       "id": "fldgdEa7IO0YzlVsnSx",
-      "name": "Inspector",
+      "Name": "Inspector",
       "dbFieldName": "Inspector",
       "type": "link",
       "description": null,
@@ -146,7 +146,7 @@
     },
     {
       "id": "fld2U7RYPGdkl5892TC",
-      "name": "Work In Progress (WIP)",
+      "Name": "Work In Progress (WIP)",
       "dbFieldName": "Work_In_Progress_WIP",
       "type": "link",
       "description": null,

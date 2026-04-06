@@ -1,12 +1,12 @@
 {
   "id": "tbl9oRDAAgDK4rwmfle",
-  "name": "Account Head",
+  "Name": "Account Head",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Account_Head\"",
   "fields": [
     {
       "id": "fldbAmSsRNcZLOR2DlB",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -22,7 +22,7 @@
     },
     {
       "id": "fldowh0eDjzrc36mkJV",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -36,7 +36,7 @@
     },
     {
       "id": "fldSms4z2XnhG8zC8ZT",
-      "name": "Parent",
+      "Name": "Parent",
       "dbFieldName": "Parent",
       "type": "link",
       "description": null,
@@ -69,7 +69,7 @@
     },
     {
       "id": "fldYGDZteqoEX5t7LLF",
-      "name": "Name",
+      "Name": "Name",
       "dbFieldName": "Name",
       "type": "singleLineText",
       "description": null,
@@ -81,7 +81,7 @@
     },
     {
       "id": "fldmeJCkjshyGjLagls",
-      "name": "Account Head",
+      "Name": "Account Head",
       "dbFieldName": "Account_Heard",
       "type": "link",
       "description": null,
@@ -102,7 +102,7 @@
     },
     {
       "id": "fld887vror0fgjK3Nje",
-      "name": "Account Type",
+      "Name": "Account Type",
       "dbFieldName": "Account_Type",
       "type": "link",
       "description": null,

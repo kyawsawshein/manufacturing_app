@@ -1,12 +1,12 @@
 {
   "id": "tbl8QlQ0FRRLSlKGu2w",
-  "name": "Request Cutting",
+  "Name": "Request Cutting",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Request_Cutting\"",
   "fields": [
     {
       "id": "fld1VLkTRTKBsccNyuZ",
-      "name": "Sequence",
+      "Name": "Sequence",
       "dbFieldName": "Sequence",
       "type": "autoNumber",
       "description": null,
@@ -20,7 +20,7 @@
     },
     {
       "id": "fldiUBTd9XQmWCIJ8hG",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -35,7 +35,7 @@
     },
     {
       "id": "fld0OiQkKSbMmDX1X1M",
-      "name": "Date",
+      "Name": "Date",
       "dbFieldName": "Date",
       "type": "date",
       "description": null,
@@ -53,7 +53,7 @@
     },
     {
       "id": "fldePSwfE9rahdOxQeY",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -67,7 +67,7 @@
     },
     {
       "id": "flduMZQfWGSCYqA3n5c",
-      "name": "Employee",
+      "Name": "Employee",
       "dbFieldName": "Employee",
       "type": "link",
       "description": null,
@@ -90,7 +90,7 @@
     },
     {
       "id": "fldYJ9m7ZYB6G251Twz",
-      "name": "Location",
+      "Name": "Location",
       "dbFieldName": "Location",
       "type": "link",
       "description": null,
@@ -113,7 +113,7 @@
     },
     {
       "id": "fldkY5UlABIeLdAhX03",
-      "name": "H&L Item",
+      "Name": "H&L Item",
       "dbFieldName": "HL_Item",
       "type": "link",
       "description": null,
@@ -136,7 +136,7 @@
     },
     {
       "id": "fldRYdV0cVBbrWEucle",
-      "name": "Tube",
+      "Name": "Tube",
       "dbFieldName": "Tube",
       "type": "link",
       "description": null,
@@ -159,7 +159,7 @@
     },
     {
       "id": "fldYItXqLOfsJz2k5Wf",
-      "name": "MO No",
+      "Name": "MO No",
       "dbFieldName": "MO_No",
       "type": "link",
       "description": null,
@@ -182,7 +182,7 @@
     },
     {
       "id": "fldoedGW7P3UbsExd1p",
-      "name": "Name",
+      "Name": "Name",
       "dbFieldName": "Name",
       "type": "formula",
       "description": null,

@@ -10,7 +10,7 @@ import { useToast } from "@/hooks/use-toast";
 
 interface ModuleAccess {
   id: string;
-  name: string;
+  Name: string;
   description: string;
   icon: React.ElementType;
   permissions: {
@@ -23,7 +23,7 @@ interface ModuleAccess {
 const initialModules: ModuleAccess[] = [
   {
     id: "inventory",
-    name: "Inventory",
+    Name: "Inventory",
     description: "Manage products, stock levels, and warehouse operations",
     icon: Package,
     permissions: [
@@ -36,7 +36,7 @@ const initialModules: ModuleAccess[] = [
   },
   {
     id: "purchase",
-    name: "Purchase",
+    Name: "Purchase",
     description: "Handle purchase orders and vendor management",
     icon: ShoppingCart,
     permissions: [
@@ -49,7 +49,7 @@ const initialModules: ModuleAccess[] = [
   },
   {
     id: "sales",
-    name: "Sales",
+    Name: "Sales",
     description: "Manage sales orders and customer relationships",
     icon: Receipt,
     permissions: [
@@ -62,7 +62,7 @@ const initialModules: ModuleAccess[] = [
   },
   {
     id: "manufacturing",
-    name: "Manufacturing",
+    Name: "Manufacturing",
     description: "Control production orders and bill of materials",
     icon: Factory,
     permissions: [
@@ -75,7 +75,7 @@ const initialModules: ModuleAccess[] = [
   },
   {
     id: "employees",
-    name: "Employees",
+    Name: "Employees",
     description: "Employee and department management",
     icon: Users,
     permissions: [
@@ -88,7 +88,7 @@ const initialModules: ModuleAccess[] = [
   },
   {
     id: "settings",
-    name: "Settings",
+    Name: "Settings",
     description: "System configuration and user management",
     icon: Settings,
     permissions: [
@@ -109,13 +109,13 @@ export default function AccessRightsPage() {
       prev.map((module) =>
         module.id === moduleId
           ? {
-              ...module,
-              permissions: module.permissions.map((perm) =>
-                perm.id === permissionId
-                  ? { ...perm, enabled: !perm.enabled }
-                  : perm
-              ),
-            }
+            ...module,
+            permissions: module.permissions.map((perm) =>
+              perm.id === permissionId
+                ? { ...perm, enabled: !perm.enabled }
+                : perm
+            ),
+          }
           : module
       )
     );
@@ -158,7 +158,7 @@ export default function AccessRightsPage() {
                       <Icon className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <CardTitle className="text-lg">{module.name}</CardTitle>
+                      <CardTitle className="text-lg">{module.Name}</CardTitle>
                       <CardDescription>{module.description}</CardDescription>
                     </div>
                   </div>

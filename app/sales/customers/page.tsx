@@ -19,7 +19,7 @@ import { getPartners, createPartner, updatePartner, deletePartner } from "@/app/
 
 interface Customer {
   id: string;
-  name: string;
+  Name: string;
   email: string;
   phone: string;
   type: string;
@@ -47,7 +47,7 @@ export default function CustomersPage() {
   const { toast } = useToast();
 
   const [formData, setFormData] = useState({
-    name: "",
+    Name: "",
     email: "",
     phone: "",
     country: "",
@@ -77,7 +77,7 @@ export default function CustomersPage() {
   }, []);
 
   const columns: Column<Customer>[] = [
-    { key: "name", label: "Name" },
+    { key: "Name", label: "Name" },
     { key: "email", label: "Email" },
     { key: "phone", label: "Phone" },
     { key: "country", label: "Country" },
@@ -93,7 +93,7 @@ export default function CustomersPage() {
   const handleAdd = () => {
     setEditingCustomer(null);
     setFormData({
-      name: "",
+      Name: "",
       email: "",
       phone: "",
       country: "",
@@ -108,7 +108,7 @@ export default function CustomersPage() {
   const handleEdit = (customer: Customer) => {
     setEditingCustomer(customer);
     setFormData({
-      name: customer.name || "",
+      Name: customer.Name || "",
       email: customer.email || "",
       phone: customer.phone || "",
       country: customer.country || "",
@@ -121,7 +121,7 @@ export default function CustomersPage() {
   };
 
   const handleDelete = (customer: Customer) => {
-    if (confirm(`Are you sure you want to delete ${customer.name}?`)) {
+    if (confirm(`Are you sure you want to delete ${customer.Name}?`)) {
       startTransition(async () => {
         try {
           await deletePartner(customer.id);
@@ -200,7 +200,7 @@ export default function CustomersPage() {
         <DataTable
           data={customers}
           columns={columns}
-          searchKey="name"
+          searchKey="Name"
           searchPlaceholder="Search customers..."
           onAdd={handleAdd}
           onEdit={handleEdit}
@@ -218,14 +218,14 @@ export default function CustomersPage() {
             </DialogHeader>
             <div className="grid gap-4 py-4">
               <div className="grid gap-2">
-                <Label htmlFor="name">Customer Name</Label>
+                <Label htmlFor="Name">Customer Name</Label>
                 <Input
-                  id="name"
-                  value={formData.name}
+                  id="Name"
+                  value={formData.Name}
                   onChange={(e) =>
-                    setFormData({ ...formData, name: e.target.value })
+                    setFormData({ ...formData, Name: e.target.value })
                   }
-                  placeholder="Enter customer name"
+                  placeholder="Enter customer Name"
                 />
               </div>
               <div className="grid grid-cols-2 gap-4">

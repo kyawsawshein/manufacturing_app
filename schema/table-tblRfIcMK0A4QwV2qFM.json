@@ -1,12 +1,12 @@
 {
   "id": "tblRfIcMK0A4QwV2qFM",
-  "name": "Production Log",
+  "Name": "Production Log",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Production_Log\"",
   "fields": [
     {
       "id": "fldNcbmfcx0NzBpLQmh",
-      "name": "Photo",
+      "Name": "Photo",
       "dbFieldName": "Photo",
       "type": "attachment",
       "description": null,
@@ -18,7 +18,7 @@
     },
     {
       "id": "fldUiYg0GqOTk5o7eop",
-      "name": "Operator",
+      "Name": "Operator",
       "dbFieldName": "Operator",
       "type": "singleLineText",
       "description": null,
@@ -30,7 +30,7 @@
     },
     {
       "id": "fld70HiRgdJHPyRTM97",
-      "name": "Section Completed",
+      "Name": "Section Completed",
       "dbFieldName": "Section_Completed",
       "type": "singleSelect",
       "description": null,
@@ -48,7 +48,7 @@
     },
     {
       "id": "fldczJBojk3JIDHuvvG",
-      "name": "Time Taken (minutes)",
+      "Name": "Time Taken (minutes)",
       "dbFieldName": "Time_Taken_minutes",
       "type": "number",
       "description": null,
@@ -65,7 +65,7 @@
     },
     {
       "id": "fld6jI1xnONVTwP1hGm",
-      "name": "Status Update",
+      "Name": "Status Update",
       "dbFieldName": "Status_Update",
       "type": "singleSelect",
       "description": null,
@@ -82,7 +82,7 @@
     },
     {
       "id": "fldFxFJkqw0dbDM0MnO",
-      "name": "Notes",
+      "Name": "Notes",
       "dbFieldName": "Notes",
       "type": "singleLineText",
       "description": null,
@@ -94,7 +94,7 @@
     },
     {
       "id": "fldOIoWEkcVdrjY6rpL",
-      "name": "WIP Number",
+      "Name": "WIP Number",
       "dbFieldName": "WIP_Number",
       "type": "link",
       "description": null,

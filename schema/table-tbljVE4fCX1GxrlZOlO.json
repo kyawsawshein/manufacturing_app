@@ -1,12 +1,12 @@
 {
   "id": "tbljVE4fCX1GxrlZOlO",
-  "name": "BOM",
+  "Name": "BOM",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"BOM\"",
   "fields": [
     {
       "id": "fldAFwbFX6fCWyIOMHl",
-      "name": "Name",
+      "Name": "Name",
       "dbFieldName": "Name",
       "type": "formula",
       "description": null,
@@ -21,7 +21,7 @@
     },
     {
       "id": "fld0VdSDfuO9aUlG55s",
-      "name": "Version",
+      "Name": "Version",
       "dbFieldName": "Version",
       "type": "singleLineText",
       "description": null,
@@ -33,7 +33,7 @@
     },
     {
       "id": "fldXoofJqfxsI38hfhd",
-      "name": "Quantity",
+      "Name": "Quantity",
       "dbFieldName": "Quantity",
       "type": "number",
       "description": null,
@@ -50,7 +50,7 @@
     },
     {
       "id": "fldJ7ZvTwuanUAPIIDu",
-      "name": "Drawing",
+      "Name": "Drawing",
       "dbFieldName": "Drawing",
       "type": "attachment",
       "description": null,
@@ -62,7 +62,7 @@
     },
     {
       "id": "fldooU78f6gHZ362PtW",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -78,7 +78,7 @@
     },
     {
       "id": "fldbG7C496IC5irpjcI",
-      "name": "Document",
+      "Name": "Document",
       "dbFieldName": "Document",
       "type": "attachment",
       "description": null,
@@ -90,7 +90,7 @@
     },
     {
       "id": "fldSKhzNnNJqDWQDOlZ",
-      "name": "Effective Date",
+      "Name": "Effective Date",
       "dbFieldName": "Effective_Date",
       "type": "date",
       "description": null,
@@ -108,7 +108,7 @@
     },
     {
       "id": "fldV1cUu57SObBr8XId",
-      "name": "Reference",
+      "Name": "Reference",
       "dbFieldName": "Reference",
       "type": "singleLineText",
       "description": null,
@@ -120,7 +120,7 @@
     },
     {
       "id": "flddO7Bo7vDwIfgtFug",
-      "name": "Cost Status",
+      "Name": "Cost Status",
       "dbFieldName": "Cost_Status",
       "type": "singleSelect",
       "description": null,
@@ -136,7 +136,7 @@
     },
     {
       "id": "fldhgAFmzUOYIfHI9tM",
-      "name": "Version Date",
+      "Name": "Version Date",
       "dbFieldName": "Version_Date",
       "type": "date",
       "description": null,
@@ -154,7 +154,7 @@
     },
     {
       "id": "fldF21mtkY9Pnqzajq6",
-      "name": "Total Material Cost",
+      "Name": "Total Material Cost",
       "dbFieldName": "Total_Material_Cost",
       "type": "rollup",
       "description": null,
@@ -173,7 +173,7 @@
     },
     {
       "id": "fldL8vV4vjOBxKqzy1h",
-      "name": "BOM",
+      "Name": "BOM",
       "dbFieldName": "BOM",
       "type": "autoNumber",
       "description": null,
@@ -187,7 +187,7 @@
     },
     {
       "id": "fldFCRdHxfGaZOv0N1e",
-      "name": "BOM Lines",
+      "Name": "BOM Lines",
       "dbFieldName": "BOM_Lines",
       "type": "link",
       "description": null,
@@ -208,7 +208,7 @@
     },
     {
       "id": "fldehyTSNV6w3jgHqP5",
-      "name": "Product",
+      "Name": "Product",
       "dbFieldName": "Product",
       "type": "link",
       "description": null,
@@ -231,7 +231,7 @@
     },
     {
       "id": "fld6sXgTn8R8UuZq2UT",
-      "name": "MO  (Manufacturing Plan)",
+      "Name": "MO  (Manufacturing Plan)",
       "dbFieldName": "MO_Manufacturing_Plan",
       "type": "link",
       "description": null,

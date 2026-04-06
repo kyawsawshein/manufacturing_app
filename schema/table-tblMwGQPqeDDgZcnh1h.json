@@ -1,12 +1,12 @@
 {
   "id": "tblMwGQPqeDDgZcnh1h",
-  "name": "Cutting Tube",
+  "Name": "Cutting Tube",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Cutting_Tube\"",
   "fields": [
     {
       "id": "fldnXLxSS8yuVKXsKVw",
-      "name": "Qty",
+      "Name": "Qty",
       "dbFieldName": "Qty",
       "type": "number",
       "description": null,
@@ -23,7 +23,7 @@
     },
     {
       "id": "fld6izGEOScGretsY2z",
-      "name": "Lot No",
+      "Name": "Lot No",
       "dbFieldName": "Lot_No",
       "type": "singleLineText",
       "description": null,
@@ -35,7 +35,7 @@
     },
     {
       "id": "fldPSdiQYbsUHdLQ6N8",
-      "name": "Description",
+      "Name": "Description",
       "dbFieldName": "Description",
       "type": "singleLineText",
       "description": null,
@@ -47,7 +47,7 @@
     },
     {
       "id": "fldBsmAldar1RMLf3zN",
-      "name": "Remark",
+      "Name": "Remark",
       "dbFieldName": "Remark",
       "type": "singleLineText",
       "description": null,
@@ -59,7 +59,7 @@
     },
     {
       "id": "fldWh1Nm9EhayOv8yX3",
-      "name": "PO.No",
+      "Name": "PO.No",
       "dbFieldName": "PO_No",
       "type": "singleLineText",
       "description": null,
@@ -71,7 +71,7 @@
     },
     {
       "id": "fldAcZhzXSUMYXfgdd6",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "Name",
       "type": "autoNumber",
       "description": null,
@@ -85,7 +85,7 @@
     },
     {
       "id": "fldOwm0U3c1YuzIhcoS",
-      "name": "Item",
+      "Name": "Item",
       "dbFieldName": "Code",
       "type": "link",
       "description": null,
@@ -108,7 +108,7 @@
     },
     {
       "id": "fld8ZnaDtWiRzQiQH4m",
-      "name": "Cutting Request",
+      "Name": "Cutting Request",
       "dbFieldName": "Cutting_Request",
       "type": "link",
       "description": null,
@@ -129,7 +129,7 @@
     },
     {
       "id": "fldOcUQKSqBcxMjtG7N",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,

@@ -10,7 +10,7 @@ import { getWarehouses } from "@/app/actions";
 
 interface WarehouseData {
   id: string;
-  name: string;
+  Name: string;
   company: string;
   status: string;
 }
@@ -40,7 +40,7 @@ export default function WarehousesPage() {
   }, []);
 
   const columns: Column<WarehouseData>[] = [
-    { key: "name", label: "Warehouse Name" },
+    { key: "Name", label: "Warehouse Name" },
     { key: "company", label: "Company" },
     {
       key: "status",
@@ -77,7 +77,7 @@ export default function WarehousesPage() {
         <DataTable
           data={warehouses}
           columns={columns}
-          searchKey="name"
+          searchKey="Name"
           searchPlaceholder="Search warehouses..."
           pageSize={15}
         />

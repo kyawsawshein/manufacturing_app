@@ -1,12 +1,12 @@
 {
   "id": "tblxkpNSxxYmitJCtWS",
-  "name": "Material Log",
+  "Name": "Material Log",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Material_Log\"",
   "fields": [
     {
       "id": "fldwNHzbZIJTON1z4KW",
-      "name": "Notes",
+      "Name": "Notes",
       "dbFieldName": "Notes",
       "type": "singleLineText",
       "description": null,
@@ -18,7 +18,7 @@
     },
     {
       "id": "fldHWReFs2NEFhALhzq",
-      "name": "Photo",
+      "Name": "Photo",
       "dbFieldName": "Photo",
       "type": "attachment",
       "description": null,
@@ -30,7 +30,7 @@
     },
     {
       "id": "fldpaXgeJ0bIxOjB09k",
-      "name": "Issued By (User)",
+      "Name": "Issued By (User)",
       "dbFieldName": "Issued_By_User",
       "type": "user",
       "description": null,
@@ -45,7 +45,7 @@
     },
     {
       "id": "fldDRgRD585HnUcu6u4",
-      "name": "Ordered Qty",
+      "Name": "Ordered Qty",
       "dbFieldName": "Ordered_Qty",
       "type": "singleLineText",
       "description": null,
@@ -57,7 +57,7 @@
     },
     {
       "id": "fldVu5nUK7Wi5nUmKNy",
-      "name": "Quantity Issued",
+      "Name": "Quantity Issued",
       "dbFieldName": "Quantity_Issued",
       "type": "number",
       "description": null,
@@ -74,7 +74,7 @@
     },
     {
       "id": "fld5NNANdygnac0Zucc",
-      "name": "WIP Number",
+      "Name": "WIP Number",
       "dbFieldName": "WIP_Number",
       "type": "link",
       "description": null,

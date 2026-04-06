@@ -19,7 +19,7 @@ import { getPartners, createPartner, updatePartner, deletePartner } from "@/app/
 
 interface Vendor {
   id: string;
-  name: string;
+  Name: string;
   email: string;
   phone: string;
   type: string;
@@ -47,7 +47,7 @@ export default function VendorsPage() {
   const { toast } = useToast();
 
   const [formData, setFormData] = useState({
-    name: "",
+    Name: "",
     email: "",
     phone: "",
     country: "",
@@ -77,7 +77,7 @@ export default function VendorsPage() {
   }, []);
 
   const columns: Column<Vendor>[] = [
-    { key: "name", label: "Name" },
+    { key: "Name", label: "Name" },
     { key: "email", label: "Email" },
     { key: "phone", label: "Phone" },
     { key: "country", label: "Country" },
@@ -93,7 +93,7 @@ export default function VendorsPage() {
   const handleAdd = () => {
     setEditingVendor(null);
     setFormData({
-      name: "",
+      Name: "",
       email: "",
       phone: "",
       country: "",
@@ -108,7 +108,7 @@ export default function VendorsPage() {
   const handleEdit = (vendor: Vendor) => {
     setEditingVendor(vendor);
     setFormData({
-      name: vendor.name || "",
+      Name: vendor.Name || "",
       email: vendor.email || "",
       phone: vendor.phone || "",
       country: vendor.country || "",
@@ -121,7 +121,7 @@ export default function VendorsPage() {
   };
 
   const handleDelete = (vendor: Vendor) => {
-    if (confirm(`Are you sure you want to delete ${vendor.name}?`)) {
+    if (confirm(`Are you sure you want to delete ${vendor.Name}?`)) {
       startTransition(async () => {
         try {
           await deletePartner(vendor.id);
@@ -200,7 +200,7 @@ export default function VendorsPage() {
         <DataTable
           data={vendors}
           columns={columns}
-          searchKey="name"
+          searchKey="Name"
           searchPlaceholder="Search vendors..."
           onAdd={handleAdd}
           onEdit={handleEdit}
@@ -218,14 +218,14 @@ export default function VendorsPage() {
             </DialogHeader>
             <div className="grid gap-4 py-4">
               <div className="grid gap-2">
-                <Label htmlFor="name">Vendor Name</Label>
+                <Label htmlFor="Name">Vendor Name</Label>
                 <Input
-                  id="name"
-                  value={formData.name}
+                  id="Name"
+                  value={formData.Name}
                   onChange={(e) =>
-                    setFormData({ ...formData, name: e.target.value })
+                    setFormData({ ...formData, Name: e.target.value })
                   }
-                  placeholder="Enter vendor name"
+                  placeholder="Enter vendor Name"
                 />
               </div>
               <div className="grid grid-cols-2 gap-4">

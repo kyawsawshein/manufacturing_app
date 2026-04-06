@@ -1,12 +1,12 @@
 {
   "id": "tblKPsfPodeEWRIvdm0",
-  "name": "Departments",
+  "Name": "Departments",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Departments\"",
   "fields": [
     {
       "id": "fldxMEHcc1ENSpHyV0X",
-      "name": "Location",
+      "Name": "Location",
       "dbFieldName": "Location",
       "type": "singleLineText",
       "description": null,
@@ -18,7 +18,7 @@
     },
     {
       "id": "fldqgkM5QlLGXM92bz8",
-      "name": "Code",
+      "Name": "Code",
       "dbFieldName": "Code",
       "type": "singleLineText",
       "description": null,
@@ -30,7 +30,7 @@
     },
     {
       "id": "fld04CDJaUI2vJJh56w",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -44,7 +44,7 @@
     },
     {
       "id": "fldv6sVGecljuYGwXNL",
-      "name": "Description",
+      "Name": "Description",
       "dbFieldName": "Description",
       "type": "longText",
       "description": null,
@@ -56,7 +56,7 @@
     },
     {
       "id": "fldX3RK91yfOtFS5z9X",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -72,7 +72,7 @@
     },
     {
       "id": "flduGUmCMlUwVSezdsg",
-      "name": "Name",
+      "Name": "Name",
       "dbFieldName": "Name",
       "type": "singleLineText",
       "description": null,
@@ -84,7 +84,7 @@
     },
     {
       "id": "fldOhHYuwl848KrZBwG",
-      "name": "Manager",
+      "Name": "Manager",
       "dbFieldName": "Manager",
       "type": "link",
       "description": null,
@@ -107,7 +107,7 @@
     },
     {
       "id": "fldinAM0JIRmeYQekTS",
-      "name": "Employees",
+      "Name": "Employees",
       "dbFieldName": "Employees",
       "type": "link",
       "description": null,

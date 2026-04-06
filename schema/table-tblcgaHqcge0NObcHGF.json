@@ -1,12 +1,12 @@
 {
   "id": "tblcgaHqcge0NObcHGF",
-  "name": "Sales Orders",
+  "Name": "Sales Orders",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Sales_Orders\"",
   "fields": [
     {
       "id": "flddrY47nA9tk47qBje",
-      "name": "Currency",
+      "Name": "Currency",
       "dbFieldName": "Currency",
       "type": "link",
       "description": null,
@@ -29,7 +29,7 @@
     },
     {
       "id": "fldZzbk8eDDBvy3R4s4",
-      "name": "Sales Order Lines",
+      "Name": "Sales Order Lines",
       "dbFieldName": "Sales_Order_Lines",
       "type": "link",
       "description": null,
@@ -50,7 +50,7 @@
     },
     {
       "id": "fldinfhraIkfLow6PKj",
-      "name": "Company",
+      "Name": "Company",
       "dbFieldName": "Company",
       "type": "link",
       "description": null,
@@ -73,7 +73,7 @@
     },
     {
       "id": "fldPElTrU699ziuuAk4",
-      "name": "Is Kit Order",
+      "Name": "Is Kit Order",
       "dbFieldName": "Is_Kit_Order",
       "type": "checkbox",
       "description": null,
@@ -85,7 +85,7 @@
     },
     {
       "id": "fld47ona6fn0lPVXY3t",
-      "name": "Delivery Date",
+      "Name": "Delivery Date",
       "dbFieldName": "Delivery_Date",
       "type": "date",
       "description": null,
@@ -103,7 +103,7 @@
     },
     {
       "id": "fldXsIxa7eAgL9VuMXK",
-      "name": "Order Date",
+      "Name": "Order Date",
       "dbFieldName": "Order_Date",
       "type": "date",
       "description": null,
@@ -121,7 +121,7 @@
     },
     {
       "id": "fld5vmAcv2IhusCGyX5",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -139,7 +139,7 @@
     },
     {
       "id": "fld8sQ0KFIEohknMGSR",
-      "name": "Sale Team",
+      "Name": "Sale Team",
       "dbFieldName": "Sale_Team",
       "type": "link",
       "description": null,
@@ -162,7 +162,7 @@
     },
     {
       "id": "fldOrYKDMc9OHXYpb8R",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -176,7 +176,7 @@
     },
     {
       "id": "fldLiKVDfu1cqPfi3Ny",
-      "name": "Stock Reservations",
+      "Name": "Stock Reservations",
       "dbFieldName": "Stock_Reservations",
       "type": "singleLineText",
       "description": null,
@@ -188,7 +188,7 @@
     },
     {
       "id": "fldwmdi4GZp0fQdzcpq",
-      "name": "Source Location",
+      "Name": "Source Location",
       "dbFieldName": "Source_Location",
       "type": "link",
       "description": null,
@@ -211,7 +211,7 @@
     },
     {
       "id": "fld4hpPakgQCl9NsKBd",
-      "name": "PO.No",
+      "Name": "PO.No",
       "dbFieldName": "PO_No",
       "type": "link",
       "description": null,
@@ -235,7 +235,7 @@
     },
     {
       "id": "flddelJuMwuBd4RryK8",
-      "name": "Total Amount",
+      "Name": "Total Amount",
       "dbFieldName": "Total_Amount",
       "type": "rollup",
       "description": null,
@@ -254,8 +254,8 @@
     },
     {
       "id": "fldiHsWOavXfNpz2Xh8",
-      "name": "Naem",
-      "dbFieldName": "Naem",
+      "Name": "Name",
+      "dbFieldName": "Name",
       "type": "formula",
       "description": null,
       "options": {
@@ -269,7 +269,7 @@
     },
     {
       "id": "fldLQtTSQ23wo4MR4KY",
-      "name": "Customer",
+      "Name": "Customer",
       "dbFieldName": "Customer",
       "type": "link",
       "description": null,

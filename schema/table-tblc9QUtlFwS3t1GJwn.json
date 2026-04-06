@@ -1,12 +1,12 @@
 {
   "id": "tblc9QUtlFwS3t1GJwn",
-  "name": "Partners",
+  "Name": "Partners",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Partners\"",
   "fields": [
     {
       "id": "fldV8ZXuzPjIF5g4nSw",
-      "name": "Email",
+      "Name": "Email",
       "dbFieldName": "Email",
       "type": "singleLineText",
       "description": null,
@@ -18,7 +18,7 @@
     },
     {
       "id": "fldNwTApxN338Iu7uTh",
-      "name": "Phone",
+      "Name": "Phone",
       "dbFieldName": "Phone",
       "type": "singleLineText",
       "description": null,
@@ -30,7 +30,7 @@
     },
     {
       "id": "fldupiJvfHt1Ngee3c5",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -44,7 +44,7 @@
     },
     {
       "id": "fldLFjY8yZe2Zi1BN39",
-      "name": "Tax ID",
+      "Name": "Tax ID",
       "dbFieldName": "Tax_ID",
       "type": "singleLineText",
       "description": null,
@@ -56,7 +56,7 @@
     },
     {
       "id": "fldzJV0VtBgNqormk5W",
-      "name": "Type",
+      "Name": "Type",
       "dbFieldName": "Type",
       "type": "singleSelect",
       "description": null,
@@ -74,7 +74,7 @@
     },
     {
       "id": "fldVGCgqzwcEzdsk7gI",
-      "name": "Country",
+      "Name": "Country",
       "dbFieldName": "Country",
       "type": "singleSelect",
       "description": null,
@@ -92,7 +92,7 @@
     },
     {
       "id": "fldAMql7wEQbr3QHgbl",
-      "name": "Credit Limit",
+      "Name": "Credit Limit",
       "dbFieldName": "Credit_Limit",
       "type": "number",
       "description": null,
@@ -109,7 +109,7 @@
     },
     {
       "id": "fldbgJNVsSWSjCIEE4y",
-      "name": "Payment Terms",
+      "Name": "Payment Terms",
       "dbFieldName": "Payment_Terms",
       "type": "singleSelect",
       "description": null,
@@ -126,7 +126,7 @@
     },
     {
       "id": "fldMypa2FCSUWZr95Wh",
-      "name": "Website",
+      "Name": "Website",
       "dbFieldName": "Website",
       "type": "singleLineText",
       "description": null,
@@ -138,8 +138,8 @@
     },
     {
       "id": "fldM8w5kIo9jHUy5rAq",
-      "name": "Name",
-      "dbFieldName": "Naem",
+      "Name": "Name",
+      "dbFieldName": "Name",
       "type": "singleLineText",
       "description": null,
       "options": {},
@@ -150,7 +150,7 @@
     },
     {
       "id": "fldSMbUrijVRJwmIKQ5",
-      "name": "Payment",
+      "Name": "Payment",
       "dbFieldName": "Payment",
       "type": "link",
       "description": null,
@@ -170,7 +170,7 @@
     },
     {
       "id": "fldagfG6hTbBx8SJRIG",
-      "name": "Source Location",
+      "Name": "Source Location",
       "dbFieldName": "Source_Location",
       "type": "singleLineText",
       "description": null,
@@ -182,7 +182,7 @@
     },
     {
       "id": "fldCHV95seGsfc9vuNW",
-      "name": "Destination Location",
+      "Name": "Destination Location",
       "dbFieldName": "Destination_Location",
       "type": "singleLineText",
       "description": null,
@@ -194,7 +194,7 @@
     },
     {
       "id": "fld5GmxlNZwFFG4gTeN",
-      "name": "Customer PO",
+      "Name": "Customer PO",
       "dbFieldName": "Customer_PO",
       "type": "link",
       "description": null,
@@ -215,7 +215,7 @@
     },
     {
       "id": "fld7gBiriDYrXdRz8UY",
-      "name": "Sales Orders",
+      "Name": "Sales Orders",
       "dbFieldName": "Sales_Orders",
       "type": "link",
       "description": null,
@@ -236,7 +236,7 @@
     },
     {
       "id": "fld1t9ZOxesyccUfvT2",
-      "name": "Account Move",
+      "Name": "Account Move",
       "dbFieldName": "Account_Move",
       "type": "link",
       "description": null,
@@ -257,7 +257,7 @@
     },
     {
       "id": "fldkFkOZ3SmAt1sXmlE",
-      "name": "Purchase Orders",
+      "Name": "Purchase Orders",
       "dbFieldName": "Purchase_Orders",
       "type": "link",
       "description": null,

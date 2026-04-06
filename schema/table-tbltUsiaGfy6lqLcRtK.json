@@ -1,12 +1,12 @@
 {
   "id": "tbltUsiaGfy6lqLcRtK",
-  "name": "Brands",
+  "Name": "Brands",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Brands\"",
   "fields": [
     {
       "id": "fldFXP9zHbiA80l5zsU",
-      "name": "Name",
+      "Name": "Name",
       "dbFieldName": "Name",
       "type": "singleLineText",
       "description": null,
@@ -18,7 +18,7 @@
     },
     {
       "id": "fldMHM8FldNFeRPzTp7",
-      "name": "Type",
+      "Name": "Type",
       "dbFieldName": "Type",
       "type": "singleSelect",
       "description": null,
@@ -34,7 +34,7 @@
     },
     {
       "id": "fldOeOoCW80ma7IRUbu",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,

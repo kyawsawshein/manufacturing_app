@@ -1,12 +1,12 @@
 {
   "id": "tblgUXivhYFzqLRbghx",
-  "name": "Stock Move Lines",
+  "Name": "Stock Move Lines",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Stock_move_lines\"",
   "fields": [
     {
       "id": "fldcjMVz5QSpUTxfI2p",
-      "name": "Date",
+      "Name": "Date",
       "dbFieldName": "Date",
       "type": "date",
       "description": null,
@@ -24,7 +24,7 @@
     },
     {
       "id": "fldkZsKqfVn1olu4qAE",
-      "name": "Quantity",
+      "Name": "Quantity",
       "dbFieldName": "Quantity",
       "type": "number",
       "description": null,
@@ -41,7 +41,7 @@
     },
     {
       "id": "fldXNsqaFXcleySQyp6",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -57,7 +57,7 @@
     },
     {
       "id": "fldPPfdPWVKW5IV6Jqn",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -71,7 +71,7 @@
     },
     {
       "id": "fldqOpfJ5u2vij3rWYC",
-      "name": "Name",
+      "Name": "Name",
       "dbFieldName": "Number",
       "type": "formula",
       "description": null,
@@ -86,7 +86,7 @@
     },
     {
       "id": "fldDaBNOcVeRpUesO75",
-      "name": "Source Location",
+      "Name": "Source Location",
       "dbFieldName": "Source_Location",
       "type": "link",
       "description": null,
@@ -109,7 +109,7 @@
     },
     {
       "id": "fldYmFz4jP47LiJTSkx",
-      "name": "Destination Location",
+      "Name": "Destination Location",
       "dbFieldName": "Destination_Location",
       "type": "link",
       "description": null,
@@ -132,7 +132,7 @@
     },
     {
       "id": "fldNvQp68vgNPf1P7r8",
-      "name": "Stock Reservation",
+      "Name": "Stock Reservation",
       "dbFieldName": "Stock_Reservation",
       "type": "number",
       "description": null,
@@ -149,7 +149,7 @@
     },
     {
       "id": "fldlF14Fep21KVJlegC",
-      "name": "Unit",
+      "Name": "Unit",
       "dbFieldName": "Unit",
       "type": "link",
       "description": null,
@@ -172,7 +172,7 @@
     },
     {
       "id": "fldvJv02hVtk8NRTVeV",
-      "name": "Print Unit",
+      "Name": "Print Unit",
       "dbFieldName": "Print_Unit",
       "type": "number",
       "description": null,
@@ -189,7 +189,7 @@
     },
     {
       "id": "fldUQVum7vYRpQYVY9z",
-      "name": "Stock Quant",
+      "Name": "Stock Quant",
       "dbFieldName": "Stock_Quant",
       "type": "link",
       "description": null,
@@ -213,7 +213,7 @@
     },
     {
       "id": "fld8iZqvYIctJRcp2KU",
-      "name": "Expiry Date",
+      "Name": "Expiry Date",
       "dbFieldName": "Expiry_Date",
       "type": "date",
       "description": null,
@@ -231,7 +231,7 @@
     },
     {
       "id": "fldT87hVAVGt1DZQuTf",
-      "name": "Lot No",
+      "Name": "Lot No",
       "dbFieldName": "Lot_No",
       "type": "link",
       "description": null,
@@ -254,7 +254,7 @@
     },
     {
       "id": "fld5HesLMEdknPSqogV",
-      "name": "Stock Move",
+      "Name": "Stock Move",
       "dbFieldName": "Stock_Move",
       "type": "link",
       "description": null,
@@ -275,7 +275,7 @@
     },
     {
       "id": "flduUA4PSMIbdyn122p",
-      "name": "Product",
+      "Name": "Product",
       "dbFieldName": "Product",
       "type": "link",
       "description": null,

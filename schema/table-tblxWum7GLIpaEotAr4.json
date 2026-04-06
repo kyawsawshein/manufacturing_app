@@ -1,12 +1,12 @@
 {
   "id": "tblxWum7GLIpaEotAr4",
-  "name": "BOM Lines",
+  "Name": "BOM Lines",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"BOM_Lines\"",
   "fields": [
     {
       "id": "fldkwqLN9LpsqMdAuFR",
-      "name": "Qty used",
+      "Name": "Qty used",
       "dbFieldName": "Qty_used",
       "type": "formula",
       "description": null,
@@ -25,7 +25,7 @@
     },
     {
       "id": "fldAxfVf6D1pCuq0oDh",
-      "name": "BOM",
+      "Name": "BOM",
       "dbFieldName": "BOM",
       "type": "link",
       "description": null,
@@ -46,7 +46,7 @@
     },
     {
       "id": "fldXLFoeimtdMhFEOtO",
-      "name": "Name",
+      "Name": "Name",
       "dbFieldName": "Name",
       "type": "formula",
       "description": null,
@@ -61,7 +61,7 @@
     },
     {
       "id": "fldK7S10zg59EtFbHqg",
-      "name": "Quantity",
+      "Name": "Quantity",
       "dbFieldName": "Quantity",
       "type": "number",
       "description": null,
@@ -78,7 +78,7 @@
     },
     {
       "id": "fldQsDCiQuYllnUvXq2",
-      "name": "Raw Reference",
+      "Name": "Raw Reference",
       "dbFieldName": "Reference",
       "type": "singleLineText",
       "description": null,
@@ -90,7 +90,7 @@
     },
     {
       "id": "fld7aGRuwEEQsxcjYN7",
-      "name": "Total Cost",
+      "Name": "Total Cost",
       "dbFieldName": "Total_Cost",
       "type": "formula",
       "description": null,
@@ -109,7 +109,7 @@
     },
     {
       "id": "fldrK0oqPscsZaYEgDv",
-      "name": "Unit Cost",
+      "Name": "Unit Cost",
       "dbFieldName": "Unit_Cost",
       "type": "number",
       "description": null,
@@ -126,7 +126,7 @@
     },
     {
       "id": "flde1ul8M1kxWWmkrRT",
-      "name": "BOM Qty",
+      "Name": "BOM Qty",
       "dbFieldName": "BOM_Qty",
       "type": "number",
       "description": null,
@@ -143,7 +143,7 @@
     },
     {
       "id": "fldTHdnKDwuPEJzAFkf",
-      "name": "Product",
+      "Name": "Product",
       "dbFieldName": "Product",
       "type": "link",
       "description": null,
@@ -166,7 +166,7 @@
     },
     {
       "id": "fldVYn7r40Tizvse5bE",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -180,7 +180,7 @@
     },
     {
       "id": "fldUelLsvIJaKggNrlS",
-      "name": "UoM",
+      "Name": "UoM",
       "dbFieldName": "UoM",
       "type": "link",
       "description": null,
@@ -200,7 +200,7 @@
     },
     {
       "id": "fldwEsz0DQDCqIuQHyM",
-      "name": "H&L Detaili",
+      "Name": "H&L Detaili",
       "dbFieldName": "H_L_Detaili",
       "type": "link",
       "description": null,
@@ -224,7 +224,7 @@
     },
     {
       "id": "fldaYCKR66LQGrNYfxY",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -240,7 +240,7 @@
     },
     {
       "id": "fldmrDNm4ygWpKLAtXA",
-      "name": "Item Count",
+      "Name": "Item Count",
       "dbFieldName": "Item_Qty_Unit",
       "type": "number",
       "description": null,
@@ -257,7 +257,7 @@
     },
     {
       "id": "fldRbC3G9JywBDXPGWI",
-      "name": "Usage (mm)",
+      "Name": "Usage (mm)",
       "dbFieldName": "Usage",
       "type": "rollup",
       "description": null,
@@ -276,7 +276,7 @@
     },
     {
       "id": "fld5ylu9Akee2DeZLKo",
-      "name": "Used Qty",
+      "Name": "Used Qty",
       "dbFieldName": "Used_Qty",
       "type": "formula",
       "description": null,

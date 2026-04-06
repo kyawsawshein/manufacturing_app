@@ -85,12 +85,12 @@ export function BOMCreationForm() {
   // Convert data to options
   const productOptions: Option[] = products.map((p) => ({
     value: p.id,
-    label: `${p.sku}${p.name ? ` - ${p.name}` : ""}`,
+    label: `${p.sku}${p.Name ? ` - ${p.Name}` : ""}`,
   }));
 
   const unitOptions: Option[] = unitsOfMeasure.map((u) => ({
     value: u.id,
-    label: u.name,
+    label: u.Name,
   }));
 
   const hookLoopOptions: Option[] = hookLoopItems.map((item) => ({

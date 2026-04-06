@@ -44,7 +44,7 @@ export async function getEmployees() {
   return rows.map(row => ({
     id: row.__id as string,
     employeeId: row.Employee_ID as string,
-    name: row.Name as string,
+    Name: row.Name as string,
     contact: row.Contact as string,
     position: row.Position as string,
     status: row.Status as string,
@@ -53,14 +53,14 @@ export async function getEmployees() {
 }
 
 export async function createEmployee(data: {
-  name: string;
+  Name: string;
   contact: string;
   position: string;
   status: string;
   departmentId?: string;
 }) {
   return createRecord("tblcpTwSlhbUY3kOdUa", {
-    fldDkD7tiSDTq5ByaEi: data.name,
+    fldDkD7tiSDTq5ByaEi: data.Name,
     fldNr8jHg1KFsbSacwM: data.contact,
     fldlueEnCp4q4Nbdhpr: data.position,
     fldu1LU731Q4lb4DwIb: data.status,
@@ -69,14 +69,14 @@ export async function createEmployee(data: {
 }
 
 export async function updateEmployee(id: string, data: {
-  name?: string;
+  Name?: string;
   contact?: string;
   position?: string;
   status?: string;
   departmentId?: string;
 }) {
   const fields: Record<string, unknown> = {};
-  if (data.name !== undefined) fields.fldDkD7tiSDTq5ByaEi = data.name;
+  if (data.Name !== undefined) fields.fldDkD7tiSDTq5ByaEi = data.Name;
   if (data.contact !== undefined) fields.fldNr8jHg1KFsbSacwM = data.contact;
   if (data.position !== undefined) fields.fldlueEnCp4q4Nbdhpr = data.position;
   if (data.status !== undefined) fields.fldu1LU731Q4lb4DwIb = data.status;
@@ -102,7 +102,7 @@ export async function getDepartments() {
   return rows.map(row => ({
     id: row.__id as string,
     code: row.Code as string,
-    name: row.Name as string,
+    Name: row.Name as string,
     location: row.Location as string,
     description: row.Description as string,
     status: row.Status as string,
@@ -112,14 +112,14 @@ export async function getDepartments() {
 
 export async function createDepartment(data: {
   code: string;
-  name: string;
+  Name: string;
   location: string;
   description: string;
   status: string;
 }) {
   return createRecord("tblKPsfPodeEWRIvdm0", {
     fldqgkM5QlLGXM92bz8: data.code,
-    fld04CDJaUI2vJJh56w: data.name,
+    fld04CDJaUI2vJJh56w: data.Name,
     fldxMEHcc1ENSpHyV0X: data.location,
     fldv6sVGecljuYGwXNL: data.description,
     fldX3RK91yfOtFS5z9X: data.status,
@@ -128,14 +128,14 @@ export async function createDepartment(data: {
 
 export async function updateDepartment(id: string, data: {
   code?: string;
-  name?: string;
+  Name?: string;
   location?: string;
   description?: string;
   status?: string;
 }) {
   const fields: Record<string, unknown> = {};
   if (data.code !== undefined) fields.fldqgkM5QlLGXM92bz8 = data.code;
-  if (data.name !== undefined) fields.fld04CDJaUI2vJJh56w = data.name;
+  if (data.Name !== undefined) fields.fld04CDJaUI2vJJh56w = data.Name;
   if (data.location !== undefined) fields.fldxMEHcc1ENSpHyV0X = data.location;
   if (data.description !== undefined) fields.fldv6sVGecljuYGwXNL = data.description;
   if (data.status !== undefined) fields.fldX3RK91yfOtFS5z9X = data.status;
@@ -152,15 +152,15 @@ export async function deleteDepartment(id: string) {
 
 export async function getProducts() {
   const { rows } = await sqlQuery(BASE_ID, `
-    SELECT "__id", "SKU", "Name", "Cost", "Sale_Price", "Onhand", "Available_Qty", "Reorder_Point", "Barcode"
+    SELECT "__id", "default_code" AS SKU, "Name", standard_price AS "Cost", list_price AS "Sale_Price", qty_available AS "Onhand", "barcode"
     FROM "${BASE_ID}"."Products"
-    ORDER BY "Name" ASC
+    ORDER BY "id" ASC
     LIMIT 500
   `);
   return rows.map(row => ({
     id: row.__id as string,
     sku: row.SKU as string,
-    name: row.Name as string,
+    Name: row.Name as string,
     productCode: row.SKU as string,
     barcode: row.Barcode as string,
     cost: Number(row.Cost || 0),
@@ -187,7 +187,7 @@ export async function getHookLoopItems(): Promise<HookLoopItem[]> {
 }
 export interface UnitOfMeasure {
   id: string;
-  name: string;
+  Name: string;
 }
 
 export async function getUnitsOfMeasure(): Promise<UnitOfMeasure[]> {
@@ -197,13 +197,13 @@ export async function getUnitsOfMeasure(): Promise<UnitOfMeasure[]> {
   );
   return rows.map((row) => ({
     id: row.__id as string,
-    name: row.Name as string,
+    Name: row.Name as string,
   }));
 }
 
 export async function createProduct(data: {
   sku: string;
-  name: string;
+  Name: string;
   productCode: string;
   barcode?: string;
   cost: number;
@@ -212,7 +212,7 @@ export async function createProduct(data: {
 }) {
   return createRecord("tblSGof3jV6QLz5WkuN", {
     fldfz6GEHVXAjg98KVL: data.sku,
-    fldrftRxilDx5PsR7uJ: data.name,
+    fldrftRxilDx5PsR7uJ: data.Name,
     fldUUyPSjllgjlOR2tY: data.productCode,
     fld4nDtlEktYUrI02Ra: data.barcode || "",
     fld0unz8xlhtFATLrq5: data.cost,
@@ -223,7 +223,7 @@ export async function createProduct(data: {
 
 export async function updateProduct(id: string, data: {
   sku?: string;
-  name?: string;
+  Name?: string;
   productCode?: string;
   barcode?: string;
   cost?: number;
@@ -232,7 +232,7 @@ export async function updateProduct(id: string, data: {
 }) {
   const fields: Record<string, unknown> = {};
   if (data.sku !== undefined) fields.fldfz6GEHVXAjg98KVL = data.sku;
-  if (data.name !== undefined) fields.fldrftRxilDx5PsR7uJ = data.name;
+  if (data.Name !== undefined) fields.fldrftRxilDx5PsR7uJ = data.Name;
   if (data.productCode !== undefined) fields.fldUUyPSjllgjlOR2tY = data.productCode;
   if (data.barcode !== undefined) fields.fld4nDtlEktYUrI02Ra = data.barcode;
   if (data.cost !== undefined) fields.fld0unz8xlhtFATLrq5 = data.cost;
@@ -254,7 +254,7 @@ export async function getStockOnHand() {
   `);
   return rows.map(row => ({
     id: row.__id as string,
-    name: row.Product as string,
+    Name: row.Product as string,
     qty: Number(row.Qty || 0),
     availableQty: Number(row.Available_Quantity || 0),
     reservedQty: Number(row.Reserved_Quantity || 0),
@@ -273,7 +273,7 @@ export async function getStockMoves() {
   `);
   return rows.map(row => ({
     id: row.__id as string,
-    name: row.Qty as string,
+    Name: row.Qty as string,
     date: row.Date as string,
     status: row.Status as string,
     batchNumber: row.Batch_Number as string,
@@ -293,7 +293,7 @@ export async function getLocations() {
   return rows.map(row => ({
     id: row.__id as string,
     code: row.Code as string,
-    name: row.Location_Name as string,
+    Name: row.Location_Name as string,
     status: row.Status as string,
     warehouse: safeParseJson(row.Warehouse)?.title || "",
   }));
@@ -308,7 +308,7 @@ export async function getWarehouses() {
   `);
   return rows.map(row => ({
     id: row.__id as string,
-    name: row.Label as string,
+    Name: row.Label as string,
     company: row.Company as string,
     status: row.Status as string,
   }));
@@ -379,7 +379,7 @@ export async function getSalesOrders() {
   `);
   return rows.map(row => ({
     id: row.__id as string,
-    name: row.Name as string,
+    Name: row.Name as string,
     orderDate: row.Order_Date as string,
     deliveryDate: row.Delivery_Date as string,
     status: row.Status as string,
@@ -496,7 +496,7 @@ export async function getBOMs() {
   `);
   return rows.map(row => ({
     id: row.__id as string,
-    name: row.BOM as string,
+    Name: row.BOM as string,
     version: row.Version as string,
     quantity: Number(row.Quantity || 0),
     status: row.Status as string,
@@ -587,23 +587,23 @@ export async function createBOMWithLines(data: {
 
 export async function getPartners(type?: string) {
   let query = `
-    SELECT "__id", "Name", "Email", "Phone", "Type", "Country", "Payment_Terms", "Credit_Limit", "Tax_ID", "Website"
+    SELECT "__id", "name", "email", "phone", "Type", "country", "property_payment_term_id", "Credit_Limit", "tax_id", "Website"
     FROM "${BASE_ID}"."Partners"
   `;
   if (type) {
     query += ` WHERE "Type" = '${type}'`;
   }
-  query += ` ORDER BY "Name" ASC LIMIT 500`;
-  
+  query += ` ORDER BY "name" ASC LIMIT 500`;
+
   const { rows } = await sqlQuery(BASE_ID, query);
   return rows.map(row => ({
     id: row.__id as string,
-    name: row.Name as string,
+    Name: row.name as string,
     email: row.Email as string,
     phone: row.Phone as string,
     type: row.Type as string,
-    country: row.Country as string,
-    paymentTerms: row.Payment_Terms as string,
+    country: row.country as string,
+    paymentTerms: row.property_payment_term_id as string,
     creditLimit: Number(row.Credit_Limit || 0),
     taxId: row.Tax_ID as string,
     website: row.Website as string,
@@ -611,7 +611,7 @@ export async function getPartners(type?: string) {
 }
 
 export async function createPartner(data: {
-  name: string;
+  Name: string;
   email: string;
   phone: string;
   type: string;
@@ -622,7 +622,7 @@ export async function createPartner(data: {
   website?: string;
 }) {
   return createRecord("tblc9QUtlFwS3t1GJwn", {
-    fldupiJvfHt1Ngee3c5: data.name,
+    fldupiJvfHt1Ngee3c5: data.Name,
     fldV8ZXuzPjIF5g4nSw: data.email,
     fldNwTApxN338Iu7uTh: data.phone,
     fldzJV0VtBgNqormk5W: data.type,
@@ -635,7 +635,7 @@ export async function createPartner(data: {
 }
 
 export async function updatePartner(id: string, data: {
-  name?: string;
+  Name?: string;
   email?: string;
   phone?: string;
   type?: string;
@@ -646,7 +646,7 @@ export async function updatePartner(id: string, data: {
   website?: string;
 }) {
   const fields: Record<string, unknown> = {};
-  if (data.name !== undefined) fields.fldupiJvfHt1Ngee3c5 = data.name;
+  if (data.Name !== undefined) fields.fldupiJvfHt1Ngee3c5 = data.Name;
   if (data.email !== undefined) fields.fldV8ZXuzPjIF5g4nSw = data.email;
   if (data.phone !== undefined) fields.fldNwTApxN338Iu7uTh = data.phone;
   if (data.type !== undefined) fields.fldzJV0VtBgNqormk5W = data.type;
@@ -668,7 +668,7 @@ export async function deletePartner(id: string) {
 
 export interface BOMLineItem {
   id: string;
-  name: string;
+  Name: string;
   productId: string;
   productName: string;
   quantity: number;
@@ -695,7 +695,7 @@ export async function getBOMWithLines(bomId: string) {
   const { rows } = await sqlQuery(BASE_ID, `
     SELECT 
       b."__id" as "bom_id",
-      b."BOM" as "bom_name",
+      b."BOM" as "bom_Name",
       b."Total_Material_Cost" as "total_cost",
       b."Status" as "status",
       bl."__id" as "line_id",
@@ -708,11 +708,11 @@ export async function getBOMWithLines(bomId: string) {
     WHERE b."__id" = '${bomId}'
     ORDER BY bl."Quantity" DESC
   `);
-  
+
   return {
     bom: rows[0] ? {
       id: rows[0].bom_id as string,
-      name: rows[0].bom_name as string,
+      Name: rows[0].bom_Name as string,
       totalCost: Number(rows[0].total_cost || 0),
       status: rows[0].status as string,
     } : null,
@@ -733,16 +733,16 @@ export async function getBOMWithLines(bomId: string) {
  */
 export async function getBOMsByProduct(productId: string) {
   const { rows } = await sqlQuery(BASE_ID, `
-    SELECT "__id", "BOM" as "name", "Version" as "version", "Status" as "status", "Total_Material_Cost" as "total_cost"
+    SELECT "__id", "BOM" as "Name", "Version" as "version", "Status" as "status", "Total_Material_Cost" as "total_cost"
     FROM "${BASE_ID}"."BOM"
     WHERE "__fk_fldcKWcxXFLKHBkqJxT" = '${productId}' OR "Product" LIKE '%${productId}%'
     ORDER BY "Version" DESC
     LIMIT 100
   `);
-  
+
   return rows.map(row => ({
     id: row.__id as string,
-    name: row.name as string,
+    Name: row.Name as string,
     version: row.version as string,
     status: row.status as string,
     totalCost: Number(row.total_cost || 0),
@@ -758,7 +758,7 @@ export async function calculateBOMTotalCost(bomId: string): Promise<number> {
     FROM "${BASE_ID}"."BOM_Lines"
     WHERE "__fk_fldAxfVf6D1pCuq0oDh" = '${bomId}'
   `);
-  
+
   return Number(rows[0]?.total || 0);
 }
 
@@ -770,35 +770,35 @@ export async function exploseBOM(bomId: string, quantity: number = 1, level: num
   if (visitedBOMs.has(bomId) || level > 5) {
     return [];
   }
-  
+
   visitedBOMs.add(bomId);
-  
+
   const { rows } = await sqlQuery(BASE_ID, `
     SELECT 
       bl."__id" as "line_id",
       bl."Product" as "product_json",
       bl."Quantity" as "qty_per_unit",
       bl."Unit_Cost" as "unit_cost",
-      bl."Name" as "line_name",
+      bl."Name" as "line_Name",
       p."__id" as "product_id",
-      p."Name" as "product_name"
+      p."Name" as "product_Name"
     FROM "${BASE_ID}"."BOM_Lines" bl
     LEFT JOIN "${BASE_ID}"."Products" p ON p."__id" = bl."__fk_fldTHdnKDwuPEJzAFkf"
     WHERE bl."__fk_fldAxfVf6D1pCuq0oDh" = '${bomId}'
     LIMIT 500
   `);
-  
+
   const explosedItems: BOMLineItem[] = [];
-  
+
   for (const row of rows) {
     const qtyForThisLevel = Number(row.qty_per_unit || 0) * quantity;
     const unitCost = Number(row.unit_cost || 0);
-    
+
     explosedItems.push({
       id: row.line_id as string,
-      name: row.line_name as string,
+      Name: row.line_Name as string,
       productId: row.product_id as string,
-      productName: row.product_name as string || safeParseJson(row.product_json)?.title || "",
+      productName: row.product_Name as string || safeParseJson(row.product_json)?.title || "",
       quantity: qtyForThisLevel,
       unitCost: unitCost,
       totalCost: qtyForThisLevel * unitCost,
@@ -806,7 +806,7 @@ export async function exploseBOM(bomId: string, quantity: number = 1, level: num
       parentBOMId: bomId,
     });
   }
-  
+
   return explosedItems;
 }
 
@@ -817,14 +817,14 @@ export async function createMORawMaterialsFromBOM(moId: string, bomId: string, m
   try {
     // Get exploded BOM items
     const explosedItems = await exploseBOM(bomId, moQuantity);
-    
+
     // Get BOM lines to link them
     const { rows: bomLineRows } = await sqlQuery(BASE_ID, `
       SELECT "__id", "Product" as "product_json"
       FROM "${BASE_ID}"."BOM_Lines"
       WHERE "__fk_fldAxfVf6D1pCuq0oDh" = '${bomId}'
     `);
-    
+
     // Create MO Raw Material records for each item
     const createdRecords = [];
     for (const item of explosedItems) {
@@ -832,7 +832,7 @@ export async function createMORawMaterialsFromBOM(moId: string, bomId: string, m
       const matchingBOMLine = bomLineRows.find(
         r => safeParseJson(r.product_json)?.id === item.productId
       );
-      
+
       const record = await createRecord("tbl0aq09fCJXpdox9aT", {
         fldsokXZdzYBr5wKVvh: moId, // MO link
         fldFtiECtVOujmdbCiu: item.quantity, // Quantity
@@ -841,7 +841,7 @@ export async function createMORawMaterialsFromBOM(moId: string, bomId: string, m
       });
       createdRecords.push(record);
     }
-    
+
     return { success: true, count: createdRecords.length, records: createdRecords };
   } catch (error) {
     console.error("Error creating MO raw materials:", error);
@@ -859,10 +859,10 @@ export async function getMORawMaterials(moId: string) {
       mrm."Quantity" as "quantity",
       mrm."Consume_Qty" as "consume_qty",
       p."__id" as "product_id",
-      p."Name" as "product_name",
+      p."Name" as "product_Name",
       p."Unit_Cost" as "product_cost",
       bl."__id" as "bom_line_id",
-      bl."Name" as "bom_line_name"
+      bl."Name" as "bom_line_Name"
     FROM "${BASE_ID}"."MO_Raw_Material" mrm
     LEFT JOIN "${BASE_ID}"."Products" p ON p."__id" = mrm."__fk_fldqRPhdzYBbKShNsEg"
     LEFT JOIN "${BASE_ID}"."BOM_Lines" bl ON bl."__id" = mrm."__fk_fldJTI7ub6KKVU0FrjM"
@@ -870,16 +870,16 @@ export async function getMORawMaterials(moId: string) {
     ORDER BY mrm."__id" DESC
     LIMIT 500
   `);
-  
+
   return rows.map(row => ({
     id: row.id as string,
     quantity: Number(row.quantity || 0),
     consumeQty: Number(row.consume_qty || 0),
     productId: row.product_id as string,
-    productName: row.product_name as string,
+    productName: row.product_Name as string,
     productCost: Number(row.product_cost || 0),
     bomLineId: row.bom_line_id as string || null,
-    bomLineName: row.bom_line_name as string,
+    bomLineName: row.bom_line_Name as string,
   }));
 }
 
@@ -893,7 +893,7 @@ export async function calculateMORawMaterialCost(moId: string): Promise<number> 
     LEFT JOIN "${BASE_ID}"."Products" p ON p."__id" = mrm."__fk_fldqRPhdzYBbKShNsEg"
     WHERE mrm."__fk_fldsokXZdzYBr5wKVvh" = '${moId}'
   `);
-  
+
   return Number(rows[0]?.total || 0);
 }
 
@@ -903,21 +903,21 @@ export async function calculateMORawMaterialCost(moId: string): Promise<number> 
 export async function checkBOMCircularReference(bomId: string, parentBomId?: string): Promise<{ hasCircular: boolean; path: string[] }> {
   const visitedBOMs = new Set<string>();
   const path: string[] = [bomId];
-  
+
   async function traverse(currentBomId: string): Promise<boolean> {
     if (visitedBOMs.has(currentBomId)) {
       return true; // Circular reference found
     }
-    
+
     visitedBOMs.add(currentBomId);
-    
+
     const { rows } = await sqlQuery(BASE_ID, `
       SELECT DISTINCT "__fk_fldAxfVf6D1pCuq0oDh" as "parent_bom"
       FROM "${BASE_ID}"."BOM_Lines"
       WHERE "__fk_fldAxfVf6D1pCuq0oDh" = '${currentBomId}'
       LIMIT 50
     `);
-    
+
     for (const row of rows) {
       if (row.parent_bom) {
         path.push(row.parent_bom as string);
@@ -927,10 +927,10 @@ export async function checkBOMCircularReference(bomId: string, parentBomId?: str
         path.pop();
       }
     }
-    
+
     return false;
   }
-  
+
   const hasCircular = await traverse(bomId);
   return { hasCircular, path };
 }
@@ -949,10 +949,10 @@ export async function getManufacturingOrderWithCosts(moId: string) {
     `),
     calculateMORawMaterialCost(moId),
   ]);
-  
+
   const moRow = moQuery.rows[0];
   if (!moRow) return null;
-  
+
   return {
     id: moRow.__id as string,
     reference: moRow.MO_Reference as string,

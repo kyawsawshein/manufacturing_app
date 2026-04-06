@@ -1,12 +1,12 @@
 {
   "id": "tblmvfBl1KNvB0ownLb",
-  "name": "Request RM",
+  "Name": "Request RM",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Request_RM\"",
   "fields": [
     {
       "id": "fldlrIZRbJpGDZ5LR2x",
-      "name": "Name",
+      "Name": "Name",
       "dbFieldName": "Name",
       "type": "formula",
       "description": null,
@@ -21,7 +21,7 @@
     },
     {
       "id": "fld21wGw8jluBBQIsCT",
-      "name": "Time",
+      "Name": "Time",
       "dbFieldName": "Time",
       "type": "singleLineText",
       "description": null,
@@ -33,7 +33,7 @@
     },
     {
       "id": "fldAZQry02rOE16o1vv",
-      "name": "Date",
+      "Name": "Date",
       "dbFieldName": "Date",
       "type": "date",
       "description": null,
@@ -51,7 +51,7 @@
     },
     {
       "id": "fldeh7r5rxKNgejHZNd",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -66,7 +66,7 @@
     },
     {
       "id": "fldeOm87ux4Bkv2KRNK",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "Label",
       "type": "autoNumber",
       "description": null,
@@ -80,7 +80,7 @@
     },
     {
       "id": "fldl69f6L8MkgS6wkgl",
-      "name": "Request Items",
+      "Name": "Request Items",
       "dbFieldName": "Request_Items",
       "type": "link",
       "description": null,
@@ -104,7 +104,7 @@
     },
     {
       "id": "fld4yZgRkQ94g1RfYz1",
-      "name": "Employee",
+      "Name": "Employee",
       "dbFieldName": "Employee",
       "type": "link",
       "description": null,
@@ -127,7 +127,7 @@
     },
     {
       "id": "fldB8ncFn8s5v55Iqqp",
-      "name": "MO No",
+      "Name": "MO No",
       "dbFieldName": "MO_No",
       "type": "link",
       "description": null,

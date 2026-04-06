@@ -1,12 +1,12 @@
 {
   "id": "tbl7JIUHTMA3nCAAGIW",
-  "name": "Currencies",
+  "Name": "Currencies",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Currencies\"",
   "fields": [
     {
       "id": "fldmavvIAMlfJKVMeAU",
-      "name": "Name",
+      "Name": "Name",
       "dbFieldName": "Name",
       "type": "singleLineText",
       "description": null,
@@ -18,7 +18,7 @@
     },
     {
       "id": "fld6VEWezJVquMkBoPf",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -33,7 +33,7 @@
     },
     {
       "id": "fldaQybVaE1UNmKXRs5",
-      "name": "Symbol",
+      "Name": "Symbol",
       "dbFieldName": "Symbol",
       "type": "singleLineText",
       "description": null,
@@ -45,7 +45,7 @@
     },
     {
       "id": "fldmURHNiaqbVJbgl4o",
-      "name": "Unit",
+      "Name": "Unit",
       "dbFieldName": "Unit",
       "type": "number",
       "description": null,
@@ -62,7 +62,7 @@
     },
     {
       "id": "fldb4UMM96vJbBy0dmW",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -76,7 +76,7 @@
     },
     {
       "id": "fldU8RQ9KSd5eseZm2e",
-      "name": "Code",
+      "Name": "Code",
       "dbFieldName": "Code",
       "type": "singleLineText",
       "description": null,

@@ -1,12 +1,12 @@
 {
   "id": "tblyPSfKcaQIjDZRrCz",
-  "name": "Request MO",
+  "Name": "Request MO",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Request_MO\"",
   "fields": [
     {
       "id": "fldm0ItrrSmZQDq8MTV",
-      "name": "Number",
+      "Name": "Number",
       "dbFieldName": "Number",
       "type": "number",
       "description": null,
@@ -23,7 +23,7 @@
     },
     {
       "id": "fldNYpVNkoaXHkECa4R",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -38,7 +38,7 @@
     },
     {
       "id": "fldl246Yh4zEZoWEvlM",
-      "name": "Material",
+      "Name": "Material",
       "dbFieldName": "Material",
       "type": "singleLineText",
       "description": null,
@@ -50,7 +50,7 @@
     },
     {
       "id": "flduGvyLkzTIePDIftD",
-      "name": "Project",
+      "Name": "Project",
       "dbFieldName": "Project",
       "type": "singleLineText",
       "description": null,
@@ -62,7 +62,7 @@
     },
     {
       "id": "fldWa0ysJrgEwqLnjC6",
-      "name": "Date",
+      "Name": "Date",
       "dbFieldName": "Date",
       "type": "date",
       "description": null,
@@ -80,7 +80,7 @@
     },
     {
       "id": "fldEIsKZzrECc966ItD",
-      "name": "Name",
+      "Name": "Name",
       "dbFieldName": "Name",
       "type": "formula",
       "description": null,
@@ -95,7 +95,7 @@
     },
     {
       "id": "fldUG7teenhbnh3aH8o",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -109,7 +109,7 @@
     },
     {
       "id": "fldyS5yddka2IXHofN6",
-      "name": "Product (Part No)",
+      "Name": "Product (Part No)",
       "dbFieldName": "Product_Part_No",
       "type": "singleLineText",
       "description": null,
@@ -121,7 +121,7 @@
     },
     {
       "id": "fldyHdn5NYlgiidwEYj",
-      "name": "Customer",
+      "Name": "Customer",
       "dbFieldName": "Customer",
       "type": "link",
       "description": null,

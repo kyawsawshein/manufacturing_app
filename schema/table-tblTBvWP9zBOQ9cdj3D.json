@@ -1,12 +1,12 @@
 {
   "id": "tblTBvWP9zBOQ9cdj3D",
-  "name": "Stock Reservations",
+  "Name": "Stock Reservations",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Stock_Reservations\"",
   "fields": [
     {
       "id": "fldTDd5irOiAEEOEFU1",
-      "name": "Stock Move Line",
+      "Name": "Stock Move Line",
       "dbFieldName": "Stock_Move_Line",
       "type": "link",
       "description": null,
@@ -26,7 +26,7 @@
     },
     {
       "id": "fld0meYHpCyn0OlUlXO",
-      "name": "Batch Number",
+      "Name": "Batch Number",
       "dbFieldName": "Batch_Number",
       "type": "singleLineText",
       "description": null,
@@ -38,7 +38,7 @@
     },
     {
       "id": "fld3wu7jWGXaNch3DaI",
-      "name": "Quantity Fulfilled",
+      "Name": "Quantity Fulfilled",
       "dbFieldName": "Quantity_Fulfilled",
       "type": "number",
       "description": null,
@@ -55,7 +55,7 @@
     },
     {
       "id": "fld4gDROLC9p0h2kn1J",
-      "name": "Reservation Date",
+      "Name": "Reservation Date",
       "dbFieldName": "Reservation_Date",
       "type": "date",
       "description": null,
@@ -73,7 +73,7 @@
     },
     {
       "id": "fldrDF1S9lhQtaVAnR9",
-      "name": "Expected Ship Date",
+      "Name": "Expected Ship Date",
       "dbFieldName": "Expected_Ship_Date",
       "type": "date",
       "description": null,
@@ -91,7 +91,7 @@
     },
     {
       "id": "fldqRwHoSqTyJNKlC4P",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -105,7 +105,7 @@
     },
     {
       "id": "fldBT05ktrQZBrJmbW6",
-      "name": "Quantity Reserved",
+      "Name": "Quantity Reserved",
       "dbFieldName": "Quantity_Reserved",
       "type": "number",
       "description": null,
@@ -122,7 +122,7 @@
     },
     {
       "id": "fld98S5XrhJBjmkr1lK",
-      "name": "Expiry Date",
+      "Name": "Expiry Date",
       "dbFieldName": "Expiry_Date",
       "type": "date",
       "description": null,
@@ -140,7 +140,7 @@
     },
     {
       "id": "fld2se67K10tsirsozZ",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,

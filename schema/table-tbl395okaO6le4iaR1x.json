@@ -1,12 +1,12 @@
 {
   "id": "tbl395okaO6le4iaR1x",
-  "name": "QC Results",
+  "Name": "QC Results",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"QC_Results\"",
   "fields": [
     {
       "id": "fldCkwdDadhxoWFgF0u",
-      "name": "Result ID",
+      "Name": "Result ID",
       "dbFieldName": "Result_ID",
       "type": "autoNumber",
       "description": null,
@@ -20,7 +20,7 @@
     },
     {
       "id": "fld6Drhb5279pTeaM9I",
-      "name": "QC Order",
+      "Name": "QC Order",
       "dbFieldName": "QC_Order",
       "type": "link",
       "description": null,
@@ -41,7 +41,7 @@
     },
     {
       "id": "fldRH4rq6XXCFeJjt9Z",
-      "name": "Measured Value",
+      "Name": "Measured Value",
       "dbFieldName": "Measured_Value",
       "type": "number",
       "description": null,
@@ -58,7 +58,7 @@
     },
     {
       "id": "fldE1FUzBRI6u5QB0bU",
-      "name": "Result",
+      "Name": "Result",
       "dbFieldName": "Result",
       "type": "singleSelect",
       "description": null,
@@ -73,7 +73,7 @@
     },
     {
       "id": "fld18uYRXznONoFfpYk",
-      "name": "Checkpoint",
+      "Name": "Checkpoint",
       "dbFieldName": "Checkpoint",
       "type": "link",
       "description": null,

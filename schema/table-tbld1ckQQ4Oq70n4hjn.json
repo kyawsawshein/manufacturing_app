@@ -1,12 +1,12 @@
 {
   "id": "tbld1ckQQ4Oq70n4hjn",
-  "name": "Customer PO",
+  "Name": "Customer PO",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Customer_PO\"",
   "fields": [
     {
       "id": "fldAsG9h6RX4t2eFkvg",
-      "name": "PO Lines",
+      "Name": "PO Lines",
       "dbFieldName": "PO_Lines",
       "type": "link",
       "description": null,
@@ -26,7 +26,7 @@
     },
     {
       "id": "fldyFdcFhXfFgPC7EWK",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -42,7 +42,7 @@
     },
     {
       "id": "fldUu7GQ4NLWufUe7nd",
-      "name": "Label",
+      "Name": "Label",
       "dbFieldName": "Label",
       "type": "autoNumber",
       "description": null,
@@ -56,7 +56,7 @@
     },
     {
       "id": "fldVxcuUKFzVlT5kut5",
-      "name": "Name",
+      "Name": "Name",
       "dbFieldName": "Name",
       "type": "singleLineText",
       "description": null,
@@ -68,7 +68,7 @@
     },
     {
       "id": "fldJJZ6TF8nXgwut24F",
-      "name": "Sales Orders",
+      "Name": "Sales Orders",
       "dbFieldName": "Sales_Orders",
       "type": "link",
       "description": null,
@@ -89,7 +89,7 @@
     },
     {
       "id": "fldw4fXOVDpBdOJbKqW",
-      "name": "Customer",
+      "Name": "Customer",
       "dbFieldName": "Customer",
       "type": "link",
       "description": null,

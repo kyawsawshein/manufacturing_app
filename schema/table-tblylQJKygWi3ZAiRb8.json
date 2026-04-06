@@ -1,12 +1,12 @@
 {
   "id": "tblylQJKygWi3ZAiRb8",
-  "name": "Overhead Allocation",
+  "Name": "Overhead Allocation",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Overhead_Allocation\"",
   "fields": [
     {
       "id": "fld9Cfsh8KyFnVx6OdW",
-      "name": "Rent",
+      "Name": "Rent",
       "dbFieldName": "Rent",
       "type": "number",
       "description": null,
@@ -24,7 +24,7 @@
     },
     {
       "id": "fldycACHprESq5A2iji",
-      "name": "Utilities",
+      "Name": "Utilities",
       "dbFieldName": "Utilities",
       "type": "number",
       "description": null,
@@ -42,7 +42,7 @@
     },
     {
       "id": "fld0WwFyI1LFnSvsN1l",
-      "name": "Depreciation",
+      "Name": "Depreciation",
       "dbFieldName": "Depreciation",
       "type": "number",
       "description": null,
@@ -60,7 +60,7 @@
     },
     {
       "id": "fld6z2ZLDmQgg4LPBR0",
-      "name": "Other Overhead",
+      "Name": "Other Overhead",
       "dbFieldName": "Other_Overhead",
       "type": "number",
       "description": null,
@@ -78,7 +78,7 @@
     },
     {
       "id": "fldjC22I2s2YDuBDXh2",
-      "name": "Available Hours",
+      "Name": "Available Hours",
       "dbFieldName": "Available_Hours",
       "type": "number",
       "description": null,
@@ -95,7 +95,7 @@
     },
     {
       "id": "fldqZe8f5pbQBNidKFJ",
-      "name": "Total Overhead",
+      "Name": "Total Overhead",
       "dbFieldName": "Total_Overhead",
       "type": "formula",
       "description": null,
@@ -114,7 +114,7 @@
     },
     {
       "id": "fldisXVu2otRvhtcXp5",
-      "name": "Month",
+      "Name": "Month",
       "dbFieldName": "Month",
       "type": "date",
       "description": null,
@@ -132,7 +132,7 @@
     },
     {
       "id": "fldi23EXoTGSHC1rQ28",
-      "name": "Work Center",
+      "Name": "Work Center",
       "dbFieldName": "Work_Center",
       "type": "link",
       "description": null,
@@ -152,7 +152,7 @@
     },
     {
       "id": "fldQqYagMrdo82OdYJ0",
-      "name": "Overhead Rate/hr",
+      "Name": "Overhead Rate/hr",
       "dbFieldName": "Overhead_Rate_hr",
       "type": "formula",
       "description": null,

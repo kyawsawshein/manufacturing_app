@@ -1,12 +1,12 @@
 {
   "id": "tblhSAYQBm7hsA2D1ne",
-  "name": "Stock Move Line",
+  "Name": "Stock Move Line",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Stock_Move_Line\"",
   "fields": [
     {
       "id": "fldWtVS7i7Rj4stjusS",
-      "name": "Source Type",
+      "Name": "Source Type",
       "dbFieldName": "Source_Type",
       "type": "link",
       "description": null,
@@ -29,7 +29,7 @@
     },
     {
       "id": "fldHvTo8Pl15xds98oC",
-      "name": "Product",
+      "Name": "Product",
       "dbFieldName": "Product",
       "type": "link",
       "description": null,
@@ -53,7 +53,7 @@
     },
     {
       "id": "fld2yB4RXeG9qTB8Z2C",
-      "name": "Price Unit",
+      "Name": "Price Unit",
       "dbFieldName": "Price_Unit",
       "type": "number",
       "description": null,
@@ -70,7 +70,7 @@
     },
     {
       "id": "fldfVXXiUcxJGqLLh86",
-      "name": "Quantity",
+      "Name": "Quantity",
       "dbFieldName": "Quantity",
       "type": "number",
       "description": null,
@@ -87,7 +87,7 @@
     },
     {
       "id": "fldVffW3pZkJwIGNdmL",
-      "name": "Expiry Date",
+      "Name": "Expiry Date",
       "dbFieldName": "Expiry_Date",
       "type": "date",
       "description": null,
@@ -105,7 +105,7 @@
     },
     {
       "id": "fldjZUOEKqCnJlYP14y",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -122,7 +122,7 @@
     },
     {
       "id": "fldVrr2BLpLRp3ConrU",
-      "name": "Stock Quantity",
+      "Name": "Stock Quantity",
       "dbFieldName": "Stock_Quantity",
       "type": "link",
       "description": null,
@@ -146,7 +146,7 @@
     },
     {
       "id": "fldQSoFmvsl85kEcDYh",
-      "name": "Created By",
+      "Name": "Created By",
       "dbFieldName": "Created_By",
       "type": "user",
       "description": null,
@@ -161,7 +161,7 @@
     },
     {
       "id": "fldLcvVyGAeRvm2ndul",
-      "name": "Created At",
+      "Name": "Created At",
       "dbFieldName": "Created_At",
       "type": "date",
       "description": null,
@@ -179,7 +179,7 @@
     },
     {
       "id": "fldyjAfSXtTPxloZvnL",
-      "name": "Destination Location",
+      "Name": "Destination Location",
       "dbFieldName": "Destination_Location",
       "type": "link",
       "description": null,
@@ -202,7 +202,7 @@
     },
     {
       "id": "fld9MbdMplwKZREIQ6n",
-      "name": "Destination Type",
+      "Name": "Destination Type",
       "dbFieldName": "Destination_Type",
       "type": "link",
       "description": null,
@@ -225,7 +225,7 @@
     },
     {
       "id": "fldnG4OPP7two3M7TOc",
-      "name": "Stock Move",
+      "Name": "Stock Move",
       "dbFieldName": "Stock_Move",
       "type": "link",
       "description": null,
@@ -246,7 +246,7 @@
     },
     {
       "id": "fldAly4YMxRrqLv7RVx",
-      "name": "Source Location",
+      "Name": "Source Location",
       "dbFieldName": "Source_Location",
       "type": "link",
       "description": null,
@@ -269,7 +269,7 @@
     },
     {
       "id": "fld88jEuJb6UFRRrH95",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -283,7 +283,7 @@
     },
     {
       "id": "fldlghK8abG2F3NUc0Q",
-      "name": "Unit",
+      "Name": "Unit",
       "dbFieldName": "Unit",
       "type": "link",
       "description": null,
@@ -306,7 +306,7 @@
     },
     {
       "id": "fldpRHDt5kBbaBC2PnN",
-      "name": "Lot No",
+      "Name": "Lot No",
       "dbFieldName": "Lot_No",
       "type": "link",
       "description": null,
@@ -330,7 +330,7 @@
     },
     {
       "id": "fldca3EU28hNPWpyKzo",
-      "name": "Date",
+      "Name": "Date",
       "dbFieldName": "Date",
       "type": "date",
       "description": null,
@@ -348,7 +348,7 @@
     },
     {
       "id": "flddnOTBqdqRoYqutgJ",
-      "name": "Name",
+      "Name": "Name",
       "dbFieldName": "Name",
       "type": "formula",
       "description": null,
@@ -363,7 +363,7 @@
     },
     {
       "id": "fldLwr3BIvEGSFMYtxO",
-      "name": "Stock Reservations",
+      "Name": "Stock Reservations",
       "dbFieldName": "Stock_Reservations",
       "type": "link",
       "description": null,
@@ -387,7 +387,7 @@
     },
     {
       "id": "fldFu1eBxiIKmZFIoE4",
-      "name": "Stock_Ledger",
+      "Name": "Stock_Ledger",
       "dbFieldName": "Stock_Ledger",
       "type": "link",
       "description": null,

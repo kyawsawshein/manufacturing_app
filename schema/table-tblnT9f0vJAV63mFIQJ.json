@@ -1,12 +1,12 @@
 {
   "id": "tblnT9f0vJAV63mFIQJ",
-  "name": "Model",
+  "Name": "Model",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Model\"",
   "fields": [
     {
       "id": "fld3YCkFEwOD9DUoMgS",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -22,7 +22,7 @@
     },
     {
       "id": "fld4C1aY6nkRht030En",
-      "name": "Name",
+      "Name": "Name",
       "dbFieldName": "Name",
       "type": "singleLineText",
       "description": null,
@@ -34,7 +34,7 @@
     },
     {
       "id": "fldH2FbG6SksUyPoWWX",
-      "name": "Label",
+      "Name": "Label",
       "dbFieldName": "Label",
       "type": "autoNumber",
       "description": null,

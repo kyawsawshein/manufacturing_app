@@ -6,7 +6,7 @@ const BASE_ID = process.env.BASE_ID || "${BASE_ID}";
 const BOM_LINE = process.env.BOM_LINE;
 export interface Product {
   id: string;
-  name: string;
+  Name: string;
   productCode: string;
   cost: number | null;
   defaultBomId: string | null;
@@ -15,7 +15,7 @@ export interface Product {
 
 export interface BOM {
   id: string;
-  name: string;
+  Name: string;
   reference: string | null;
   productId: string | null;
   productName: string | null;
@@ -49,12 +49,12 @@ export async function getProducts(): Promise<Product[]> {
     `SELECT 
       "__id",
       "Name",
-      "SKU",
+      "default_code" as "Product_Code",
       "Cost",
       "Default_BOM"
     FROM "${BASE_ID}"."Products"
-    WHERE "Name" IS NOT NULL
-    ORDER BY "Name"
+    WHERE "default_code" IS NOT NULL
+    ORDER BY "id" ASC
     LIMIT 500`
   );
 
@@ -62,7 +62,7 @@ export async function getProducts(): Promise<Product[]> {
     const defaultBom = safeParseJson(row.Default_BOM);
     return {
       id: row.__id as string,
-      name: row.Name as string,
+      Name: row.Name as string,
       productCode: (row.Product_Code as string) || "",
       cost: row.Cost as number | null,
       defaultBomId: defaultBom?.id || null,
@@ -94,7 +94,7 @@ export async function getBOMsByProduct(productId: string): Promise<BOM[]> {
     const product = safeParseJson(row.Product);
     return {
       id: row.__id as string,
-      name: row.Name as string,
+      Name: row.Name as string,
       reference: row.Reference as string | null,
       productId: product?.id || null,
       productName: product?.title || null,
@@ -127,7 +127,7 @@ export async function getAllBOMs(): Promise<BOM[]> {
     const product = safeParseJson(row.Product);
     return {
       id: row.__id as string,
-      name: row.Name as string,
+      Name: row.Name as string,
       reference: row.Reference as string | null,
       productId: product?.id || null,
       productName: product?.title || null,
@@ -276,7 +276,7 @@ export async function getBOMs() {
   `);
   return rows.map(row => ({
     id: row.__id as string,
-    name: row.BOM as string,
+    Name: row.BOM as string,
     version: row.Version as string,
     quantity: Number(row.Quantity || 0),
     status: row.Status as string,
@@ -370,7 +370,7 @@ export async function getBOMWithLines(bomId: string) {
   const { rows } = await sqlQuery(BASE_ID, `
     SELECT 
       b."__id" as "bom_id",
-      b."BOM" as "bom_name",
+      b."BOM" as "bom_Name",
       b."Total_Material_Cost" as "total_cost",
       b."Status" as "status",
       bl."__id" as "line_id",
@@ -383,11 +383,11 @@ export async function getBOMWithLines(bomId: string) {
     WHERE b."__id" = '${bomId}'
     ORDER BY bl."Quantity" DESC
   `);
-  
+
   return {
     bom: rows[0] ? {
       id: rows[0].bom_id as string,
-      name: rows[0].bom_name as string,
+      Name: rows[0].bom_Name as string,
       totalCost: Number(rows[0].total_cost || 0),
       status: rows[0].status as string,
     } : null,
@@ -408,16 +408,16 @@ export async function getBOMWithLines(bomId: string) {
  */
 // export async function getBOMsByProduct(productId: string) {
 //   const { rows } = await sqlQuery(BASE_ID, `
-//     SELECT "__id", "BOM" as "name", "Version" as "version", "Status" as "status", "Total_Material_Cost" as "total_cost"
+//     SELECT "__id", "BOM" as "Name", "Version" as "version", "Status" as "status", "Total_Material_Cost" as "total_cost"
 //     FROM "${BASE_ID}"."BOM"
 //     WHERE "__fk_fldcKWcxXFLKHBkqJxT" = '${productId}' OR "Product" LIKE '%${productId}%'
 //     ORDER BY "Version" DESC
 //     LIMIT 100
 //   `);
-  
+
 //   return rows.map(row => ({
 //     id: row.__id as string,
-//     name: row.name as string,
+//     Name: row.Name as string,
 //     version: row.version as string,
 //     status: row.status as string,
 //     totalCost: Number(row.total_cost || 0),
@@ -433,7 +433,7 @@ export async function calculateBOMTotalCost(bomId: string): Promise<number> {
     FROM "${BASE_ID}"."BOM_Lines"
     WHERE "__fk_fldAxfVf6D1pCuq0oDh" = '${bomId}'
   `);
-  
+
   return Number(rows[0]?.total || 0);
 }
 
@@ -445,35 +445,35 @@ export async function exploseBOM(bomId: string, quantity: number = 1, level: num
   if (visitedBOMs.has(bomId) || level > 5) {
     return [];
   }
-  
+
   visitedBOMs.add(bomId);
-  
+
   const { rows } = await sqlQuery(BASE_ID, `
     SELECT 
       bl."__id" as "line_id",
       bl."Product" as "product_json",
       bl."Quantity" as "qty_per_unit",
       bl."Unit_Cost" as "unit_cost",
-      bl."Name" as "line_name",
+      bl."Name" as "line_Name",
       p."__id" as "product_id",
-      p."Name" as "product_name"
+      p."Name" as "product_Name"
     FROM "${BASE_ID}"."BOM_Lines" bl
     LEFT JOIN "${BASE_ID}"."Products" p ON p."__id" = bl."__fk_fldTHdnKDwuPEJzAFkf"
     WHERE bl."__fk_fldAxfVf6D1pCuq0oDh" = '${bomId}'
     LIMIT 500
   `);
-  
+
   const explosedItems: BOMLineItem[] = [];
-  
+
   for (const row of rows) {
     const qtyForThisLevel = Number(row.qty_per_unit || 0) * quantity;
     const unitCost = Number(row.unit_cost || 0);
-    
+
     explosedItems.push({
       id: row.line_id as string,
-      name: row.line_name as string,
+      Name: row.line_Name as string,
       productId: row.product_id as string,
-      productName: row.product_name as string || safeParseJson(row.product_json)?.title || "",
+      productName: row.product_Name as string || safeParseJson(row.product_json)?.title || "",
       quantity: qtyForThisLevel,
       unitCost: unitCost,
       totalCost: qtyForThisLevel * unitCost,
@@ -481,7 +481,7 @@ export async function exploseBOM(bomId: string, quantity: number = 1, level: num
       parentBOMId: bomId,
     });
   }
-  
+
   return explosedItems;
 }
 
@@ -491,21 +491,21 @@ export async function exploseBOM(bomId: string, quantity: number = 1, level: num
 export async function checkBOMCircularReference(bomId: string, parentBomId?: string): Promise<{ hasCircular: boolean; path: string[] }> {
   const visitedBOMs = new Set<string>();
   const path: string[] = [bomId];
-  
+
   async function traverse(currentBomId: string): Promise<boolean> {
     if (visitedBOMs.has(currentBomId)) {
       return true; // Circular reference found
     }
-    
+
     visitedBOMs.add(currentBomId);
-    
+
     const { rows } = await sqlQuery(BASE_ID, `
       SELECT DISTINCT "__fk_fldAxfVf6D1pCuq0oDh" as "parent_bom"
       FROM "${BASE_ID}"."BOM_Lines"
       WHERE "__fk_fldAxfVf6D1pCuq0oDh" = '${currentBomId}'
       LIMIT 50
     `);
-    
+
     for (const row of rows) {
       if (row.parent_bom) {
         path.push(row.parent_bom as string);
@@ -515,10 +515,10 @@ export async function checkBOMCircularReference(bomId: string, parentBomId?: str
         path.pop();
       }
     }
-    
+
     return false;
   }
-  
+
   const hasCircular = await traverse(bomId);
   return { hasCircular, path };
 }

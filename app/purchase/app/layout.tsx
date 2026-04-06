@@ -9,7 +9,7 @@ import { ErrorReporter, ReactErrorBoundary } from "@/components/error-reporter";
 export const metadata: Metadata = {
   title: "Purchase Order Creation",
   description: "Create and manage purchase orders for vendors",
-    generator: 'v0.app'
+  generator: 'v0.app'
 };
 
 export default function RootLayout({

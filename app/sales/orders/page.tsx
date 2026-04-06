@@ -38,7 +38,7 @@ import {
 
 interface SalesOrder {
   id: string;
-  name: string;
+  Name: string;
   orderDate: string;
   deliveryDate: string;
   status: string;
@@ -48,7 +48,7 @@ interface SalesOrder {
 
 interface Partner {
   id: string;
-  name: string;
+  Name: string;
 }
 
 function formatDate(dateStr: string | null): string {
@@ -121,7 +121,7 @@ export default function SalesOrdersPage() {
   }, []);
 
   const columns: Column<SalesOrder>[] = [
-    { key: "name", label: "SO Reference" },
+    { key: "Name", label: "SO Reference" },
     { key: "customer", label: "Customer" },
     {
       key: "orderDate",
@@ -176,7 +176,7 @@ export default function SalesOrdersPage() {
 
   const handleEdit = (order: SalesOrder) => {
     setEditingOrder(order);
-    const customer = customers.find((c) => c.name === order.customer);
+    const customer = customers.find((c) => c.Name === order.customer);
     setFormData({
       orderDate: order.orderDate ? order.orderDate.split("T")[0] : toISODateString(new Date()),
       deliveryDate: order.deliveryDate ? order.deliveryDate.split("T")[0] : toISODateString(new Date()),
@@ -187,7 +187,7 @@ export default function SalesOrdersPage() {
   };
 
   const handleDelete = (order: SalesOrder) => {
-    if (confirm(`Are you sure you want to delete ${order.name}?`)) {
+    if (confirm(`Are you sure you want to delete ${order.Name}?`)) {
       startTransition(async () => {
         try {
           await deleteSalesOrder(order.id);
@@ -267,7 +267,7 @@ export default function SalesOrdersPage() {
         <DataTable
           data={orders}
           columns={columns}
-          searchKey="name"
+          searchKey="Name"
           searchPlaceholder="Search sales orders..."
           onAdd={handleAdd}
           onEdit={handleEdit}
@@ -299,7 +299,7 @@ export default function SalesOrdersPage() {
                     <SelectContent>
                       {customers.map((customer) => (
                         <SelectItem key={customer.id} value={customer.id}>
-                          {customer.name}
+                          {customer.Name}
                         </SelectItem>
                       ))}
                     </SelectContent>

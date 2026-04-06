@@ -1,12 +1,12 @@
 {
   "id": "tblN8PCHnjtPVgwYkx8",
-  "name": "Request Item",
+  "Name": "Request Item",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Request_Item\"",
   "fields": [
     {
       "id": "fldZel5oa47ct950J5w",
-      "name": "Reference",
+      "Name": "Reference",
       "dbFieldName": "Reference",
       "type": "autoNumber",
       "description": null,
@@ -20,7 +20,7 @@
     },
     {
       "id": "fld5H0AlyoI7pdlL8uu",
-      "name": "Production Request",
+      "Name": "Production Request",
       "dbFieldName": "Production_Request",
       "type": "link",
       "description": null,
@@ -41,7 +41,7 @@
     },
     {
       "id": "fldxcWWsvq41ZWcP6aH",
-      "name": "Lot No",
+      "Name": "Lot No",
       "dbFieldName": "Lot_No",
       "type": "singleLineText",
       "description": null,
@@ -53,7 +53,7 @@
     },
     {
       "id": "fldrcfK6vsyitKC7tZv",
-      "name": "Quantity",
+      "Name": "Quantity",
       "dbFieldName": "Quantity",
       "type": "number",
       "description": null,
@@ -70,7 +70,7 @@
     },
     {
       "id": "fldYYst7hdmQjwK0TKm",
-      "name": "Location",
+      "Name": "Location",
       "dbFieldName": "Location",
       "type": "link",
       "description": null,
@@ -93,7 +93,7 @@
     },
     {
       "id": "fldhGzrps9xcYYFue1r",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -107,7 +107,7 @@
     },
     {
       "id": "fld4nFfIsvVmeGi9msp",
-      "name": "Unit",
+      "Name": "Unit",
       "dbFieldName": "Unit",
       "type": "link",
       "description": null,
@@ -130,7 +130,7 @@
     },
     {
       "id": "fldRt9IypdtDppmtoIC",
-      "name": "Product",
+      "Name": "Product",
       "dbFieldName": "Product",
       "type": "singleLineText",
       "description": null,
@@ -142,7 +142,7 @@
     },
     {
       "id": "fldUBHl5ZJXDga16OQX",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -157,7 +157,7 @@
     },
     {
       "id": "fldrYOqbD1O19lLHJab",
-      "name": "Name",
+      "Name": "Name",
       "dbFieldName": "Name",
       "type": "formula",
       "description": null,

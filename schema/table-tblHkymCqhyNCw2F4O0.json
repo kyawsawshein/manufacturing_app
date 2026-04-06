@@ -1,12 +1,12 @@
 {
   "id": "tblHkymCqhyNCw2F4O0",
-  "name": "Payment",
+  "Name": "Payment",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Payment\"",
   "fields": [
     {
       "id": "fldGyA2PSRuMpFtEvS7",
-      "name": "Amount",
+      "Name": "Amount",
       "dbFieldName": "Amount",
       "type": "number",
       "description": null,
@@ -23,7 +23,7 @@
     },
     {
       "id": "fldnJxJtuLmzXFTd2VH",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -39,7 +39,7 @@
     },
     {
       "id": "fldQoXtdrnpKXROPTFm",
-      "name": "Date",
+      "Name": "Date",
       "dbFieldName": "Date",
       "type": "date",
       "description": null,
@@ -57,7 +57,7 @@
     },
     {
       "id": "fldCGS4d56hUVFfwq8n",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -71,7 +71,7 @@
     },
     {
       "id": "fld0OvN6WyH2fiMLaI1",
-      "name": "Partner",
+      "Name": "Partner",
       "dbFieldName": "Partner",
       "type": "link",
       "description": null,
@@ -95,7 +95,7 @@
     },
     {
       "id": "fldDdwIJgu6Jgemrmyq",
-      "name": "Journal",
+      "Name": "Journal",
       "dbFieldName": "Journal",
       "type": "link",
       "description": null,
@@ -119,7 +119,7 @@
     },
     {
       "id": "fldle66g0hqlE4UPiaw",
-      "name": "Currency",
+      "Name": "Currency",
       "dbFieldName": "Currency",
       "type": "link",
       "description": null,

@@ -1,12 +1,12 @@
 {
   "id": "tblyMv9W9B6eKuuhmZI",
-  "name": "Taxes",
+  "Name": "Taxes",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Taxes\"",
   "fields": [
     {
       "id": "fldzF8OuCyveSwKCxmi",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -22,7 +22,7 @@
     },
     {
       "id": "fldm2ASO3jjvpr2fXWy",
-      "name": "Amount",
+      "Name": "Amount",
       "dbFieldName": "Amount",
       "type": "number",
       "description": null,
@@ -39,7 +39,7 @@
     },
     {
       "id": "fld0ZGLIVpos95odKYq",
-      "name": "Tax Type",
+      "Name": "Tax Type",
       "dbFieldName": "Tax_Type",
       "type": "singleSelect",
       "description": null,
@@ -54,7 +54,7 @@
     },
     {
       "id": "fldfpWOTwWULZBbwMOo",
-      "name": "Name",
+      "Name": "Name",
       "dbFieldName": "Name",
       "type": "singleLineText",
       "description": null,
@@ -66,7 +66,7 @@
     },
     {
       "id": "fld6ZSTsXGmwpwmL4uU",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -80,7 +80,7 @@
     },
     {
       "id": "fldA01aCwlIb7H6hjl9",
-      "name": "Account",
+      "Name": "Account",
       "dbFieldName": "Account",
       "type": "link",
       "description": null,

@@ -1,12 +1,12 @@
 {
   "id": "tblaVMKDADXfdHimLRY",
-  "name": "Stock_Ledger",
+  "Name": "Stock_Ledger",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Stock_Ledger\"",
   "fields": [
     {
       "id": "fldnkpRwdiOlit9Lqke",
-      "name": "Product",
+      "Name": "Product",
       "dbFieldName": "Product",
       "type": "link",
       "description": null,
@@ -27,7 +27,7 @@
     },
     {
       "id": "fldGn4zmCzfcj57Rlzs",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "Id",
       "type": "autoNumber",
       "description": null,
@@ -41,7 +41,7 @@
     },
     {
       "id": "fldJ8jyy3xyr7dLfLki",
-      "name": "Stock Move Line",
+      "Name": "Stock Move Line",
       "dbFieldName": "Stock_Move_Line",
       "type": "link",
       "description": null,
@@ -63,7 +63,7 @@
     },
     {
       "id": "fldiMi3zZknWFAoYsJK",
-      "name": "Balance After",
+      "Name": "Balance After",
       "dbFieldName": "Balance_After",
       "type": "number",
       "description": null,
@@ -80,7 +80,7 @@
     },
     {
       "id": "fldZzOBbztYbmRBtj6L",
-      "name": "Transaction Type",
+      "Name": "Transaction Type",
       "dbFieldName": "Transaction_Type",
       "type": "singleSelect",
       "description": null,
@@ -101,7 +101,7 @@
     },
     {
       "id": "fld657ek6rKq5OhNtkX",
-      "name": "Reason Code",
+      "Name": "Reason Code",
       "dbFieldName": "Reason_Code",
       "type": "singleSelect",
       "description": null,
@@ -120,7 +120,7 @@
     },
     {
       "id": "fldgcQQMhmBnGIlZmWF",
-      "name": "Created By",
+      "Name": "Created By",
       "dbFieldName": "Created_By",
       "type": "user",
       "description": null,
@@ -132,7 +132,7 @@
     },
     {
       "id": "fldqD8IuKZw8QxoSD6Z",
-      "name": "Created At",
+      "Name": "Created At",
       "dbFieldName": "Created_At",
       "type": "date",
       "description": null,
@@ -150,7 +150,7 @@
     },
     {
       "id": "fldGdNikmVwGpGlGWqE",
-      "name": "Quantity",
+      "Name": "Quantity",
       "dbFieldName": "Quantity",
       "type": "number",
       "description": null,
@@ -167,7 +167,7 @@
     },
     {
       "id": "fldFIDzsnmrW4Gl5VHk",
-      "name": "Category",
+      "Name": "Category",
       "dbFieldName": "Category",
       "type": "link",
       "description": null,
@@ -188,7 +188,7 @@
     },
     {
       "id": "fldHlYggnBBpte4kzhX",
-      "name": "Lot",
+      "Name": "Lot",
       "dbFieldName": "Lot",
       "type": "link",
       "description": null,
@@ -212,7 +212,7 @@
     },
     {
       "id": "fldSDC1Ho2CwgudK4TF",
-      "name": "Location",
+      "Name": "Location",
       "dbFieldName": "Location",
       "type": "link",
       "description": null,
@@ -235,7 +235,7 @@
     },
     {
       "id": "fldKlQV8ei80TMbzwpa",
-      "name": "Destination Location",
+      "Name": "Destination Location",
       "dbFieldName": "Destination_Location",
       "type": "link",
       "description": null,

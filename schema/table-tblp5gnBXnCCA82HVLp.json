@@ -1,12 +1,12 @@
 {
   "id": "tblp5gnBXnCCA82HVLp",
-  "name": "Cutting Fabric",
+  "Name": "Cutting Fabric",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Cutting_Fabric\"",
   "fields": [
     {
       "id": "fld3Gn6NX3o656tOo01",
-      "name": "MO",
+      "Name": "MO",
       "dbFieldName": "MO",
       "type": "singleLineText",
       "description": null,
@@ -18,7 +18,7 @@
     },
     {
       "id": "fldKy1vtbWzIhNPRCMw",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -32,7 +32,7 @@
     },
     {
       "id": "fldfe03yUx2o9U2WCql",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -48,7 +48,7 @@
     },
     {
       "id": "fldDcqgNxy5l02i70il",
-      "name": "Pair",
+      "Name": "Pair",
       "dbFieldName": "Pair",
       "type": "number",
       "description": null,
@@ -65,7 +65,7 @@
     },
     {
       "id": "fld0L7JLq0s4aoJP37s",
-      "name": "Width",
+      "Name": "Width",
       "dbFieldName": "Width",
       "type": "singleLineText",
       "description": null,
@@ -77,7 +77,7 @@
     },
     {
       "id": "fld8hXGNtLoRkxUbQmr",
-      "name": "Used Qty",
+      "Name": "Used Qty",
       "dbFieldName": "Used_Qty",
       "type": "number",
       "description": null,
@@ -94,7 +94,7 @@
     },
     {
       "id": "fld0EyQdRb3h5JKyFZD",
-      "name": "Lot No",
+      "Name": "Lot No",
       "dbFieldName": "Lot_No",
       "type": "singleLineText",
       "description": null,
@@ -106,7 +106,7 @@
     },
     {
       "id": "fldphFyTIme6qGiinBg",
-      "name": "Remark",
+      "Name": "Remark",
       "dbFieldName": "Remark",
       "type": "singleLineText",
       "description": null,
@@ -118,7 +118,7 @@
     },
     {
       "id": "fld92bPUBhRjaxQjOOv",
-      "name": "Date",
+      "Name": "Date",
       "dbFieldName": "Date",
       "type": "date",
       "description": null,
@@ -136,7 +136,7 @@
     },
     {
       "id": "fldtVbwdu6GbkzhZDYg",
-      "name": "Part No",
+      "Name": "Part No",
       "dbFieldName": "Part_No",
       "type": "link",
       "description": null,
@@ -159,7 +159,7 @@
     },
     {
       "id": "fldX0jQ7hpbSSEZulBI",
-      "name": "Item",
+      "Name": "Item",
       "dbFieldName": "Item",
       "type": "link",
       "description": null,
@@ -182,7 +182,7 @@
     },
     {
       "id": "fldHPgZmGSCBObXDbEh",
-      "name": "Machine No",
+      "Name": "Machine No",
       "dbFieldName": "Machine_No",
       "type": "link",
       "description": null,
@@ -205,7 +205,7 @@
     },
     {
       "id": "fldW83s9G5pTldICtKo",
-      "name": "Unit",
+      "Name": "Unit",
       "dbFieldName": "Unit",
       "type": "link",
       "description": null,
@@ -228,7 +228,7 @@
     },
     {
       "id": "fldTksIEIwNkW0sCu2i",
-      "name": "User",
+      "Name": "User",
       "dbFieldName": "User",
       "type": "link",
       "description": null,

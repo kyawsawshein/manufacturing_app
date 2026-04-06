@@ -1,12 +1,12 @@
 {
   "id": "tblIjEJLmhAMrP6DTL3",
-  "name": "Express",
+  "Name": "Express",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Express\"",
   "fields": [
     {
       "id": "fldFxHtUmX8Q87cYyXW",
-      "name": "Qty",
+      "Name": "Qty",
       "dbFieldName": "Qty",
       "type": "number",
       "description": null,
@@ -23,7 +23,7 @@
     },
     {
       "id": "fld5UBW0EojZQtU5SP5",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -39,7 +39,7 @@
     },
     {
       "id": "fld1Gc2kziB0Vszh9UW",
-      "name": "Type",
+      "Name": "Type",
       "dbFieldName": "Front_Rear",
       "type": "singleSelect",
       "description": null,
@@ -54,7 +54,7 @@
     },
     {
       "id": "flddpvy1pNhGRtXNdxF",
-      "name": "Model",
+      "Name": "Model",
       "dbFieldName": "Model",
       "type": "singleLineText",
       "description": null,
@@ -66,7 +66,7 @@
     },
     {
       "id": "fldLOCgQ8xNFq6GPZLf",
-      "name": "Cutting Date",
+      "Name": "Cutting Date",
       "dbFieldName": "Cutting_Date",
       "type": "date",
       "description": null,
@@ -84,7 +84,7 @@
     },
     {
       "id": "fldMyrPvNHnQa6RVIBG",
-      "name": "Fabric Used",
+      "Name": "Fabric Used",
       "dbFieldName": "Fabric_Used",
       "type": "number",
       "description": null,
@@ -101,7 +101,7 @@
     },
     {
       "id": "fldAMEKf4PQ42ESZjZ8",
-      "name": "Send Sewing",
+      "Name": "Send Sewing",
       "dbFieldName": "Send_Sewing",
       "type": "date",
       "description": null,
@@ -119,7 +119,7 @@
     },
     {
       "id": "fldqjx4q736PhnzyqMz",
-      "name": "Sewing Finished",
+      "Name": "Sewing Finished",
       "dbFieldName": "Sewing_Finished",
       "type": "date",
       "description": null,
@@ -137,7 +137,7 @@
     },
     {
       "id": "fld0xESn86UA583jNYe",
-      "name": "QC Date",
+      "Name": "QC Date",
       "dbFieldName": "QC_Date",
       "type": "date",
       "description": null,
@@ -155,7 +155,7 @@
     },
     {
       "id": "fld7FXi4GBOzbgr4Kg0",
-      "name": "Packing Date",
+      "Name": "Packing Date",
       "dbFieldName": "Packing_Date",
       "type": "date",
       "description": null,
@@ -173,7 +173,7 @@
     },
     {
       "id": "fldgZBchnbWIA27C7YI",
-      "name": "Packing Finished",
+      "Name": "Packing Finished",
       "dbFieldName": "Packing_Finished",
       "type": "date",
       "description": null,
@@ -191,7 +191,7 @@
     },
     {
       "id": "fldR89KK1Ek8VWpOlsk",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -205,7 +205,7 @@
     },
     {
       "id": "fldHPdVSD8RU6TQjGOm",
-      "name": "Lot No",
+      "Name": "Lot No",
       "dbFieldName": "Lot_No",
       "type": "link",
       "description": null,
@@ -228,7 +228,7 @@
     },
     {
       "id": "fldg20fn0IyOauF3EXD",
-      "name": "SO",
+      "Name": "SO",
       "dbFieldName": "SO",
       "type": "link",
       "description": null,
@@ -251,7 +251,7 @@
     },
     {
       "id": "fldhgANsoNQAnFhgqPS",
-      "name": "Fabric",
+      "Name": "Fabric",
       "dbFieldName": "Fabric",
       "type": "link",
       "description": null,
@@ -274,7 +274,7 @@
     },
     {
       "id": "fldVl4fjIESe1uC6mm6",
-      "name": "Unit",
+      "Name": "Unit",
       "dbFieldName": "Unit",
       "type": "link",
       "description": null,
@@ -297,7 +297,7 @@
     },
     {
       "id": "fldognEAxnic0bAxqis",
-      "name": "Job No",
+      "Name": "Job No",
       "dbFieldName": "Job_No",
       "type": "link",
       "description": null,
@@ -320,7 +320,7 @@
     },
     {
       "id": "fldmSDcRSM9dxMZXSLr",
-      "name": "PART No",
+      "Name": "PART No",
       "dbFieldName": "PART_No",
       "type": "link",
       "description": null,
@@ -343,7 +343,7 @@
     },
     {
       "id": "fld85TA28RMMeaPJjMk",
-      "name": "PO",
+      "Name": "PO",
       "dbFieldName": "PO",
       "type": "link",
       "description": null,

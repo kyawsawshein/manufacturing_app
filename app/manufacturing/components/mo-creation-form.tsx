@@ -89,7 +89,7 @@ export function MOCreationForm({ onSuccess }: MOCreationFormProps) {
       try {
         const data = await getBOMsByProduct(productId);
         setBoms(data);
-        
+
         // Auto-select default BOM if available
         const selectedProduct = products.find((p) => p.id === productId);
         if (selectedProduct?.defaultBomId) {
@@ -287,7 +287,7 @@ export function MOCreationForm({ onSuccess }: MOCreationFormProps) {
                       {products.map((product) => (
                         <SelectItem key={product.id} value={product.id}>
                           {product.productCode ? `[${product.productCode}] ` : ""}
-                          {product.name}
+                          {product.Name}
                         </SelectItem>
                       ))}
                     </SelectContent>
@@ -323,17 +323,17 @@ export function MOCreationForm({ onSuccess }: MOCreationFormProps) {
                           loadingBOMs
                             ? "Loading..."
                             : !productId
-                            ? "Select a product first"
-                            : boms.length === 0
-                            ? "No BOMs available"
-                            : "Select a BOM"
+                              ? "Select a product first"
+                              : boms.length === 0
+                                ? "No BOMs available"
+                                : "Select a BOM"
                         }
                       />
                     </SelectTrigger>
                     <SelectContent>
                       {boms.map((bom) => (
                         <SelectItem key={bom.id} value={bom.id}>
-                          {bom.name}
+                          {bom.Name}
                           {bom.reference ? ` - ${bom.reference}` : ""}
                         </SelectItem>
                       ))}
@@ -554,8 +554,8 @@ export function MOCreationForm({ onSuccess }: MOCreationFormProps) {
                     {!bomId
                       ? "Select a BOM to see cost preview"
                       : quantity <= 0
-                      ? "Enter a valid quantity"
-                      : "Cost preview unavailable"}
+                        ? "Enter a valid quantity"
+                        : "Cost preview unavailable"}
                   </div>
                 )}
 

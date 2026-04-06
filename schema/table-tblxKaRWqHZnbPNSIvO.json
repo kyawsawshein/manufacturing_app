@@ -1,12 +1,12 @@
 {
   "id": "tblxKaRWqHZnbPNSIvO",
-  "name": "QC Orders",
+  "Name": "QC Orders",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"QC_Orders\"",
   "fields": [
     {
       "id": "flddILGfdjaz3ueG8Iq",
-      "name": "QC Results",
+      "Name": "QC Results",
       "dbFieldName": "QC_Results",
       "type": "link",
       "description": null,
@@ -26,7 +26,7 @@
     },
     {
       "id": "fldfVt3PtP8N6oKuAZw",
-      "name": "MO",
+      "Name": "MO",
       "dbFieldName": "MO",
       "type": "link",
       "description": null,
@@ -47,7 +47,7 @@
     },
     {
       "id": "fldpPaT1T3xC0FqhB0a",
-      "name": "QC Number",
+      "Name": "QC Number",
       "dbFieldName": "QC_Number",
       "type": "autoNumber",
       "description": null,
@@ -61,7 +61,7 @@
     },
     {
       "id": "fldAFqZfwpT3BUmyaui",
-      "name": "Finished Goods",
+      "Name": "Finished Goods",
       "dbFieldName": "Product",
       "type": "singleLineText",
       "description": null,
@@ -73,7 +73,7 @@
     },
     {
       "id": "fldwSAXVpoLHm4DmYtA",
-      "name": "Lot / Batch",
+      "Name": "Lot / Batch",
       "dbFieldName": "Lot_Batch",
       "type": "singleLineText",
       "description": null,
@@ -85,7 +85,7 @@
     },
     {
       "id": "fldCymGrJA97LCzBePh",
-      "name": "Quantity",
+      "Name": "Quantity",
       "dbFieldName": "Quantity",
       "type": "number",
       "description": null,
@@ -102,7 +102,7 @@
     },
     {
       "id": "fldQqs0ty2jGoKzCo6U",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -119,7 +119,7 @@
     },
     {
       "id": "fldct76lYVAL2JfckL3",
-      "name": "Inspection Date",
+      "Name": "Inspection Date",
       "dbFieldName": "Inspection_Date",
       "type": "date",
       "description": null,

@@ -1,12 +1,12 @@
 {
   "id": "tblqugp8k8NsihBGtTC",
-  "name": "Planning",
+  "Name": "Planning",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Planning\"",
   "fields": [
     {
       "id": "fldcy8hUaHA1I7BUEvW",
-      "name": "Label",
+      "Name": "Label",
       "dbFieldName": "Label",
       "type": "autoNumber",
       "description": null,
@@ -20,7 +20,7 @@
     },
     {
       "id": "fldHD7dLsswKZ3CMG44",
-      "name": "PO",
+      "Name": "PO",
       "dbFieldName": "PO",
       "type": "singleLineText",
       "description": null,
@@ -32,7 +32,7 @@
     },
     {
       "id": "fldt5NRlIYfPHBd2zLw",
-      "name": "Qty",
+      "Name": "Qty",
       "dbFieldName": "Qty",
       "type": "number",
       "description": null,
@@ -49,7 +49,7 @@
     },
     {
       "id": "fld5SGiNlvJh1KhQ5qZ",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -65,7 +65,7 @@
     },
     {
       "id": "fldBi1OyFSuSBvBQEt1",
-      "name": "SO",
+      "Name": "SO",
       "dbFieldName": "SO",
       "type": "singleLineText",
       "description": null,
@@ -77,7 +77,7 @@
     },
     {
       "id": "fldav6LtgDMcSVMwfXg",
-      "name": "Front / Rear",
+      "Name": "Front / Rear",
       "dbFieldName": "Front_Rear",
       "type": "singleSelect",
       "description": null,
@@ -92,7 +92,7 @@
     },
     {
       "id": "fld6W1M8cllPaBgugZM",
-      "name": "Model",
+      "Name": "Model",
       "dbFieldName": "Model",
       "type": "singleLineText",
       "description": null,
@@ -104,7 +104,7 @@
     },
     {
       "id": "fldPaIliEMKb4uOCHwL",
-      "name": "Lot No",
+      "Name": "Lot No",
       "dbFieldName": "Lot_No",
       "type": "singleLineText",
       "description": null,
@@ -116,7 +116,7 @@
     },
     {
       "id": "fldETPN4BNzSuDtwU6A",
-      "name": "Qty 2",
+      "Name": "Qty 2",
       "dbFieldName": "Qty_2",
       "type": "number",
       "description": null,
@@ -133,7 +133,7 @@
     },
     {
       "id": "fld9lsMwXZRScDL55Gu",
-      "name": "Cutting Date",
+      "Name": "Cutting Date",
       "dbFieldName": "Cutting_Date",
       "type": "date",
       "description": null,
@@ -151,7 +151,7 @@
     },
     {
       "id": "fldiZxcny0OLgKIV7AB",
-      "name": "Fabric Used",
+      "Name": "Fabric Used",
       "dbFieldName": "Fabric_Used",
       "type": "number",
       "description": null,
@@ -168,7 +168,7 @@
     },
     {
       "id": "fldDVYwwtJ8utnmlfuY",
-      "name": "Send Sewing",
+      "Name": "Send Sewing",
       "dbFieldName": "Send_Sewing",
       "type": "date",
       "description": null,
@@ -186,7 +186,7 @@
     },
     {
       "id": "fldrmBCE5VdPIlqk7o9",
-      "name": "Sewing Finished",
+      "Name": "Sewing Finished",
       "dbFieldName": "Sewing_Finished",
       "type": "date",
       "description": null,
@@ -204,7 +204,7 @@
     },
     {
       "id": "fldC8SVq6l35myNm4xz",
-      "name": "QC Date",
+      "Name": "QC Date",
       "dbFieldName": "QC_Date",
       "type": "date",
       "description": null,
@@ -222,7 +222,7 @@
     },
     {
       "id": "fldX6ePDTKOxE70vhkv",
-      "name": "Packing Date",
+      "Name": "Packing Date",
       "dbFieldName": "Packing_Date",
       "type": "date",
       "description": null,
@@ -240,7 +240,7 @@
     },
     {
       "id": "fldJQF7JeKM8w2F3KKN",
-      "name": "Packing Finished",
+      "Name": "Packing Finished",
       "dbFieldName": "Packing_Finished",
       "type": "date",
       "description": null,
@@ -258,7 +258,7 @@
     },
     {
       "id": "fldsol44O6yNTkk17TR",
-      "name": "PART No",
+      "Name": "PART No",
       "dbFieldName": "PART_No",
       "type": "link",
       "description": null,
@@ -281,7 +281,7 @@
     },
     {
       "id": "fldWrNPRrmPitwscm0Q",
-      "name": "Fabric",
+      "Name": "Fabric",
       "dbFieldName": "Fabric",
       "type": "link",
       "description": null,
@@ -304,7 +304,7 @@
     },
     {
       "id": "flduxtapoUmM3ZyRQJg",
-      "name": "Unit",
+      "Name": "Unit",
       "dbFieldName": "Unit",
       "type": "link",
       "description": null,

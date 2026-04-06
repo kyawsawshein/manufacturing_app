@@ -38,7 +38,7 @@ import {
 
 interface BOM {
   id: string;
-  name: string;
+  Name: string;
   version: string;
   quantity: number;
   status: string;
@@ -139,7 +139,7 @@ export default function BOMPage() {
   }, []);
 
   const columns: Column<BOM>[] = [
-    { key: "name", label: "BOM Name" },
+    { key: "Name", label: "BOM Name" },
     { key: "product", label: "Product" },
     { key: "version", label: "Version" },
     { key: "reference", label: "Reference" },
@@ -178,7 +178,7 @@ export default function BOMPage() {
   };
 
   const handleDelete = (bom: BOM) => {
-    if (confirm(`Are you sure you want to delete ${bom.name}?`)) {
+    if (confirm(`Are you sure you want to delete ${bom.Name}?`)) {
       startTransition(async () => {
         try {
           await deleteBOM(bom.id);
@@ -290,7 +290,7 @@ export default function BOMPage() {
         <DataTable
           data={boms}
           columns={columns}
-          searchKey="name"
+          searchKey="Name"
           searchPlaceholder="Search BOMs..."
           onAdd={handleAdd}
           onEdit={handleEdit}
@@ -402,7 +402,7 @@ export default function BOMPage() {
           <DialogContent className="max-w-2xl">
             <DialogHeader>
               <DialogTitle>
-                {selectedBOM ? `BOM - ${selectedBOM.name}` : "BOM Details"}
+                {selectedBOM ? `BOM - ${selectedBOM.Name}` : "BOM Details"}
               </DialogTitle>
             </DialogHeader>
 
@@ -417,7 +417,7 @@ export default function BOMPage() {
                   <div className="grid gap-4">
                     <div>
                       <Label className="text-sm font-medium text-muted-foreground">BOM Name</Label>
-                      <p className="text-lg font-semibold">{selectedBOM.name}</p>
+                      <p className="text-lg font-semibold">{selectedBOM.Name}</p>
                     </div>
                     <div className="grid grid-cols-2 gap-4">
                       <div>

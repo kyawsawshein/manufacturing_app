@@ -34,7 +34,7 @@ import {
 interface Employee {
   id: string;
   employeeId: string;
-  name: string;
+  Name: string;
   contact: string;
   position: string;
   status: string;
@@ -43,7 +43,7 @@ interface Employee {
 
 interface Department {
   id: string;
-  name: string;
+  Name: string;
 }
 
 export default function EmployeesPage() {
@@ -56,7 +56,7 @@ export default function EmployeesPage() {
   const { toast } = useToast();
 
   const [formData, setFormData] = useState({
-    name: "",
+    Name: "",
     contact: "",
     position: "",
     status: "Active",
@@ -88,7 +88,7 @@ export default function EmployeesPage() {
 
   const columns: Column<Employee>[] = [
     { key: "employeeId", label: "ID" },
-    { key: "name", label: "Name" },
+    { key: "Name", label: "Name" },
     { key: "contact", label: "Contact" },
     { key: "position", label: "Position" },
     { key: "department", label: "Department" },
@@ -102,7 +102,7 @@ export default function EmployeesPage() {
   const handleAdd = () => {
     setEditingEmployee(null);
     setFormData({
-      name: "",
+      Name: "",
       contact: "",
       position: "",
       status: "Active",
@@ -113,9 +113,9 @@ export default function EmployeesPage() {
 
   const handleEdit = (employee: Employee) => {
     setEditingEmployee(employee);
-    const dept = departments.find((d) => d.name === employee.department);
+    const dept = departments.find((d) => d.Name === employee.department);
     setFormData({
-      name: employee.name,
+      Name: employee.Name,
       contact: employee.contact,
       position: employee.position,
       status: employee.status,
@@ -125,7 +125,7 @@ export default function EmployeesPage() {
   };
 
   const handleDelete = (employee: Employee) => {
-    if (confirm(`Are you sure you want to delete ${employee.name}?`)) {
+    if (confirm(`Are you sure you want to delete ${employee.Name}?`)) {
       startTransition(async () => {
         try {
           await deleteEmployee(employee.id);
@@ -201,7 +201,7 @@ export default function EmployeesPage() {
         <DataTable
           data={employees}
           columns={columns}
-          searchKey="name"
+          searchKey="Name"
           searchPlaceholder="Search employees..."
           onAdd={handleAdd}
           onEdit={handleEdit}
@@ -218,14 +218,14 @@ export default function EmployeesPage() {
             </DialogHeader>
             <div className="grid gap-4 py-4">
               <div className="grid gap-2">
-                <Label htmlFor="name">Name</Label>
+                <Label htmlFor="Name">Name</Label>
                 <Input
-                  id="name"
-                  value={formData.name}
+                  id="Name"
+                  value={formData.Name}
                   onChange={(e) =>
-                    setFormData({ ...formData, name: e.target.value })
+                    setFormData({ ...formData, Name: e.target.value })
                   }
-                  placeholder="Enter employee name"
+                  placeholder="Enter employee Name"
                 />
               </div>
               <div className="grid gap-2">
@@ -264,7 +264,7 @@ export default function EmployeesPage() {
                   <SelectContent>
                     {departments.map((dept) => (
                       <SelectItem key={dept.id} value={dept.id}>
-                        {dept.name}
+                        {dept.Name}
                       </SelectItem>
                     ))}
                   </SelectContent>

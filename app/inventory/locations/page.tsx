@@ -11,7 +11,7 @@ import { getLocations } from "@/app/actions";
 interface Location {
   id: string;
   code: string;
-  name: string;
+  Name: string;
   status: string;
   warehouse: string;
 }
@@ -42,7 +42,7 @@ export default function LocationsPage() {
 
   const columns: Column<Location>[] = [
     { key: "code", label: "Code" },
-    { key: "name", label: "Location Name" },
+    { key: "Name", label: "Location Name" },
     { key: "warehouse", label: "Warehouse" },
     {
       key: "status",
@@ -79,7 +79,7 @@ export default function LocationsPage() {
         <DataTable
           data={locations}
           columns={columns}
-          searchKey="name"
+          searchKey="Name"
           searchPlaceholder="Search locations..."
           pageSize={15}
         />

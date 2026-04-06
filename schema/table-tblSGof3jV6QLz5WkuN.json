@@ -1,12 +1,12 @@
 {
   "id": "tblSGof3jV6QLz5WkuN",
-  "name": "Products",
+  "Name": "Products",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Products\"",
   "fields": [
     {
       "id": "fldFwoNrLNorAQ3QtKy",
-      "name": "Type",
+      "Name": "Type",
       "dbFieldName": "Type",
       "type": "singleSelect",
       "description": null,
@@ -22,7 +22,7 @@
     },
     {
       "id": "fldYGRXJCOJS4hApwyT",
-      "name": "Cost Method",
+      "Name": "Cost Method",
       "dbFieldName": "Cost_Method",
       "type": "singleSelect",
       "description": null,
@@ -37,7 +37,7 @@
     },
     {
       "id": "fldBP0j7n6CjgvyctNM",
-      "name": "Unit Count",
+      "Name": "Unit Count",
       "dbFieldName": "Unit_Count",
       "type": "number",
       "description": null,
@@ -54,7 +54,7 @@
     },
     {
       "id": "fldfz6GEHVXAjg98KVL",
-      "name": "SKU",
+      "Name": "SKU",
       "dbFieldName": "SKU",
       "type": "singleLineText",
       "description": null,
@@ -66,7 +66,7 @@
     },
     {
       "id": "fldrftRxilDx5PsR7uJ",
-      "name": "Name",
+      "Name": "Name",
       "dbFieldName": "Name",
       "type": "singleLineText",
       "description": null,
@@ -78,7 +78,7 @@
     },
     {
       "id": "fld0unz8xlhtFATLrq5",
-      "name": "Cost",
+      "Name": "Cost",
       "dbFieldName": "Cost",
       "type": "number",
       "description": null,
@@ -95,7 +95,7 @@
     },
     {
       "id": "fldgftVmi7HkWVqmRHE",
-      "name": "Sale Price",
+      "Name": "Sale Price",
       "dbFieldName": "Sale_Price",
       "type": "number",
       "description": null,
@@ -112,7 +112,7 @@
     },
     {
       "id": "fldQvMIBy9qDU87CM4q",
-      "name": "Reorder Point",
+      "Name": "Reorder Point",
       "dbFieldName": "Reorder_Point",
       "type": "number",
       "description": null,
@@ -129,7 +129,7 @@
     },
     {
       "id": "fld4nDtlEktYUrI02Ra",
-      "name": "Barcode",
+      "Name": "Barcode",
       "dbFieldName": "Barcode",
       "type": "singleLineText",
       "description": null,
@@ -141,7 +141,7 @@
     },
     {
       "id": "fldZmPfocBQd211SnZ1",
-      "name": "Product Templates",
+      "Name": "Product Templates",
       "dbFieldName": "Product_Templates",
       "type": "link",
       "description": null,
@@ -161,7 +161,7 @@
     },
     {
       "id": "fldUUyPSjllgjlOR2tY",
-      "name": "Product Code",
+      "Name": "Product Code",
       "dbFieldName": "Description",
       "type": "singleLineText",
       "description": null,
@@ -173,7 +173,7 @@
     },
     {
       "id": "fldzjhIPQuXcu51aDEI",
-      "name": "Category",
+      "Name": "Category",
       "dbFieldName": "Category",
       "type": "link",
       "description": null,
@@ -194,7 +194,7 @@
     },
     {
       "id": "fldbhckiiexElmPXfZb",
-      "name": "Reserved Qty",
+      "Name": "Reserved Qty",
       "dbFieldName": "Reserved_Qty",
       "type": "number",
       "description": null,
@@ -211,7 +211,7 @@
     },
     {
       "id": "fld45OLhdQK2VBTJQlT",
-      "name": "Stock_Ledger",
+      "Name": "Stock_Ledger",
       "dbFieldName": "Stock_Ledger",
       "type": "link",
       "description": null,
@@ -231,7 +231,7 @@
     },
     {
       "id": "fldNPBtbiiH5jAn0zPQ",
-      "name": "Incoming",
+      "Name": "Incoming",
       "dbFieldName": "Incoming",
       "type": "rollup",
       "description": null,
@@ -250,7 +250,7 @@
     },
     {
       "id": "fldaLlRgxsHPvfwKSDA",
-      "name": "Stock Move",
+      "Name": "Stock Move",
       "dbFieldName": "Stock_Move",
       "type": "link",
       "description": null,
@@ -270,7 +270,7 @@
     },
     {
       "id": "flda6pw0PtJJVKZfRqd",
-      "name": "Outgoing",
+      "Name": "Outgoing",
       "dbFieldName": "Outgoing",
       "type": "rollup",
       "description": null,
@@ -289,7 +289,7 @@
     },
     {
       "id": "fldEftyjVeQH63ObczO",
-      "name": "Onhand",
+      "Name": "Onhand",
       "dbFieldName": "Onhand",
       "type": "formula",
       "description": null,
@@ -308,7 +308,7 @@
     },
     {
       "id": "fldk90l7Sculc3tY21g",
-      "name": "Available Qty",
+      "Name": "Available Qty",
       "dbFieldName": "Available_Qty",
       "type": "formula",
       "description": null,
@@ -327,7 +327,7 @@
     },
     {
       "id": "fldhwCmu78XBp3A5kmx",
-      "name": "Sales Order Lines",
+      "Name": "Sales Order Lines",
       "dbFieldName": "Sales_Order_Lines",
       "type": "link",
       "description": null,
@@ -348,7 +348,7 @@
     },
     {
       "id": "fldNAikouOm16NmDaZV",
-      "name": "Stock On Hand",
+      "Name": "Stock On Hand",
       "dbFieldName": "Stock_On_Hand",
       "type": "link",
       "description": null,
@@ -369,7 +369,7 @@
     },
     {
       "id": "fldfkhyxPWySmlJGHS4",
-      "name": "Stock Lot",
+      "Name": "Stock Lot",
       "dbFieldName": "Stock_Lot",
       "type": "link",
       "description": null,
@@ -390,7 +390,7 @@
     },
     {
       "id": "fldemTsL37tiTd9qLQz",
-      "name": "UoM",
+      "Name": "UoM",
       "dbFieldName": "UoM",
       "type": "link",
       "description": null,
@@ -413,7 +413,7 @@
     },
     {
       "id": "fldsqhyLPnnnQW5iiXG",
-      "name": "Cost Update Date",
+      "Name": "Cost Update Date",
       "dbFieldName": "Cost_Update_Date",
       "type": "date",
       "description": "When standard_cost was last updated",
@@ -431,7 +431,7 @@
     },
     {
       "id": "fldtTz2G4WAbmeR0Van",
-      "name": "Profit Margin %",
+      "Name": "Profit Margin %",
       "dbFieldName": "Profit_Margin",
       "type": "formula",
       "description": "Profit margin percentage based on standard cost and selling price",
@@ -450,7 +450,7 @@
     },
     {
       "id": "fldyJvX5Tx68fkT3PdO",
-      "name": "Selling Price",
+      "Name": "Selling Price",
       "dbFieldName": "Selling_Price",
       "type": "number",
       "description": "Standard selling price per unit",
@@ -468,7 +468,7 @@
     },
     {
       "id": "fldKKhxECd67dcpUGTK",
-      "name": "Standard Cost",
+      "Name": "Standard Cost",
       "dbFieldName": "Standard_Cost",
       "type": "number",
       "description": "Standard manufacturing cost per unit",
@@ -486,7 +486,7 @@
     },
     {
       "id": "fldqx0OJOZ1UTOBM7qe",
-      "name": "Last Actual Cost",
+      "Name": "Last Actual Cost",
       "dbFieldName": "Last_Actual_Cost",
       "type": "number",
       "description": "Last actual production cost per unit",
@@ -504,7 +504,7 @@
     },
     {
       "id": "fldwbYvAsBrvtDjXKCd",
-      "name": "BOM",
+      "Name": "BOM",
       "dbFieldName": "BOM",
       "type": "link",
       "description": null,

@@ -1,12 +1,12 @@
 {
   "id": "tblJsQ6bIiXdQg8a7ki",
-  "name": "Stock Move",
+  "Name": "Stock Move",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Stock_Movements\"",
   "fields": [
     {
       "id": "fldT4ufIPMfJN0SjThi",
-      "name": "Source Type",
+      "Name": "Source Type",
       "dbFieldName": "Source_Type",
       "type": "link",
       "description": null,
@@ -29,7 +29,7 @@
     },
     {
       "id": "fldotksLpkU33VkC4bA",
-      "name": "Destination Type",
+      "Name": "Destination Type",
       "dbFieldName": "Destination_Type",
       "type": "link",
       "description": null,
@@ -52,7 +52,7 @@
     },
     {
       "id": "fldgxbXiyMoy6nwNzLa",
-      "name": "Operation Type",
+      "Name": "Operation Type",
       "dbFieldName": "Operation_Type",
       "type": "link",
       "description": null,
@@ -75,7 +75,7 @@
     },
     {
       "id": "fldw2RWEb6KX82Zqlg6",
-      "name": "Transaction Type",
+      "Name": "Transaction Type",
       "dbFieldName": "Transaction_Type",
       "type": "singleLineText",
       "description": null,
@@ -87,7 +87,7 @@
     },
     {
       "id": "fldn2A3hqvMM6HUvIMX",
-      "name": "Source Location",
+      "Name": "Source Location",
       "dbFieldName": "Source_Location",
       "type": "link",
       "description": null,
@@ -110,7 +110,7 @@
     },
     {
       "id": "fldZt5qOnCDHGQx3Dal",
-      "name": "Sales Order Lines",
+      "Name": "Sales Order Lines",
       "dbFieldName": "Sales_Order_Lines",
       "type": "link",
       "description": null,
@@ -131,7 +131,7 @@
     },
     {
       "id": "fldpElytAazyjqvIP9E",
-      "name": "Purchase Order Lines",
+      "Name": "Purchase Order Lines",
       "dbFieldName": "Purchase_Order_Lines",
       "type": "link",
       "description": null,
@@ -152,7 +152,7 @@
     },
     {
       "id": "fldax5MLmZgRGmqU1d6",
-      "name": "Move Type",
+      "Name": "Move Type",
       "dbFieldName": "Move_Type",
       "type": "singleSelect",
       "description": null,
@@ -167,7 +167,7 @@
     },
     {
       "id": "fldTCCCdnGF17OMQXel",
-      "name": "Reference Type",
+      "Name": "Reference Type",
       "dbFieldName": "Reference_Type",
       "type": "singleSelect",
       "description": null,
@@ -183,7 +183,7 @@
     },
     {
       "id": "fldDDQj9DVfkshkDhrM",
-      "name": "Batch Number",
+      "Name": "Batch Number",
       "dbFieldName": "Batch_Number",
       "type": "singleLineText",
       "description": null,
@@ -195,7 +195,7 @@
     },
     {
       "id": "fldR5mMdxSawi1mjQDS",
-      "name": "Date",
+      "Name": "Date",
       "dbFieldName": "Date",
       "type": "date",
       "description": null,
@@ -213,7 +213,7 @@
     },
     {
       "id": "fldMgugISQudz49hBnW",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -230,7 +230,7 @@
     },
     {
       "id": "fld2mGMjkYXYHRrqh07",
-      "name": "Sequence",
+      "Name": "Sequence",
       "dbFieldName": "Sequence",
       "type": "autoNumber",
       "description": null,
@@ -244,7 +244,7 @@
     },
     {
       "id": "fldi475hVl40Ci08FXW",
-      "name": "Created By",
+      "Name": "Created By",
       "dbFieldName": "Created_By",
       "type": "user",
       "description": null,
@@ -259,7 +259,7 @@
     },
     {
       "id": "fldOP8IOzK8Lq6fO3hl",
-      "name": "Created At",
+      "Name": "Created At",
       "dbFieldName": "Created_At",
       "type": "date",
       "description": null,
@@ -277,7 +277,7 @@
     },
     {
       "id": "fldc6IB0dGYgNp0hBbh",
-      "name": "Stock Picking",
+      "Name": "Stock Picking",
       "dbFieldName": "Stock_Picking",
       "type": "link",
       "description": null,
@@ -298,7 +298,7 @@
     },
     {
       "id": "fldyVuxVo2KtFe9Wv5L",
-      "name": "Product",
+      "Name": "Product",
       "dbFieldName": "Product",
       "type": "link",
       "description": null,
@@ -322,7 +322,7 @@
     },
     {
       "id": "fldfGBF1hlTTpQOnFUq",
-      "name": "Move Line",
+      "Name": "Move Line",
       "dbFieldName": "Move_Line",
       "type": "link",
       "description": null,
@@ -346,7 +346,7 @@
     },
     {
       "id": "fldJL16tZAqCAqCOMGX",
-      "name": "Quantity",
+      "Name": "Quantity",
       "dbFieldName": "Quantity",
       "type": "number",
       "description": null,
@@ -363,7 +363,7 @@
     },
     {
       "id": "fldbyzFotyeJ13tdCsq",
-      "name": "Price Unit",
+      "Name": "Price Unit",
       "dbFieldName": "Price_Unit",
       "type": "number",
       "description": null,
@@ -380,7 +380,7 @@
     },
     {
       "id": "fldK8tappBozbjGU3fh",
-      "name": "Value",
+      "Name": "Value",
       "dbFieldName": "Value",
       "type": "formula",
       "description": null,
@@ -399,7 +399,7 @@
     },
     {
       "id": "fldvI2J7D6rVi3kx6rZ",
-      "name": "Description",
+      "Name": "Description",
       "dbFieldName": "Description",
       "type": "rollup",
       "description": null,
@@ -414,7 +414,7 @@
     },
     {
       "id": "fldkR3R1Z1fOPGgSf9M",
-      "name": "Account Move",
+      "Name": "Account Move",
       "dbFieldName": "Account_Move",
       "type": "link",
       "description": null,
@@ -438,7 +438,7 @@
     },
     {
       "id": "fldd98GM8FEoQZWWFWx",
-      "name": "Destination Location",
+      "Name": "Destination Location",
       "dbFieldName": "Destination_Location",
       "type": "link",
       "description": null,
@@ -461,7 +461,7 @@
     },
     {
       "id": "fldr7qqY1WJocUpg4kJ",
-      "name": "Stock Valuation Layers",
+      "Name": "Stock Valuation Layers",
       "dbFieldName": "Stock_Valuation_Layers",
       "type": "link",
       "description": null,
@@ -482,7 +482,7 @@
     },
     {
       "id": "fld2wFM5f9UwpXlIFnJ",
-      "name": "Name",
+      "Name": "Name",
       "dbFieldName": "Name",
       "type": "formula",
       "description": null,
@@ -497,7 +497,7 @@
     },
     {
       "id": "fldD8k1CZDF2sfNkv04",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -511,7 +511,7 @@
     },
     {
       "id": "fldeXDIsnQtlTTTuRYq",
-      "name": "Finished Goods",
+      "Name": "Finished Goods",
       "dbFieldName": "Finished_Goods",
       "type": "link",
       "description": null,
@@ -531,7 +531,7 @@
     },
     {
       "id": "fldFIorw2foqT0nQ0Tf",
-      "name": "Production Raw Material",
+      "Name": "Production Raw Material",
       "dbFieldName": "Production_Raw_Material",
       "type": "link",
       "description": null,

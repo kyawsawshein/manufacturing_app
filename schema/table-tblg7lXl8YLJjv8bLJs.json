@@ -1,12 +1,12 @@
 {
   "id": "tblg7lXl8YLJjv8bLJs",
-  "name": "Stock On Hand",
+  "Name": "Stock On Hand",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Stock_On_Hand\"",
   "fields": [
     {
       "id": "fldlNdjfQF4asnkh5PM",
-      "name": "Reserved Quantity",
+      "Name": "Reserved Quantity",
       "dbFieldName": "Reserved_Quantity",
       "type": "number",
       "description": null,
@@ -23,7 +23,7 @@
     },
     {
       "id": "fldr3Wv1xgEcp7E7JTp",
-      "name": "Last Counted Date",
+      "Name": "Last Counted Date",
       "dbFieldName": "Last_Counted_Date",
       "type": "date",
       "description": null,
@@ -41,7 +41,7 @@
     },
     {
       "id": "fldNn2xuBPBXoqbnDZH",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -55,7 +55,7 @@
     },
     {
       "id": "fldja7JwtXSCFcnWHvO",
-      "name": "Variance",
+      "Name": "Variance",
       "dbFieldName": "Variance",
       "type": "number",
       "description": null,
@@ -72,7 +72,7 @@
     },
     {
       "id": "fldCAa114nhW3qanY0P",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -90,7 +90,7 @@
     },
     {
       "id": "fldDrfyKKR6lFf02qrC",
-      "name": "Unit Cost",
+      "Name": "Unit Cost",
       "dbFieldName": "Unit_Cost",
       "type": "number",
       "description": null,
@@ -107,7 +107,7 @@
     },
     {
       "id": "fldXxpjEVNobZhcuYYz",
-      "name": "Total Value",
+      "Name": "Total Value",
       "dbFieldName": "Total_Value",
       "type": "formula",
       "description": null,
@@ -126,7 +126,7 @@
     },
     {
       "id": "fldBpGlUUzRQcnZzQU9",
-      "name": "Product",
+      "Name": "Product",
       "dbFieldName": "Product",
       "type": "link",
       "description": null,
@@ -149,7 +149,7 @@
     },
     {
       "id": "fldEFGfnLP1PgCFaoDi",
-      "name": "Location",
+      "Name": "Location",
       "dbFieldName": "Location",
       "type": "link",
       "description": null,
@@ -173,7 +173,7 @@
     },
     {
       "id": "fldun0vwyfQu9kUmhIV",
-      "name": "Lot",
+      "Name": "Lot",
       "dbFieldName": "Lot",
       "type": "link",
       "description": null,
@@ -196,7 +196,7 @@
     },
     {
       "id": "fldIb5heAB3UvzNPSFO",
-      "name": "Available Quantity",
+      "Name": "Available Quantity",
       "dbFieldName": "Available_Quantity",
       "type": "formula",
       "description": null,
@@ -215,7 +215,7 @@
     },
     {
       "id": "fld83qMUdZHKm1eNqlq",
-      "name": "Qty",
+      "Name": "Qty",
       "dbFieldName": "Qty",
       "type": "number",
       "description": null,
@@ -232,7 +232,7 @@
     },
     {
       "id": "fldIr9KWKY9Be3SYe8O",
-      "name": "Expiry Date",
+      "Name": "Expiry Date",
       "dbFieldName": "Expiry_Date",
       "type": "date",
       "description": null,
@@ -250,7 +250,7 @@
     },
     {
       "id": "fldqYWrwED3ZgyxI5VG",
-      "name": "Stock Move Lines",
+      "Name": "Stock Move Lines",
       "dbFieldName": "Stock_Move_Lines",
       "type": "link",
       "description": null,

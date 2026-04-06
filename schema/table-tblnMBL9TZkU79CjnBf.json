@@ -1,12 +1,12 @@
 {
   "id": "tblnMBL9TZkU79CjnBf",
-  "name": "Product Templates",
+  "Name": "Product Templates",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Product_Templates\"",
   "fields": [
     {
       "id": "fldj6a30wDsPdH1DQnC",
-      "name": "Product Type",
+      "Name": "Product Type",
       "dbFieldName": "Product_Type",
       "type": "link",
       "description": null,
@@ -29,7 +29,7 @@
     },
     {
       "id": "fldI9Nf9KwUxpaSsFzd",
-      "name": "Code",
+      "Name": "Code",
       "dbFieldName": "Code",
       "type": "singleLineText",
       "description": null,
@@ -41,7 +41,7 @@
     },
     {
       "id": "fldewflNfHySTTXGqrY",
-      "name": "Count Unit",
+      "Name": "Count Unit",
       "dbFieldName": "Count_Unit",
       "type": "number",
       "description": null,
@@ -58,7 +58,7 @@
     },
     {
       "id": "fldy0PFMhgkZQfHHI8P",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -72,7 +72,7 @@
     },
     {
       "id": "fldCeh0S9es7Zzbka6q",
-      "name": "Make-or-Buy Default",
+      "Name": "Make-or-Buy Default",
       "dbFieldName": "Make_or_Buy_Default",
       "type": "singleSelect",
       "description": null,
@@ -88,7 +88,7 @@
     },
     {
       "id": "fld3YkI7AFLSIeW3hLY",
-      "name": "Product Name",
+      "Name": "Product Name",
       "dbFieldName": "Product_Name",
       "type": "singleLineText",
       "description": null,
@@ -100,7 +100,7 @@
     },
     {
       "id": "fld6J9Ncc7XjYhz3muh",
-      "name": "Lead Time Days",
+      "Name": "Lead Time Days",
       "dbFieldName": "Lead_Time_Days",
       "type": "number",
       "description": null,
@@ -117,7 +117,7 @@
     },
     {
       "id": "fldMgQytS9XmcORkpJs",
-      "name": "Income Account",
+      "Name": "Income Account",
       "dbFieldName": "Income_Account",
       "type": "link",
       "description": null,
@@ -140,7 +140,7 @@
     },
     {
       "id": "fldsGz7OcmlQsZ2ObXE",
-      "name": "Expense Account",
+      "Name": "Expense Account",
       "dbFieldName": "Expense_Account",
       "type": "link",
       "description": null,
@@ -163,7 +163,7 @@
     },
     {
       "id": "fld6mmSrPoswWTemGFB",
-      "name": "Product",
+      "Name": "Product",
       "dbFieldName": "Product",
       "type": "link",
       "description": null,
@@ -183,7 +183,7 @@
     },
     {
       "id": "fldNL3AyYvNeHJdbzGI",
-      "name": "Brand",
+      "Name": "Brand",
       "dbFieldName": "Brand",
       "type": "link",
       "description": null,
@@ -206,7 +206,7 @@
     },
     {
       "id": "fldsCdTeuAULvDVJwHZ",
-      "name": "Unit of Measure",
+      "Name": "Unit of Measure",
       "dbFieldName": "Unit_of_Measure",
       "type": "link",
       "description": null,
@@ -229,7 +229,7 @@
     },
     {
       "id": "fldO6m0rGrwi3Tyfaqq",
-      "name": "Category",
+      "Name": "Category",
       "dbFieldName": "Category",
       "type": "link",
       "description": null,

@@ -1,12 +1,12 @@
 {
   "id": "tbl89A4Ps2lwrMui6vC",
-  "name": "Sales Order Lines",
+  "Name": "Sales Order Lines",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Sales_Order_Lines\"",
   "fields": [
     {
       "id": "fldSagYO3tU6vypqlne",
-      "name": "Tax",
+      "Name": "Tax",
       "dbFieldName": "Tax",
       "type": "link",
       "description": null,
@@ -29,7 +29,7 @@
     },
     {
       "id": "fld2ZhQs5dc98T6Umyt",
-      "name": "Job No",
+      "Name": "Job No",
       "dbFieldName": "Job_No",
       "type": "singleLineText",
       "description": null,
@@ -41,7 +41,7 @@
     },
     {
       "id": "fldIFeM8pR0U88HMuIA",
-      "name": "Unit Price",
+      "Name": "Unit Price",
       "dbFieldName": "Unit_Price",
       "type": "number",
       "description": null,
@@ -58,7 +58,7 @@
     },
     {
       "id": "fldyf6OcNXHcxBHj1Ph",
-      "name": "Qty",
+      "Name": "Qty",
       "dbFieldName": "Qty",
       "type": "number",
       "description": null,
@@ -75,7 +75,7 @@
     },
     {
       "id": "fldqh8JX9JK4FhxXxUL",
-      "name": "Currency",
+      "Name": "Currency",
       "dbFieldName": "Currency",
       "type": "link",
       "description": null,
@@ -98,7 +98,7 @@
     },
     {
       "id": "fldws56MO8Zf95GFyoN",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -116,7 +116,7 @@
     },
     {
       "id": "fldAa4WWccTlzbGTLtx",
-      "name": "Account Move Line",
+      "Name": "Account Move Line",
       "dbFieldName": "Account_Move_Line",
       "type": "link",
       "description": null,
@@ -137,7 +137,7 @@
     },
     {
       "id": "fldYXvY7bgO1pQVHJFh",
-      "name": "Sale Order",
+      "Name": "Sale Order",
       "dbFieldName": "Sale_Order",
       "type": "link",
       "description": null,
@@ -161,7 +161,7 @@
     },
     {
       "id": "fld1WonitwEWaLdD39R",
-      "name": "Subtotal",
+      "Name": "Subtotal",
       "dbFieldName": "Subtotal",
       "type": "formula",
       "description": null,
@@ -180,7 +180,7 @@
     },
     {
       "id": "fldj22Fbxee3ArGyzHA",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -194,7 +194,7 @@
     },
     {
       "id": "fldXgnX2GTFMLmF3JBd",
-      "name": "Product",
+      "Name": "Product",
       "dbFieldName": "Product",
       "type": "link",
       "description": null,
@@ -217,7 +217,7 @@
     },
     {
       "id": "flds2xvXtzdUb6Zuoxn",
-      "name": "Unit",
+      "Name": "Unit",
       "dbFieldName": "Unit",
       "type": "link",
       "description": null,
@@ -240,7 +240,7 @@
     },
     {
       "id": "fldv46oGpo76HcEM7qc",
-      "name": "Stock Move",
+      "Name": "Stock Move",
       "dbFieldName": "Stock_Move",
       "type": "link",
       "description": null,
@@ -260,7 +260,7 @@
     },
     {
       "id": "fldKWY4hZWu2VgRtVpG",
-      "name": "Name",
+      "Name": "Name",
       "dbFieldName": "Name",
       "type": "formula",
       "description": null,

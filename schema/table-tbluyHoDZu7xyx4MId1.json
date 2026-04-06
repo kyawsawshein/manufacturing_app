@@ -1,12 +1,12 @@
 {
   "id": "tbluyHoDZu7xyx4MId1",
-  "name": "Locations",
+  "Name": "Locations",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Locations\"",
   "fields": [
     {
       "id": "fld5eRZ3LDu6gZuclha",
-      "name": "Code",
+      "Name": "Code",
       "dbFieldName": "Code",
       "type": "singleLineText",
       "description": null,
@@ -18,7 +18,7 @@
     },
     {
       "id": "fldLArg3yre2kNTKrlh",
-      "name": "Site",
+      "Name": "Site",
       "dbFieldName": "Site",
       "type": "singleLineText",
       "description": null,
@@ -30,7 +30,7 @@
     },
     {
       "id": "fldBrvLlY952zxFE2Fx",
-      "name": "Building",
+      "Name": "Building",
       "dbFieldName": "Building",
       "type": "singleLineText",
       "description": null,
@@ -42,7 +42,7 @@
     },
     {
       "id": "fldTikvjWteJAdBFYnS",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -56,7 +56,7 @@
     },
     {
       "id": "fldkz006AHMLtBj2BNy",
-      "name": "Floor",
+      "Name": "Floor",
       "dbFieldName": "Floor",
       "type": "singleLineText",
       "description": null,
@@ -68,7 +68,7 @@
     },
     {
       "id": "fld5cI972Rc3zNufNf6",
-      "name": "Room/Zone",
+      "Name": "Room/Zone",
       "dbFieldName": "Room_Zone",
       "type": "singleLineText",
       "description": null,
@@ -80,7 +80,7 @@
     },
     {
       "id": "fldwizFP1fOFR1FrpjM",
-      "name": "Bin/Shelf",
+      "Name": "Bin/Shelf",
       "dbFieldName": "Bin_Shelf",
       "type": "singleLineText",
       "description": null,
@@ -92,7 +92,7 @@
     },
     {
       "id": "fldgOKNjrhEO5YWZkI0",
-      "name": "Capacity",
+      "Name": "Capacity",
       "dbFieldName": "Capacity",
       "type": "number",
       "description": null,
@@ -109,7 +109,7 @@
     },
     {
       "id": "fldAhRXsFlRQZx90F41",
-      "name": "Temperature Controlled",
+      "Name": "Temperature Controlled",
       "dbFieldName": "Temperature_Controlled",
       "type": "checkbox",
       "description": null,
@@ -121,7 +121,7 @@
     },
     {
       "id": "fldG78ZBgsA1RuhBbVi",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -137,7 +137,7 @@
     },
     {
       "id": "fldNUobb26yWipzFlzL",
-      "name": "Description",
+      "Name": "Description",
       "dbFieldName": "Description",
       "type": "singleLineText",
       "description": null,
@@ -149,7 +149,7 @@
     },
     {
       "id": "fldOSV3Xc90oPPtZxhk",
-      "name": "Type",
+      "Name": "Type",
       "dbFieldName": "Type",
       "type": "singleLineText",
       "description": null,
@@ -161,7 +161,7 @@
     },
     {
       "id": "fldZTNE0Ft49x3iqhOk",
-      "name": "Location Type",
+      "Name": "Location Type",
       "dbFieldName": "Location_Type",
       "type": "link",
       "description": null,
@@ -184,7 +184,7 @@
     },
     {
       "id": "fldXVhsz4CUaGjqEz92",
-      "name": "Stock On Hand",
+      "Name": "Stock On Hand",
       "dbFieldName": "Stock_On_Hand",
       "type": "link",
       "description": null,
@@ -204,7 +204,7 @@
     },
     {
       "id": "fld5ybPHHikn6SXzXlA",
-      "name": "Locations",
+      "Name": "Locations",
       "dbFieldName": "Locations",
       "type": "link",
       "description": null,
@@ -224,7 +224,7 @@
     },
     {
       "id": "fldHyQYJ6vYVb654wU5",
-      "name": "Parent Location",
+      "Name": "Parent Location",
       "dbFieldName": "Location",
       "type": "link",
       "description": null,
@@ -248,7 +248,7 @@
     },
     {
       "id": "fldleQTy59612aPj6jB",
-      "name": "Location Name",
+      "Name": "Location Name",
       "dbFieldName": "Location_Name",
       "type": "formula",
       "description": null,
@@ -263,7 +263,7 @@
     },
     {
       "id": "fldz6NARMmZrl0PvXaq",
-      "name": "Warehouse",
+      "Name": "Warehouse",
       "dbFieldName": "Warehouse",
       "type": "link",
       "description": null,

@@ -1,12 +1,12 @@
 {
   "id": "tblRLVnYeavaHlqKA2s",
-  "name": "FG/PL/Production",
+  "Name": "FG/PL/Production",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"FG_PL_Production\"",
   "fields": [
     {
       "id": "fldDshUNwOeBHIeKBV7",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -22,7 +22,7 @@
     },
     {
       "id": "fldvdimyWNzMlHy7FXF",
-      "name": "Qty",
+      "Name": "Qty",
       "dbFieldName": "Qty",
       "type": "number",
       "description": null,
@@ -39,7 +39,7 @@
     },
     {
       "id": "fldifM4MNtHNOqwwJm9",
-      "name": "Type-BOX",
+      "Name": "Type-BOX",
       "dbFieldName": "Type_BOX",
       "type": "singleLineText",
       "description": null,
@@ -51,7 +51,7 @@
     },
     {
       "id": "fldofeiGIHbmLMm2t91",
-      "name": "BOX No",
+      "Name": "BOX No",
       "dbFieldName": "BOX_No",
       "type": "singleLineText",
       "description": null,
@@ -63,7 +63,7 @@
     },
     {
       "id": "fldGGQzXaL53fY9HoyX",
-      "name": "IV No",
+      "Name": "IV No",
       "dbFieldName": "IV_No",
       "type": "singleLineText",
       "description": null,
@@ -75,7 +75,7 @@
     },
     {
       "id": "fldAKwgsicgugXfyIZv",
-      "name": "G.W",
+      "Name": "G.W",
       "dbFieldName": "G_W",
       "type": "number",
       "description": null,
@@ -92,7 +92,7 @@
     },
     {
       "id": "fldJWLaXAC5GhPuWhWa",
-      "name": "B.W",
+      "Name": "B.W",
       "dbFieldName": "B_W",
       "type": "number",
       "description": null,
@@ -109,7 +109,7 @@
     },
     {
       "id": "fldqYga7o2Y4j81ioJt",
-      "name": "N.W",
+      "Name": "N.W",
       "dbFieldName": "N_W",
       "type": "number",
       "description": null,
@@ -126,7 +126,7 @@
     },
     {
       "id": "flddpPEFYAJ9w1y2hho",
-      "name": "Unit",
+      "Name": "Unit",
       "dbFieldName": "Unit",
       "type": "singleSelect",
       "description": null,
@@ -143,7 +143,7 @@
     },
     {
       "id": "fldTqM0CV6Lw3wZuvOf",
-      "name": "PO.No",
+      "Name": "PO.No",
       "dbFieldName": "PO_No",
       "type": "formula",
       "description": null,
@@ -158,7 +158,7 @@
     },
     {
       "id": "fldTfPGfHYFZBYIwrbu",
-      "name": "PART No",
+      "Name": "PART No",
       "dbFieldName": "PART_No",
       "type": "link",
       "description": null,
@@ -181,7 +181,7 @@
     },
     {
       "id": "fldot9edirXTeyiIcHe",
-      "name": "Lot Name",
+      "Name": "Lot Name",
       "dbFieldName": "Lot_Name",
       "type": "link",
       "description": null,
@@ -204,7 +204,7 @@
     },
     {
       "id": "fldUwpNmFSeHdQef0TS",
-      "name": "PO",
+      "Name": "PO",
       "dbFieldName": "PO",
       "type": "link",
       "description": null,
@@ -228,7 +228,7 @@
     },
     {
       "id": "fldaAzTIeRV1tOoFu6z",
-      "name": "MO No",
+      "Name": "MO No",
       "dbFieldName": "MO_No",
       "type": "link",
       "description": null,
@@ -251,7 +251,7 @@
     },
     {
       "id": "fldyV2chsWY6GN8hQHb",
-      "name": "SO.No",
+      "Name": "SO.No",
       "dbFieldName": "SO_No",
       "type": "link",
       "description": null,

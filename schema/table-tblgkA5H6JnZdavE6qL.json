@@ -1,12 +1,12 @@
 {
   "id": "tblgkA5H6JnZdavE6qL",
-  "name": "Hook & Loop Size",
+  "Name": "Hook & Loop Size",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Hook_Loop_Size\"",
   "fields": [
     {
       "id": "fldYlQkcXpWcAJaT37Q",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "singleLineText",
       "description": null,
@@ -18,7 +18,7 @@
     },
     {
       "id": "fldHyY7yd2lFpG7SL0v",
-      "name": "Width",
+      "Name": "Width",
       "dbFieldName": "Width",
       "type": "number",
       "description": null,
@@ -35,7 +35,7 @@
     },
     {
       "id": "fldbG95nXNF971u5TSG",
-      "name": "length",
+      "Name": "length",
       "dbFieldName": "length",
       "type": "number",
       "description": null,
@@ -52,7 +52,7 @@
     },
     {
       "id": "fldErqTfZhdSHSRKeIr",
-      "name": "Size",
+      "Name": "Size",
       "dbFieldName": "Size",
       "type": "formula",
       "description": null,

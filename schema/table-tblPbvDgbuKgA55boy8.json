@@ -1,12 +1,12 @@
 {
   "id": "tblPbvDgbuKgA55boy8",
-  "name": "MO  (Manufacturing Plan)",
+  "Name": "MO  (Manufacturing Plan)",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"MO\"",
   "fields": [
     {
       "id": "fldOCAJQrX6kHRrGHkh",
-      "name": "Product",
+      "Name": "Product",
       "dbFieldName": "Product",
       "type": "link",
       "description": null,
@@ -29,7 +29,7 @@
     },
     {
       "id": "fldbFr38YcvMjKMxvqV",
-      "name": "MO Type",
+      "Name": "MO Type",
       "dbFieldName": "MO_Type",
       "type": "singleSelect",
       "description": null,
@@ -44,7 +44,7 @@
     },
     {
       "id": "fldfXFqu8fX4QmI6vfh",
-      "name": "Cutting BOM",
+      "Name": "Cutting BOM",
       "dbFieldName": "Cutting_BOM",
       "type": "link",
       "description": null,
@@ -68,7 +68,7 @@
     },
     {
       "id": "fldkn3Z8gNv5Y0eFQ3b",
-      "name": "Production Order",
+      "Name": "Production Order",
       "dbFieldName": "Name",
       "type": "formula",
       "description": null,
@@ -83,7 +83,7 @@
     },
     {
       "id": "fldLoofRQfW97nbeKiL",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -97,7 +97,7 @@
     },
     {
       "id": "fldCmETsjwAWU6oozDK",
-      "name": "Capacity Utilization",
+      "Name": "Capacity Utilization",
       "dbFieldName": "Capacity_Utilization",
       "type": "formula",
       "description": "Work center capacity utilization percentage",
@@ -116,7 +116,7 @@
     },
     {
       "id": "fldpIcgI12a5jMMyfLT",
-      "name": "Lead Time",
+      "Name": "Lead Time",
       "dbFieldName": "Lead_Time",
       "type": "singleLineText",
       "description": "Estimated lead time for manufacturing order",
@@ -128,7 +128,7 @@
     },
     {
       "id": "fld8KDIMICVt1xz2lK5",
-      "name": "Date",
+      "Name": "Date",
       "dbFieldName": "Date",
       "type": "date",
       "description": null,
@@ -146,7 +146,7 @@
     },
     {
       "id": "fldNdHiLXoM7FjEAE70",
-      "name": "Source",
+      "Name": "Source",
       "dbFieldName": "Source",
       "type": "singleLineText",
       "description": null,
@@ -158,7 +158,7 @@
     },
     {
       "id": "fldXhY0m1edcLZbBBj4",
-      "name": "Batch Number",
+      "Name": "Batch Number",
       "dbFieldName": "Batch_Number",
       "type": "singleLineText",
       "description": null,
@@ -170,7 +170,7 @@
     },
     {
       "id": "fldL0wAAZUeCcuEavOz",
-      "name": "Start Date",
+      "Name": "Start Date",
       "dbFieldName": "Start_Date",
       "type": "date",
       "description": null,
@@ -188,7 +188,7 @@
     },
     {
       "id": "fldmtKVIvDWxly1H2TL",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -206,7 +206,7 @@
     },
     {
       "id": "fldEBTh6KseVZSBSxKS",
-      "name": "End Date",
+      "Name": "End Date",
       "dbFieldName": "End_Date",
       "type": "date",
       "description": null,
@@ -224,7 +224,7 @@
     },
     {
       "id": "fldpO4mn3Dz9A75VGrv",
-      "name": "BOM Version",
+      "Name": "BOM Version",
       "dbFieldName": "BOM_Version",
       "type": "singleLineText",
       "description": null,
@@ -236,7 +236,7 @@
     },
     {
       "id": "fldol1eNL6A8B3OQDqe",
-      "name": "Quantity",
+      "Name": "Quantity",
       "dbFieldName": "Quantity",
       "type": "number",
       "description": null,
@@ -253,7 +253,7 @@
     },
     {
       "id": "fldjlZSCHctyvCAEVjb",
-      "name": "Reference",
+      "Name": "Reference",
       "dbFieldName": "Reference",
       "type": "singleLineText",
       "description": null,
@@ -265,7 +265,7 @@
     },
     {
       "id": "fldNUSEFI9z8PKcFJPR",
-      "name": "Sequence",
+      "Name": "Sequence",
       "dbFieldName": "Sequence",
       "type": "autoNumber",
       "description": null,
@@ -279,7 +279,7 @@
     },
     {
       "id": "fldMzYG3fzCCIgIbqJ0",
-      "name": "Created By",
+      "Name": "Created By",
       "dbFieldName": "Created_By",
       "type": "user",
       "description": null,
@@ -294,7 +294,7 @@
     },
     {
       "id": "fldj3eqIJczvShgA1yc",
-      "name": "Created At",
+      "Name": "Created At",
       "dbFieldName": "Created_At",
       "type": "date",
       "description": null,
@@ -312,7 +312,7 @@
     },
     {
       "id": "fldMpNIccUhdeegzHID",
-      "name": "Production Cost Sheet",
+      "Name": "Production Cost Sheet",
       "dbFieldName": "Production_Cost_Sheet",
       "type": "link",
       "description": null,
@@ -332,7 +332,7 @@
     },
     {
       "id": "fldvvP0Cad0QGcrIJg5",
-      "name": "Production Raw Material",
+      "Name": "Production Raw Material",
       "dbFieldName": "Production_Raw_Material",
       "type": "link",
       "description": null,
@@ -352,7 +352,7 @@
     },
     {
       "id": "fldKYWW3tw5s3olapl0",
-      "name": "Finished Good Per Cost",
+      "Name": "Finished Good Per Cost",
       "dbFieldName": "Finished_Good_Cost",
       "type": "formula",
       "description": null,
@@ -371,7 +371,7 @@
     },
     {
       "id": "fldvraJrm0QbKtKG0tj",
-      "name": "Operation Cost",
+      "Name": "Operation Cost",
       "dbFieldName": "Work_Center_Cost",
       "type": "rollup",
       "description": null,
@@ -390,7 +390,7 @@
     },
     {
       "id": "fldqw8ayLin5Sg2oW1B",
-      "name": "Operation Work",
+      "Name": "Operation Work",
       "dbFieldName": "Operation_Work",
       "type": "link",
       "description": null,
@@ -411,7 +411,7 @@
     },
     {
       "id": "fldEk7yRGu5eskdoSgC",
-      "name": "SO.No",
+      "Name": "SO.No",
       "dbFieldName": "SO_No",
       "type": "link",
       "description": null,
@@ -434,7 +434,7 @@
     },
     {
       "id": "fld6lWrZUC42KQm21d8",
-      "name": "Finished Goods",
+      "Name": "Finished Goods",
       "dbFieldName": "Finished_Goods",
       "type": "link",
       "description": null,
@@ -454,7 +454,7 @@
     },
     {
       "id": "fldewEkQC565cVLYvdF",
-      "name": "PO.No",
+      "Name": "PO.No",
       "dbFieldName": "PO_No",
       "type": "link",
       "description": null,
@@ -478,7 +478,7 @@
     },
     {
       "id": "fldbj5lYHEr8NKu6eee",
-      "name": "Finished Qty",
+      "Name": "Finished Qty",
       "dbFieldName": "Finished_Qty",
       "type": "rollup",
       "description": null,
@@ -497,7 +497,7 @@
     },
     {
       "id": "fldrfmDgTcQga9hSiKy",
-      "name": "Remaining Qty",
+      "Name": "Remaining Qty",
       "dbFieldName": "Remaining_Qty",
       "type": "formula",
       "description": null,
@@ -516,7 +516,7 @@
     },
     {
       "id": "fldxzAzz8k8rAw6W6bE",
-      "name": "Location",
+      "Name": "Location",
       "dbFieldName": "Location",
       "type": "link",
       "description": null,
@@ -539,7 +539,7 @@
     },
     {
       "id": "fldhn9QYIsKBSjSpdRl",
-      "name": "Quality Checks",
+      "Name": "Quality Checks",
       "dbFieldName": "Quality_Checks",
       "type": "link",
       "description": null,
@@ -559,7 +559,7 @@
     },
     {
       "id": "fldmM4ecVYAFOC5DzTl",
-      "name": "QC Orders",
+      "Name": "QC Orders",
       "dbFieldName": "QC_Orders",
       "type": "link",
       "description": null,
@@ -579,7 +579,7 @@
     },
     {
       "id": "fldP9sMkMfZcGfdKJp1",
-      "name": "BOM",
+      "Name": "BOM",
       "dbFieldName": "BOM",
       "type": "link",
       "description": null,
@@ -603,7 +603,7 @@
     },
     {
       "id": "fldmDuzwaUXBHBRZoZN",
-      "name": "Raw Total Cost",
+      "Name": "Raw Total Cost",
       "dbFieldName": "Raw_Total_Cost",
       "type": "rollup",
       "description": null,

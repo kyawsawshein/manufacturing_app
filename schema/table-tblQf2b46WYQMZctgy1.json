@@ -1,12 +1,12 @@
 {
   "id": "tblQf2b46WYQMZctgy1",
-  "name": "Product Types",
+  "Name": "Product Types",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Product_Types\"",
   "fields": [
     {
       "id": "fld8hRvEuuKGbF0EVsH",
-      "name": "Is Manufacturable",
+      "Name": "Is Manufacturable",
       "dbFieldName": "Is_Manufacturable",
       "type": "checkbox",
       "description": null,
@@ -18,7 +18,7 @@
     },
     {
       "id": "fldUMHMwbHiNYxVJlci",
-      "name": "Is Sellable",
+      "Name": "Is Sellable",
       "dbFieldName": "Is_Sellable",
       "type": "checkbox",
       "description": null,
@@ -30,7 +30,7 @@
     },
     {
       "id": "fld6eaixOWBdObkdBgp",
-      "name": "Type Name",
+      "Name": "Type Name",
       "dbFieldName": "Type_Name",
       "type": "singleLineText",
       "description": null,
@@ -45,7 +45,7 @@
     },
     {
       "id": "fld7mmNshKaTmYAHpJH",
-      "name": "Description",
+      "Name": "Description",
       "dbFieldName": "Description",
       "type": "longText",
       "description": null,
@@ -57,7 +57,7 @@
     },
     {
       "id": "fldgJSJaEAFITrmIeyw",
-      "name": "Is Purchasable",
+      "Name": "Is Purchasable",
       "dbFieldName": "Is_Purchasable",
       "type": "checkbox",
       "description": null,

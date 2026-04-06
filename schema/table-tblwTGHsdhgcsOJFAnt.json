@@ -1,12 +1,12 @@
 {
   "id": "tblwTGHsdhgcsOJFAnt",
-  "name": "Work Stations",
+  "Name": "Work Stations",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Work_Stations\"",
   "fields": [
     {
       "id": "flddK46wqJhjaRnx5gF",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -21,7 +21,7 @@
     },
     {
       "id": "fldMc3crR1KfYAb1SG5",
-      "name": "Hourly Rate",
+      "Name": "Hourly Rate",
       "dbFieldName": "Cost_Per_Hour",
       "type": "number",
       "description": null,
@@ -39,7 +39,7 @@
     },
     {
       "id": "fldJn5E4VCWaT6MpfJC",
-      "name": "Capacity",
+      "Name": "Capacity",
       "dbFieldName": "Capacity",
       "type": "number",
       "description": null,
@@ -56,7 +56,7 @@
     },
     {
       "id": "fldKymTRe7l0VFohmvN",
-      "name": "Name",
+      "Name": "Name",
       "dbFieldName": "Description",
       "type": "formula",
       "description": null,
@@ -71,7 +71,7 @@
     },
     {
       "id": "fld88ZlZnRtrTmYyGeq",
-      "name": "Location",
+      "Name": "Location",
       "dbFieldName": "Location",
       "type": "singleLineText",
       "description": null,
@@ -83,7 +83,7 @@
     },
     {
       "id": "flduCCpkn71Ca42oQ3F",
-      "name": "Overhead Cost per",
+      "Name": "Overhead Cost per",
       "dbFieldName": "Overhead_Cost_per",
       "type": "number",
       "description": null,
@@ -100,7 +100,7 @@
     },
     {
       "id": "fld5D179tCbNTm0sQ7G",
-      "name": "Labour Costs per",
+      "Name": "Labour Costs per",
       "dbFieldName": "Labour_Costs_per",
       "type": "number",
       "description": null,
@@ -117,7 +117,7 @@
     },
     {
       "id": "fldkHzutnbR6oRDV6hF",
-      "name": "Hourly Machine Rate",
+      "Name": "Hourly Machine Rate",
       "dbFieldName": "Hourly_Machine_Rate",
       "type": "number",
       "description": null,
@@ -135,7 +135,7 @@
     },
     {
       "id": "fldtyfHJLiHzwP7OvHQ",
-      "name": "Hourly Tooling Rate",
+      "Name": "Hourly Tooling Rate",
       "dbFieldName": "Hourly_Tooling_Rate",
       "type": "number",
       "description": null,
@@ -153,7 +153,7 @@
     },
     {
       "id": "fldM2cJUf5nSdBkGtvy",
-      "name": "Hourly Utility Rate",
+      "Name": "Hourly Utility Rate",
       "dbFieldName": "Hourly_Utility_Rate",
       "type": "number",
       "description": null,
@@ -171,7 +171,7 @@
     },
     {
       "id": "fldKS8I5Td6ep5qPwvo",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -185,7 +185,7 @@
     },
     {
       "id": "fldfYApIL7xnonndk5B",
-      "name": "Equipment",
+      "Name": "Equipment",
       "dbFieldName": "Equipment",
       "type": "link",
       "description": null,
@@ -208,7 +208,7 @@
     },
     {
       "id": "fldn2jPara3amujjACq",
-      "name": "Department",
+      "Name": "Department",
       "dbFieldName": "Department",
       "type": "link",
       "description": null,

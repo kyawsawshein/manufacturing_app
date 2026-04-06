@@ -10,7 +10,7 @@ import { getStockOnHand } from "@/app/actions";
 
 interface StockOnHand {
   id: string;
-  name: string;
+  Name: string;
   qty: number;
   availableQty: number;
   reservedQty: number;
@@ -44,7 +44,7 @@ export default function StockOnHandPage() {
   }, []);
 
   const columns: Column<StockOnHand>[] = [
-    { key: "name", label: "Reference" },
+    { key: "Name", label: "Reference" },
     { key: "product", label: "Product" },
     { key: "location", label: "Location" },
     {

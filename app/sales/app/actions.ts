@@ -1,6 +1,6 @@
 "use server";
 
-import { sqlQuery, createRecord, updateRecord, deleteRecord, safeParseJson} from "@/lib/teable";
+import { sqlQuery, createRecord, updateRecord, deleteRecord, safeParseJson } from "@/lib/teable";
 
 const BASE_ID = process.env.BASE_ID || "bseTIY0IrZr61kt6u5E";
 
@@ -10,7 +10,7 @@ const SALES_ORDER_LINES_TABLE = "tbl89A4Ps2lwrMui6vC";
 
 export interface Partner {
   id: string;
-  name: string;
+  Name: string;
 }
 
 export interface CustomerPO {
@@ -26,13 +26,13 @@ export interface Location {
 export interface Product {
   id: string;
   sku: string;
-  name: string;
+  Name: string;
   salePrice: number | null;
 }
 
 export interface UnitOfMeasure {
   id: string;
-  name: string;
+  Name: string;
 }
 
 export async function getSalesOrders() {
@@ -44,7 +44,7 @@ export async function getSalesOrders() {
   `);
   return rows.map(row => ({
     id: row.__id as string,
-    name: row.Name as string,
+    Name: row.Name as string,
     orderDate: row.Order_Date as string,
     deliveryDate: row.Delivery_Date as string,
     status: row.Status as string,
@@ -72,11 +72,11 @@ export async function deleteSalesOrder(id: string) {
 export async function getPartners(): Promise<Partner[]> {
   const { rows } = await sqlQuery(
     BASE_ID,
-    `SELECT "__id", "Name" FROM "${BASE_ID}"."Partners" WHERE "Name" IS NOT NULL ORDER BY "Name" LIMIT 500`
+    `SELECT "__id", "name" FROM "${BASE_ID}"."Partners" WHERE "name" IS NOT NULL ORDER BY "name" LIMIT 500`
   );
   return rows.map((row) => ({
     id: row.__id as string,
-    name: row.Name as string,
+    Name: row.name as string,
   }));
 }
 
@@ -105,13 +105,13 @@ export async function getLocations(): Promise<Location[]> {
 export async function getProducts(): Promise<Product[]> {
   const { rows } = await sqlQuery(
     BASE_ID,
-    `SELECT "__id", "SKU", "Name", "Sale_Price" FROM "${BASE_ID}"."Products" WHERE "SKU" IS NOT NULL ORDER BY "SKU" LIMIT 1000`
+    `SELECT "__id", "default_code", "name", "list_price" FROM "${BASE_ID}"."Products" WHERE "default_code" IS NOT NULL ORDER BY "default_code" LIMIT 1000`
   );
   return rows.map((row) => ({
     id: row.__id as string,
-    sku: row.SKU as string,
-    name: row.Name as string,
-    salePrice: row.Sale_Price as number | null,
+    sku: row.default_code as string,
+    Name: row.name as string,
+    salePrice: row.list_price as number | null,
   }));
 }
 
@@ -122,7 +122,7 @@ export async function getUnitsOfMeasure(): Promise<UnitOfMeasure[]> {
   );
   return rows.map((row) => ({
     id: row.__id as string,
-    name: row.Name as string,
+    Name: row.Name as string,
   }));
 }
 
@@ -163,7 +163,7 @@ export async function createSalesOrder(
     // - fldwmdi4GZp0fQdzcpq: Source Location (link)
     // - fldPElTrU699ziuuAk4: Is Kit Order (checkbox)
     // - fld5vmAcv2IhusCGyX5: Status
-    
+
     const soFields: Record<string, unknown> = {
       fldLQtTSQ23wo4MR4KY: [header.customerId], // Link field - array of record IDs
       fld4hpPakgQCl9NsKBd: [header.poNoId], // Link field - array of record IDs

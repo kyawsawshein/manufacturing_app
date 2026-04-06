@@ -1,12 +1,12 @@
 {
   "id": "tblo9esf4d7Agj5n4tn",
-  "name": "Journal",
+  "Name": "Journal",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Journal\"",
   "fields": [
     {
       "id": "fldRrx4js31OCDwq3uf",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -22,7 +22,7 @@
     },
     {
       "id": "fldZBz4zQ4iVHPRLwPM",
-      "name": "Prefix",
+      "Name": "Prefix",
       "dbFieldName": "Prefix",
       "type": "singleLineText",
       "description": null,
@@ -34,7 +34,7 @@
     },
     {
       "id": "fldRuDXNLUDRD4Lfkm0",
-      "name": "Name",
+      "Name": "Name",
       "dbFieldName": "Name",
       "type": "singleLineText",
       "description": null,
@@ -46,7 +46,7 @@
     },
     {
       "id": "fldybQWwnmV43gLVYAh",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -60,7 +60,7 @@
     },
     {
       "id": "fldwV7E1dojCX9iF3Rp",
-      "name": "Payment",
+      "Name": "Payment",
       "dbFieldName": "Payment",
       "type": "link",
       "description": null,
@@ -80,7 +80,7 @@
     },
     {
       "id": "fldbmceuuPI91GiOvGY",
-      "name": "Sequence",
+      "Name": "Sequence",
       "dbFieldName": "Sequence",
       "type": "autoNumber",
       "description": null,
@@ -94,7 +94,7 @@
     },
     {
       "id": "fldwDZSSxFp7tsENH2V",
-      "name": "Account",
+      "Name": "Account",
       "dbFieldName": "Account",
       "type": "link",
       "description": null,
@@ -117,7 +117,7 @@
     },
     {
       "id": "fldOq6w4HEUObGVSjKP",
-      "name": "Type",
+      "Name": "Type",
       "dbFieldName": "Type",
       "type": "link",
       "description": null,

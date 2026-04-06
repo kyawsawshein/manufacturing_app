@@ -26,7 +26,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 
 interface User {
   id: string;
-  name: string;
+  Name: string;
   email: string;
   role: string;
   status: string;
@@ -37,7 +37,7 @@ interface User {
 const mockUsers: User[] = [
   {
     id: "1",
-    name: "John Doe",
+    Name: "John Doe",
     email: "john@company.com",
     role: "Admin",
     status: "Active",
@@ -45,7 +45,7 @@ const mockUsers: User[] = [
   },
   {
     id: "2",
-    name: "Jane Smith",
+    Name: "Jane Smith",
     email: "jane@company.com",
     role: "Manager",
     status: "Active",
@@ -53,7 +53,7 @@ const mockUsers: User[] = [
   },
   {
     id: "3",
-    name: "Bob Wilson",
+    Name: "Bob Wilson",
     email: "bob@company.com",
     role: "User",
     status: "Active",
@@ -61,7 +61,7 @@ const mockUsers: User[] = [
   },
   {
     id: "4",
-    name: "Alice Brown",
+    Name: "Alice Brown",
     email: "alice@company.com",
     role: "User",
     status: "Inactive",
@@ -83,7 +83,7 @@ export default function UsersPage() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [editingUser, setEditingUser] = useState<User | null>(null);
   const [formData, setFormData] = useState({
-    name: "",
+    Name: "",
     email: "",
     role: "User",
     status: "Active",
@@ -91,7 +91,7 @@ export default function UsersPage() {
   });
 
   const columns: Column<User>[] = [
-    { key: "name", label: "Name" },
+    { key: "Name", label: "Name" },
     { key: "email", label: "Email" },
     { key: "role", label: "Role" },
     {
@@ -128,7 +128,7 @@ export default function UsersPage() {
   const handleAdd = () => {
     setEditingUser(null);
     setFormData({
-      name: "",
+      Name: "",
       email: "",
       role: "User",
       status: "Active",
@@ -140,7 +140,7 @@ export default function UsersPage() {
   const handleEdit = (user: User) => {
     setEditingUser(user);
     setFormData({
-      name: user.name,
+      Name: user.Name,
       email: user.email,
       role: user.role,
       status: user.status,
@@ -150,7 +150,7 @@ export default function UsersPage() {
   };
 
   const handleDelete = (user: User) => {
-    if (confirm(`Are you sure you want to delete ${user.name}?`)) {
+    if (confirm(`Are you sure you want to delete ${user.Name}?`)) {
       setUsers(users.filter((u) => u.id !== user.id));
     }
   };
@@ -198,7 +198,7 @@ export default function UsersPage() {
         <DataTable
           data={users}
           columns={columns}
-          searchKey="name"
+          searchKey="Name"
           searchPlaceholder="Search users..."
           onAdd={handleAdd}
           onEdit={handleEdit}
@@ -215,14 +215,14 @@ export default function UsersPage() {
             </DialogHeader>
             <div className="grid gap-4 py-4">
               <div className="grid gap-2">
-                <Label htmlFor="name">Name</Label>
+                <Label htmlFor="Name">Name</Label>
                 <Input
-                  id="name"
-                  value={formData.name}
+                  id="Name"
+                  value={formData.Name}
                   onChange={(e) =>
-                    setFormData({ ...formData, name: e.target.value })
+                    setFormData({ ...formData, Name: e.target.value })
                   }
-                  placeholder="Enter name"
+                  placeholder="Enter Name"
                 />
               </div>
               <div className="grid gap-2">

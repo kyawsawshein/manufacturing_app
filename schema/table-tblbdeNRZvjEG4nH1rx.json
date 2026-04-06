@@ -1,12 +1,12 @@
 {
   "id": "tblbdeNRZvjEG4nH1rx",
-  "name": "Purchase Request",
+  "Name": "Purchase Request",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Purchase_Request\"",
   "fields": [
     {
       "id": "fldK3XnaIcNeW0H5reT",
-      "name": "Name",
+      "Name": "Name",
       "dbFieldName": "Name",
       "type": "formula",
       "description": null,
@@ -21,7 +21,7 @@
     },
     {
       "id": "fldDk7RqDU0sOHBwXKB",
-      "name": "Date",
+      "Name": "Date",
       "dbFieldName": "Date",
       "type": "date",
       "description": null,
@@ -39,7 +39,7 @@
     },
     {
       "id": "fld8mDeZj2lxws7YFFu",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -54,7 +54,7 @@
     },
     {
       "id": "fldV81T7ZirJCClffSs",
-      "name": "Project",
+      "Name": "Project",
       "dbFieldName": "Project",
       "type": "singleLineText",
       "description": null,
@@ -66,7 +66,7 @@
     },
     {
       "id": "fldBD7YFECBje8Il8xK",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -80,7 +80,7 @@
     },
     {
       "id": "fldrikqgFfeBEqQyjAV",
-      "name": "Request Items",
+      "Name": "Request Items",
       "dbFieldName": "Request_Items",
       "type": "link",
       "description": null,

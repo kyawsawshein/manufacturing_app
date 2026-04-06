@@ -21,7 +21,7 @@ import { cn } from "@/lib/utils";
 interface Product {
   id: string;
   sku: string;
-  name: string;
+  Name: string;
   productCode: string;
   barcode: string;
   cost: number;
@@ -49,7 +49,7 @@ export default function ProductsPage() {
 
   const [formData, setFormData] = useState({
     sku: "",
-    name: "",
+    Name: "",
     productCode: "",
     barcode: "",
     cost: 0,
@@ -78,7 +78,7 @@ export default function ProductsPage() {
 
   const columns: Column<Product>[] = [
     { key: "sku", label: "SKU" },
-    { key: "name", label: "Product Name" },
+    { key: "Name", label: "Product Name" },
     { key: "productCode", label: "Product Code" },
     { key: "barcode", label: "Barcode" },
     {
@@ -124,7 +124,7 @@ export default function ProductsPage() {
     setEditingProduct(null);
     setFormData({
       sku: "",
-      name: "",
+      Name: "",
       productCode: "",
       barcode: "",
       cost: 0,
@@ -138,7 +138,7 @@ export default function ProductsPage() {
     setEditingProduct(product);
     setFormData({
       sku: product.sku || "",
-      name: product.name || "",
+      Name: product.Name || "",
       productCode: product.productCode || "",
       barcode: product.barcode || "",
       cost: product.cost || 0,
@@ -149,7 +149,7 @@ export default function ProductsPage() {
   };
 
   const handleDelete = (product: Product) => {
-    if (confirm(`Are you sure you want to delete ${product.name}?`)) {
+    if (confirm(`Are you sure you want to delete ${product.Name}?`)) {
       startTransition(async () => {
         try {
           await deleteProduct(product.id);
@@ -225,7 +225,7 @@ export default function ProductsPage() {
         <DataTable
           data={products}
           columns={columns}
-          searchKey="name"
+          searchKey="Name"
           searchPlaceholder="Search products..."
           onAdd={handleAdd}
           onEdit={handleEdit}
@@ -267,14 +267,14 @@ export default function ProductsPage() {
                 </div>
               </div>
               <div className="grid gap-2">
-                <Label htmlFor="name">Product Name</Label>
+                <Label htmlFor="Name">Product Name</Label>
                 <Input
-                  id="name"
-                  value={formData.name}
+                  id="Name"
+                  value={formData.Name}
                   onChange={(e) =>
-                    setFormData({ ...formData, name: e.target.value })
+                    setFormData({ ...formData, Name: e.target.value })
                   }
-                  placeholder="Enter product name"
+                  placeholder="Enter product Name"
                 />
               </div>
               <div className="grid gap-2">

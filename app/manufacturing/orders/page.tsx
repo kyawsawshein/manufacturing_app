@@ -53,7 +53,7 @@ interface ManufacturingOrder {
 
 interface BOM {
   id: string;
-  name: string;
+  Name: string;
 }
 
 interface RawMaterial {
@@ -66,7 +66,7 @@ interface RawMaterial {
 
 interface BOMExplosionItem {
   id: string;
-  name: string;
+  Name: string;
   productName: string;
   quantity: number;
   unitCost: number;
@@ -159,7 +159,7 @@ export default function ManufacturingOrdersPage() {
   };
 
   const handleBOMExplosion = async (order: ManufacturingOrder) => {
-    const selectedBom = boms.find(b => b.name === order.bom);
+    const selectedBom = boms.find(b => b.Name === order.bom);
     if (!selectedBom) {
       toast({
         title: "Error",
@@ -186,7 +186,7 @@ export default function ManufacturingOrdersPage() {
   };
 
   const handleCreateRawMaterials = async (order: ManufacturingOrder) => {
-    const selectedBom = boms.find(b => b.name === order.bom);
+    const selectedBom = boms.find(b => b.Name === order.bom);
     if (!selectedBom) {
       toast({
         title: "Error",
@@ -265,7 +265,7 @@ export default function ManufacturingOrdersPage() {
 
   const handleEdit = (order: ManufacturingOrder) => {
     setEditingOrder(order);
-    const bom = boms.find((b) => b.name === order.bom);
+    const bom = boms.find((b) => b.Name === order.bom);
     setFormData({
       date: order.date ? order.date.split("T")[0] : toISODateString(new Date()),
       startDate: order.startDate ? order.startDate.split("T")[0] : toISODateString(new Date()),
@@ -431,7 +431,7 @@ export default function ManufacturingOrdersPage() {
                     <SelectContent>
                       {boms.map((bom) => (
                         <SelectItem key={bom.id} value={bom.id}>
-                          {bom.name}
+                          {bom.Name}
                         </SelectItem>
                       ))}
                     </SelectContent>
@@ -650,7 +650,7 @@ export default function ManufacturingOrdersPage() {
                           <div className="flex justify-between mb-2">
                             <div>
                               <p className="font-medium">{item.productName}</p>
-                              <p className="text-xs text-muted-foreground">{item.name}</p>
+                              <p className="text-xs text-muted-foreground">{item.Name}</p>
                             </div>
                             <p className="text-sm font-semibold text-primary">
                               {formatCurrency(item.totalCost)}

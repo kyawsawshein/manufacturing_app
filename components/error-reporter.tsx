@@ -68,7 +68,7 @@ export function ErrorReporter() {
       post({
         type: "runtime-error",
         message: event.message,
-        filename: event.filename,
+        fileName: event.fileName,
         lineno: event.lineno,
         colno: event.colno,
         stack: event.error?.stack,

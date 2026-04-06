@@ -1,12 +1,12 @@
 {
   "id": "tblR11f69xiBigYee3f",
-  "name": "Cutting Hook & Loop",
+  "Name": "Cutting Hook & Loop",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Cutting_Hook_Loop\"",
   "fields": [
     {
       "id": "fld5GveCMenQfoti7jh",
-      "name": "Quantity",
+      "Name": "Quantity",
       "dbFieldName": "Quantity",
       "type": "number",
       "description": null,
@@ -23,7 +23,7 @@
     },
     {
       "id": "fldtuTrTp2YgyqiSJnS",
-      "name": "Unit",
+      "Name": "Unit",
       "dbFieldName": "Unit",
       "type": "singleSelect",
       "description": null,
@@ -37,7 +37,7 @@
     },
     {
       "id": "flds7CZM5RD5kSDrFYd",
-      "name": "Name",
+      "Name": "Name",
       "dbFieldName": "Name",
       "type": "singleLineText",
       "description": null,
@@ -49,7 +49,7 @@
     },
     {
       "id": "fldcIiOKhECzQI00zXx",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -63,7 +63,7 @@
     },
     {
       "id": "fldhn1VdfIYSDsIQe9Z",
-      "name": "Item",
+      "Name": "Item",
       "dbFieldName": "Item",
       "type": "link",
       "description": null,
@@ -86,7 +86,7 @@
     },
     {
       "id": "fldlaLbadTrLntLzNMN",
-      "name": "Size",
+      "Name": "Size",
       "dbFieldName": "Size",
       "type": "link",
       "description": null,
@@ -109,7 +109,7 @@
     },
     {
       "id": "fld8OU9QlBg5uorTTGX",
-      "name": "Cutting Request",
+      "Name": "Cutting Request",
       "dbFieldName": "Cutting_Request",
       "type": "link",
       "description": null,
@@ -130,7 +130,7 @@
     },
     {
       "id": "fldwruTiLTio9WGFzUc",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,

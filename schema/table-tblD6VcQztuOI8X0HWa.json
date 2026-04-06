@@ -1,12 +1,12 @@
 {
   "id": "tblD6VcQztuOI8X0HWa",
-  "name": "QC Checkpoints",
+  "Name": "QC Checkpoints",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"QC_Checkpoints\"",
   "fields": [
     {
       "id": "fld6XtNs2hK2xePiVSm",
-      "name": "QC Results",
+      "Name": "QC Results",
       "dbFieldName": "QC_Results",
       "type": "link",
       "description": null,
@@ -26,7 +26,7 @@
     },
     {
       "id": "fld507u2Bi4PmsZtchU",
-      "name": "Name",
+      "Name": "Name",
       "dbFieldName": "Name",
       "type": "singleLineText",
       "description": null,
@@ -38,7 +38,7 @@
     },
     {
       "id": "fldyllCUUwtRADM9HCY",
-      "name": "Product",
+      "Name": "Product",
       "dbFieldName": "Product",
       "type": "singleLineText",
       "description": null,
@@ -50,7 +50,7 @@
     },
     {
       "id": "fldb0JT5nqhPkVyZkca",
-      "name": "Specification",
+      "Name": "Specification",
       "dbFieldName": "Specification",
       "type": "singleLineText",
       "description": null,
@@ -62,7 +62,7 @@
     },
     {
       "id": "fldB9jsOxpKleXcmgVM",
-      "name": "Min Value",
+      "Name": "Min Value",
       "dbFieldName": "Min_Value",
       "type": "number",
       "description": null,
@@ -79,7 +79,7 @@
     },
     {
       "id": "fldRAaLaZjYK9GP7YeJ",
-      "name": "Max Value",
+      "Name": "Max Value",
       "dbFieldName": "Max_Value",
       "type": "number",
       "description": null,
@@ -96,7 +96,7 @@
     },
     {
       "id": "fldUFrHNI8DHeOyaueH",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,

@@ -1,12 +1,12 @@
 {
   "id": "tblaFOdEAo9sqvAAmEZ",
-  "name": "PO Lines",
+  "Name": "PO Lines",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"New_table\"",
   "fields": [
     {
       "id": "fldogox1xw8KVMJqvxl",
-      "name": "Quantity",
+      "Name": "Quantity",
       "dbFieldName": "Quantity",
       "type": "number",
       "description": null,
@@ -23,7 +23,7 @@
     },
     {
       "id": "fldlDCXImqFjETBZ0lo",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -39,7 +39,7 @@
     },
     {
       "id": "fldHCnyBWYh73fIS3GK",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -53,7 +53,7 @@
     },
     {
       "id": "fldHymFVfQKgIUOeTvb",
-      "name": "Part No",
+      "Name": "Part No",
       "dbFieldName": "Part_No",
       "type": "singleLineText",
       "description": null,
@@ -65,7 +65,7 @@
     },
     {
       "id": "fld8xTlUyrr2vPFOtwT",
-      "name": "PO",
+      "Name": "PO",
       "dbFieldName": "PO",
       "type": "link",
       "description": null,
@@ -89,7 +89,7 @@
     },
     {
       "id": "fld6vOHPvkQraolhod6",
-      "name": "Item",
+      "Name": "Item",
       "dbFieldName": "Item",
       "type": "link",
       "description": null,

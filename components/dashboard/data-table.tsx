@@ -49,12 +49,12 @@ export function DataTable<T extends { id: string }>({
 
   const filteredData = searchKey
     ? data.filter((row) => {
-        const value = row[searchKey];
-        if (typeof value === "string") {
-          return value.toLowerCase().includes(search.toLowerCase());
-        }
-        return true;
-      })
+      const value = row[searchKey];
+      if (typeof value === "string") {
+        return value.toLowerCase().includes(search.toLowerCase());
+      }
+      return true;
+    })
     : data;
 
   const totalPages = Math.ceil(filteredData.length / pageSize);

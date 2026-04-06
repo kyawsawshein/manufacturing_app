@@ -73,7 +73,7 @@ async function request<T>(endpoint: string, options: RequestOptions = {}): Promi
       url += `?${queryString}`;
     }
   }
-  console.log(`############### Teable API Request: ${method} ${url}`);
+  console.log(`############### Teable API Request: ${method} ${url} {body: ${JSON.stringify(body)}}`);
   const response = await fetch(url, {
     method,
     headers: {
@@ -118,7 +118,7 @@ interface ISqlQueryResponse {
  * @example
  * // Simple query - use dbTableName from schema (e.g., "bseXXX"."users")
  * const { rows } = await sqlQuery('bseXXX', 
- *   `SELECT "__id", "fld_name", "fld_email" 
+ *   `SELECT "__id", "fld_Name", "fld_email" 
  *    FROM "bseXXX"."users" 
  *    WHERE "fld_status" = 'Active' 
  *    LIMIT 100`
@@ -356,11 +356,11 @@ export async function getAttachmentSignature(
  */
 export async function notifyAttachmentUpload(
   token: string,
-  filename: string
+  fileName: string
 ): Promise<IAttachmentNotifyResponse> {
   return request<IAttachmentNotifyResponse>(`/attachments/notify/${token}`, {
     method: 'POST',
-    params: { filename },
+    params: { fileName },
   });
 }
 
@@ -403,9 +403,9 @@ export async function uploadAttachmentToRecord(
  */
 export async function uploadNewAttachment(
   file: Blob,
-  filename: string,
+  fileName: string,
   baseId?: string
-): Promise<{ name: string; token: string }> {
+): Promise<{ Name: string; token: string }> {
   const signature = await getAttachmentSignature({
     contentType: file.type || 'application/octet-stream',
     contentLength: file.size,
@@ -425,10 +425,10 @@ export async function uploadNewAttachment(
     throw new Error(`Failed to upload file to storage: ${uploadResponse.statusText}`);
   }
 
-  const notifyResult = await notifyAttachmentUpload(signature.token, filename);
+  const notifyResult = await notifyAttachmentUpload(signature.token, fileName);
 
   return {
-    name: filename,
+    Name: fileName,
     token: notifyResult.token,
   };
 }

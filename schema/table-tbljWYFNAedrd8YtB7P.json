@@ -1,12 +1,12 @@
 {
   "id": "tbljWYFNAedrd8YtB7P",
-  "name": "Product Categories",
+  "Name": "Product Categories",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Product_Categories\"",
   "fields": [
     {
       "id": "fldxyr29DpztU0232uY",
-      "name": "Costing Method",
+      "Name": "Costing Method",
       "dbFieldName": "Costing_Method",
       "type": "singleSelect",
       "description": null,
@@ -22,7 +22,7 @@
     },
     {
       "id": "fld4DBBitfiF0FQrxWK",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -36,7 +36,7 @@
     },
     {
       "id": "fldcHOX0pTVGlKv4BBr",
-      "name": "Expense Account",
+      "Name": "Expense Account",
       "dbFieldName": "Expense_Account",
       "type": "link",
       "description": null,
@@ -59,7 +59,7 @@
     },
     {
       "id": "fldPI9BBio164XDejJi",
-      "name": "Name",
+      "Name": "Name",
       "dbFieldName": "Name",
       "type": "singleLineText",
       "description": null,
@@ -71,7 +71,7 @@
     },
     {
       "id": "fld9tNbIXnWF0aubAPb",
-      "name": "Description",
+      "Name": "Description",
       "dbFieldName": "Description",
       "type": "formula",
       "description": null,
@@ -86,7 +86,7 @@
     },
     {
       "id": "fldcI0NI98YkNYgi7sY",
-      "name": "Product Categories",
+      "Name": "Product Categories",
       "dbFieldName": "Product_Categories",
       "type": "link",
       "description": null,
@@ -106,7 +106,7 @@
     },
     {
       "id": "fldgFa2Y6og2xXvq30g",
-      "name": "Parent Category",
+      "Name": "Parent Category",
       "dbFieldName": "Parent_Category",
       "type": "link",
       "description": null,
@@ -130,7 +130,7 @@
     },
     {
       "id": "fldbxjG8LY9LMpdlAWR",
-      "name": "Product Templates",
+      "Name": "Product Templates",
       "dbFieldName": "Product_Templates",
       "type": "link",
       "description": null,
@@ -151,7 +151,7 @@
     },
     {
       "id": "fldGmgIDhIi4sPjNBWI",
-      "name": "Income Account",
+      "Name": "Income Account",
       "dbFieldName": "Income_Account",
       "type": "link",
       "description": null,
@@ -174,7 +174,7 @@
     },
     {
       "id": "fldJzBK2gx3MPIA70uY",
-      "name": "Stock Journal",
+      "Name": "Stock Journal",
       "dbFieldName": "Stock_Journal",
       "type": "link",
       "description": null,

@@ -1,12 +1,12 @@
 {
   "id": "tbl0aq09fCJXpdox9aT",
-  "name": "MO Raw Material",
+  "Name": "MO Raw Material",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"MO_Raw_Material\"",
   "fields": [
     {
       "id": "fldsokXZdzYBr5wKVvh",
-      "name": "MO",
+      "Name": "MO",
       "dbFieldName": "MO",
       "type": "link",
       "description": null,
@@ -30,7 +30,7 @@
     },
     {
       "id": "fldFtiECtVOujmdbCiu",
-      "name": "Quantity",
+      "Name": "Quantity",
       "dbFieldName": "Quantity",
       "type": "number",
       "description": null,
@@ -47,7 +47,7 @@
     },
     {
       "id": "fldG17ZJzolabz4bsEj",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -61,7 +61,7 @@
     },
     {
       "id": "fldQwhRLMtk5G1pTtnP",
-      "name": "BOM Line",
+      "Name": "BOM Line",
       "dbFieldName": "BOM_Line",
       "type": "link",
       "description": null,
@@ -84,7 +84,7 @@
     },
     {
       "id": "fldIOQj0dOj3LgxOPVg",
-      "name": "Product",
+      "Name": "Product",
       "dbFieldName": "Product",
       "type": "link",
       "description": null,
@@ -107,7 +107,7 @@
     },
     {
       "id": "fldtKn7c70xQvxQXHWe",
-      "name": "CUT",
+      "Name": "CUT",
       "dbFieldName": "CUT",
       "type": "link",
       "description": null,
@@ -131,7 +131,7 @@
     },
     {
       "id": "fldAAx1GpxjmEGaQW8W",
-      "name": "MO Qty",
+      "Name": "MO Qty",
       "dbFieldName": "MO_Qty",
       "type": "number",
       "description": null,
@@ -148,7 +148,7 @@
     },
     {
       "id": "fldObsX4bDLw7GCyKgn",
-      "name": "Consume Qty",
+      "Name": "Consume Qty",
       "dbFieldName": "Consume_Qty",
       "type": "formula",
       "description": null,
@@ -167,7 +167,7 @@
     },
     {
       "id": "fldoU4qqJ989EiwnC9X",
-      "name": "Lot",
+      "Name": "Lot",
       "dbFieldName": "Lot",
       "type": "link",
       "description": null,
@@ -190,7 +190,7 @@
     },
     {
       "id": "fldVhmMhsf6uwLmtSYs",
-      "name": "Created By",
+      "Name": "Created By",
       "dbFieldName": "Created_By",
       "type": "user",
       "description": null,
@@ -205,7 +205,7 @@
     },
     {
       "id": "fld7dedg5kMsz8bEzvO",
-      "name": "Created At",
+      "Name": "Created At",
       "dbFieldName": "Created_At",
       "type": "date",
       "description": null,
@@ -223,7 +223,7 @@
     },
     {
       "id": "fldYluBD5yVyDm3iHzf",
-      "name": "Product Cost",
+      "Name": "Product Cost",
       "dbFieldName": "Cost",
       "type": "number",
       "description": null,
@@ -240,7 +240,7 @@
     },
     {
       "id": "fldHjfTdWj2jx9Nxcv5",
-      "name": "Total Cost",
+      "Name": "Total Cost",
       "dbFieldName": "Total_Cost",
       "type": "formula",
       "description": null,
@@ -259,7 +259,7 @@
     },
     {
       "id": "fldjvHUcFUUAdzg7Vjl",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -277,7 +277,7 @@
     },
     {
       "id": "fldeivnHrpdhwYOa5Od",
-      "name": "Scrap Rate",
+      "Name": "Scrap Rate",
       "dbFieldName": "Scrap_Rate",
       "type": "number",
       "description": null,
@@ -294,7 +294,7 @@
     },
     {
       "id": "fldUbG5TnYfNInMhkpV",
-      "name": "Lead Time",
+      "Name": "Lead Time",
       "dbFieldName": "Lead_Time",
       "type": "singleLineText",
       "description": null,
@@ -306,7 +306,7 @@
     },
     {
       "id": "fld8VCxgQIqcL1b2gw4",
-      "name": "Scrap Percent",
+      "Name": "Scrap Percent",
       "dbFieldName": "Scrap_Percent",
       "type": "number",
       "description": null,
@@ -323,7 +323,7 @@
     },
     {
       "id": "fldWL3eodbeCmcBRLP4",
-      "name": "Scrap Cost",
+      "Name": "Scrap Cost",
       "dbFieldName": "Scrap_Cost",
       "type": "formula",
       "description": null,
@@ -342,7 +342,7 @@
     },
     {
       "id": "fldqhhdwIth0hmmlltJ",
-      "name": "Unit",
+      "Name": "Unit",
       "dbFieldName": "Unit",
       "type": "link",
       "description": null,
@@ -365,7 +365,7 @@
     },
     {
       "id": "fldQpCLkCtiwsGHFXRY",
-      "name": "Used Qty",
+      "Name": "Used Qty",
       "dbFieldName": "Used_Qty",
       "type": "number",
       "description": null,
@@ -382,7 +382,7 @@
     },
     {
       "id": "fldVdqWXktIdc1LbIMv",
-      "name": "Width",
+      "Name": "Width",
       "dbFieldName": "Width",
       "type": "singleLineText",
       "description": null,
@@ -394,7 +394,7 @@
     },
     {
       "id": "fldW4P1kKagIFXIVm7f",
-      "name": "Reference",
+      "Name": "Reference",
       "dbFieldName": "Reference",
       "type": "singleLineText",
       "description": null,
@@ -406,7 +406,7 @@
     },
     {
       "id": "fldD5GKDQlgw1jjgldQ",
-      "name": "Item Count Unit",
+      "Name": "Item Count Unit",
       "dbFieldName": "Item_Count_Unit",
       "type": "number",
       "description": null,
@@ -423,7 +423,7 @@
     },
     {
       "id": "fldoOUlDo4jN1ciXvA5",
-      "name": "Required Qty",
+      "Name": "Required Qty",
       "dbFieldName": "Required_Qty",
       "type": "formula",
       "description": null,
@@ -442,7 +442,7 @@
     },
     {
       "id": "fldjGZHNzeklIOOo9kS",
-      "name": "Total Cost wit Scrap",
+      "Name": "Total Cost wit Scrap",
       "dbFieldName": "Total_Cost_wit_Scrap",
       "type": "formula",
       "description": null,
@@ -461,7 +461,7 @@
     },
     {
       "id": "fldgljVog9UT6eKvbil",
-      "name": "Minimum Order Qty",
+      "Name": "Minimum Order Qty",
       "dbFieldName": "Minimum_Order_Qty",
       "type": "number",
       "description": null,
@@ -478,7 +478,7 @@
     },
     {
       "id": "fldiBi2C6A7bubPO8qI",
-      "name": "Stock Move",
+      "Name": "Stock Move",
       "dbFieldName": "Stock_Move1774324983168",
       "type": "link",
       "description": null,
@@ -498,7 +498,7 @@
     },
     {
       "id": "fldB9Q7cEPKo4yo6QgV",
-      "name": "Stock Onhand",
+      "Name": "Stock Onhand",
       "dbFieldName": "Stock_Onhand",
       "type": "link",
       "description": null,
@@ -521,7 +521,7 @@
     },
     {
       "id": "fld157Wtcki7Ne0ICQP",
-      "name": "Raw Unit",
+      "Name": "Raw Unit",
       "dbFieldName": "Raw_Unit",
       "type": "link",
       "description": null,
@@ -544,7 +544,7 @@
     },
     {
       "id": "fldfSE5uQvuCSTFmqEr",
-      "name": "Source Location",
+      "Name": "Source Location",
       "dbFieldName": "Source_Location",
       "type": "link",
       "description": null,
@@ -567,7 +567,7 @@
     },
     {
       "id": "fldPAr7AR88bgab4tsc",
-      "name": "BOM",
+      "Name": "BOM",
       "dbFieldName": "BOM",
       "type": "link",
       "description": null,
@@ -591,7 +591,7 @@
     },
     {
       "id": "fldIdVsUevb41BIPyZy",
-      "name": "MO Type",
+      "Name": "MO Type",
       "dbFieldName": "MO_Type",
       "type": "singleSelect",
       "description": null,
@@ -606,7 +606,7 @@
     },
     {
       "id": "fldganoBUrTUIrrt1cS",
-      "name": "Destination Location",
+      "Name": "Destination Location",
       "dbFieldName": "Destination_Location",
       "type": "link",
       "description": null,

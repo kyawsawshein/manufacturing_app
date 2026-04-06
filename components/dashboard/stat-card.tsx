@@ -36,7 +36,7 @@ interface StatCardProps {
 
 export function StatCard({ title, value, subtitle, icon, trend, className }: StatCardProps) {
   const Icon = iconMap[icon] || Package;
-  
+
   return (
     <div className={cn("rounded-lg border border-border bg-card p-6", className)}>
       <div className="flex items-start justify-between">

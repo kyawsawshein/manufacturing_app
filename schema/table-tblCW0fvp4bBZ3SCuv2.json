@@ -1,12 +1,12 @@
 {
   "id": "tblCW0fvp4bBZ3SCuv2",
-  "name": "Hook & Loop Items",
+  "Name": "Hook & Loop Items",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Hook_Loop_Items\"",
   "fields": [
     {
       "id": "fldI8xVd7Wo4bZ5UhIy",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -20,7 +20,7 @@
     },
     {
       "id": "flduimHUCDRkKwuocxx",
-      "name": "Name",
+      "Name": "Name",
       "dbFieldName": "Name",
       "type": "formula",
       "description": null,
@@ -35,7 +35,7 @@
     },
     {
       "id": "fldkYc7dD9dlgeswinC",
-      "name": "Qty",
+      "Name": "Qty",
       "dbFieldName": "Qty",
       "type": "number",
       "description": null,
@@ -52,7 +52,7 @@
     },
     {
       "id": "fldn4wb8OrJs41QqP9W",
-      "name": "Total (mm)",
+      "Name": "Total (mm)",
       "dbFieldName": "Total_mm",
       "type": "formula",
       "description": null,
@@ -71,7 +71,7 @@
     },
     {
       "id": "flddLDfqRDfFBvSHFLb",
-      "name": "Total (m)",
+      "Name": "Total (m)",
       "dbFieldName": "Total_m",
       "type": "formula",
       "description": null,
@@ -90,7 +90,7 @@
     },
     {
       "id": "fldGI8oyLnapYfUtOYK",
-      "name": "Item",
+      "Name": "Item",
       "dbFieldName": "Item",
       "type": "link",
       "description": null,
@@ -113,7 +113,7 @@
     },
     {
       "id": "fld8WzbImgMN161Np7c",
-      "name": "BOM Lines",
+      "Name": "BOM Lines",
       "dbFieldName": "BOM_Lines",
       "type": "link",
       "description": null,
@@ -134,7 +134,7 @@
     },
     {
       "id": "fldxBNmsBPnvhdNCCRx",
-      "name": "Length",
+      "Name": "Length",
       "dbFieldName": "Length",
       "type": "rollup",
       "description": null,
@@ -153,7 +153,7 @@
     },
     {
       "id": "fldrC9S4N8J8cwy6tdK",
-      "name": "Size",
+      "Name": "Size",
       "dbFieldName": "Size",
       "type": "link",
       "description": null,

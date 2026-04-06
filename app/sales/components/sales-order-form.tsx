@@ -80,7 +80,7 @@ export function SalesOrderForm({
   // Convert data to options
   const partnerOptions: Option[] = partners.map((p) => ({
     value: p.id,
-    label: p.name,
+    label: p.Name,
   }));
 
   const poOptions: Option[] = customerPOs.map((po) => ({
@@ -95,12 +95,12 @@ export function SalesOrderForm({
 
   const productOptions: Option[] = products.map((p) => ({
     value: p.id,
-    label: `${p.sku}${p.name ? ` - ${p.name}` : ""}`,
+    label: `${p.sku}${p.Name ? ` - ${p.Name}` : ""}`,
   }));
 
   const unitOptions: Option[] = unitsOfMeasure.map((u) => ({
     value: u.id,
-    label: u.name,
+    label: u.Name,
   }));
 
   // Create a product lookup for quick access to sale price

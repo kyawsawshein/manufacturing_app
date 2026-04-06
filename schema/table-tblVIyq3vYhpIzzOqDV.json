@@ -1,12 +1,12 @@
 {
   "id": "tblVIyq3vYhpIzzOqDV",
-  "name": "Warehouse",
+  "Name": "Warehouse",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Warehouse\"",
   "fields": [
     {
       "id": "fldm7ccvJu62oMe2Q5d",
-      "name": "Name",
+      "Name": "Name",
       "dbFieldName": "Name",
       "type": "singleLineText",
       "description": null,
@@ -18,7 +18,7 @@
     },
     {
       "id": "fld2d2ToRLlRbAyac4S",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -34,7 +34,7 @@
     },
     {
       "id": "fldKfU4qyaEZOtqOhNB",
-      "name": "Company",
+      "Name": "Company",
       "dbFieldName": "Company",
       "type": "singleLineText",
       "description": null,
@@ -46,7 +46,7 @@
     },
     {
       "id": "fld77njGMtqQ0z2N4Ya",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,

@@ -1,12 +1,12 @@
 {
   "id": "tblypkdG2CfrjsCglAY",
-  "name": "Units of Measure",
+  "Name": "Units of Measure",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Units_of_Measure\"",
   "fields": [
     {
       "id": "fldQgi658pGe3LrAvp5",
-      "name": "Type",
+      "Name": "Type",
       "dbFieldName": "Type",
       "type": "singleSelect",
       "description": null,
@@ -26,7 +26,7 @@
     },
     {
       "id": "fldbcNQTVhVXRsZ0GUa",
-      "name": "Ratio",
+      "Name": "Ratio",
       "dbFieldName": "Ratio",
       "type": "number",
       "description": null,
@@ -43,7 +43,7 @@
     },
     {
       "id": "fldIonumpLjA7mXCh25",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "singleLineText",
       "description": null,
@@ -55,7 +55,7 @@
     },
     {
       "id": "fldEtk65rkLweL3bzO3",
-      "name": "UOM",
+      "Name": "UOM",
       "dbFieldName": "UOM",
       "type": "singleLineText",
       "description": null,
@@ -67,7 +67,7 @@
     },
     {
       "id": "fldFAx4mx1dgfa0HAK0",
-      "name": "Name",
+      "Name": "Name",
       "dbFieldName": "Name",
       "type": "singleLineText",
       "description": null,

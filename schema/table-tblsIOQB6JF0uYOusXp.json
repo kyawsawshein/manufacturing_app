@@ -1,12 +1,12 @@
 {
   "id": "tblsIOQB6JF0uYOusXp",
-  "name": "Stock Valuation",
+  "Name": "Stock Valuation",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Stock_Valuation\"",
   "fields": [
     {
       "id": "fldATaBWUlboqKX7eka",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -20,7 +20,7 @@
     },
     {
       "id": "fldeoHDpNQ4zCvo8dKx",
-      "name": "Type",
+      "Name": "Type",
       "dbFieldName": "Type",
       "type": "singleSelect",
       "description": null,
@@ -35,7 +35,7 @@
     },
     {
       "id": "fldPMuSn4YNUt1V0OzU",
-      "name": "Create date",
+      "Name": "Create date",
       "dbFieldName": "Date",
       "type": "createdTime",
       "description": null,
@@ -54,7 +54,7 @@
     },
     {
       "id": "fldyXSiC48oRPAOBJSt",
-      "name": "Remaining Qty",
+      "Name": "Remaining Qty",
       "dbFieldName": "Remaining_Qty",
       "type": "number",
       "description": null,
@@ -71,7 +71,7 @@
     },
     {
       "id": "fldk0YJ8DqVEkrwon6D",
-      "name": "Total Cost",
+      "Name": "Total Cost",
       "dbFieldName": "Total_Cost",
       "type": "formula",
       "description": null,
@@ -90,7 +90,7 @@
     },
     {
       "id": "fld27wFC7bSuML8BjX4",
-      "name": "Stock Move",
+      "Name": "Stock Move",
       "dbFieldName": "Stock_Move1774324862436",
       "type": "link",
       "description": null,
@@ -110,7 +110,7 @@
     },
     {
       "id": "fld6LWw0oSFKuTxXCzE",
-      "name": "Product",
+      "Name": "Product",
       "dbFieldName": "Product",
       "type": "link",
       "description": null,
@@ -133,7 +133,7 @@
     },
     {
       "id": "fldwmEYDjocu6lAHoLS",
-      "name": "Unit Cost",
+      "Name": "Unit Cost",
       "dbFieldName": "Unit_Cost",
       "type": "number",
       "description": null,
@@ -150,7 +150,7 @@
     },
     {
       "id": "fldIIRinsY0Mg5QhSVy",
-      "name": "Quantity",
+      "Name": "Quantity",
       "dbFieldName": "Quantity",
       "type": "number",
       "description": null,

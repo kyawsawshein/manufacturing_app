@@ -1,5 +1,5 @@
 {
-  "name": "MO Creation App",
+  "Name": "MO Creation App",
   "description": "Manufacturing Order creation form with cost preview",
   "logs": [
     "Created MO creation form with type selection (Production/Cutting), product dropdown, quantity input, conditional BOM selection, scheduling fields, and real-time cost preview"

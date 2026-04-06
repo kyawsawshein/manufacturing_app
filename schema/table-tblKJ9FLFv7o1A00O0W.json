@@ -1,12 +1,12 @@
 {
   "id": "tblKJ9FLFv7o1A00O0W",
-  "name": "Production Cost Sheet",
+  "Name": "Production Cost Sheet",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Production_Cost_Sheet\"",
   "fields": [
     {
       "id": "fldLCi6kficp9PaCbqr",
-      "name": "Approved By",
+      "Name": "Approved By",
       "dbFieldName": "Approved_By",
       "type": "user",
       "description": null,
@@ -20,7 +20,7 @@
     },
     {
       "id": "fldTmBvMIawmzD1K5Pe",
-      "name": "Variance",
+      "Name": "Variance",
       "dbFieldName": "Variance",
       "type": "formula",
       "description": null,
@@ -39,7 +39,7 @@
     },
     {
       "id": "fldRJv3CV4d2HqOvx7p",
-      "name": "MO",
+      "Name": "MO",
       "dbFieldName": "MO",
       "type": "link",
       "description": null,
@@ -60,7 +60,7 @@
     },
     {
       "id": "fldjLUtEqA3g8wsCxM6",
-      "name": "Total Cost",
+      "Name": "Total Cost",
       "dbFieldName": "Total_Cost",
       "type": "formula",
       "description": null,
@@ -79,7 +79,7 @@
     },
     {
       "id": "fldlJhTOJwvphqZtKrJ",
-      "name": "Labor Cost",
+      "Name": "Labor Cost",
       "dbFieldName": "Labor_Cost",
       "type": "number",
       "description": null,
@@ -96,7 +96,7 @@
     },
     {
       "id": "fldOjbu26y2TpTtF3fF",
-      "name": "Overhead Cost",
+      "Name": "Overhead Cost",
       "dbFieldName": "Overhead_Cost",
       "type": "number",
       "description": null,
@@ -113,7 +113,7 @@
     },
     {
       "id": "fldHJWkE763rynzfdJF",
-      "name": "Subcontract Cost",
+      "Name": "Subcontract Cost",
       "dbFieldName": "Subcontract_Cost",
       "type": "number",
       "description": null,
@@ -130,7 +130,7 @@
     },
     {
       "id": "fldWlMjr5YAHo5ijVBS",
-      "name": "Tooling/Scrap Cost",
+      "Name": "Tooling/Scrap Cost",
       "dbFieldName": "Tooling_Scrap_Cost",
       "type": "number",
       "description": null,
@@ -147,7 +147,7 @@
     },
     {
       "id": "fldU0FI4Zsr3ZJj9Fl5",
-      "name": "Standard Cost",
+      "Name": "Standard Cost",
       "dbFieldName": "Standard_Cost",
       "type": "number",
       "description": null,
@@ -164,7 +164,7 @@
     },
     {
       "id": "fld6NBKY02LKMSeqJnP",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -180,7 +180,7 @@
     },
     {
       "id": "fldY4viipbVmoY6cIid",
-      "name": "Created Date",
+      "Name": "Created Date",
       "dbFieldName": "Created_Date",
       "type": "date",
       "description": null,
@@ -198,7 +198,7 @@
     },
     {
       "id": "fldKuJRSJvjSIf8uuYW",
-      "name": "Variance %",
+      "Name": "Variance %",
       "dbFieldName": "Variance_percent",
       "type": "formula",
       "description": null,
@@ -217,7 +217,7 @@
     },
     {
       "id": "fldLiJAKg1mwCPueAD5",
-      "name": "Cost Sheet",
+      "Name": "Cost Sheet",
       "dbFieldName": "Cost_Sheet",
       "type": "autoNumber",
       "description": null,
@@ -231,7 +231,7 @@
     },
     {
       "id": "fldEMI5QFiNJXANawK3",
-      "name": "Material Cost",
+      "Name": "Material Cost",
       "dbFieldName": "Material",
       "type": "number",
       "description": null,
@@ -248,7 +248,7 @@
     },
     {
       "id": "fldErGJOQMXooNQmogH",
-      "name": "Product",
+      "Name": "Product",
       "dbFieldName": "Product",
       "type": "link",
       "description": null,
@@ -271,7 +271,7 @@
     },
     {
       "id": "fldGDbAGXcaIrXdJNNH",
-      "name": "Operation",
+      "Name": "Operation",
       "dbFieldName": "Operation",
       "type": "link",
       "description": null,

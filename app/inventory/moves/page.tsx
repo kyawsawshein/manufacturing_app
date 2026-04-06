@@ -10,7 +10,7 @@ import { getStockMoves } from "@/app/actions";
 
 interface StockMove {
   id: string;
-  name: string;
+  Name: string;
   date: string;
   status: string;
   batchNumber: string;
@@ -54,7 +54,7 @@ export default function StockMovesPage() {
   }, []);
 
   const columns: Column<StockMove>[] = [
-    { key: "name", label: "Reference" },
+    { key: "Name", label: "Reference" },
     {
       key: "date",
       label: "Date",
@@ -113,7 +113,7 @@ export default function StockMovesPage() {
         <DataTable
           data={moves}
           columns={columns}
-          searchKey="name"
+          searchKey="Name"
           searchPlaceholder="Search stock moves..."
           onAdd={handleAdd}
           addLabel="Create Stock Move"

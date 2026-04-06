@@ -1,12 +1,12 @@
 {
   "id": "tblkfp9kDtrRCoMNlK2",
-  "name": "RBEX Packing List",
+  "Name": "RBEX Packing List",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"RBEX_Packing_List\"",
   "fields": [
     {
       "id": "fldDOS19RUuC38T7BUO",
-      "name": "Label",
+      "Name": "Label",
       "dbFieldName": "Label",
       "type": "autoNumber",
       "description": null,
@@ -20,7 +20,7 @@
     },
     {
       "id": "fldYcQiGCHHY9cgypb4",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -36,7 +36,7 @@
     },
     {
       "id": "fldrKSnJU7g9YrUQHyg",
-      "name": "Total (Cartons)",
+      "Name": "Total (Cartons)",
       "dbFieldName": "Total_Cartons",
       "type": "singleLineText",
       "description": null,
@@ -48,7 +48,7 @@
     },
     {
       "id": "fldiKXGt1FqizbboLZf",
-      "name": "Net Weight (Kg)",
+      "Name": "Net Weight (Kg)",
       "dbFieldName": "Net_Weight_Kg",
       "type": "number",
       "description": null,
@@ -65,7 +65,7 @@
     },
     {
       "id": "fldG6KXxEhndlHWo090",
-      "name": "Gross Weight (Kg)",
+      "Name": "Gross Weight (Kg)",
       "dbFieldName": "Gross_Weight_Kg",
       "type": "number",
       "description": null,
@@ -82,7 +82,7 @@
     },
     {
       "id": "fldD5LQZPjJIlhbyQBh",
-      "name": "Average Box (Kg)",
+      "Name": "Average Box (Kg)",
       "dbFieldName": "Average_Box_Kg",
       "type": "singleLineText",
       "description": null,
@@ -94,7 +94,7 @@
     },
     {
       "id": "fld8tLXVrWS3IDcJ7bG",
-      "name": "Total",
+      "Name": "Total",
       "dbFieldName": "Total",
       "type": "number",
       "description": null,
@@ -111,7 +111,7 @@
     },
     {
       "id": "fldigEmTdz2iEpz7KOG",
-      "name": "Box No",
+      "Name": "Box No",
       "dbFieldName": "Box_No",
       "type": "link",
       "description": null,
@@ -134,7 +134,7 @@
     },
     {
       "id": "fldx9cpfIHeMWVstQs7",
-      "name": "Description",
+      "Name": "Description",
       "dbFieldName": "Description",
       "type": "singleLineText",
       "description": null,
@@ -146,7 +146,7 @@
     },
     {
       "id": "fldj7oGSxT5ff1M0qcB",
-      "name": "Item Code",
+      "Name": "Item Code",
       "dbFieldName": "Item_Code",
       "type": "singleLineText",
       "description": null,
@@ -158,7 +158,7 @@
     },
     {
       "id": "fldkbxAOxQSpzrM5qaW",
-      "name": "Unit",
+      "Name": "Unit",
       "dbFieldName": "Unit",
       "type": "singleSelect",
       "description": null,

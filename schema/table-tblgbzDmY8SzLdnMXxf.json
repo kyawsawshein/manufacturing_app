@@ -1,12 +1,12 @@
 {
   "id": "tblgbzDmY8SzLdnMXxf",
-  "name": "Equipment",
+  "Name": "Equipment",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Equipment\"",
   "fields": [
     {
       "id": "fldKGgsai0z4LYhat1u",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -22,7 +22,7 @@
     },
     {
       "id": "fldJ0w0Fe7V82xIOIx8",
-      "name": "Number",
+      "Name": "Number",
       "dbFieldName": "Number",
       "type": "number",
       "description": null,
@@ -39,7 +39,7 @@
     },
     {
       "id": "flduofqdaVLklCJlS7G",
-      "name": "Machine",
+      "Name": "Machine",
       "dbFieldName": "Machine",
       "type": "singleLineText",
       "description": null,
@@ -51,7 +51,7 @@
     },
     {
       "id": "fldCXsGUu77D9B0l6Ur",
-      "name": "Name",
+      "Name": "Name",
       "dbFieldName": "Name",
       "type": "formula",
       "description": null,
@@ -66,7 +66,7 @@
     },
     {
       "id": "fldPQqrqgAdCa6v5gR5",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,

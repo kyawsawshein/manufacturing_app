@@ -1,12 +1,12 @@
 {
   "id": "tblAvg4APx0CZ8zH2oY",
-  "name": "Chart of Account",
+  "Name": "Chart of Account",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Chart_of_Account\"",
   "fields": [
     {
       "id": "fldHDHqQEDm1sf7zaH9",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -20,7 +20,7 @@
     },
     {
       "id": "fldnKPYhVxgNA4jf6Mm",
-      "name": "Account Name",
+      "Name": "Account Name",
       "dbFieldName": "Account_Name",
       "type": "singleLineText",
       "description": null,
@@ -32,7 +32,7 @@
     },
     {
       "id": "fldYAAxVQjsYxnRHdId",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -47,7 +47,7 @@
     },
     {
       "id": "fld6oDo7vnFiTUgXb5L",
-      "name": "Code",
+      "Name": "Code",
       "dbFieldName": "Code",
       "type": "singleLineText",
       "description": null,
@@ -59,7 +59,7 @@
     },
     {
       "id": "fldebHLjClsJ80WZzBe",
-      "name": "Description",
+      "Name": "Description",
       "dbFieldName": "Description",
       "type": "formula",
       "description": null,
@@ -74,7 +74,7 @@
     },
     {
       "id": "fldeTZ1K3WJf6vndbFR",
-      "name": "Journal",
+      "Name": "Journal",
       "dbFieldName": "Journal",
       "type": "link",
       "description": null,
@@ -95,7 +95,7 @@
     },
     {
       "id": "fldF3EpyUI1xYqn1biH",
-      "name": "Taxes",
+      "Name": "Taxes",
       "dbFieldName": "Taxes",
       "type": "link",
       "description": null,
@@ -116,7 +116,7 @@
     },
     {
       "id": "fld0t8gS4I4cS5nK6nT",
-      "name": "Type",
+      "Name": "Type",
       "dbFieldName": "Type",
       "type": "link",
       "description": null,

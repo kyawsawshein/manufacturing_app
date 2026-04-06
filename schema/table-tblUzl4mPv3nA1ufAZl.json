@@ -1,12 +1,12 @@
 {
   "id": "tblUzl4mPv3nA1ufAZl",
-  "name": "Cutting",
+  "Name": "Cutting",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Cutting\"",
   "fields": [
     {
       "id": "fldjojsawe8EUMNNe4G",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -20,7 +20,7 @@
     },
     {
       "id": "fldYwmZ5E7g4GRfbJ5k",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -36,7 +36,7 @@
     },
     {
       "id": "flduvQJ1qKTj9M4mwKU",
-      "name": "Product",
+      "Name": "Product",
       "dbFieldName": "Product",
       "type": "link",
       "description": null,
@@ -59,7 +59,7 @@
     },
     {
       "id": "fldyLRHZp6ERHhsGvGI",
-      "name": "MO  (Manufacturing Plan)",
+      "Name": "MO  (Manufacturing Plan)",
       "dbFieldName": "MO_Manufacturing_Plan",
       "type": "link",
       "description": null,
@@ -80,7 +80,7 @@
     },
     {
       "id": "fld5dbLrigCp2vvil1M",
-      "name": "Cutting Line",
+      "Name": "Cutting Line",
       "dbFieldName": "Cutting_Line",
       "type": "link",
       "description": null,
@@ -100,7 +100,7 @@
     },
     {
       "id": "fldXwnmi4SZAqykBru5",
-      "name": "Name",
+      "Name": "Name",
       "dbFieldName": "Name",
       "type": "formula",
       "description": null,
@@ -115,7 +115,7 @@
     },
     {
       "id": "fld4uDgApOPDAjEXW52",
-      "name": "Quntity",
+      "Name": "Quntity",
       "dbFieldName": "Quntity",
       "type": "number",
       "description": null,
@@ -132,7 +132,7 @@
     },
     {
       "id": "fldvdbjgKUfvIjjCnsR",
-      "name": "Reference",
+      "Name": "Reference",
       "dbFieldName": "Reference",
       "type": "link",
       "description": null,

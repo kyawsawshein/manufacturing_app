@@ -34,7 +34,7 @@ import {
 interface Department {
   id: string;
   code: string;
-  name: string;
+  Name: string;
   location: string;
   description: string;
   status: string;
@@ -51,7 +51,7 @@ export default function DepartmentsPage() {
 
   const [formData, setFormData] = useState({
     code: "",
-    name: "",
+    Name: "",
     location: "",
     description: "",
     status: "Active",
@@ -78,7 +78,7 @@ export default function DepartmentsPage() {
 
   const columns: Column<Department>[] = [
     { key: "code", label: "Code" },
-    { key: "name", label: "Name" },
+    { key: "Name", label: "Name" },
     { key: "location", label: "Location" },
     { key: "manager", label: "Manager" },
     {
@@ -92,7 +92,7 @@ export default function DepartmentsPage() {
     setEditingDepartment(null);
     setFormData({
       code: "",
-      name: "",
+      Name: "",
       location: "",
       description: "",
       status: "Active",
@@ -104,7 +104,7 @@ export default function DepartmentsPage() {
     setEditingDepartment(department);
     setFormData({
       code: department.code || "",
-      name: department.name || "",
+      Name: department.Name || "",
       location: department.location || "",
       description: department.description || "",
       status: department.status || "Active",
@@ -113,7 +113,7 @@ export default function DepartmentsPage() {
   };
 
   const handleDelete = (department: Department) => {
-    if (confirm(`Are you sure you want to delete ${department.name}?`)) {
+    if (confirm(`Are you sure you want to delete ${department.Name}?`)) {
       startTransition(async () => {
         try {
           await deleteDepartment(department.id);
@@ -189,7 +189,7 @@ export default function DepartmentsPage() {
         <DataTable
           data={departments}
           columns={columns}
-          searchKey="name"
+          searchKey="Name"
           searchPlaceholder="Search departments..."
           onAdd={handleAdd}
           onEdit={handleEdit}
@@ -217,14 +217,14 @@ export default function DepartmentsPage() {
                 />
               </div>
               <div className="grid gap-2">
-                <Label htmlFor="name">Name</Label>
+                <Label htmlFor="Name">Name</Label>
                 <Input
-                  id="name"
-                  value={formData.name}
+                  id="Name"
+                  value={formData.Name}
                   onChange={(e) =>
-                    setFormData({ ...formData, name: e.target.value })
+                    setFormData({ ...formData, Name: e.target.value })
                   }
-                  placeholder="Department name"
+                  placeholder="Department Name"
                 />
               </div>
               <div className="grid gap-2">

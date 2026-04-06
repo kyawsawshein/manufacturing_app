@@ -1,12 +1,12 @@
 {
   "id": "tblcfnWU8Vb7dNtJEZo",
-  "name": "Purchase Orders",
+  "Name": "Purchase Orders",
   "description": null,
   "dbTableName": "\"bseTIY0IrZr61kt6u5E\".\"Purchase_Orders\"",
   "fields": [
     {
       "id": "fldn05Btl7SBglM2ssf",
-      "name": "Destination Location",
+      "Name": "Destination Location",
       "dbFieldName": "Destination",
       "type": "link",
       "description": null,
@@ -29,7 +29,7 @@
     },
     {
       "id": "fldyApAYMs5iwwO7AAT",
-      "name": "Currency",
+      "Name": "Currency",
       "dbFieldName": "Currency",
       "type": "link",
       "description": null,
@@ -52,7 +52,7 @@
     },
     {
       "id": "fldjUzQO0h5NVeg0WRw",
-      "name": "Order Date",
+      "Name": "Order Date",
       "dbFieldName": "Order_Date",
       "type": "date",
       "description": null,
@@ -70,7 +70,7 @@
     },
     {
       "id": "fldUbiCzmCzytWp0tql",
-      "name": "Expected Delivery",
+      "Name": "Expected Delivery",
       "dbFieldName": "Expected_Delivery",
       "type": "date",
       "description": null,
@@ -88,7 +88,7 @@
     },
     {
       "id": "fldn8PbkmTGKthr7yi1",
-      "name": "Status",
+      "Name": "Status",
       "dbFieldName": "Status",
       "type": "singleSelect",
       "description": null,
@@ -105,7 +105,7 @@
     },
     {
       "id": "fld2QGf0t8fpm9hKUBh",
-      "name": "Sequence",
+      "Name": "Sequence",
       "dbFieldName": "Sequence",
       "type": "autoNumber",
       "description": null,
@@ -119,7 +119,7 @@
     },
     {
       "id": "fldRw9KDHJ5otLCXq3E",
-      "name": "Payment Term",
+      "Name": "Payment Term",
       "dbFieldName": "Payment_Term",
       "type": "singleSelect",
       "description": null,
@@ -136,7 +136,7 @@
     },
     {
       "id": "fldYGhKcFLTPIoLQwDO",
-      "name": "Company",
+      "Name": "Company",
       "dbFieldName": "Company",
       "type": "link",
       "description": null,
@@ -159,7 +159,7 @@
     },
     {
       "id": "fldfUKPd0nC3vqf9tb1",
-      "name": "ID",
+      "Name": "ID",
       "dbFieldName": "ID",
       "type": "autoNumber",
       "description": null,
@@ -173,7 +173,7 @@
     },
     {
       "id": "fldAVHkTHmSW8YGh3Ch",
-      "name": "Vendor",
+      "Name": "Vendor",
       "dbFieldName": "Vendor",
       "type": "link",
       "description": null,
@@ -194,7 +194,7 @@
     },
     {
       "id": "fldGQQJ5is2QqJ69nE7",
-      "name": "Purchase Order Lines",
+      "Name": "Purchase Order Lines",
       "dbFieldName": "Purchase_Order_Lines",
       "type": "link",
       "description": null,
@@ -214,7 +214,7 @@
     },
     {
       "id": "fldMT5okp0k7AJ5rBZP",
-      "name": "Total Amount",
+      "Name": "Total Amount",
       "dbFieldName": "Total_Amount",
       "type": "rollup",
       "description": null,
@@ -233,7 +233,7 @@
     },
     {
       "id": "fldLQeQovx3iq43GlH3",
-      "name": "Name",
+      "Name": "Name",
       "dbFieldName": "Name",
       "type": "formula",
       "description": null,
