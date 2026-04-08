@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useState, useTransition } from "react";
+import { useRouter } from "next/navigation";
 import { DashboardLayout } from "@/components/dashboard/dashboard-layout";
 import { DataTable, type Column } from "@/components/dashboard/data-table";
 import { StatusBadge } from "@/components/dashboard/status-badge";
-import { MOCreationForm } from "../components/mo-creation-form";
 import {
   Dialog,
   DialogContent,
@@ -35,7 +35,7 @@ import {
   getMORawMaterials,
   calculateMORawMaterialCost,
   getManufacturingOrderWithCosts,
-  exploseBOM,
+  explodeBOM,
 } from "@/app/actions";
 
 interface ManufacturingOrder {
@@ -100,7 +100,6 @@ export default function ManufacturingOrdersPage() {
   const [boms, setBOMs] = useState<BOM[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [isFormDialogOpen, setIsFormDialogOpen] = useState(false);
   const [editingOrder, setEditingOrder] = useState<ManufacturingOrder | null>(null);
   const [selectedOrder, setSelectedOrder] = useState<ManufacturingOrder | null>(null);
   const [showDetailsDialog, setShowDetailsDialog] = useState(false);
@@ -110,6 +109,7 @@ export default function ManufacturingOrdersPage() {
   const [isPending, startTransition] = useTransition();
   const [isExploding, setIsExploding] = useTransition();
   const { toast } = useToast();
+  const router = useRouter();
 
   const [formData, setFormData] = useState({
     date: toISODateString(new Date()),
@@ -171,7 +171,7 @@ export default function ManufacturingOrdersPage() {
 
     startExplosionTransition(async () => {
       try {
-        const items = await exploseBOM(selectedBom.id, order.quantity);
+        const items = await explodeBOM(selectedBom.id, order.quantity);
         setExplosionItems(items);
         setSelectedOrder(order);
         setShowDetailsDialog(true);
@@ -260,7 +260,7 @@ export default function ManufacturingOrdersPage() {
   ];
 
   const handleAdd = () => {
-    setIsFormDialogOpen(true);
+    router.push("/manufacturing/orders/create");
   };
 
   const handleEdit = (order: ManufacturingOrder) => {
@@ -519,7 +519,7 @@ export default function ManufacturingOrdersPage() {
 
         {/* Order Details Dialog with Cost and BOM Explosion */}
         <Dialog open={showDetailsDialog} onOpenChange={setShowDetailsDialog}>
-          <DialogContent className="max-w-2xl">
+          <DialogContent className="max-w-7xl max-h-[90vh] overflow-y-auto">
             <DialogHeader>
               <DialogTitle>
                 {selectedOrder ? `Manufacturing Order - ${selectedOrder.reference}` : "Order Details"}
@@ -672,22 +672,6 @@ export default function ManufacturingOrdersPage() {
                 </TabsContent>
               </Tabs>
             )}
-          </DialogContent>
-        </Dialog>
-
-        <Dialog open={isFormDialogOpen} onOpenChange={setIsFormDialogOpen}>
-          <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
-            <DialogHeader>
-              <DialogTitle>Create Manufacturing Order</DialogTitle>
-            </DialogHeader>
-            <div className="py-4">
-              <MOCreationForm
-                onSuccess={() => {
-                  setIsFormDialogOpen(false);
-                  loadData();
-                }}
-              />
-            </div>
           </DialogContent>
         </Dialog>
       </div>

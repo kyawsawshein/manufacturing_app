@@ -222,7 +222,7 @@ export async function createProduct(data: {
   salePrice: number;
   reorderPoint: number;
 }) {
-  return createRecord("PRODUCT", {
+  return createRecord(PRODUCT, {
     'Label': data.sku,
     'name': data.Name,
     'default_code': data.productCode,
@@ -747,7 +747,7 @@ export async function getBOMsByProduct(productId: string) {
   const { rows } = await sqlQuery(BASE_ID, `
     SELECT "__id", "BOM" as "Name", "Version" as "version", "Status" as "status", "Total_Material_Cost" as "total_cost"
     FROM "${BASE_ID}"."BOM"
-    WHERE "__fk_fldcKWcxXFLKHBkqJxT" = '${productId}' OR "Product" LIKE '%${productId}%'
+    WHERE "__fk_fldcKWcxXFLKHBkqJxT" = '${productId}'
     ORDER BY "Version" DESC
     LIMIT 100
   `);
@@ -777,7 +777,7 @@ export async function calculateBOMTotalCost(bomId: string): Promise<number> {
 /**
  * Explode BOM into all raw materials (flattened view)
  */
-export async function exploseBOM(bomId: string, quantity: number = 1, level: number = 0, visitedBOMs: Set<string> = new Set()): Promise<BOMLineItem[]> {
+export async function explodeBOM(bomId: string, quantity: number = 1, level: number = 0, visitedBOMs: Set<string> = new Set()): Promise<BOMLineItem[]> {
   // Prevent circular references
   if (visitedBOMs.has(bomId) || level > 5) {
     return [];
@@ -800,13 +800,13 @@ export async function exploseBOM(bomId: string, quantity: number = 1, level: num
     LIMIT 500
   `);
 
-  const explosedItems: BOMLineItem[] = [];
+  const explodedItems: BOMLineItem[] = [];
 
   for (const row of rows) {
     const qtyForThisLevel = Number(row.qty_per_unit || 0) * quantity;
     const unitCost = Number(row.unit_cost || 0);
 
-    explosedItems.push({
+    explodedItems.push({
       id: row.line_id as string,
       Name: row.line_Name as string,
       productId: row.product_id as string,
@@ -819,7 +819,7 @@ export async function exploseBOM(bomId: string, quantity: number = 1, level: num
     });
   }
 
-  return explosedItems;
+  return explodedItems;
 }
 
 /**
@@ -828,7 +828,7 @@ export async function exploseBOM(bomId: string, quantity: number = 1, level: num
 export async function createMORawMaterialsFromBOM(moId: string, bomId: string, moQuantity: number) {
   try {
     // Get exploded BOM items
-    const explosedItems = await exploseBOM(bomId, moQuantity);
+    const explodedItems = await explodeBOM(bomId, moQuantity);
 
     // Get BOM lines to link them
     const { rows: bomLineRows } = await sqlQuery(BASE_ID, `
@@ -839,7 +839,7 @@ export async function createMORawMaterialsFromBOM(moId: string, bomId: string, m
 
     // Create MO Raw Material records for each item
     const createdRecords = [];
-    for (const item of explosedItems) {
+    for (const item of explodedItems) {
       // Find matching BOM line
       const matchingBOMLine = bomLineRows.find(
         r => safeParseJson(r.product_json)?.id === item.productId

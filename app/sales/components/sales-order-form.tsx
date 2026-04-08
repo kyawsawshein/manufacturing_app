@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { useRouter } from "next/navigation";
 import { Plus, Trash2, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -26,7 +27,6 @@ interface SalesOrderFormProps {
   locations: Location[];
   products: Product[];
   unitsOfMeasure: UnitOfMeasure[];
-  onSuccess?: () => void;
 }
 
 interface OrderLine {
@@ -52,8 +52,8 @@ export function SalesOrderForm({
   locations,
   products,
   unitsOfMeasure,
-  onSuccess,
 }: SalesOrderFormProps) {
+  const router = useRouter();
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = React.useState(false);
 
@@ -235,7 +235,7 @@ export function SalesOrderForm({
           description: `Sales Order ${result.soReference} created successfully!`,
         });
         resetForm();
-        onSuccess?.();
+        router.push("/sales/orders");
       } else {
         toast({
           title: "Error",

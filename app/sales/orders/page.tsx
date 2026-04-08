@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useState, useTransition } from "react";
+import { useRouter } from "next/navigation";
 import { DashboardLayout } from "@/components/dashboard/dashboard-layout";
 import { DataTable, type Column } from "@/components/dashboard/data-table";
 import { StatusBadge } from "@/components/dashboard/status-badge";
-import { SalesOrderForm } from "../components/sales-order-form";
 import {
   Dialog,
   DialogContent,
@@ -78,17 +78,10 @@ export default function SalesOrdersPage() {
   const [customers, setCustomers] = useState<Partner[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [isFormDialogOpen, setIsFormDialogOpen] = useState(false);
   const [editingOrder, setEditingOrder] = useState<SalesOrder | null>(null);
   const [isPending, startTransition] = useTransition();
   const { toast } = useToast();
-
-  // Form data for the full SalesOrderForm
-  const [formPartners, setFormPartners] = useState<Partner[]>([]);
-  const [formCustomerPOs, setFormCustomerPOs] = useState<any[]>([]);
-  const [formLocations, setFormLocations] = useState<any[]>([]);
-  const [formProducts, setFormProducts] = useState<any[]>([]);
-  const [formUnitsOfMeasure, setFormUnitsOfMeasure] = useState<any[]>([]);
+  const router = useRouter();
 
   const [formData, setFormData] = useState({
     orderDate: toISODateString(new Date()),
@@ -146,32 +139,8 @@ export default function SalesOrdersPage() {
     },
   ];
 
-  const loadFormData = async () => {
-    try {
-      const [partners, customerPOs, locations, products, unitsOfMeasure] = await Promise.all([
-        getPartners(),
-        getCustomerPO(),
-        getLocations(),
-        getProducts(),
-        getUnitsOfMeasure(),
-      ]);
-      setFormPartners(partners);
-      setFormCustomerPOs(customerPOs);
-      setFormLocations(locations);
-      setFormProducts(products);
-      setFormUnitsOfMeasure(unitsOfMeasure);
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "Failed to load form data",
-        variant: "destructive",
-      });
-    }
-  };
-
-  const handleAdd = async () => {
-    await loadFormData();
-    setIsFormDialogOpen(true);
+  const handleAdd = () => {
+    router.push("/sales/orders/create");
   };
 
   const handleEdit = (order: SalesOrder) => {
@@ -358,25 +327,6 @@ export default function SalesOrdersPage() {
                 {editingOrder ? "Update" : "Create"}
               </Button>
             </DialogFooter>
-          </DialogContent>
-        </Dialog>
-
-        {/* Sales Order Form Dialog */}
-        <Dialog open={isFormDialogOpen} onOpenChange={setIsFormDialogOpen}>
-          <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
-            <DialogHeader>
-              <DialogTitle>Create Sales Order</DialogTitle>
-            </DialogHeader>
-            <div className="py-4">
-              <SalesOrderForm
-                partners={formPartners}
-                customerPOs={formCustomerPOs}
-                locations={formLocations}
-                products={formProducts}
-                unitsOfMeasure={formUnitsOfMeasure}
-                onSuccess={() => setIsFormDialogOpen(false)}
-              />
-            </div>
           </DialogContent>
         </Dialog>
       </div>

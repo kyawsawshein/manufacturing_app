@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo, useCallback } from "react";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -39,7 +40,6 @@ interface PurchaseOrderFormProps {
   vendors: Vendor[];
   locations: Location[];
   products: Product[];
-  onSuccess?: () => void;
 }
 
 function formatCurrency(value: number): string {
@@ -53,9 +53,9 @@ export function PurchaseOrderForm({
   vendors,
   locations,
   products,
-  onSuccess,
 }: PurchaseOrderFormProps) {
   const { toast } = useToast();
+  const router = useRouter();
   // Header fields
   const [vendorId, setVendorId] = useState<string>("");
   const [orderDate, setOrderDate] = useState<string>(
@@ -180,7 +180,7 @@ export function PurchaseOrderForm({
       setNewProductId("");
       setNewQuantity("");
       setNewUnitPrice("");
-      onSuccess?.(); // Notify parent of success
+      router.push("/purchase/orders"); // Navigate back to orders list
     } else {
       toast({
         title: "Error",

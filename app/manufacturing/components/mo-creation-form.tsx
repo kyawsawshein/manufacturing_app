@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useTransition } from "react";
+import { useRouter } from "next/navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -27,12 +28,11 @@ import {
 
 type MOType = "Production" | "Cutting";
 
-interface MOCreationFormProps {
-  onSuccess?: () => void;
-}
+interface MOCreationFormProps {}
 
-export function MOCreationForm({ onSuccess }: MOCreationFormProps) {
+export function MOCreationForm({}: MOCreationFormProps) {
   const { toast } = useToast();
+  const router = useRouter();
   const [isPending, startTransition] = useTransition();
 
   // Form state
@@ -212,7 +212,7 @@ export function MOCreationForm({ onSuccess }: MOCreationFormProps) {
         setReference("");
         setCostPreview(null);
 
-        onSuccess?.();
+        router.push("/manufacturing/orders");
       } catch (error) {
         console.error("Failed to create MO:", error);
         toast({

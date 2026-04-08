@@ -301,7 +301,7 @@ export default function BOMPage() {
         />
 
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-          <DialogContent className="max-w-4xl">
+          <DialogContent className="max-w-7xl">
             <DialogHeader>
               <DialogTitle>
                 {editingBOM ? "Edit BOM" : "Create BOM"}
@@ -387,7 +387,7 @@ export default function BOMPage() {
 
         {/* BOM Creation Form Dialog */}
         <Dialog open={isFormDialogOpen} onOpenChange={setIsFormDialogOpen}>
-          <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+          <DialogContent className="max-w-7xl max-h-[90vh] overflow-y-auto">
             <DialogHeader>
               <DialogTitle>Create BOM</DialogTitle>
             </DialogHeader>
@@ -399,7 +399,7 @@ export default function BOMPage() {
 
         {/* BOM Details Dialog */}
         <Dialog open={showDetailsDialog} onOpenChange={setShowDetailsDialog}>
-          <DialogContent className="max-w-2xl">
+          <DialogContent className="max-w-7xl max-h-[90vh] overflow-y-auto">
             <DialogHeader>
               <DialogTitle>
                 {selectedBOM ? `BOM - ${selectedBOM.Name}` : "BOM Details"}
