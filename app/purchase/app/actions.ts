@@ -66,10 +66,10 @@ export async function getVendors(): Promise<Vendor[]> {
   // Note: Partners table has "Name" as the dbFieldName for "Name" field (typo in schema)
   const { rows } = await sqlQuery(
     BASE_ID,
-    `SELECT "__id", "Name", "Email", "Phone" 
-     FROM "${BASE_ID}"."Partners" 
+    `SELECT "__id", "name" AS "Name",  "email" AS "Email", "phone" AS "Phone"
+     FROM "${BASE_ID}"."Partners"
      WHERE "Type" = 'Vendor'
-     ORDER BY "Name" 
+     ORDER BY "name"
      LIMIT 200`
   );
 
