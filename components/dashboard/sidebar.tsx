@@ -22,6 +22,7 @@ import {
   Layers,
   Shield,
   UserCog,
+  Scissors,
 } from "lucide-react";
 import { useState } from "react";
 
@@ -87,6 +88,7 @@ const navItems: NavItem[] = [
     children: [
       { label: "Manufacturing Orders", href: "/manufacturing/orders", icon: Factory },
       { label: "Bill of Materials", href: "/manufacturing/bom", icon: Layers },
+      { label: "Request Cutting", href: "/manufacturing/cutting", icon: Scissors },
     ],
   },
 ];

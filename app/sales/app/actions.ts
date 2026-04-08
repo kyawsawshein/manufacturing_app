@@ -5,8 +5,8 @@ import { sqlQuery, createRecord, updateRecord, deleteRecord, safeParseJson } fro
 const BASE_ID = process.env.BASE_ID || "bseTIY0IrZr61kt6u5E";
 
 // Table IDs
-const SALES_ORDERS_TABLE = "tblcgaHqcge0NObcHGF";
-const SALES_ORDER_LINES_TABLE = "tbl89A4Ps2lwrMui6vC";
+const SALES_ORDERS_TABLE = "tblbHH0u4LuH0Po7IJR";
+const SALES_ORDER_LINES_TABLE = "tblvZe8sZ0CRrb9HdHw";
 
 export interface Partner {
   id: string;
@@ -165,19 +165,19 @@ export async function createSalesOrder(
     // - fld5vmAcv2IhusCGyX5: Status
 
     const soFields: Record<string, unknown> = {
-      fldLQtTSQ23wo4MR4KY: [header.customerId], // Link field - array of record IDs
-      fld4hpPakgQCl9NsKBd: [header.poNoId], // Link field - array of record IDs
-      fldXsIxa7eAgL9VuMXK: header.orderDate,
-      fld5vmAcv2IhusCGyX5: "Draft",
-      fldPElTrU699ziuuAk4: header.isKitOrder,
+      "Customer": [header.customerId], // Link field - array of record IDs
+      "PO_No": [header.poNoId], // Link field - array of record IDs
+      "Order_Date": header.orderDate,
+      "Status": "Draft",
+      // "Is Kit Order": header.isKitOrder,
     };
 
     if (header.deliveryDate) {
-      soFields.fld47ona6fn0lPVXY3t = header.deliveryDate;
+      soFields["Delivery_Date"] = header.deliveryDate;
     }
 
     if (header.sourceLocationId) {
-      soFields.fldwmdi4GZp0fQdzcpq = [header.sourceLocationId];
+      soFields["Source_Location"] = [header.sourceLocationId];
     }
 
     const salesOrder = await createRecord(SALES_ORDERS_TABLE, soFields);
@@ -194,14 +194,14 @@ export async function createSalesOrder(
 
     for (const line of lines) {
       const lineFields: Record<string, unknown> = {
-        fldXgnX2GTFMLmF3JBd: [line.productId], // Product link
-        fldyf6OcNXHcxBHj1Ph: line.qty,
-        fldIFeM8pR0U88HMuIA: line.unitPrice,
-        fldtk9PIQOymWmECGzn: [salesOrderId], // Link to Sales Order
+        "default_code": [line.productId], // Product link
+        "Qty": line.qty,
+        "Unit_Price": line.unitPrice,
+        "Sale_Order": [salesOrderId], // Link to Sales Order
       };
 
       if (line.jobNo) {
-        lineFields.fld2ZhQs5dc98T6Umyt = line.jobNo;
+        lineFields.Job_No = line.jobNo;
       }
 
       await createRecord(SALES_ORDER_LINES_TABLE, lineFields);

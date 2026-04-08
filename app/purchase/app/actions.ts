@@ -2,11 +2,11 @@
 
 import { sqlQuery, createRecord, createRecords, safeParseJson } from "@/lib/teable";
 
-const BASE_ID = process.env.BASE_ID || "bseTIY0IrZr61kt6u5E";
+const BASE_ID = process.env.BASE_ID || "bsevp7nvwmXvxF5HKx4";
 
 // Table IDs
-const PURCHASE_ORDERS_TABLE = "tblcfnWU8Vb7dNtJEZo";
-const PURCHASE_ORDER_LINES_TABLE = "tbluZE3J00gmOtjq719";
+const PURCHASE_ORDERS_TABLE = "tbl4jLMZSZNyBfexxmK";
+const PURCHASE_ORDER_LINES_TABLE = "tblGo3vGQ2Zr7aVPmQK";
 
 // Field IDs for Purchase Orders
 const PO_FIELDS = {
@@ -102,15 +102,15 @@ export async function getProducts(): Promise<Product[]> {
   // Get products - UoM is a computed lookup field so we cannot query it via SQL
   const { rows } = await sqlQuery(
     BASE_ID,
-    `SELECT "__id", "SKU", "name", "Cost"
+    `SELECT "__id", "Label", "name", "standard_price" AS "Cost"
      FROM "${BASE_ID}"."Products"
-     ORDER BY "SKU" 
+     ORDER BY "Label" 
      LIMIT 500`
   );
 
   return rows.map((row) => ({
     id: row.__id as string,
-    sku: (row.SKU as string) || "",
+    sku: (row.Label as string) || "",
     Name: (row.Name as string) || "UnNamed Product",
     cost: (row.Cost as number) || 0,
     uom: null, // UoM is a lookup field and cannot be queried via SQL

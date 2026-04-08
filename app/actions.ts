@@ -5,6 +5,10 @@ import { sqlQuery, createRecord, updateRecord, deleteRecord, safeParseJson } fro
 const BASE_ID = process.env.BASE_ID || "bsez0Y8svP1AV6SJyPa";
 const PRODUCT = "tbl4j50Luypz4duYYuu";
 
+// PURCHASE
+const PURCHASE_ORDERS_TABLE = "tbl4jLMZSZNyBfexxmK";
+const PURCHASE_ORDER_LINES_TABLE = "tblGo3vGQ2Zr7aVPmQK";
+
 // ============================================================================
 // Dashboard Stats
 // ============================================================================
@@ -343,11 +347,11 @@ export async function createPurchaseOrder(data: {
   status: string;
   vendorId?: string;
 }) {
-  return createRecord("tblcfnWU8Vb7dNtJEZo", {
-    fldjUzQO0h5NVeg0WRw: data.orderDate,
-    fldUbiCzmCzytWp0tql: data.expectedDelivery,
-    fldn8PbkmTGKthr7yi1: data.status,
-    ...(data.vendorId ? { fldAVHkTHmSW8YGh3Ch: [data.vendorId] } : {}),
+  return createRecord(PURCHASE_ORDERS_TABLE, {
+    "Order_Date": data.orderDate,
+    "Expected_Delivery": data.expectedDelivery,
+    "Status": data.status,
+    ...(data.vendorId ? { "Vendor": [data.vendorId] } : {}),
   });
 }
 
@@ -357,14 +361,14 @@ export async function updatePurchaseOrder(id: string, data: {
   status?: string;
 }) {
   const fields: Record<string, unknown> = {};
-  if (data.orderDate !== undefined) fields.fldjUzQO0h5NVeg0WRw = data.orderDate;
-  if (data.expectedDelivery !== undefined) fields.fldUbiCzmCzytWp0tql = data.expectedDelivery;
-  if (data.status !== undefined) fields.fldn8PbkmTGKthr7yi1 = data.status;
-  return updateRecord("tblcfnWU8Vb7dNtJEZo", id, fields);
+  if (data.orderDate !== undefined) fields["Order_Date"] = data.orderDate;
+  if (data.expectedDelivery !== undefined) fields["Expected_Delivery"] = data.expectedDelivery;
+  if (data.status !== undefined) fields["Status"] = data.status;
+  return updateRecord(PURCHASE_ORDERS_TABLE, id, fields);
 }
 
 export async function deletePurchaseOrder(id: string) {
-  return deleteRecord("tblcfnWU8Vb7dNtJEZo", id);
+  return deleteRecord(PURCHASE_ORDERS_TABLE, id);
 }
 
 // ============================================================================

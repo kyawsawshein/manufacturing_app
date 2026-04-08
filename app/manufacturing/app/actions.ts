@@ -1,6 +1,6 @@
 "use server";
 
-import { sqlQuery, createRecord, updateRecord, deleteRecord, safeParseJson } from "@/lib/teable";
+import { sqlQuery, createRecord, createRecords, updateRecord, deleteRecord, safeParseJson } from "@/lib/teable";
 
 const BASE_ID = process.env.BASE_ID || "${BASE_ID}";
 const BOM_LINE = process.env.BOM_LINE;
@@ -379,7 +379,7 @@ export async function getBOMWithLines(bomId: string) {
       bl."Unit_Cost" as "unit_cost",
       bl."Total_Cost" as "line_total_cost"
     FROM "${BASE_ID}"."BOM" b
-    LEFT JOIN "${BASE_ID}"."BOM_Lines" bl ON b."__id" = bl."__fk_fldAxfVf6D1pCuq0oDh"
+    LEFT JOIN "${BASE_ID}"."BOM_Lines" bl ON b."__id" = bl."BOM"
     WHERE b."__id" = '${bomId}'
     ORDER BY bl."Quantity" DESC
   `);
@@ -521,4 +521,75 @@ export async function checkBOMCircularReference(bomId: string, parentBomId?: str
 
   const hasCircular = await traverse(bomId);
   return { hasCircular, path };
+}
+
+// ============================================================================
+// Cutting Requests
+// ============================================================================
+
+export async function createCutting(data: {
+  date: string;
+  reference: string;
+}) {
+  return createRecord("${BASE_ID}.Request_Cutting", {
+    'Date': data.date,
+    'Reference': data.reference,
+  });
+}
+
+export interface CuttingTubLine {
+  productId: string;
+  quantity: number;
+  unitId: string;
+  notes?: string;
+}
+
+export interface CuttingHookLoopLine {
+  itemId: string;
+  length: number;
+  quantity: number;
+  notes?: string;
+}
+
+export async function createCuttingRequest(data: {
+  Date: string;
+  reference: string;
+  tubLines: CuttingTubLine[];
+  hookLoopLines: CuttingHookLoopLine[];
+}) {
+  // 1. Create MO Header (Type: Cutting)
+  const cut = await createCutting({
+    date: data.Date ? data.Date : new Date().toISOString(),
+    reference: data.reference,
+  });
+
+  // 2. Create Tub Lines (Assuming table: Cutting_Tub_Lines)
+  if (data.tubLines.length > 0) {
+    const tubRecords = data.tubLines.map(line => ({
+      fields: {
+        "MO": [cut.id],
+        "Product": [line.productId],
+        "Quantity": line.quantity,
+        "UoM": [line.unitId],
+        "Notes": line.notes || ""
+      }
+    }));
+    await createRecords("tblCuttingTubLines", tubRecords);
+  }
+
+  // 3. Create Hook & Loop Lines (Assuming table: Cutting_HL_Lines)
+  if (data.hookLoopLines.length > 0) {
+    const hlRecords = data.hookLoopLines.map(line => ({
+      fields: {
+        "MO": [cut.id],
+        "Item": [line.itemId],
+        "Length": line.length,
+        "Quantity": line.quantity,
+        "Notes": line.notes || ""
+      }
+    }));
+    await createRecords("tblCuttingHLLines", hlRecords);
+  }
+
+  return { success: true, moId: cut.id };
 }

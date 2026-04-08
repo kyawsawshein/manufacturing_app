@@ -158,8 +158,11 @@ export async function sqlQuery(
   console.log(`############### Teable API SQL Query:  ${baseId} , ${sql}`);
   return request<ISqlQueryResponse>(`/base/${baseId}/sql-query`, {
     method: 'POST',
-    body: { sql },
-    // body: JSON.stringify({ sql })
+    body: {
+      fieldKeyType: 'dbFieldName',
+      sql: sql
+    },
+    // body: JSON.stringify({ "fieldKeyType": "dbFieldName", "sql": sql })
   });
 }
 
