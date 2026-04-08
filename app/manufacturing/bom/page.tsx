@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useState, useTransition } from "react";
+import { useRouter } from "next/navigation";
 import { DashboardLayout } from "@/components/dashboard/dashboard-layout";
 import { DataTable, type Column } from "@/components/dashboard/data-table";
 import { StatusBadge } from "@/components/dashboard/status-badge";
-import { BOMCreationForm } from "../components/bom-creation-form";
 import {
   Dialog,
   DialogContent,
@@ -28,8 +28,6 @@ import { useToast } from "@/hooks/use-toast";
 
 import {
   getBOMs,
-  createBOM,
-  updateBOM,
   deleteBOM,
   getBOMWithLines,
   calculateBOMTotalCost,
@@ -79,9 +77,6 @@ function toISODateString(date: Date): string {
 export default function BOMPage() {
   const [boms, setBOMs] = useState<BOM[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [isFormDialogOpen, setIsFormDialogOpen] = useState(false);
-  const [editingBOM, setEditingBOM] = useState<BOM | null>(null);
   const [selectedBOM, setSelectedBOM] = useState<BOM | null>(null);
   const [showDetailsDialog, setShowDetailsDialog] = useState(false);
   const [bomLines, setBOMLines] = useState<BOMLine[]>([]);
@@ -89,14 +84,6 @@ export default function BOMPage() {
   const [circularRefCheck, setCircularRefCheck] = useState<{ hasCircular: boolean; path: string[] } | null>(null);
   const [isPending, startTransition] = useTransition();
   const { toast } = useToast();
-
-  const [formData, setFormData] = useState({
-    version: "1.0",
-    quantity: 1,
-    status: "Draft",
-    effectiveDate: toISODateString(new Date()),
-    reference: "",
-  });
 
   const loadData = async () => {
     try {
@@ -161,20 +148,14 @@ export default function BOMPage() {
     },
   ];
 
+  const router = useRouter();
+
   const handleAdd = () => {
-    setIsFormDialogOpen(true);
+    router.push("/manufacturing/bom/create");
   };
 
   const handleEdit = (bom: BOM) => {
-    setEditingBOM(bom);
-    setFormData({
-      version: bom.version || "1.0",
-      quantity: bom.quantity || 1,
-      status: bom.status || "Draft",
-      effectiveDate: bom.effectiveDate ? bom.effectiveDate.split("T")[0] : toISODateString(new Date()),
-      reference: bom.reference || "",
-    });
-    setIsDialogOpen(true);
+    router.push(`/manufacturing/bom/${bom.id}/edit`);
   };
 
   const handleDelete = (bom: BOM) => {
@@ -196,34 +177,6 @@ export default function BOMPage() {
         }
       });
     }
-  };
-
-  const handleSubmit = () => {
-    startTransition(async () => {
-      try {
-        if (editingBOM) {
-          await updateBOM(editingBOM.id, formData);
-          toast({
-            title: "Success",
-            description: "BOM updated successfully",
-          });
-        } else {
-          await createBOM(formData);
-          toast({
-            title: "Success",
-            description: "BOM created successfully",
-          });
-        }
-        await loadData();
-        setIsDialogOpen(false);
-      } catch {
-        toast({
-          title: "Error",
-          description: "Failed to save BOM",
-          variant: "destructive",
-        });
-      }
-    });
   };
 
   if (isLoading) {
@@ -299,103 +252,6 @@ export default function BOMPage() {
           pageSize={15}
           onRowClick={(bom) => loadBOMDetails(bom)}
         />
-
-        <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-          <DialogContent className="max-w-7xl">
-            <DialogHeader>
-              <DialogTitle>
-                {editingBOM ? "Edit BOM" : "Create BOM"}
-              </DialogTitle>
-            </DialogHeader>
-            <div className="grid gap-4 py-4">
-              <div className="grid gap-2">
-                <Label htmlFor="reference">Reference</Label>
-                <Input
-                  id="reference"
-                  value={formData.reference}
-                  onChange={(e) =>
-                    setFormData({ ...formData, reference: e.target.value })
-                  }
-                  placeholder="BOM reference code"
-                />
-              </div>
-              <div className="grid gap-2">
-                <Label htmlFor="version">Version</Label>
-                <Input
-                  id="version"
-                  value={formData.version}
-                  onChange={(e) =>
-                    setFormData({ ...formData, version: e.target.value })
-                  }
-                  placeholder="e.g., 1.0"
-                />
-              </div>
-              <div className="grid gap-2">
-                <Label htmlFor="quantity">Quantity</Label>
-                <Input
-                  id="quantity"
-                  type="number"
-                  min="1"
-                  step="0.01"
-                  value={formData.quantity}
-                  onChange={(e) =>
-                    setFormData({ ...formData, quantity: parseFloat(e.target.value) || 1 })
-                  }
-                />
-              </div>
-              <div className="grid gap-2">
-                <Label htmlFor="effectiveDate">Effective Date</Label>
-                <Input
-                  id="effectiveDate"
-                  type="date"
-                  value={formData.effectiveDate}
-                  onChange={(e) =>
-                    setFormData({ ...formData, effectiveDate: e.target.value })
-                  }
-                />
-              </div>
-              <div className="grid gap-2">
-                <Label htmlFor="status">Status</Label>
-                <Select
-                  value={formData.status}
-                  onValueChange={(value) =>
-                    setFormData({ ...formData, status: value })
-                  }
-                >
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select status" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="Draft">Draft</SelectItem>
-                    <SelectItem value="Active">Active</SelectItem>
-                    <SelectItem value="Obsolete">Obsolete</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-            </div>
-            <DialogFooter>
-              <Button variant="outline" onClick={() => setIsDialogOpen(false)}>
-                Cancel
-              </Button>
-              <Button onClick={handleSubmit} disabled={isPending}>
-                {isPending && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                {editingBOM ? "Update" : "Create"}
-              </Button>
-            </DialogFooter>
-          </DialogContent>
-        </Dialog>
-
-        {/* BOM Creation Form Dialog */}
-        <Dialog open={isFormDialogOpen} onOpenChange={setIsFormDialogOpen}>
-          <DialogContent className="max-w-7xl max-h-[90vh] overflow-y-auto">
-            <DialogHeader>
-              <DialogTitle>Create BOM</DialogTitle>
-            </DialogHeader>
-            <div className="py-4">
-              <BOMCreationForm />
-            </div>
-          </DialogContent>
-        </Dialog>
 
         {/* BOM Details Dialog */}
         <Dialog open={showDetailsDialog} onOpenChange={setShowDetailsDialog}>

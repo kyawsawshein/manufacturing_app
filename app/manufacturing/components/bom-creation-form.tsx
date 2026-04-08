@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useTransition } from "react";
+import { useRouter } from "next/navigation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -30,6 +31,7 @@ function generateId() {
 }
 
 export function BOMCreationForm() {
+  const router = useRouter();
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -204,6 +206,7 @@ export function BOMCreationForm() {
         description: "BOM created successfully!",
       });
       resetForm();
+      router.push("/manufacturing/bom");
     } catch (error) {
       toast({
         title: "Error",
