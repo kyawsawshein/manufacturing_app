@@ -48,9 +48,9 @@ export async function getProducts(): Promise<Product[]> {
     BASE_ID,
     `SELECT 
       "__id",
-      "Name",
+      "name",
       "default_code" as "Product_Code",
-      "Cost",
+      "standard_price" as "Cost",
       "Default_BOM"
     FROM "${BASE_ID}"."Products"
     WHERE "default_code" IS NOT NULL
@@ -62,7 +62,7 @@ export async function getProducts(): Promise<Product[]> {
     const defaultBom = safeParseJson(row.Default_BOM);
     return {
       id: row.__id as string,
-      Name: row.Name as string,
+      Name: row.name as string,
       productCode: (row.Product_Code as string) || "",
       cost: row.Cost as number | null,
       defaultBomId: defaultBom?.id || null,

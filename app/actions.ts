@@ -3,6 +3,7 @@
 import { sqlQuery, createRecord, updateRecord, deleteRecord, safeParseJson } from "@/lib/teable";
 
 const BASE_ID = process.env.BASE_ID || "bsez0Y8svP1AV6SJyPa";
+const PRODUCT = "tbl4j50Luypz4duYYuu";
 
 // ============================================================================
 // Dashboard Stats
@@ -152,7 +153,7 @@ export async function deleteDepartment(id: string) {
 
 export async function getProducts() {
   const { rows } = await sqlQuery(BASE_ID, `
-    SELECT "__id", "default_code" AS SKU, "Name", standard_price AS "Cost", list_price AS "Sale_Price", qty_available AS "Onhand", "barcode"
+    SELECT "__id", "Label" AS "SKU", "name", "default_code", "standard_price" AS "Cost", "list_price" AS "Sale_Price", "qty_available" AS "Onhand", "barcode"
     FROM "${BASE_ID}"."Products"
     ORDER BY "id" ASC
     LIMIT 500
@@ -160,9 +161,9 @@ export async function getProducts() {
   return rows.map(row => ({
     id: row.__id as string,
     sku: row.SKU as string,
-    Name: row.Name as string,
-    productCode: row.SKU as string,
-    barcode: row.Barcode as string,
+    Name: row.name as string,
+    productCode: row.default_code as string,
+    barcode: row.barcode as string,
     cost: Number(row.Cost || 0),
     salePrice: Number(row.Sale_Price || 0),
     onhand: Number(row.Onhand || 0),
@@ -210,14 +211,14 @@ export async function createProduct(data: {
   salePrice: number;
   reorderPoint: number;
 }) {
-  return createRecord("tblSGof3jV6QLz5WkuN", {
-    fldfz6GEHVXAjg98KVL: data.sku,
-    fldrftRxilDx5PsR7uJ: data.Name,
-    fldUUyPSjllgjlOR2tY: data.productCode,
-    fld4nDtlEktYUrI02Ra: data.barcode || "",
-    fld0unz8xlhtFATLrq5: data.cost,
-    fldgftVmi7HkWVqmRHE: data.salePrice,
-    fldQvMIBy9qDU87CM4q: data.reorderPoint,
+  return createRecord("PRODUCT", {
+    'Label': data.sku,
+    'name': data.Name,
+    'default_code': data.productCode,
+    'barcode': data.barcode || "",
+    'standard_price': data.cost,
+    'list_price': data.salePrice,
+    // 'reorder_point': data.reorderPoint,
   });
 }
 
@@ -247,7 +248,7 @@ export async function deleteProduct(id: string) {
 
 export async function getStockOnHand() {
   const { rows } = await sqlQuery(BASE_ID, `
-    SELECT "__id", "Product", "Qty", "Available_Quantity", "Reserved_Quantity", "Status", "Product", "Location"
+    SELECT "__id", "Product", "Available_Quantity", "Reserved_Quantity", "Status", "Product", "Location"
     FROM "${BASE_ID}"."Stock_On_Hand"
     ORDER BY "ID" DESC
     LIMIT 500
@@ -266,8 +267,8 @@ export async function getStockOnHand() {
 
 export async function getStockMoves() {
   const { rows } = await sqlQuery(BASE_ID, `
-    SELECT "__id", "Qty", "Date", "Status", "Batch_Number", "Source_Location", "Destination_Location", "Operation_Type"
-    FROM "${BASE_ID}"."Stock_Movements"
+    SELECT "__id", "Quantity", "Date", "Status", "Source_Location", "Destination_Location", "Operation_Type"
+    FROM "${BASE_ID}"."Stock_Move"
     ORDER BY "Date" DESC
     LIMIT 500
   `);
@@ -303,12 +304,12 @@ export async function getWarehouses() {
   const { rows } = await sqlQuery(BASE_ID, `
     SELECT "__id", "Name", "Company", "Status"
     FROM "${BASE_ID}"."Warehouse"
-    ORDER BY "ID" ASC
+    ORDER BY "Name" ASC
     LIMIT 100
   `);
   return rows.map(row => ({
     id: row.__id as string,
-    Name: row.Label as string,
+    Name: row.Name as string,
     company: row.Company as string,
     status: row.Status as string,
   }));
@@ -320,7 +321,7 @@ export async function getWarehouses() {
 
 export async function getPurchaseOrders() {
   const { rows } = await sqlQuery(BASE_ID, `
-    SELECT "__id", "PO_Reference", "Order_Date", "Expected_Delivery", "Status", "Total_Amount", "Vendor"
+    SELECT "__id", "Order_Date", "Expected_Delivery", "Status", "Total_Amount", "Vendor"
     FROM "${BASE_ID}"."Purchase_Orders"
     ORDER BY "Order_Date" DESC
     LIMIT 500

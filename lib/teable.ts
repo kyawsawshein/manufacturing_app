@@ -254,7 +254,7 @@ export async function createRecords(
   return request<ICreateRecordsResponse>(`/table/${tableId}/record`, {
     method: 'POST',
     body: {
-      fieldKeyType: 'id',
+      fieldKeyType: 'dbFieldName',
       typecast: true,
       records,
     },

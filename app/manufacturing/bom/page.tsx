@@ -301,7 +301,7 @@ export default function BOMPage() {
         />
 
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-          <DialogContent className="sm:max-w-md">
+          <DialogContent className="max-w-4xl">
             <DialogHeader>
               <DialogTitle>
                 {editingBOM ? "Edit BOM" : "Create BOM"}

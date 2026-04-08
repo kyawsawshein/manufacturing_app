@@ -409,7 +409,7 @@ export default function ManufacturingOrdersPage() {
         />
 
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-          <DialogContent className="sm:max-w-md">
+          <DialogContent className="max-w-6xl">
             <DialogHeader>
               <DialogTitle>
                 {editingOrder ? "Edit Manufacturing Order" : "Create Manufacturing Order"}

@@ -17,6 +17,7 @@ export interface Option {
 }
 
 interface SearchableSelectProps {
+  id?: string;
   options: Option[];
   value: string;
   onValueChange: (value: string) => void;
@@ -27,6 +28,7 @@ interface SearchableSelectProps {
 }
 
 export function SearchableSelect({
+  id,
   options,
   value,
   onValueChange,
@@ -52,6 +54,7 @@ export function SearchableSelect({
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <Button
+          id={id}
           variant="outline"
           role="combobox"
           aria-expanded={open}

@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
 import { useToast } from "@/hooks/use-toast";
+import { SearchableSelect } from "@/components/searchable-select";
 import { Loader2, Factory, Scissors, Package, DollarSign, Calendar, FileText } from "lucide-react";
 import type { Product, BOM, CostPreview as CostPreviewType } from "../app/actions";
 import {
@@ -50,6 +51,11 @@ export function MOCreationForm({ onSuccess }: MOCreationFormProps) {
   const [products, setProducts] = useState<Product[]>([]);
   const [boms, setBoms] = useState<BOM[]>([]);
   const [costPreview, setCostPreview] = useState<CostPreviewType | null>(null);
+
+  const productOptions = products.map((product) => ({
+    value: product.id,
+    label: `${product.productCode ? `[${product.productCode}] ` : ""}${product.Name}`,
+  }));
 
   // Loading states
   const [loadingProducts, setLoadingProducts] = useState(true);
@@ -275,23 +281,16 @@ export function MOCreationForm({ onSuccess }: MOCreationFormProps) {
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="space-y-2">
                   <Label htmlFor="product">Product *</Label>
-                  <Select
+                  <SearchableSelect
+                    id="product"
+                    options={productOptions}
                     value={productId}
                     onValueChange={setProductId}
                     disabled={loadingProducts}
-                  >
-                    <SelectTrigger id="product">
-                      <SelectValue placeholder={loadingProducts ? "Loading..." : "Select a product"} />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {products.map((product) => (
-                        <SelectItem key={product.id} value={product.id}>
-                          {product.productCode ? `[${product.productCode}] ` : ""}
-                          {product.Name}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
+                    placeholder={loadingProducts ? "Loading products..." : "Search and select a product"}
+                    searchPlaceholder="Search product..."
+                    className="w-full"
+                  />
                 </div>
 
                 <div className="space-y-2">
