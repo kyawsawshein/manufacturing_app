@@ -102,7 +102,7 @@ export async function getProducts(): Promise<Product[]> {
   // Get products - UoM is a computed lookup field so we cannot query it via SQL
   const { rows } = await sqlQuery(
     BASE_ID,
-    `SELECT "__id", "SKU", "Name", "Cost"
+    `SELECT "__id", "SKU", "name", "Cost"
      FROM "${BASE_ID}"."Products"
      ORDER BY "SKU" 
      LIMIT 500`
