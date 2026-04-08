@@ -8,6 +8,7 @@ import {
   Receipt,
   Factory,
   TrendingUp,
+  PackageCheck,
   DollarSign,
 } from "lucide-react";
 import Link from "next/link";
@@ -34,7 +35,7 @@ export default async function DashboardPage() {
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           <StatCard
             title="Active Employees"
             value={stats.employees}
@@ -55,6 +56,12 @@ export default async function DashboardPage() {
             value={stats.manufacturingOrders}
             subtitle="Manufacturing orders in progress"
             icon="factory"
+          />
+          <StatCard
+            title="Stock Moves"
+            value={stats.stockMoves || 0}
+            subtitle="Total inventory movements"
+            icon="packageCheck"
           />
         </div>
 
@@ -136,7 +143,7 @@ export default async function DashboardPage() {
           </div>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           <Link
             href="/employees"
             className="group rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary/50"
@@ -178,6 +185,21 @@ export default async function DashboardPage() {
               <div>
                 <h3 className="font-semibold text-card-foreground">Manufacturing</h3>
                 <p className="text-sm text-muted-foreground">Manage production orders and BOMs</p>
+              </div>
+            </div>
+          </Link>
+
+          <Link
+            href="/stock_management/app"
+            className="group rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary/50"
+          >
+            <div className="flex items-center gap-4">
+              <div className="rounded-lg bg-primary/10 p-3 group-hover:bg-primary/20 transition-colors">
+                <PackageCheck className="h-6 w-6 text-primary" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-card-foreground">Stock Management</h3>
+                <p className="text-sm text-muted-foreground">Manage receipts and deliveries</p>
               </div>
             </div>
           </Link>

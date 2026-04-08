@@ -9,6 +9,13 @@ const PRODUCT = "tbl4j50Luypz4duYYuu";
 const PURCHASE_ORDERS_TABLE = "tbl4jLMZSZNyBfexxmK";
 const PURCHASE_ORDER_LINES_TABLE = "tblGo3vGQ2Zr7aVPmQK";
 
+// SALES
+const SALES_ORDERS_TABLE = "tblbHH0u4LuH0Po7IJR";
+const SALES_ORDER_LINES_TABLE = "tblvZe8sZ0CRrb9HdHw";
+
+// Partners
+const PARTNERS_TABLE = "tblOAipmI1dGH83Ox4t";
+
 // ============================================================================
 // Dashboard Stats
 // ============================================================================
@@ -399,11 +406,11 @@ export async function createSalesOrder(data: {
   status: string;
   customerId?: string;
 }) {
-  return createRecord("tblcgaHqcge0NObcHGF", {
-    fldXsIxa7eAgL9VuMXK: data.orderDate,
-    fld47ona6fn0lPVXY3t: data.deliveryDate,
-    fld5vmAcv2IhusCGyX5: data.status,
-    ...(data.customerId ? { fldLQtTSQ23wo4MR4KY: [data.customerId] } : {}),
+  return createRecord(SALES_ORDERS_TABLE, {
+    "Order_Date": data.orderDate,
+    "Delivery_Date": data.deliveryDate,
+    "Status": data.status,
+    ...(data.customerId ? { "Customer": [data.customerId] } : {}),
   });
 }
 
@@ -413,14 +420,14 @@ export async function updateSalesOrder(id: string, data: {
   status?: string;
 }) {
   const fields: Record<string, unknown> = {};
-  if (data.orderDate !== undefined) fields.fldXsIxa7eAgL9VuMXK = data.orderDate;
-  if (data.deliveryDate !== undefined) fields.fld47ona6fn0lPVXY3t = data.deliveryDate;
-  if (data.status !== undefined) fields.fld5vmAcv2IhusCGyX5 = data.status;
-  return updateRecord("tblcgaHqcge0NObcHGF", id, fields);
+  if (data.orderDate !== undefined) fields["Order_Date"] = data.orderDate;
+  if (data.deliveryDate !== undefined) fields["Delivery_Date"] = data.deliveryDate;
+  if (data.status !== undefined) fields["Status"] = data.status;
+  return updateRecord(SALES_ORDERS_TABLE, id, fields);
 }
 
 export async function deleteSalesOrder(id: string) {
-  return deleteRecord("tblcgaHqcge0NObcHGF", id);
+  return deleteRecord(SALES_ORDERS_TABLE, id);
 }
 
 // ============================================================================
@@ -626,16 +633,16 @@ export async function createPartner(data: {
   taxId?: string;
   website?: string;
 }) {
-  return createRecord("tblc9QUtlFwS3t1GJwn", {
-    fldupiJvfHt1Ngee3c5: data.Name,
-    fldV8ZXuzPjIF5g4nSw: data.email,
-    fldNwTApxN338Iu7uTh: data.phone,
-    fldzJV0VtBgNqormk5W: data.type,
-    fldVGCgqzwcEzdsk7gI: data.country,
-    fldbgJNVsSWSjCIEE4y: data.paymentTerms,
-    fldAMql7wEQbr3QHgbl: data.creditLimit,
-    fldLFjY8yZe2Zi1BN39: data.taxId || "",
-    fldMypa2FCSUWZr95Wh: data.website || "",
+  return createRecord(PARTNERS_TABLE, {
+    "Name": data.Name,
+    "email": data.email,
+    "phone": data.phone,
+    "Type": data.type,
+    "country": data.country,
+    // "Payment_Terms": data.paymentTerms,
+    // "Credit_Limit": data.creditLimit,
+    "tax_id": data.taxId || "",
+    // "Website": data.website || "",
   });
 }
 
@@ -651,20 +658,20 @@ export async function updatePartner(id: string, data: {
   website?: string;
 }) {
   const fields: Record<string, unknown> = {};
-  if (data.Name !== undefined) fields.fldupiJvfHt1Ngee3c5 = data.Name;
-  if (data.email !== undefined) fields.fldV8ZXuzPjIF5g4nSw = data.email;
-  if (data.phone !== undefined) fields.fldNwTApxN338Iu7uTh = data.phone;
-  if (data.type !== undefined) fields.fldzJV0VtBgNqormk5W = data.type;
-  if (data.country !== undefined) fields.fldVGCgqzwcEzdsk7gI = data.country;
-  if (data.paymentTerms !== undefined) fields.fldbgJNVsSWSjCIEE4y = data.paymentTerms;
-  if (data.creditLimit !== undefined) fields.fldAMql7wEQbr3QHgbl = data.creditLimit;
-  if (data.taxId !== undefined) fields.fldLFjY8yZe2Zi1BN39 = data.taxId;
-  if (data.website !== undefined) fields.fldMypa2FCSUWZr95Wh = data.website;
-  return updateRecord("tblc9QUtlFwS3t1GJwn", id, fields);
+  if (data.Name !== undefined) fields["Name"] = data.Name;
+  if (data.email !== undefined) fields["email"] = data.email;
+  if (data.phone !== undefined) fields["phone"] = data.phone;
+  if (data.type !== undefined) fields["type"] = data.type;
+  if (data.country !== undefined) fields["country"] = data.country;
+  if (data.paymentTerms !== undefined) fields["paymentTerms"] = data.paymentTerms;
+  if (data.creditLimit !== undefined) fields["Credit_Limit"] = data.creditLimit;
+  if (data.taxId !== undefined) fields["tax_id"] = data.taxId;
+  if (data.website !== undefined) fields["Website"] = data.website;
+  return updateRecord(PARTNERS_TABLE, id, fields);
 }
 
 export async function deletePartner(id: string) {
-  return deleteRecord("tblc9QUtlFwS3t1GJwn", id);
+  return deleteRecord(PARTNERS_TABLE, id);
 }
 
 // ============================================================================

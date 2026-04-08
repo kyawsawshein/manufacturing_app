@@ -62,11 +62,11 @@ export async function updateSalesOrder(id: string, data: {
   if (data.orderDate !== undefined) fields.fldXsIxa7eAgL9VuMXK = data.orderDate;
   if (data.deliveryDate !== undefined) fields.fld47ona6fn0lPVXY3t = data.deliveryDate;
   if (data.status !== undefined) fields.fld5vmAcv2IhusCGyX5 = data.status;
-  return updateRecord("tblcgaHqcge0NObcHGF", id, fields);
+  return updateRecord(SALES_ORDERS_TABLE, id, fields);
 }
 
 export async function deleteSalesOrder(id: string) {
-  return deleteRecord("tblcgaHqcge0NObcHGF", id);
+  return deleteRecord(SALES_ORDERS_TABLE, id);
 }
 
 export async function getPartners(): Promise<Partner[]> {

@@ -177,6 +177,7 @@ export async function calculateCostPreview(
   let rawMaterialsCost = 0;
 
   if (bomId) {
+    console.log(`[v0] Calculating cost preview for BOM ID: ${bomId} with quantity: ${quantity}`);
     const bomLines = await getBOMLines(bomId);
     rawMaterialsCost = bomLines.reduce((sum, line) => {
       const lineCost = (line.quantity || 0) * (line.unitCost || 0);

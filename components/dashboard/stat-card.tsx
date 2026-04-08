@@ -6,6 +6,7 @@ import {
   Factory,
   ShoppingCart,
   Receipt,
+  PackageCheck,
   TrendingUp,
   DollarSign,
   type LucideIcon,
@@ -18,6 +19,7 @@ const iconMap: Record<string, LucideIcon> = {
   factory: Factory,
   cart: ShoppingCart,
   receipt: Receipt,
+  packageCheck: PackageCheck,
   trending: TrendingUp,
   dollar: DollarSign,
 };

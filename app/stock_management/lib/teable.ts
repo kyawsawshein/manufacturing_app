@@ -17,6 +17,7 @@ import type {
   IAttachmentNotifyResponse,
   IAttachmentCellValue,
 } from './teable.types';
+import "../temp.ts";
 
 // Re-export types for convenience
 export type * from './teable.types';
@@ -53,12 +54,7 @@ async function request<T>(endpoint: string, options: RequestOptions = {}): Promi
   const { baseUrl, token } = getConfig();
   const { method = 'GET', body, params } = options;
 
-  // Normalize URL to prevent double slashes or missing slashes
-  const cleanBaseUrl = baseUrl.endsWith('/') ? baseUrl.slice(0, -1) : baseUrl;
-  const cleanEndpoint = endpoint.startsWith('/') ? endpoint : `/${endpoint}`;
-  let url = `${cleanBaseUrl}${cleanEndpoint}`;
-  console.log(`############### Teable API Request url: ${method} ${url}`);
-
+  let url = `${baseUrl}/api${endpoint}`;
   if (params && Object.keys(params).length > 0) {
     const searchParams = new URLSearchParams();
     Object.entries(params).forEach(([key, value]) => {
@@ -71,7 +67,7 @@ async function request<T>(endpoint: string, options: RequestOptions = {}): Promi
       url += `?${queryString}`;
     }
   }
-  console.log(`############### Teable API Request: ${method} ${url} {body: ${JSON.stringify(body)}}`);
+
   const response = await fetch(url, {
     method,
     headers: {
@@ -116,7 +112,7 @@ interface ISqlQueryResponse {
  * @example
  * // Simple query - use dbTableName from schema (e.g., "bseXXX"."users")
  * const { rows } = await sqlQuery('bseXXX', 
- *   `SELECT "__id", "fld_Name", "fld_email" 
+ *   `SELECT "__id", "fld_name", "fld_email" 
  *    FROM "bseXXX"."users" 
  *    WHERE "fld_status" = 'Active' 
  *    LIMIT 100`
@@ -129,38 +125,13 @@ interface ISqlQueryResponse {
  *    FROM "bseXXX"."orders"`
  * );
  */
-
-// /api/base/{baseId}/sql-query
-
-
-// SELECT * FROM "bsez0Y8svP1AV6SJyPa"."Work_In_Progress_WIP" LIMIT 10
-// And the full API call:
-
-// // SQL Query API
-// const response = await fetch('https://app.teable.ai/api/base/bsez0Y8svP1AV6SJyPa/sql-query', {
-//   method: 'POST',
-//   headers: {
-//     'Content-Type': 'application/json',
-//     'Authorization': 'Bearer YOUR_ACCESS_TOKEN'
-//   },
-//   body: JSON.stringify({
-//     sql: 'SELECT * FROM "bsez0Y8svP1AV6SJyPa"."Work_In_Progress_WIP" LIMIT 10'
-//   })
-// });
-// https://app.teable.ai/api/base/bsez0Y8svP1AV6SJyPa/sql-query
-
 export async function sqlQuery(
   baseId: string,
   sql: string
 ): Promise<ISqlQueryResponse> {
-  console.log(`############### Teable API SQL Query:  ${baseId} , ${sql}`);
   return request<ISqlQueryResponse>(`/base/${baseId}/sql-query`, {
     method: 'POST',
-    body: {
-      fieldKeyType: 'dbFieldName',
-      sql: sql
-    },
-    // body: JSON.stringify({ "fieldKeyType": "dbFieldName", "sql": sql })
+    body: { sql },
   });
 }
 
@@ -214,7 +185,7 @@ export async function signAttachments<T extends { path: string; token: string; m
   attachments: T[]
 ): Promise<Array<{ path: string; token: string; presignedUrl: string }>> {
   if (!attachments || attachments.length === 0) return [];
-
+  
   const response = await request<{ attachments: { token: string; url: string }[] }>(
     `/base/${baseId}/sign-attachment-urls`,
     {
@@ -222,10 +193,10 @@ export async function signAttachments<T extends { path: string; token: string; m
       body: { attachments: attachments.map(att => ({ path: att.path, token: att.token, mimetype: att.mimetype })) },
     }
   );
-
+  
   // Create a map for O(1) lookup by token
   const urlMap = new Map(response.attachments.map(s => [s.token, s.url]));
-
+  
   return attachments.map(att => ({
     ...att,
     presignedUrl: urlMap.get(att.token) || '',
@@ -251,11 +222,11 @@ export async function createRecords(
   if (!Array.isArray(records) || records.length === 0) {
     throw new Error('Records must be a non-empty array');
   }
-
+  
   return request<ICreateRecordsResponse>(`/table/${tableId}/record`, {
     method: 'POST',
     body: {
-      fieldKeyType: 'dbFieldName',
+      fieldKeyType: 'id',
       typecast: true,
       records,
     },
@@ -357,11 +328,11 @@ export async function getAttachmentSignature(
  */
 export async function notifyAttachmentUpload(
   token: string,
-  fileName: string
+  filename: string
 ): Promise<IAttachmentNotifyResponse> {
   return request<IAttachmentNotifyResponse>(`/attachments/notify/${token}`, {
     method: 'POST',
-    params: { fileName },
+    params: { filename },
   });
 }
 
@@ -375,7 +346,7 @@ export async function uploadAttachmentToRecord(
   file: Blob | { url: string }
 ): Promise<void> {
   const { baseUrl, token } = getConfig();
-  const url = `${baseUrl}/table/${tableId}/record/${recordId}/${fieldId}/uploadAttachment`;
+  const url = `${baseUrl}/api/table/${tableId}/record/${recordId}/${fieldId}/uploadAttachment`;
 
   const formData = new FormData();
   if ('url' in file) {
@@ -404,9 +375,9 @@ export async function uploadAttachmentToRecord(
  */
 export async function uploadNewAttachment(
   file: Blob,
-  fileName: string,
+  filename: string,
   baseId?: string
-): Promise<{ Name: string; token: string }> {
+): Promise<{ name: string; token: string }> {
   const signature = await getAttachmentSignature({
     contentType: file.type || 'application/octet-stream',
     contentLength: file.size,
@@ -426,10 +397,10 @@ export async function uploadNewAttachment(
     throw new Error(`Failed to upload file to storage: ${uploadResponse.statusText}`);
   }
 
-  const notifyResult = await notifyAttachmentUpload(signature.token, fileName);
+  const notifyResult = await notifyAttachmentUpload(signature.token, filename);
 
   return {
-    Name: fileName,
+    name: filename,
     token: notifyResult.token,
   };
 }

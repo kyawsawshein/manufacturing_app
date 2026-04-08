@@ -23,6 +23,7 @@ import {
   Shield,
   UserCog,
   Scissors,
+  PackageCheck,
 } from "lucide-react";
 import { useState } from "react";
 
@@ -90,6 +91,11 @@ const navItems: NavItem[] = [
       { label: "Bill of Materials", href: "/manufacturing/bom", icon: Layers },
       { label: "Request Cutting", href: "/manufacturing/cutting", icon: Scissors },
     ],
+  },
+  {
+    label: "Stock Management",
+    href: "/stock_management/app",
+    icon: PackageCheck,
   },
 ];
 
