@@ -24,6 +24,8 @@ import { Plus, Trash2, ShoppingCart, Loader2, CheckCircle } from "lucide-react";
 import type { Vendor, Location, Product } from "@/app/actions";
 import { createPurchaseOrder } from "@/app/actions";
 
+import { useToast } from "@/hooks/use-toast";
+
 interface OrderLineItem {
   id: string;
   productId: string;
@@ -37,6 +39,7 @@ interface PurchaseOrderFormProps {
   vendors: Vendor[];
   locations: Location[];
   products: Product[];
+  onSuccess?: () => void;
 }
 
 function formatCurrency(value: number): string {
@@ -50,7 +53,9 @@ export function PurchaseOrderForm({
   vendors,
   locations,
   products,
+  onSuccess,
 }: PurchaseOrderFormProps) {
+  const { toast } = useToast();
   // Header fields
   const [vendorId, setVendorId] = useState<string>("");
   const [orderDate, setOrderDate] = useState<string>(
@@ -69,10 +74,6 @@ export function PurchaseOrderForm({
 
   // Form state
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitResult, setSubmitResult] = useState<{
-    success: boolean;
-    message: string;
-  } | null>(null);
 
   // Product lookup map
   const productMap = useMemo(() => {
@@ -150,7 +151,6 @@ export function PurchaseOrderForm({
 
   const handleSubmit = async () => {
     setIsSubmitting(true);
-    setSubmitResult(null);
 
     const result = await createPurchaseOrder({
       vendorId,
@@ -167,9 +167,9 @@ export function PurchaseOrderForm({
     setIsSubmitting(false);
 
     if (result.success) {
-      setSubmitResult({
-        success: true,
-        message: `Purchase Order ${result.poReference} created successfully!`,
+      toast({
+        title: "Success",
+        description: `Purchase Order ${result.poReference} created successfully!`,
       });
       // Reset form
       setVendorId("");
@@ -177,10 +177,15 @@ export function PurchaseOrderForm({
       setExpectedDelivery("");
       setDestinationId("");
       setLines([]);
+      setNewProductId("");
+      setNewQuantity("");
+      setNewUnitPrice("");
+      onSuccess?.(); // Notify parent of success
     } else {
-      setSubmitResult({
-        success: false,
-        message: result.error || "Failed to create purchase order",
+      toast({
+        title: "Error",
+        description: result.error || "Failed to create purchase order",
+        variant: "destructive",
       });
     }
   };
@@ -413,19 +418,6 @@ export function PurchaseOrderForm({
 
       {/* Submit Section */}
       <div className="flex items-center justify-between">
-        <div>
-          {submitResult && (
-            <div
-              className={`flex items-center gap-2 rounded-lg px-4 py-2 ${submitResult.success
-                  ? "bg-green-50 text-green-700 dark:bg-green-950 dark:text-green-300"
-                  : "bg-destructive/10 text-destructive"
-                }`}
-            >
-              {submitResult.success && <CheckCircle className="h-4 w-4" />}
-              {submitResult.message}
-            </div>
-          )}
-        </div>
         <Button
           size="lg"
           onClick={handleSubmit}

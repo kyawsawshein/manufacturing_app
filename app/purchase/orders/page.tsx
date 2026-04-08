@@ -29,6 +29,8 @@ import {
   updatePurchaseOrder,
   deletePurchaseOrder,
   getPartners,
+  getLocations,
+  getProducts,
 } from "@/app/actions";
 
 interface PurchaseOrder {
@@ -133,15 +135,25 @@ export default function PurchaseOrdersPage() {
     },
   ];
 
-  const handleAdd = () => {
-    setEditingOrder(null);
-    setFormData({
-      orderDate: toISODateString(new Date()),
-      expectedDelivery: toISODateString(new Date()),
-      status: "Draft",
-      vendorId: "",
-    });
-    setIsDialogOpen(true);
+  const handleAdd = async () => {
+    // Fetch all necessary data for the form
+    try {
+      const [vendorsData, locationsData, productsData] = await Promise.all([
+        getPartners("Vendor"),
+        getLocations(),
+        getProducts(),
+      ]);
+      setFormVendors(vendorsData);
+      setFormLocations(locationsData);
+      setFormProducts(productsData);
+      setIsFormDialogOpen(true); // Open the full form dialog
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to load form data",
+        variant: "destructive",
+      });
+    }
   };
 
   const handleEdit = (order: PurchaseOrder) => {
@@ -327,6 +339,26 @@ export default function PurchaseOrdersPage() {
                 {editingOrder ? "Update" : "Create"}
               </Button>
             </DialogFooter>
+          </DialogContent>
+        </Dialog>
+
+        {/* Full Purchase Order Form Dialog */}
+        <Dialog open={isFormDialogOpen} onOpenChange={setIsFormDialogOpen}>
+          <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle>Create Purchase Order</DialogTitle>
+            </DialogHeader>
+            <div className="py-4">
+              <PurchaseOrderForm
+                vendors={formVendors}
+                locations={formLocations}
+                products={formProducts}
+                onSuccess={() => {
+                  setIsFormDialogOpen(false);
+                  loadData(); // Reload data after successful creation
+                }}
+              />
+            </div>
           </DialogContent>
         </Dialog>
       </div>
