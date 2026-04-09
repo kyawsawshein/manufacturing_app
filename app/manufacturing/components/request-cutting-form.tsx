@@ -73,8 +73,6 @@ export function RequestCuttingForm({ products, units, hookLoopItems }: any) {
     };
 
     const handleSubmit = async () => {
-        if (!header.productId) return toast.error("Please select a product");
-
         setLoading(true);
         try {
             const result = await createCuttingRequest({
@@ -93,6 +91,8 @@ export function RequestCuttingForm({ products, units, hookLoopItems }: any) {
             setLoading(false);
         }
     };
+
+    // const isValid = Date && header.reference && (tubLines.length > 0 || hlLines.length > 0);
 
     return (
         <div className="space-y-6">
@@ -265,6 +265,7 @@ export function RequestCuttingForm({ products, units, hookLoopItems }: any) {
 
             <div className="flex justify-end gap-4">
                 <Button variant="outline" onClick={() => router.back()}>Cancel</Button>
+                {/* <Button onClick={handleSubmit} disabled={loading || !isValid}></Button> */}
                 <Button onClick={handleSubmit} disabled={loading}>
                     {loading ? "Creating..." : "Create Cutting Request"}
                 </Button>

@@ -12,6 +12,9 @@ const BOM_LINES_TABLE = "tblGvS4JyTguqpE09WJ";
 const CUTTING_TABLE = "tblQVVdcMKf2tTRhK28"; // Assuming this is the Cutting table ID
 const CUTTING_LINES_TABLE = "tbln4EMtGtCBQvfkbnx"; // Assuming this is the Cutting Lines table ID
 const CUTTING_REQUEST_TABLE = "tblumYrf9COTAlowNGi"; // Assuming this is the Cutting Requirements table ID
+const CUTTING_TUB_LINES_TABLE = "tblowvr0CzcOuPPQznN"; // Assuming this is the Cutting Tub Lines table ID
+const CUTTING_HOOK_LOOP_LINES_TABLE = "tblZPTs4bpwoTIIgsr2"; // Assuming this is the Cutting Hook & Loop Lines table ID
+
 
 // MO Raw Material
 const MO_RAW_MATERIAL_TABLE = "tbll7EAk5zrchcesx3s";
@@ -723,7 +726,7 @@ export async function createCutting(data: {
 }) {
   return createRecord(CUTTING_REQUEST_TABLE, {
     'Date': data.date,
-    'Reference': data.reference,
+    'MO_No': data.reference,
   });
 }
 
@@ -757,28 +760,28 @@ export async function createCuttingRequest(data: {
   if (data.tubLines.length > 0) {
     const tubRecords = data.tubLines.map(line => ({
       fields: {
-        "MO": [cut.id],
-        "Product": [line.productId],
-        "Quantity": line.quantity,
-        "UoM": [line.unitId],
-        "Notes": line.notes || ""
+        "Cutting_Request": [cut.id],
+        "Item": [line.productId],
+        "Qty": line.quantity,
+        // "UoM": [line.unitId],
+        // "Notes": line.notes || ""
       }
     }));
-    await createRecords("tblCuttingTubLines", tubRecords);
+    await createRecords(CUTTING_TUB_LINES_TABLE, tubRecords);
   }
 
   // 3. Create Hook & Loop Lines (Assuming table: Cutting_HL_Lines)
   if (data.hookLoopLines.length > 0) {
     const hlRecords = data.hookLoopLines.map(line => ({
       fields: {
-        "MO": [cut.id],
+        "Cutting_Request": [cut.id],
         "Item": [line.itemId],
-        "Length": line.length,
+        // "Length": line.length,
         "Quantity": line.quantity,
-        "Notes": line.notes || ""
+        // "Notes": line.notes || ""
       }
     }));
-    await createRecords("tblCuttingHLLines", hlRecords);
+    await createRecords(CUTTING_HOOK_LOOP_LINES_TABLE, hlRecords);
   }
 
   return { success: true, moId: cut.id };
