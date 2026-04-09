@@ -2,29 +2,27 @@
 
 import { sqlQuery, createRecord, updateRecord, deleteRecord, safeParseJson } from "@/lib/teable";
 
-const BASE_ID = process.env.BASE_ID || "bsez0Y8svP1AV6SJyPa";
-const PRODUCT = "tbl4j50Luypz4duYYuu";
+const BASE_ID = process.env.BASE_ID || "bsevp7nvwmXvxF5HKx4";
+const PRODUCT = process.env.PRODUCT || "tbl4j50Luypz4duYYuu";
 
 // PURCHASE
-const PURCHASE_ORDERS_TABLE = "tbl4jLMZSZNyBfexxmK";
-const PURCHASE_ORDER_LINES_TABLE = "tblGo3vGQ2Zr7aVPmQK";
+const PURCHASE_ORDERS_TABLE = process.env.PURCHASE_ORDERS_TABLE || "tbl4jLMZSZNyBfexxmK";
+const PURCHASE_ORDER_LINES_TABLE = process.env.PURCHASE_ORDER_LINES_TABLE || "tblGo3vGQ2Zr7aVPmQK";
 
 // SALES
-const SALES_ORDERS_TABLE = "tblbHH0u4LuH0Po7IJR";
-const SALES_ORDER_LINES_TABLE = "tblvZe8sZ0CRrb9HdHw";
+const SALES_ORDERS_TABLE = process.env.SALES_ORDERS_TABLE || "tblbHH0u4LuH0Po7IJR";
+const SALES_ORDER_LINES_TABLE = process.env.SALES_ORDER_LINES_TABLE || "tblvZe8sZ0CRrb9HdHw";
 
 // Partners
-const PARTNERS_TABLE = "tblOAipmI1dGH83Ox4t";
-
+const PARTNERS_TABLE = process.env.PARTNERS_TABLE || "tblOAipmI1dGH83Ox4t";
 
 // BOM
-const BOM_TABLE = "tbl9MQqRZ4rP2k7BRQV";
-const BOM_LINES_TABLE = "tblGvS4JyTguqpE09WJ";
-
+const BOM_TABLE = process.env.BOM_TABLE || "tbl9MQqRZ4rP2k7BRQV";
+const BOM_LINES_TABLE = process.env.BOM_LINES_TABLE || "tblGvS4JyTguqpE09WJ";
 
 // MO
-const MO_TABLE = "tbl0bvedWXqda86st39";
-const MO_RAW_MATERIAL_TABLE = "tbll7EAk5zrchcesx3s";
+const MO_TABLE = process.env.MO_TABLE || "tbl0bvedWXqda86st39";
+const MO_RAW_MATERIAL_TABLE = process.env.MO_RAW_MATERIAL_TABLE || "tbll7EAk5zrchcesx3s";
 
 
 // ============================================================================

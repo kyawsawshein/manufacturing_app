@@ -2,25 +2,28 @@
 
 import { sqlQuery, createRecord, createRecords, updateRecord, deleteRecord, safeParseJson } from "@/lib/teable";
 
-const BASE_ID = process.env.BASE_ID || "${BASE_ID}";
-const BOM_LINE = process.env.BOM_LINE;
+const BASE_ID = process.env.BASE_ID || "bsevp7nvwmXvxF5HKx4";
+
 // BOM
-const BOM_TABLE = "tbl9MQqRZ4rP2k7BRQV";
-const BOM_LINES_TABLE = "tblGvS4JyTguqpE09WJ";
+const BOM_TABLE = process.env.BOM_TABLE || "tbl9MQqRZ4rP2k7BRQV";
+const BOM_LINES_TABLE = process.env.BOM_LINES_TABLE || "tblGvS4JyTguqpE09WJ";
 
 // Cutting
-const CUTTING_TABLE = "tblQVVdcMKf2tTRhK28"; // Assuming this is the Cutting table ID
-const CUTTING_LINES_TABLE = "tbln4EMtGtCBQvfkbnx"; // Assuming this is the Cutting Lines table ID
-const CUTTING_REQUEST_TABLE = "tblumYrf9COTAlowNGi"; // Assuming this is the Cutting Requirements table ID
-const CUTTING_TUB_LINES_TABLE = "tblowvr0CzcOuPPQznN"; // Assuming this is the Cutting Tub Lines table ID
-const CUTTING_HOOK_LOOP_LINES_TABLE = "tblZPTs4bpwoTIIgsr2"; // Assuming this is the Cutting Hook & Loop Lines table ID
+const CUTTING_TABLE = process.env.CUTTING_TABLE || "tblQVVdcMKf2tTRhK28"; // Assuming this is the Cutting table ID
+const CUTTING_LINES_TABLE = process.env.CUTTING_LINES_TABLE || "tbln4EMtGtCBQvfkbnx"; // Assuming this is the Cutting Lines table ID
+const CUTTING_REQUEST_TABLE = process.env.CUTTING_REQUEST_TABLE || "tblumYrf9COTAlowNGi"; // Assuming this is the Cutting Requirements table ID
+const CUTTING_TUB_LINES_TABLE = process.env.CUTTING_TUB_LINES_TABLE || "tblowvr0CzcOuPPQznN"; // Assuming this is the Cutting Tub Lines table ID
+const CUTTING_HOOK_LOOP_LINES_TABLE = process.env.CUTTING_HOOK_LOOP_LINES_TABLE || "tblZPTs4bpwoTIIgsr2"; // Assuming this is the Cutting Hook & Loop Lines table ID
 
+// Request RM
+const REQUEST_RM_TABLE = process.env.REQUEST_RM_TABLE || "tblftYFyyC63qvthl2p";
+const REQUEST_ITEM_TABLE = process.env.REQUEST_ITEM_TABLE || "tbl8WnTtBbc61CzUZku";
 
 // MO Raw Material
-const MO_RAW_MATERIAL_TABLE = "tbll7EAk5zrchcesx3s";
+const MO_RAW_MATERIAL_TABLE = process.env.MO_RAW_MATERIAL_TABLE || "tbll7EAk5zrchcesx3s";
 
 // MO
-const MO_TABLE = "tbl0bvedWXqda86st39";
+const MO_TABLE = process.env.MO_TABLE || "tbl0bvedWXqda86st39";
 
 
 export interface Product {
@@ -743,6 +746,92 @@ export interface CuttingHookLoopLine {
   quantity: number;
   notes?: string;
 }
+
+export interface RequestItemLine {
+  productId: string;
+  productName: string;
+  lotNo: string;
+  quantity: number;
+  unitId: string;
+  status?: string;
+}
+
+export interface RequestRMRecord {
+  id: string;
+  date: string | null;
+  time: string | null;
+  status: string | null;
+  employeeName: string;
+  moRef: string;
+  itemsCount: number;
+}
+
+export async function getRequestRMRecords(): Promise<RequestRMRecord[]> {
+  const { rows } = await sqlQuery(BASE_ID, `
+    SELECT
+      "__id",
+      "Date",
+      "Time",
+      "Status",
+      "Employee",
+      "MO_No",
+      "Request_Items"
+    FROM "${BASE_ID}"."Request_RM"
+    ORDER BY "Date" DESC, "Time" DESC
+    LIMIT 200
+  `);
+
+  return rows.map((row) => {
+    const employee = safeParseJson(row.Employee);
+    const mo = safeParseJson(row.MO_No);
+    const items = safeParseJson(row.Request_Items) || [];
+
+    return {
+      id: row.__id as string,
+      date: row.Date as string | null,
+      time: row.Time as string | null,
+      status: row.Status as string | null,
+      employeeName: employee?.title || "",
+      moRef: mo?.title || "",
+      itemsCount: Array.isArray(items) ? items.length : 0,
+    };
+  });
+}
+
+export async function createRequestRM(data: {
+  Date: string;
+  Time: string;
+  status: string;
+  // employeeId?: string;
+  // moId?: string;
+  lines: RequestItemLine[];
+}) {
+  const rm = await createRecord(REQUEST_RM_TABLE, {
+    Date: data.Date,
+    Time: data.Time,
+    Status: data.status,
+    // ...(data.employeeId ? { Employee: [data.employeeId] } : {}),
+    // ...(data.moId ? { MO_No: [data.moId] } : {}),
+  });
+
+  if (data.lines.length > 0) {
+    const itemRecords = data.lines.map((line) => ({
+      fields: {
+        Production_Request: [rm.id],
+        Product: line.productName,
+        Lot_No: line.lotNo,
+        Quantity: line.quantity,
+        Unit: [line.unitId],
+        Status: line.status || "Requested",
+      },
+    }));
+
+    await createRecords(REQUEST_ITEM_TABLE, itemRecords);
+  }
+
+  return { success: true, rmId: rm.id };
+}
+
 
 export async function createCuttingRequest(data: {
   Date: string;

@@ -93,6 +93,7 @@ const navItems: NavItem[] = [
       { label: "Bill of Materials", href: "/manufacturing/bom", icon: Layers },
       { label: "Cutting", href: "/manufacturing/cutting-management", icon: Scissors },
       { label: "Request Cutting", href: "/manufacturing/cutting", icon: Scissors },
+      { label: "Request RM Records", href: "/manufacturing/request-rm", icon: Layers },
     ],
   },
   {
