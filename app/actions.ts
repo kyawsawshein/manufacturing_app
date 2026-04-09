@@ -16,6 +16,17 @@ const SALES_ORDER_LINES_TABLE = "tblvZe8sZ0CRrb9HdHw";
 // Partners
 const PARTNERS_TABLE = "tblOAipmI1dGH83Ox4t";
 
+
+// BOM
+const BOM_TABLE = "tbl9MQqRZ4rP2k7BRQV";
+const BOM_LINES_TABLE = "tblGvS4JyTguqpE09WJ";
+
+
+// MO
+const MO_TABLE = "tbl0bvedWXqda86st39";
+const MO_RAW_MATERIAL_TABLE = "tbll7EAk5zrchcesx3s";
+
+
 // ============================================================================
 // Dashboard Stats
 // ============================================================================
@@ -464,14 +475,14 @@ export async function createManufacturingOrder(data: {
   bomId?: string;
   productId?: string;
 }) {
-  return createRecord("tblPbvDgbuKgA55boy8", {
-    fld8KDIMICVt1xz2lK5: data.date,
-    fldL0wAAZUeCcuEavOz: data.startDate,
-    fldEBTh6KseVZSBSxKS: data.endDate,
-    fldmtKVIvDWxly1H2TL: data.status,
-    fldol1eNL6A8B3OQDqe: data.quantity,
-    ...(data.bomId ? { fldCeWMsBVDhk0cwc8n: [data.bomId] } : {}),
-    ...(data.productId ? { fldjQTlqkyltfRmvzNl: [data.productId] } : {}),
+  return createRecord(MO_TABLE, {
+    "Date": data.date,
+    "Start_Date": data.startDate,
+    "End_Date": data.endDate,
+    "Status": data.status,
+    "Quantity": data.quantity,
+    ...(data.bomId ? { "BOM": [data.bomId] } : {}),
+    ...(data.productId ? { "Product": [data.productId] } : {}),
   });
 }
 
@@ -483,16 +494,16 @@ export async function updateManufacturingOrder(id: string, data: {
   quantity?: number;
 }) {
   const fields: Record<string, unknown> = {};
-  if (data.date !== undefined) fields.fld8KDIMICVt1xz2lK5 = data.date;
-  if (data.startDate !== undefined) fields.fldL0wAAZUeCcuEavOz = data.startDate;
-  if (data.endDate !== undefined) fields.fldEBTh6KseVZSBSxKS = data.endDate;
-  if (data.status !== undefined) fields.fldmtKVIvDWxly1H2TL = data.status;
-  if (data.quantity !== undefined) fields.fldol1eNL6A8B3OQDqe = data.quantity;
-  return updateRecord("tblPbvDgbuKgA55boy8", id, fields);
+  if (data.date !== undefined) fields.Date = data.date;
+  if (data.startDate !== undefined) fields.Start_Date = data.startDate;
+  if (data.endDate !== undefined) fields.End_Date = data.endDate;
+  if (data.status !== undefined) fields.Status = data.status;
+  if (data.quantity !== undefined) fields.Quantity = data.quantity;
+  return updateRecord(MO_TABLE, id, fields);
 }
 
 export async function deleteManufacturingOrder(id: string) {
-  return deleteRecord("tblPbvDgbuKgA55boy8", id);
+  return deleteRecord(MO_TABLE, id);
 }
 
 // ============================================================================
@@ -525,7 +536,7 @@ export async function getBOMs() {
 //   effectiveDate: string;
 //   reference: string;
 // }) {
-//   return createRecord("tbljVE4fCX1GxrlZOlO", {
+//   return createRecord("BOM_TABLE", {
 //     fld0VdSDfuO9aUlG55s: data.version,
 //     fldXoofJqfxsI38hfhd: data.quantity,
 //     fldooU78f6gHZ362PtW: data.status,
@@ -547,11 +558,11 @@ export async function getBOMs() {
 //   if (data.status !== undefined) fields.fldooU78f6gHZ362PtW = data.status;
 //   if (data.effectiveDate !== undefined) fields.fldSKhzNnNJqDWQDOlZ = data.effectiveDate;
 //   if (data.reference !== undefined) fields.fldV1cUu57SObBr8XId = data.reference;
-//   return updateRecord("tbljVE4fCX1GxrlZOlO", id, fields);
+//   return updateRecord("BOM_TABLE", id, fields);
 // }
 
 export async function deleteBOM(id: string) {
-  return deleteRecord("tbljVE4fCX1GxrlZOlO", id);
+  return deleteRecord(BOM_TABLE, id);
 }
 
 export async function createBOMWithLines(data: {
@@ -567,24 +578,24 @@ export async function createBOMWithLines(data: {
   }>;
 }) {
   // Create the BOM record first
-  const bomRecord = await createRecord("tbljVE4fCX1GxrlZOlO", {
-    fldehyTSNV6w3jgHqP5: data.productId, // Product
-    fldXoofJqfxsI38hfhd: data.quantity, // Quantity
-    fldV1cUu57SObBr8XId: data.reference, // Reference
-    fldooU78f6gHZ362PtW: "Draft", // Status
+  const bomRecord = await createRecord(BOM_TABLE, {
+    "Product": data.productId, // Product
+    "Quantity": data.quantity, // Quantity
+    "Reference": data.reference, // Reference
+    "Status": "Draft", // Status
   });
 
   // Create BOM lines
   const bomLinesPromises = data.lines.map((line) =>
-    createRecord("tblxWum7GLIpaEotAr4", {
-      fldAxfVf6D1pCuq0oDh: bomRecord.id, // BOM link
-      fldTHdnKDwuPEJzAFkf: line.productId, // Product
-      fldmrDNm4ygWpKLAtXA: line.qty, // Item Count
-      fldK7S10zg59EtFbHqg: line.quantity, // Quantity
-      fldUelLsvIJaKggNrlS: line.unitId, // UoM
-      ...(line.hookLoopItemIds && line.hookLoopItemIds.length > 0
-        ? { fldwEsz0DQDCqIuQHyM: line.hookLoopItemIds }
-        : {}),
+    createRecord(BOM_LINES_TABLE, {
+      "BOM": bomRecord.id, // BOM link
+      "Product": line.productId, // Product
+      // "Item_Count": line.qty, // Item Count
+      "Quantity": line.quantity, // Quantity
+      "UoM": line.unitId, // UoM
+      // ...(line.hookLoopItemIds && line.hookLoopItemIds.length > 0
+      //   ? { fldwEsz0DQDCqIuQHyM: line.hookLoopItemIds }
+      //   : {}),
     })
   );
 
@@ -747,7 +758,7 @@ export async function getBOMsByProduct(productId: string) {
   const { rows } = await sqlQuery(BASE_ID, `
     SELECT "__id", "BOM" as "Name", "Version" as "version", "Status" as "status", "Total_Material_Cost" as "total_cost"
     FROM "${BASE_ID}"."BOM"
-    WHERE "__fk_fldcKWcxXFLKHBkqJxT" = '${productId}'
+    WHERE "BOM"."Product" = '${productId}'
     ORDER BY "Version" DESC
     LIMIT 100
   `);
@@ -845,7 +856,7 @@ export async function createMORawMaterialsFromBOM(moId: string, bomId: string, m
         r => safeParseJson(r.product_json)?.id === item.productId
       );
 
-      const record = await createRecord("tbl0aq09fCJXpdox9aT", {
+      const record = await createRecord(MO_RAW_MATERIAL_TABLE, {
         fldsokXZdzYBr5wKVvh: moId, // MO link
         fldFtiECtVOujmdbCiu: item.quantity, // Quantity
         fldIOQj0dOj3LgxOPVg: item.productId, // Product
@@ -892,6 +903,97 @@ export async function getMORawMaterials(moId: string) {
     productCost: Number(row.product_cost || 0),
     bomLineId: row.bom_line_id as string || null,
     bomLineName: row.bom_line_Name as string,
+  }));
+}
+
+
+
+
+// SELECT
+//   mrm."__id" as "id",
+//   COALESCE(p."Name", '') as "product_name",
+//   p."__id" as "product_id",
+//   COALESCE(m."Reference", '') as "mo_reference",
+//   m."__id" as "mo_id",
+//   COALESCE(mrm."MO_Qty", 0) as "mo_qty",
+//   COALESCE(mrm."Quantity", 0) as "quantity",
+//   COALESCE(mrm."Used_Qty", 0) as "used_qty",
+//   COALESCE(u."Name", '') as "unit_name",
+//   -- COALESCE(STRING_AGG(DISTINCT sl."Lot", ', '), '') as "lot_names"
+// FROM "${BASE_ID}"."MO_Raw_Material" mrm
+// LEFT JOIN "${BASE_ID}"."Products" p ON p."__id" = mrm."__fk_fldqRPhdzYBbKShNsEg"
+// LEFT JOIN "${BASE_ID}"."MO" m ON m."__id" = mrm."__fk_fldsokXZdzYBr5wKVvh"
+// LEFT JOIN "${BASE_ID}"."Units_of_Measure" u ON u."__id" = mrm."__fk_fldqhhdwIth0hmmlltJ"
+// -- LEFT JOIN "${BASE_ID}"."junction_fldoU4qqJ989EiwnC9X" lot_link ON lot_link."__fk_radQKWQYeWPbNcO6B5q" = mrm."__id"
+// -- LEFT JOIN "${BASE_ID}"."Stock_Lot" sl ON sl."__id" = lot_link."__fk_fldoU4qqJ989EiwnC9X"
+// GROUP BY mrm."__id", p."__id", p."Name", m."__id", m."Reference", mrm."MO_Qty", mrm."Quantity", mrm."Used_Qty", u."Name"
+// ORDER BY mrm."__id" DESC
+// LIMIT 500
+
+export async function getAllMORawMaterials() {
+  const { rows } = await sqlQuery(BASE_ID, `
+      SELECT
+      mrm."__id" as "id",
+      COALESCE(p."Label", '') as "product_name",
+      p."__id" as "product_id",
+      COALESCE(m."Reference", '') as "mo_reference",
+      m."__id" as "mo_id",
+      COALESCE(mrm."MO_Qty", 0) as "mo_qty",
+      COALESCE(mrm."Quantity", 0) as "quantity",
+      COALESCE(mrm."Used_Qty", 0) as "used_qty",
+      COALESCE(u."Name", '') as "unit_name"
+    FROM "${BASE_ID}"."MO_Raw_Material" mrm
+    LEFT JOIN "${BASE_ID}"."Products" p ON p."__id" = (mrm."Product"->>'id')
+    LEFT JOIN "${BASE_ID}"."MO" m ON m."__id" = (mrm."MO"->>'id')
+    LEFT JOIN "${BASE_ID}"."Units_of_Measure" u ON u."__id" = (mrm."Raw_Unit"->>'id')
+    -- LEFT JOIN "${BASE_ID}"."junction_fldoU4qqJ989EiwnC9X" lot_link ON lot_link."__fk_radQKWQYeWPbNcO6B5q" = mrm."__id"
+    -- LEFT JOIN "${BASE_ID}"."Stock_Lot" sl ON sl."__id" = lot_link."__fk_fldoU4qqJ989EiwnC9X"
+    GROUP BY mrm."__id", p."__id", p."Label", m."__id", m."Reference", mrm."MO_Qty", mrm."Quantity", mrm."Used_Qty", u."Name"
+    ORDER BY mrm."__id" DESC
+    LIMIT 500
+  `);
+
+  return rows.map(row => ({
+    id: row.id as string,
+    productId: row.product_id as string,
+    productName: row.product_name as string,
+    moId: row.mo_id as string,
+    moReference: row.mo_reference as string,
+    moQty: Number(row.mo_qty || 0),
+    quantity: Number(row.quantity || 0),
+    usedQty: Number(row.used_qty || 0),
+    unitName: row.unit_name as string,
+    lotNames: row.lot_names as string,
+  }));
+}
+
+export async function getAllMOFinishedGoods() {
+  const { rows } = await sqlQuery(BASE_ID, `
+    SELECT
+      mfg."__id" as "id",
+      COALESCE(p."Label", '') as "product_name",
+      COALESCE(m."Reference", '') as "mo_reference",
+      COALESCE(cp."Name", '') as "po_no",
+      COALESCE(mfg."Quantity", 0) as "quantity",
+      COALESCE(mfg."Finished_Qty", 0) as "finished_qty",
+      COALESCE(mfg."Lot_No", '') as "lot_name"
+    FROM "${BASE_ID}"."MO_Finished_Goods" mfg
+    LEFT JOIN "${BASE_ID}"."Products" p ON p."__id" = (mfg."Product"->>'id')
+    LEFT JOIN "${BASE_ID}"."MO" m ON m."__id" = (mfg."MO"->>'id')
+    LEFT JOIN "${BASE_ID}"."Customer_PO" cp ON cp."__id" = (m."PO_No"->>'id')
+    -- LEFT JOIN "${BASE_ID}"."Stock_Lot" sl ON sl."__id" = (mfg."Lot_No"->>'id')
+    ORDER BY mfg."__id" DESC
+    LIMIT 500
+  `);
+
+  return rows.map(row => ({
+    id: row.id as string,
+    productName: row.product_name as string,
+    moReference: row.mo_reference as string,
+    poNo: row.po_no as string,
+    quantity: Number(row.quantity || 0),
+    finishedQty: Number(row.finished_qty || 0),
+    lotName: row.lot_name as string,
   }));
 }
 

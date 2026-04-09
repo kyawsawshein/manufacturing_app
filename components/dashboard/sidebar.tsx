@@ -88,7 +88,10 @@ const navItems: NavItem[] = [
     icon: Factory,
     children: [
       { label: "Manufacturing Orders", href: "/manufacturing/orders", icon: Factory },
+      { label: "MO Raw Material", href: "/manufacturing/orders/mo-raw-materials", icon: Layers },
+      { label: "MO Finished Goods", href: "/manufacturing/orders/mo-finished-goods", icon: Layers },
       { label: "Bill of Materials", href: "/manufacturing/bom", icon: Layers },
+      { label: "Cutting", href: "/manufacturing/cutting-management", icon: Scissors },
       { label: "Request Cutting", href: "/manufacturing/cutting", icon: Scissors },
     ],
   },

@@ -286,7 +286,7 @@ export async function updateRecord(
   return request<IRecord>(`/table/${tableId}/record/${recordId}`, {
     method: 'PATCH',
     body: {
-      fieldKeyType: 'id',
+      fieldKeyType: 'dbFieldName',
       typecast: true,
       record: { fields },
     },
@@ -308,7 +308,7 @@ export async function updateRecords(
   const response = await request<{ records: IRecord[] }>(`/table/${tableId}/record`, {
     method: 'PATCH',
     body: {
-      fieldKeyType: 'id',
+      fieldKeyType: 'dbFieldName',
       typecast: true,
       records,
     },

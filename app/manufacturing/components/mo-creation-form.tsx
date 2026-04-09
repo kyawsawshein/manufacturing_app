@@ -16,21 +16,24 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { useToast } from "@/hooks/use-toast";
 import { SearchableSelect } from "@/components/searchable-select";
-import { Loader2, Factory, Scissors, Package, DollarSign, Calendar, FileText } from "lucide-react";
-import type { Product, BOM, CostPreview as CostPreviewType } from "../app/actions";
+import { Loader2, Factory, Scissors, Package, DollarSign, Calendar, FileText, Layers } from "lucide-react";
+import type { Product, BOM, BOMLine, CostPreview as CostPreviewType, Cutting, CuttingLine } from "../app/actions";
 import {
   getProducts,
   getBOMsByProduct,
   getAllBOMs,
   calculateCostPreview,
+  getBOMLines,
   createMO,
+  getAllCuttings,
+  getCuttingLines,
 } from "../app/actions";
 
 type MOType = "Production" | "Cutting";
 
-interface MOCreationFormProps {}
+interface MOCreationFormProps { }
 
-export function MOCreationForm({}: MOCreationFormProps) {
+export function MOCreationForm({ }: MOCreationFormProps) {
   const { toast } = useToast();
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
@@ -40,6 +43,7 @@ export function MOCreationForm({}: MOCreationFormProps) {
   const [productId, setProductId] = useState<string>("");
   const [quantity, setQuantity] = useState<number>(1);
   const [bomId, setBomId] = useState<string>("");
+  const [cuttingId, setCuttingId] = useState<string>("");
   const [startDate, setStartDate] = useState<string>("");
   const [endDate, setEndDate] = useState<string>("");
   const [laborCost, setLaborCost] = useState<number>(0);
@@ -50,7 +54,10 @@ export function MOCreationForm({}: MOCreationFormProps) {
   // Data state
   const [products, setProducts] = useState<Product[]>([]);
   const [boms, setBoms] = useState<BOM[]>([]);
+  const [cuttings, setCuttings] = useState<Cutting[]>([]);
   const [costPreview, setCostPreview] = useState<CostPreviewType | null>(null);
+  const [bomLines, setBomLines] = useState<BOMLine[]>([]);
+  const [cuttingLines, setCuttingLines] = useState<CuttingLine[]>([]);
 
   const productOptions = products.map((product) => ({
     value: product.id,
@@ -60,6 +67,7 @@ export function MOCreationForm({}: MOCreationFormProps) {
   // Loading states
   const [loadingProducts, setLoadingProducts] = useState(true);
   const [loadingBOMs, setLoadingBOMs] = useState(false);
+  const [loadingCuttings, setLoadingCuttings] = useState(false);
   const [loadingCost, setLoadingCost] = useState(false);
 
   // Load products on mount
@@ -80,6 +88,24 @@ export function MOCreationForm({}: MOCreationFormProps) {
       }
     }
     loadProducts();
+  }, [toast]);
+
+  // Load cuttings on mount
+  useEffect(() => {
+    async function loadCuttings() {
+      try {
+        const data = await getAllCuttings();
+        setCuttings(data);
+      } catch (error) {
+        console.error("Failed to load cuttings:", error);
+        toast({
+          title: "Error",
+          description: "Failed to load cutting patterns",
+          variant: "destructive",
+        });
+      }
+    }
+    loadCuttings();
   }, [toast]);
 
   // Load BOMs when product changes (for Production type)
@@ -122,24 +148,86 @@ export function MOCreationForm({}: MOCreationFormProps) {
     }
   }, [productId, moType, products]);
 
-  // Calculate cost preview when relevant fields change
+  // Load cutting lines when cutting pattern changes
   useEffect(() => {
-    async function updateCostPreview() {
-      if (!bomId || quantity <= 0) {
-        setCostPreview(null);
+    async function loadCuttingLines() {
+      if (!cuttingId) {
+        setCuttingLines([]);
         return;
       }
 
       setLoadingCost(true);
       try {
-        const preview = await calculateCostPreview(
-          bomId,
-          quantity,
-          laborCost,
-          machineCost,
-          overheadCost
-        );
-        setCostPreview(preview);
+        const lines = await getCuttingLines(cuttingId);
+        setCuttingLines(lines);
+      } catch (error) {
+        console.error("Failed to load cutting lines:", error);
+      } finally {
+        setLoadingCost(false);
+      }
+    }
+
+    if (moType === "Cutting") {
+      loadCuttingLines();
+    }
+  }, [cuttingId, moType]);
+
+  // Calculate cost preview when relevant fields change
+  useEffect(() => {
+    async function updateCostPreview() {
+      const hasValidSelection = (moType === "Production" && bomId) || (moType === "Cutting" && cuttingId);
+
+      if (!hasValidSelection || quantity <= 0) {
+        setCostPreview(null);
+        setBomLines([]);
+        setCuttingLines([]);
+        return;
+      }
+
+      setLoadingCost(true);
+      try {
+        if (moType === "Production" && bomId) {
+          const [preview, lines] = await Promise.all([
+            calculateCostPreview(
+              bomId,
+              quantity,
+              laborCost,
+              machineCost,
+              overheadCost
+            ),
+            getBOMLines(bomId)
+          ]);
+          setCostPreview(preview);
+          setBomLines(lines);
+          setCuttingLines([]);
+        } else if (moType === "Cutting" && cuttingId) {
+          // For cutting, we'll calculate cost based on cutting lines
+          const lines = await getCuttingLines(cuttingId);
+          setCuttingLines(lines);
+          setBomLines([]);
+
+          // Calculate cost for cutting lines
+          let rawMaterialsCost = lines.reduce((sum, line) => {
+            const lineCost = (line.quantity || 0) * (line.unitCost || 0);
+            return sum + lineCost;
+          }, 0);
+          rawMaterialsCost = rawMaterialsCost * quantity;
+
+          const laborCostTotal = laborCost * quantity;
+          const machineCostTotal = machineCost * quantity;
+          const overheadCostTotal = overheadCost * quantity;
+          const totalCost = rawMaterialsCost + laborCostTotal + machineCostTotal + overheadCostTotal;
+          const unitCost = quantity > 0 ? totalCost / quantity : 0;
+
+          setCostPreview({
+            rawMaterialsCost,
+            laborCost: laborCostTotal,
+            machineCost: machineCostTotal,
+            overheadCost: overheadCostTotal,
+            totalCost,
+            unitCost,
+          });
+        }
       } catch (error) {
         console.error("Failed to calculate cost:", error);
       } finally {
@@ -149,12 +237,15 @@ export function MOCreationForm({}: MOCreationFormProps) {
 
     const debounce = setTimeout(updateCostPreview, 300);
     return () => clearTimeout(debounce);
-  }, [bomId, quantity, laborCost, machineCost, overheadCost]);
+  }, [bomId, cuttingId, quantity, laborCost, machineCost, overheadCost, moType]);
 
   // Reset form when MO type changes
   useEffect(() => {
     setBomId("");
+    setCuttingId("");
     setBoms([]);
+    setBomLines([]);
+    setCuttingLines([]);
     setCostPreview(null);
   }, [moType]);
 
@@ -186,7 +277,7 @@ export function MOCreationForm({}: MOCreationFormProps) {
           productId,
           quantity,
           bomId: moType === "Production" ? bomId : null,
-          cuttingBomId: moType === "Cutting" ? bomId : null,
+          cuttingBomId: moType === "Cutting" ? cuttingId : null,
           startDate: startDate || undefined,
           endDate: endDate || undefined,
           laborCost,
@@ -204,6 +295,7 @@ export function MOCreationForm({}: MOCreationFormProps) {
         setProductId("");
         setQuantity(1);
         setBomId("");
+        setCuttingId("");
         setStartDate("");
         setEndDate("");
         setLaborCost(0);
@@ -309,62 +401,168 @@ export function MOCreationForm({}: MOCreationFormProps) {
 
               {/* BOM Selection - Conditional based on MO Type */}
               {moType === "Production" && (
-                <div className="space-y-2">
-                  <Label htmlFor="bom">Bill of Materials (BOM)</Label>
-                  <Select
-                    value={bomId}
-                    onValueChange={setBomId}
-                    disabled={loadingBOMs || !productId}
-                  >
-                    <SelectTrigger id="bom">
-                      <SelectValue
-                        placeholder={
-                          loadingBOMs
-                            ? "Loading..."
-                            : !productId
-                              ? "Select a product first"
-                              : boms.length === 0
-                                ? "No BOMs available"
-                                : "Select a BOM"
-                        }
-                      />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {boms.map((bom) => (
-                        <SelectItem key={bom.id} value={bom.id}>
-                          {bom.Name}
-                          {bom.reference ? ` - ${bom.reference}` : ""}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
+                <div className="space-y-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="bom">Bill of Materials (BOM)</Label>
+                    <Select
+                      value={bomId}
+                      onValueChange={setBomId}
+                      disabled={loadingBOMs || !productId}
+                    >
+                      <SelectTrigger id="bom">
+                        <SelectValue
+                          placeholder={
+                            loadingBOMs
+                              ? "Loading..."
+                              : !productId
+                                ? "Select a product first"
+                                : boms.length === 0
+                                  ? "No BOMs available"
+                                  : "Select a BOM"
+                          }
+                        />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {boms.map((bom) => (
+                          <SelectItem key={bom.id} value={bom.id}>
+                            {bom.Name}
+                            {bom.reference ? ` - ${bom.reference}` : ""}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  {/* BOM Lines Display */}
+                  {bomId && (
+                    <div className="rounded-lg border bg-card p-4 space-y-3">
+                      <div className="flex items-center justify-between">
+                        <h4 className="text-sm font-semibold flex items-center gap-2">
+                          <Layers className="h-4 w-4" />
+                          BOM Line Items
+                        </h4>
+                        <span className="text-xs text-muted-foreground">
+                          {bomLines.length} line{bomLines.length !== 1 ? 's' : ''} (scaled for {quantity} unit{quantity !== 1 ? 's' : ''})
+                        </span>
+                      </div>
+                      {bomLines.length > 0 ? (
+                        <div className="overflow-x-auto">
+                          <table className="w-full text-sm">
+                            <thead>
+                              <tr className="border-b border-border bg-muted/50">
+                                <th className="text-left px-3 py-2 font-medium text-xs text-muted-foreground">Product</th>
+                                <th className="text-right px-3 py-2 font-medium text-xs text-muted-foreground">Qty/Unit</th>
+                                <th className="text-right px-3 py-2 font-medium text-xs text-muted-foreground">Unit Cost</th>
+                                <th className="text-right px-3 py-2 font-medium text-xs text-muted-foreground">Total Qty</th>
+                                <th className="text-right px-3 py-2 font-medium text-xs text-muted-foreground">Total Cost</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {bomLines.map((line) => {
+                                const scaledQty = (line.quantity || 0) * quantity;
+                                const scaledCost = (line.unitCost || 0) * scaledQty;
+                                return (
+                                  <tr key={line.id} className="border-b border-border/50 hover:bg-muted/30 transition-colors">
+                                    <td className="px-3 py-2 text-left">{line.productName || 'Unknown'}</td>
+                                    <td className="px-3 py-2 text-right text-muted-foreground">{((line.quantity || 0)).toFixed(2)}</td>
+                                    <td className="px-3 py-2 text-right">{formatCurrency(line.unitCost || 0)}</td>
+                                    <td className="px-3 py-2 text-right font-medium">{scaledQty.toFixed(2)}</td>
+                                    <td className="px-3 py-2 text-right font-medium text-primary">{formatCurrency(scaledCost)}</td>
+                                  </tr>
+                                );
+                              })}
+                            </tbody>
+                          </table>
+                        </div>
+                      ) : (
+                        <div className="text-center py-4">
+                          <p className="text-sm text-muted-foreground">No BOM lines available</p>
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </div>
               )}
 
               {moType === "Cutting" && (
-                <div className="space-y-2">
-                  <Label htmlFor="cutting-bom">Cutting Pattern</Label>
-                  <Select
-                    value={bomId}
-                    onValueChange={setBomId}
-                    disabled={!productId}
-                  >
-                    <SelectTrigger id="cutting-bom">
-                      <SelectValue
-                        placeholder={
-                          !productId
-                            ? "Select a product first"
-                            : "Select a cutting pattern"
-                        }
-                      />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="none">No cutting pattern</SelectItem>
-                    </SelectContent>
-                  </Select>
-                  <p className="text-sm text-muted-foreground">
-                    Cutting patterns are linked separately for cutting orders
-                  </p>
+                <div className="space-y-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="cutting">Cutting Pattern</Label>
+                    <Select
+                      value={cuttingId}
+                      onValueChange={setCuttingId}
+                      disabled={loadingCuttings}
+                    >
+                      <SelectTrigger id="cutting">
+                        <SelectValue
+                          placeholder={
+                            loadingCuttings
+                              ? "Loading..."
+                              : cuttings.length === 0
+                                ? "No cutting patterns available"
+                                : "Select a cutting pattern"
+                          }
+                        />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {cuttings.map((cutting) => (
+                          <SelectItem key={cutting.id} value={cutting.id}>
+                            {cutting.Name}
+                            {cutting.reference ? ` - ${cutting.reference}` : ""}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  {/* Cutting Lines Display */}
+                  {cuttingId && (
+                    <div className="rounded-lg border bg-card p-4 space-y-3">
+                      <div className="flex items-center justify-between">
+                        <h4 className="text-sm font-semibold flex items-center gap-2">
+                          <Scissors className="h-4 w-4" />
+                          Cutting Line Items
+                        </h4>
+                        <span className="text-xs text-muted-foreground">
+                          {cuttingLines.length} line{cuttingLines.length !== 1 ? 's' : ''} (scaled for {quantity} unit{quantity !== 1 ? 's' : ''})
+                        </span>
+                      </div>
+                      {cuttingLines.length > 0 ? (
+                        <div className="overflow-x-auto">
+                          <table className="w-full text-sm">
+                            <thead>
+                              <tr className="border-b border-border bg-muted/50">
+                                <th className="text-left px-3 py-2 font-medium text-xs text-muted-foreground">Product</th>
+                                <th className="text-right px-3 py-2 font-medium text-xs text-muted-foreground">Qty/Unit</th>
+                                <th className="text-right px-3 py-2 font-medium text-xs text-muted-foreground">Unit Cost</th>
+                                <th className="text-right px-3 py-2 font-medium text-xs text-muted-foreground">Total Qty</th>
+                                <th className="text-right px-3 py-2 font-medium text-xs text-muted-foreground">Total Cost</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {cuttingLines.map((line) => {
+                                const scaledQty = (line.quantity || 0) * quantity;
+                                const scaledCost = (line.unitCost || 0) * scaledQty;
+                                return (
+                                  <tr key={line.id} className="border-b border-border/50 hover:bg-muted/30 transition-colors">
+                                    <td className="px-3 py-2 text-left">{line.productName || 'Unknown'}</td>
+                                    <td className="px-3 py-2 text-right text-muted-foreground">{((line.quantity || 0)).toFixed(2)}</td>
+                                    <td className="px-3 py-2 text-right">{formatCurrency(line.unitCost || 0)}</td>
+                                    <td className="px-3 py-2 text-right font-medium">{scaledQty.toFixed(2)}</td>
+                                    <td className="px-3 py-2 text-right font-medium text-primary">{formatCurrency(scaledCost)}</td>
+                                  </tr>
+                                );
+                              })}
+                            </tbody>
+                          </table>
+                        </div>
+                      ) : (
+                        <div className="text-center py-4">
+                          <p className="text-sm text-muted-foreground">No cutting lines available</p>
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </div>
               )}
 

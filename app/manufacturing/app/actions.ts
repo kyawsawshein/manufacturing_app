@@ -4,6 +4,22 @@ import { sqlQuery, createRecord, createRecords, updateRecord, deleteRecord, safe
 
 const BASE_ID = process.env.BASE_ID || "${BASE_ID}";
 const BOM_LINE = process.env.BOM_LINE;
+// BOM
+const BOM_TABLE = "tbl9MQqRZ4rP2k7BRQV";
+const BOM_LINES_TABLE = "tblGvS4JyTguqpE09WJ";
+
+// Cutting
+const CUTTING_TABLE = "tblQVVdcMKf2tTRhK28"; // Assuming this is the Cutting table ID
+const CUTTING_LINES_TABLE = "tbln4EMtGtCBQvfkbnx"; // Assuming this is the Cutting Lines table ID
+const CUTTING_REQUEST_TABLE = "tblumYrf9COTAlowNGi"; // Assuming this is the Cutting Requirements table ID
+
+// MO Raw Material
+const MO_RAW_MATERIAL_TABLE = "tbll7EAk5zrchcesx3s";
+
+// MO
+const MO_TABLE = "tbl0bvedWXqda86st39";
+
+
 export interface Product {
   id: string;
   Name: string;
@@ -25,6 +41,22 @@ export interface BOM {
 }
 
 export interface BOMLine {
+  id: string;
+  productId: string | null;
+  productName: string | null;
+  quantity: number | null;
+  unitCost: number | null;
+  totalCost: number | null;
+}
+
+export interface Cutting {
+  id: string;
+  Name: string;
+  reference: string | null;
+  status: string | null;
+}
+
+export interface CuttingLine {
   id: string;
   productId: string | null;
   productName: string | null;
@@ -84,7 +116,7 @@ export async function getBOMsByProduct(productId: string): Promise<BOM[]> {
       "Quantity",
       "Status"
     FROM "${BASE_ID}"."BOM"
-    -- WHERE "__fk_fldsa7kbXvPPWD0ni8s" = '${productId}'
+    --WHERE "BOM"."Product"->>"__id" = '${productId}'
     WHERE "Status" = 'Active'
     ORDER BY "Name"
     LIMIT 100`
@@ -138,6 +170,57 @@ export async function getAllBOMs(): Promise<BOM[]> {
   });
 }
 
+// Fetch all active Cutting patterns
+export async function getAllCuttings(): Promise<Cutting[]> {
+  const { rows } = await sqlQuery(
+    BASE_ID,
+    `SELECT 
+      "__id",
+      "Name",
+      "Reference",
+      "Status"
+    FROM "${BASE_ID}"."Cutting"
+    WHERE "Status" = 'Active'
+    ORDER BY "Name"
+    LIMIT 200`
+  );
+
+  return rows.map((row) => ({
+    id: row.__id as string,
+    Name: row.Name as string,
+    reference: row.Reference as string | null,
+    status: row.Status as string | null,
+  }));
+}
+
+// Fetch Cutting lines for a specific cutting pattern
+export async function getCuttingLines(cuttingId: string): Promise<CuttingLine[]> {
+  const { rows } = await sqlQuery(
+    BASE_ID,
+    `SELECT 
+      "__id",
+      "Product",
+      "Plan_Qty"
+      --"Unit_Cost",
+      --"Total_Cost"
+    FROM "${BASE_ID}"."Cutting_Lines"
+    WHERE "${BASE_ID}"."Cutting_Lines"."Cut"->>'id' = '${cuttingId}'
+    LIMIT 200`
+  );
+
+  return rows.map((row) => {
+    const product = safeParseJson(row.Product);
+    return {
+      id: row.__id as string,
+      productId: product?.id || null,
+      productName: product?.title || null,
+      quantity: row.Plan_Qty as number | null,
+      unitCost: row.Unit_Cost as number | null,
+      totalCost: row.Total_Cost as number | null,
+    };
+  });
+}
+
 // Fetch BOM lines for cost calculation
 export async function getBOMLines(bomId: string): Promise<BOMLine[]> {
   const { rows } = await sqlQuery(
@@ -149,7 +232,7 @@ export async function getBOMLines(bomId: string): Promise<BOMLine[]> {
       "Unit_Cost",
       "Total_Cost"
     FROM "${BASE_ID}"."BOM_Lines"
-    WHERE "${BASE_ID}"."BOM_Lines"."BOM" = '${bomId}'
+    WHERE "${BASE_ID}"."BOM_Lines"."BOM"->>'id' = '${bomId}'
     LIMIT 200`
   );
 
@@ -219,54 +302,160 @@ export interface CreateMOInput {
 
 export async function createMO(input: CreateMOInput) {
   const fields: Record<string, unknown> = {
-    fldbFr38YcvMjKMxvqV: input.moType, // MO Type
-    fldOCAJQrX6kHRrGHkh: [input.productId], // Product (link)
-    fldol1eNL6A8B3OQDqe: input.quantity, // Quantity
-    fldmtKVIvDWxly1H2TL: "Draft", // Status
+    "MO_Type": input.moType, // MO Type
+    "Product": [input.productId], // Product (link)
+    "Quantity": input.quantity, // Quantity
+    "Status": "Draft", // Status
   };
 
   // BOM or Cutting BOM based on type
   if (input.moType === "Production" && input.bomId) {
-    fields.fldP9sMkMfZcGfdKJp1 = [input.bomId]; // BOM (link)
+    fields["BOM"] = [input.bomId]; // BOM (link)
   }
   if (input.moType === "Cutting" && input.cuttingBomId) {
-    fields.fldfXFqu8fX4QmI6vfh = [input.cuttingBomId]; // Cutting BOM (link)
+    fields["Cutting_BOM"] = [input.cuttingBomId]; // Cutting BOM (link)
   }
 
   // Dates
   if (input.startDate) {
-    fields.fldL0wAAZUeCcuEavOz = input.startDate; // Start Date
+    fields["Start_Date"] = input.startDate; // Start Date
   }
   if (input.endDate) {
-    fields.fldEBTh6KseVZSBSxKS = input.endDate; // End Date
+    fields["End_Date"] = input.endDate; // End Date
   }
 
   // Costs
   if (input.laborCost !== undefined) {
-    fields.fldYgVpUpKBCmgrIopp = input.laborCost; // Labor Cost
+    fields["Labor_Cost"] = input.laborCost; // Labor Cost
   }
   if (input.machineCost !== undefined) {
-    fields.fldRk5Jcwdork1hTNax = input.machineCost; // Machine Cost
+    fields["Machine_Cost"] = input.machineCost; // Machine Cost
   }
   if (input.overheadCost !== undefined) {
-    fields.flds9oyt9ct44exn28O = input.overheadCost; // Overhead Cost
+    fields["Overhead_Cost"] = input.overheadCost; // Overhead Cost
   }
 
   // Reference
   if (input.reference) {
-    fields.fldjlZSCHctyvCAEVjb = input.reference; // Reference
+    fields["Reference"] = input.reference; // Reference
   }
 
   // Created date
-  fields.fldj3eqIJczvShgA1yc = new Date().toISOString(); // Created At
+  fields["Created_At"] = new Date().toISOString(); // Created At
 
-  const record = await createRecord("tblPbvDgbuKgA55boy8", fields);
+  const record = await createRecord(MO_TABLE, fields);
+
+  // Create MO Raw Material records for BOM lines or Cutting lines
+  if (input.moType === "Production" && input.bomId) {
+    const bomLines = await getBOMLines(input.bomId);
+    const moRawMaterialRecords = bomLines.map(line => ({
+      fields: {
+        "MO": [record.id], // MO (link)
+        "MO_Type": input.moType, // MO Type
+        "Reference": input.reference || "", // Reference
+        "BOM": [input.bomId], // BOM (link)
+        "Product": [line.productId], // Product (link)
+        "MO_Qty": input.quantity, // MO Qty
+        "Quantity": (line.quantity || 0) * input.quantity, // Quantity (scaled)
+        "Cost": line.unitCost || 0, // Product Cost
+      }
+    }));
+    if (moRawMaterialRecords.length > 0) {
+      await createRecords(MO_RAW_MATERIAL_TABLE, moRawMaterialRecords);
+    }
+  } else if (input.moType === "Cutting" && input.cuttingBomId) {
+    const cuttingLines = await getCuttingLines(input.cuttingBomId);
+    const moRawMaterialRecords = cuttingLines.map(line => ({
+      fields: {
+        "MO": [record.id], // MO (link)
+        "MO_Type": input.moType, // MO Type
+        "Reference": input.reference || "", // Reference
+        "CUT": [input.cuttingBomId], // CUT (link)
+        "Product": [line.productId], // Product (link)
+        "MO_Qty": input.quantity, // MO Qty
+        "Quantity": (line.quantity || 0) * input.quantity, // Quantity (scaled)
+        "Cost": line.unitCost || 0, // Product Cost
+      }
+    }));
+    if (moRawMaterialRecords.length > 0) {
+      await createRecords(MO_RAW_MATERIAL_TABLE, moRawMaterialRecords);
+    }
+  }
+
   return record;
 }
 
 // ============================================================================
-// BOM (Bill of Materials)
+// Cutting Management
 // ============================================================================
+
+export async function createCuttingFabric(data: {
+  date: string;
+  reference: string;
+}) {
+  return createRecord(CUTTING_TABLE, {
+    'Date': data.date,
+    'Reference': data.reference,
+  });
+}
+
+export async function createCuttingPlan(data: {
+  name: string;
+  reference?: string;
+}) {
+  return createRecord(CUTTING_TABLE, {
+    "Name": data.name,
+    "Reference": data.reference || "",
+    "Status": "Active",
+  });
+}
+
+export async function updateCutting(id: string, data: {
+  name?: string;
+  reference?: string;
+  status?: string;
+}) {
+  const fields: Record<string, unknown> = {};
+  if (data.name !== undefined) fields.Name = data.name;
+  if (data.reference !== undefined) fields.Reference = data.reference;
+  if (data.status !== undefined) fields.Status = data.status;
+  return updateRecord(CUTTING_TABLE, id, fields);
+}
+
+export async function deleteCutting(id: string) {
+  return deleteRecord(CUTTING_TABLE, id);
+}
+
+export async function createCuttingWithLines(data: {
+  name: string;
+  reference?: string;
+  lines: Array<{
+    productId: string;
+    quantity: number;
+    unitCost: number;
+  }>;
+}) {
+  // Create the Cutting record first
+  const cuttingRecord = await createCuttingFabric({
+    name: data.name,
+    reference: data.reference,
+  });
+
+  // Create Cutting lines
+  if (data.lines.length > 0) {
+    const cuttingLinesPromises = data.lines.map((line) =>
+      createRecord(CUTTING_LINES_TABLE, {
+        "Cut": [cuttingRecord.id], // Cutting link
+        "Fabric": [line.productId], // Product
+        "Plan_Qty": line.quantity, // Quantity
+        // "Unit_Cost": line.unitCost, // Unit Cost
+      })
+    );
+    await Promise.all(cuttingLinesPromises);
+  }
+
+  return cuttingRecord;
+}
 
 export async function getBOMs() {
   const { rows } = await sqlQuery(BASE_ID, `
@@ -311,16 +500,16 @@ export async function updateBOM(id: string, data: {
   reference?: string;
 }) {
   const fields: Record<string, unknown> = {};
-  if (data.version !== undefined) fields.fld0VdSDfuO9aUlG55s = data.version;
-  if (data.quantity !== undefined) fields.fldXoofJqfxsI38hfhd = data.quantity;
-  if (data.status !== undefined) fields.fldooU78f6gHZ362PtW = data.status;
-  if (data.effectiveDate !== undefined) fields.fldSKhzNnNJqDWQDOlZ = data.effectiveDate;
-  if (data.reference !== undefined) fields.fldV1cUu57SObBr8XId = data.reference;
-  return updateRecord(`${BASE_ID}.BOM_Lines`, id, fields);
+  if (data.version !== undefined) fields.Version = data.version;
+  if (data.quantity !== undefined) fields.Quantity = data.quantity;
+  if (data.status !== undefined) fields.Status = data.status;
+  if (data.effectiveDate !== undefined) fields.Effective_Date = data.effectiveDate;
+  if (data.reference !== undefined) fields.Reference = data.reference;
+  return updateRecord(BOM_TABLE, id, fields);
 }
 
 export async function deleteBOM(id: string) {
-  return deleteRecord(`${BASE_ID}.BOM_Lines`, id);
+  return deleteRecord(BOM_TABLE, id);
 }
 
 export async function createBOMWithLines(data: {
@@ -532,7 +721,7 @@ export async function createCutting(data: {
   date: string;
   reference: string;
 }) {
-  return createRecord("${BASE_ID}.Request_Cutting", {
+  return createRecord(CUTTING_REQUEST_TABLE, {
     'Date': data.date,
     'Reference': data.reference,
   });

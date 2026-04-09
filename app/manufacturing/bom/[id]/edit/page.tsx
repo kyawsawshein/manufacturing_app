@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useTransition } from "react";
+import { useEffect, useState, useTransition, use } from "react";
 import { useRouter } from "next/navigation";
 import { DashboardLayout } from "@/components/dashboard/dashboard-layout";
 import { Button } from "@/components/ui/button";
@@ -13,9 +13,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { SearchableSelect } from "@/components/searchable-select";
 import { Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { getBOMs, updateBOM } from "../../../app/actions";
+import { getBOMs, updateBOM, getProducts } from "../../../app/actions";
 
 interface BOM {
   id: string;
@@ -26,12 +27,13 @@ interface BOM {
   effectiveDate: string;
   reference: string;
   product: string;
+  productId?: string;
 }
 
 interface BOMEditPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 function toISODateString(date: Date): string {
@@ -39,24 +41,40 @@ function toISODateString(date: Date): string {
 }
 
 export default function BOMEditPage({ params }: BOMEditPageProps) {
+  const { id } = use(params);
   const router = useRouter();
   const { toast } = useToast();
   const [bom, setBOM] = useState<BOM | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [products, setProducts] = useState<any[]>([]);
   const [isPending, startTransition] = useTransition();
   const [formData, setFormData] = useState({
+    productId: "",
     version: "1.0",
     quantity: 1,
     status: "Draft",
     effectiveDate: toISODateString(new Date()),
     reference: "",
+    product: "", // Keep for fallback/display
   });
 
   useEffect(() => {
     async function loadBOM() {
       try {
-        const boms = await getBOMs();
-        const found = boms.find((item) => item.id === params.id);
+        // Fetch both BOMs and Products in parallel
+        const [boms, productsData] = await Promise.all([
+          getBOMs(),
+          getProducts()
+        ]);
+
+        setProducts(productsData);
+
+        const productOptions = productsData.map((p: any) => ({
+          value: p.id,
+          label: `${p.sku}${p.Name ? ` - ${p.Name}` : ""}`,
+        }));
+
+        const found = boms.find((item) => item.id === id);
         if (!found) {
           toast({
             title: "Not found",
@@ -69,11 +87,13 @@ export default function BOMEditPage({ params }: BOMEditPageProps) {
 
         setBOM(found);
         setFormData({
+          productId: found.productId || "",
           version: found.version || "1.0",
           quantity: found.quantity || 1,
           status: found.status || "Draft",
           effectiveDate: found.effectiveDate ? found.effectiveDate.split("T")[0] : toISODateString(new Date()),
           reference: found.reference || "",
+          product: found.product || "",
         });
       } catch (error) {
         toast({
@@ -87,12 +107,13 @@ export default function BOMEditPage({ params }: BOMEditPageProps) {
     }
 
     loadBOM();
-  }, [params.id, router, toast]);
+  }, [id, router, toast]);
 
   const handleSubmit = () => {
     startTransition(async () => {
       try {
-        await updateBOM(params.id, {
+        await updateBOM(id, {
+          productId: formData.productId,
           version: formData.version,
           quantity: formData.quantity,
           status: formData.status,
@@ -115,6 +136,11 @@ export default function BOMEditPage({ params }: BOMEditPageProps) {
       }
     });
   };
+
+  const productOptions = products.map((p) => ({
+    value: p.id,
+    label: `${p.sku}${p.Name ? ` - ${p.Name}` : ""}`,
+  }));
 
   if (isLoading) {
     return (
@@ -147,6 +173,16 @@ export default function BOMEditPage({ params }: BOMEditPageProps) {
 
         <div className="grid gap-4 max-w-4xl">
           <div className="grid gap-4 py-4">
+            <div className="grid gap-2">
+              <Label htmlFor="product">Product</Label>
+              <Input
+                id="product"
+                value={formData.product}
+                onChange={(e) => setFormData({ ...formData, product: e.target.value })}
+                placeholder="Product name"
+              />
+            </div>
+
             <div className="grid gap-2">
               <Label htmlFor="reference">Reference</Label>
               <Input
